@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import PasswordGate from './components/PasswordGate';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
@@ -11,6 +12,7 @@ import FAQs from './pages/FAQs';
 
 export default function App() {
   return (
+    <PasswordGate>
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
@@ -25,5 +27,6 @@ export default function App() {
         </Routes>
       </main>
     </BrowserRouter>
+    </PasswordGate>
   );
 }
