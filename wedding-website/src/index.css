@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wedding-bg: #FAF9F6;
+  --color-wedding-text: #2B2D42;
+  --color-wedding-muted: #6C757D;
+  --color-wedding-accent: #8A9A86;
+
+  /* Display: Syne ExtraBold — festival poster energy */
+  --font-display: "Syne", "Impact", "Arial Black", sans-serif;
+  /* Serif: Cormorant Garamond — garden party / Asturian fete warmth */
+  --font-serif: "Cormorant Garamond", "Palatino Linotype", Georgia, serif;
+  /* Sans: Jost — clean utility labels */
+  --font-sans: "Jost", "Gill Sans MT", system-ui, sans-serif;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+  }
+}
