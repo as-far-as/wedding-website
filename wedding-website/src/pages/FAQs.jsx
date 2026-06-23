@@ -53,7 +53,7 @@ const FAQS = [
   },
   {
     q: 'I have a question not answered here.',
-    a: "Drop us a message. You can reach Adán at adan@example.com or Natalie at natalie@example.com — we'll do our best to reply promptly. If it's a question other guests are likely to have, we'll add it here.",
+    a: `Drop us a message. You can reach Adán at ${import.meta.env.VITE_ADAN_EMAIL} or Natalie at ${import.meta.env.VITE_NATALIE_EMAIL} — we'll do our best to reply promptly. If it's a question other guests are likely to have, we'll add it here.`,
   },
 ];
 
