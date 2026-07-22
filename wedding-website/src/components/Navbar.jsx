@@ -24,8 +24,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="font-display font-bold text-wedding-text text-xl leading-none"
-          style={{ fontWeight: 800 }}
+          className="font-display text-wedding-text text-xl leading-none"
           onClick={() => setMenuOpen(false)}
         >
           N&A

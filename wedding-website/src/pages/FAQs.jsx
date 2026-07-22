@@ -68,8 +68,8 @@ function FAQItem({ question, answer }) {
         aria-expanded={open}
       >
         <span
-          className="font-display font-bold text-wedding-text leading-snug"
-          style={{ fontSize: '1rem', fontWeight: 700 }}
+          className="font-display text-wedding-text leading-snug"
+          style={{ fontSize: '1rem' }}
         >
           {question}
         </span>

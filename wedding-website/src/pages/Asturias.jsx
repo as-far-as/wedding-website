@@ -110,7 +110,7 @@ export default function Asturias() {
             },
           ].map(({ name, desc }) => (
             <div key={name} className="flex flex-col sm:flex-row gap-2 sm:gap-6 pb-5 border-b border-wedding-accent/15 last:border-0">
-              <span className="font-display font-bold text-wedding-text shrink-0" style={{ fontWeight: 700, minWidth: '11rem' }}>{name}</span>
+              <span className="font-display text-wedding-text shrink-0" style={{ minWidth: '11rem' }}>{name}</span>
               <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>{desc}</p>
             </div>
           ))}

@@ -54,16 +54,16 @@ export default function Location() {
         <div className="mb-8">
           <div className="flex items-baseline gap-4 mb-4">
             <span
-              className="font-display font-bold text-wedding-accent"
-              style={{ fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 700 }}
+              className="font-display text-wedding-accent"
+              style={{ fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
             >
               Friday 27 August
             </span>
             <div className="h-px flex-1 bg-wedding-accent/20" />
           </div>
           <h3
-            className="font-display font-bold text-wedding-text mb-3"
-            style={{ fontSize: '1.15rem', fontWeight: 700 }}
+            className="font-display text-wedding-text mb-3"
+            style={{ fontSize: '1.15rem' }}
           >
             Friends pre-party — evening
           </h3>
@@ -78,16 +78,16 @@ export default function Location() {
         <div>
           <div className="flex items-baseline gap-4 mb-4">
             <span
-              className="font-display font-bold text-wedding-accent"
-              style={{ fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 700 }}
+              className="font-display text-wedding-accent"
+              style={{ fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
             >
               Saturday 28 August
             </span>
             <div className="h-px flex-1 bg-wedding-accent/20" />
           </div>
           <h3
-            className="font-display font-bold text-wedding-text mb-3"
-            style={{ fontSize: '1.15rem', fontWeight: 700 }}
+            className="font-display text-wedding-text mb-3"
+            style={{ fontSize: '1.15rem' }}
           >
             The wedding — all day and into the night
           </h3>
@@ -105,8 +105,8 @@ export default function Location() {
             ].map(({ time, desc }) => (
               <div key={time} className="flex gap-5 py-2.5 border-b border-wedding-accent/12 last:border-0">
                 <span
-                  className="font-display font-bold text-wedding-accent shrink-0"
-                  style={{ fontWeight: 700, fontSize: '0.8rem', minWidth: '5.5rem' }}
+                  className="font-display text-wedding-accent shrink-0"
+                  style={{ fontSize: '0.8rem', minWidth: '5.5rem' }}
                 >
                   {time}
                 </span>

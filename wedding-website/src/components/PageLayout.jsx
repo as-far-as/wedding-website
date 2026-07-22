@@ -21,8 +21,8 @@ export default function PageLayout({ title, subtitle, eyebrow, children }) {
             </p>
           )}
           <h1
-            className="font-display font-bold text-wedding-bg leading-none"
-            style={{ fontSize: 'clamp(2.4rem, 7vw, 5rem)', fontWeight: 800 }}
+            className="font-display text-wedding-bg leading-none"
+            style={{ fontSize: 'clamp(2.4rem, 7vw, 5rem)' }}
           >
             {title}
           </h1>
@@ -57,8 +57,8 @@ export function Section({ title, eyebrow, children }) {
         </p>
       )}
       <h2
-        className="font-display font-bold text-wedding-text mb-3"
-        style={{ fontSize: '1.5rem', fontWeight: 800 }}
+        className="font-display text-wedding-text mb-3"
+        style={{ fontSize: '1.5rem' }}
       >
         {title}
       </h2>
@@ -81,8 +81,8 @@ export function Card({ title, children }) {
     <div className="border border-wedding-accent/30 rounded-lg p-6">
       {title && (
         <h3
-          className="font-display font-bold text-wedding-text mb-3"
-          style={{ fontSize: '1.05rem', fontWeight: 700 }}
+          className="font-display text-wedding-text mb-3"
+          style={{ fontSize: '1.05rem' }}
         >
           {title}
         </h3>

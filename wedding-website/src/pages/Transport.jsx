@@ -132,7 +132,7 @@ export default function Transport() {
             { from: 'Madrid',                  dist: '~450 km', time: '~4.5 hrs',       route: 'A-66 north through the Asturian mountains' },
           ].map(({ from, dist, time, route }) => (
             <div key={from} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3 border-b border-wedding-accent/15 last:border-0">
-              <span className="font-display font-bold text-wedding-text shrink-0" style={{ fontWeight: 700, minWidth: '13rem' }}>{from}</span>
+              <span className="font-display text-wedding-text shrink-0" style={{ minWidth: '13rem' }}>{from}</span>
               <span className="font-sans text-wedding-muted" style={{ fontSize: '0.875rem' }}>
                 {dist} · {time} — <span className="text-wedding-muted/70">{route}</span>
               </span>

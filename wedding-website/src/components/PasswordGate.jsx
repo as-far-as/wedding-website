@@ -42,8 +42,8 @@ export default function PasswordGate({ children }) {
             Natalie & Adán · 28 Aug 2027
           </p>
           <h1
-            className="font-display font-bold text-wedding-text leading-none"
-            style={{ fontSize: 'clamp(3rem, 12vw, 5rem)', fontWeight: 800 }}
+            className="font-display text-wedding-text leading-none"
+            style={{ fontSize: 'clamp(3rem, 12vw, 5rem)' }}
           >
             N & A
           </h1>
@@ -83,8 +83,8 @@ export default function PasswordGate({ children }) {
           )}
           <button
             type="submit"
-            className="w-full mt-4 bg-wedding-accent text-wedding-bg font-display font-bold py-3 rounded-lg hover:opacity-90 transition-opacity"
-            style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}
+            className="w-full mt-4 bg-wedding-accent text-wedding-bg font-display py-3 rounded-lg hover:opacity-90 transition-opacity"
+            style={{ fontSize: '0.85rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}
           >
             Enter
           </button>

@@ -110,7 +110,6 @@ export default function Hero() {
             className="font-display text-wedding-text leading-[0.88] block"
             style={{
               fontSize: 'clamp(2.4rem, 7vw, 6rem)',
-              fontWeight: 800,
               animation: 'heroFadeUp 0.55s 0.15s ease both',
             }}
           >
@@ -133,7 +132,6 @@ export default function Hero() {
             className="font-display text-wedding-text leading-[0.88] block"
             style={{
               fontSize: 'clamp(2.4rem, 7vw, 6rem)',
-              fontWeight: 800,
               animation: 'heroFadeUp 0.55s 0.38s ease both',
             }}
           >
@@ -198,7 +196,7 @@ export default function Hero() {
                 <div className="flex flex-col items-center">
                   <span
                     className="font-display text-wedding-text tabular-nums leading-none"
-                    style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)', fontWeight: 700 }}
+                    style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)' }}
                   >
                     {pad(value, d)}
                   </span>
