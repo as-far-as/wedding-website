@@ -9,31 +9,41 @@ export default function Transport() {
 
       <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mb-12">
         <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.9rem' }}>
-          <strong className="text-wedding-text">The short version:</strong> Fly into Asturias (OVD) or Santander (SDR) — both have direct flights from the UK and you'll be at the site in under 2.5 hours. Hire a car and you're sorted. If you're coming from further afield, Madrid connects to everywhere and has a fast train north.
+          <strong className="text-wedding-text">The short version:</strong> Asturias Airport now only has a handful of flights a week, so getting there takes a little more planning than it used to. Our suggestion — fly into Asturias Thursday evening and out on the Tuesday, or fly via Santander instead and hire a car there. Madrid plus the train remains a reliable option from anywhere. None of this is compulsory; see below for the detail.
         </p>
       </div>
 
       <Section title="By Plane">
         <CardGrid>
-          <Card title="Asturias Airport (OVD) — Best option">
+          <Card title="Asturias Airport (OVD) — closest, but limited">
             <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
-              The closest airport. Located between Avilés and Gijón, about 1 hour 20 minutes from the venue. Direct flights from London Stansted, Amsterdam, Dublin, and Frankfurt.
+              The closest airport, about 1 hour 20 minutes from the venue. For next summer, the only scheduled route is Wizz Air from London Luton, and only on <strong className="text-wedding-text">Tuesdays, Thursdays and Saturdays</strong>.
             </p>
             <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
               <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>~1 hr 20 min to venue by car</span></li>
-              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Direct: London Stansted, Amsterdam, Dublin, Frankfurt</span></li>
-              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Airlines: Ryanair, Transavia, Eurowings</span></li>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Wizz Air: London Luton, Tue / Thu / Sat only</span></li>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>See "Recommended timings" below for our suggested flights</span></li>
             </ul>
           </Card>
 
-          <Card title="Santander Airport (SDR)">
+          <Card title="Santander Airport (SDR) — a strong alternative">
             <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
-              2 hours 30 minutes from the site. Good option from Edinburgh or Dublin, or if you're coming by Brittany Ferries from Portsmouth — great for anyone bringing a car. The coastal drive west is excellent.
+              2 hours 30 minutes from the site. Ryanair's Santander–Stansted flights are more frequent and better timed than the Asturias options, so it's well worth considering — especially if the limited Asturias schedule doesn't fit your dates.
             </p>
             <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
               <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>~2 hr 30 min to venue by car</span></li>
-              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Direct: Edinburgh, London, Dublin</span></li>
-              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Brittany Ferries: Portsmouth → Santander</span></li>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Ryanair: London Stansted, frequent</span></li>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Drive west via the Picos de Europa or Llanes — both worth the detour</span></li>
+            </ul>
+          </Card>
+
+          <Card title="Paris Orly — via Eurostar">
+            <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+              Direct flights from Paris Orly to Asturias run on Thursdays and Sundays. If you'd rather avoid Luton, combining the Eurostar to Paris with this flight is a genuine alternative route in.
+            </p>
+            <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Direct: Paris Orly, Thu / Sun only</span></li>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Pair with Eurostar London ⇄ Paris</span></li>
             </ul>
           </Card>
 
@@ -57,6 +67,26 @@ export default function Transport() {
             </ul>
           </Card>
         </CardGrid>
+      </Section>
+
+      <Section title="Recommended Timings — Flying via Asturias">
+        <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
+          With Wizz Air only flying Luton–Asturias on Tuesdays, Thursdays and Saturdays, and the wedding weekend running Friday to Sunday (27–29 August), here's the pairing that brackets it most comfortably:
+        </p>
+        <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mb-5">
+          <p className="font-sans text-wedding-muted leading-relaxed mb-2" style={{ fontSize: '0.875rem' }}>
+            <strong className="text-wedding-text">Out:</strong> Thursday 26 August, Luton 20:15 → Asturias 23:10
+          </p>
+          <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+            <strong className="text-wedding-text">Back:</strong> Tuesday 31 August, Asturias 23:50 → Luton 00:40
+          </p>
+        </div>
+        <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
+          Need to get home sooner? You can fly out on the Sunday or Monday instead via Madrid, or direct from Santander.
+        </p>
+        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
+          <strong className="text-wedding-text">Arriving late at night:</strong> car rental desks at Asturias Airport should still be open for the late arrival, so hiring a car on the spot should work. If you'd rather not drive straight off a flight, there's a coach into Oviedo or Gijón (last one around midnight) — spend the night there and head on to Bueida the next day. You can pick up a rental car in either Gijón or Oviedo, or let us know and we can help arrange ride-sharing from Gijón.
+        </p>
       </Section>
 
       <Section title="By Car">
@@ -117,6 +147,17 @@ export default function Transport() {
             </p>
           </Card>
         </CardGrid>
+      </Section>
+
+      <Section title="However You Get Here">
+        <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
+          All of the above is just our suggestion — feel free to ignore it entirely. Getting here can be part of the trip: take longer than you need, stop off in the Picos de Europa, Llanes, or wherever takes your fancy on the way. We'd love for people to spend as much time in the area as they can and explore in their own time.
+        </p>
+        <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5">
+          <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+            <strong className="text-wedding-text">Questions about logistics?</strong> Get in touch with Adán at {import.meta.env.VITE_ADAN_EMAIL} or Natalie at {import.meta.env.VITE_NATALIE_EMAIL} — we're happy to help you work out flights, timings, or anything else.
+          </p>
+        </div>
       </Section>
 
     </PageLayout>
