@@ -89,6 +89,35 @@ export default function Transport() {
         </p>
       </Section>
 
+      <Section title="Overland Options">
+        <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
+          Prefer not to fly, or fancy making a proper trip of it? There are two solid ways to get here overland from the UK and northern Europe.
+        </p>
+        <CardGrid>
+          <Card title="Ferry — Portsmouth to Santander">
+            <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+              Brittany Ferries runs a direct crossing from Portsmouth to Santander — a great option if you'd like to bring your own car and turn the journey into an extended road trip through northern Spain. From Santander, drive west and stop off in the Picos de Europa or Llanes on the way if you fancy it.
+            </p>
+            <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Brittany Ferries: Portsmouth → Santander</span></li>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Bring your own car — no rental needed</span></li>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>~2 hr 30 min drive from Santander to the venue</span></li>
+            </ul>
+          </Card>
+
+          <Card title="Train — Paris to Irún, then onward">
+            <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+              Travelling by train from Paris, the direct service only runs as far as Irún, on the French–Spanish border. From there, continue by BlaBlaCar (ride-share) or the Alsa coach to Gijón or Oviedo, then arrange onward transport to the venue.
+            </p>
+            <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Direct train: Paris → Irún</span></li>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Onward: BlaBlaCar or Alsa coach to Gijón / Oviedo</span></li>
+              <li className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>Then ~45 min–1 hr to the venue by car</span></li>
+            </ul>
+          </Card>
+        </CardGrid>
+      </Section>
+
       <Section title="By Car">
         <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
           A car is the most practical way to move around Asturias. The venue is in a rural valley off the AS-228 — GPS gets you most of the way. We'll share exact coordinates and any tricky junctions closer to the date.
