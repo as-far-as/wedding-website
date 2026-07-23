@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-
-const NAV_LINKS = [
-  { to: '/location',      label: 'Location' },
-  { to: '/accommodation', label: 'Accommodation' },
-  { to: '/transport',     label: 'Transport' },
-  { to: '/asturias',      label: 'Asturias' },
-  { to: '/faqs',          label: 'FAQs' },
-];
+import { useLanguage } from '../i18n/useLanguage';
+import LanguageToggle from './LanguageToggle';
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const NAV_LINKS = [
+    { to: '/location',      label: t.nav.location },
+    { to: '/accommodation', label: t.nav.accommodation },
+    { to: '/transport',     label: t.nav.transport },
+    { to: '/asturias',      label: t.nav.asturias },
+    { to: '/faqs',          label: t.nav.faqs },
+  ];
 
   const linkClass = ({ isActive }) =>
     `font-sans transition-colors ${
@@ -31,25 +34,28 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map(({ to, label }) => (
-            <li key={to}>
-              <NavLink
-                to={to}
-                className={linkClass}
-                style={{ fontSize: '0.65rem', letterSpacing: '0.22em', textTransform: 'uppercase' }}
-              >
-                {label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {NAV_LINKS.map(({ to, label }) => (
+              <li key={to}>
+                <NavLink
+                  to={to}
+                  className={linkClass}
+                  style={{ fontSize: '0.65rem', letterSpacing: '0.22em', textTransform: 'uppercase' }}
+                >
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <LanguageToggle />
+        </div>
 
         {/* Mobile hamburger */}
         <button
           className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-[5px]"
           onClick={() => setMenuOpen(prev => !prev)}
-          aria-label="Toggle navigation menu"
+          aria-label={t.nav.toggleMenu}
           aria-expanded={menuOpen}
         >
           <span
@@ -81,6 +87,7 @@ export default function Navbar() {
               {label}
             </NavLink>
           ))}
+          <LanguageToggle className="mt-2" />
         </div>
       )}
     </nav>

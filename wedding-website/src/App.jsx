@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { LanguageProvider } from './i18n/LanguageContext';
 import PasswordGate from './components/PasswordGate';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
@@ -12,6 +13,7 @@ import FAQs from './pages/FAQs';
 
 export default function App() {
   return (
+    <LanguageProvider>
     <PasswordGate>
     <BrowserRouter>
       <ScrollToTop />
@@ -28,5 +30,6 @@ export default function App() {
       </main>
     </BrowserRouter>
     </PasswordGate>
+    </LanguageProvider>
   );
 }

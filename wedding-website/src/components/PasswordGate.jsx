@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../i18n/useLanguage';
+import LanguageToggle from './LanguageToggle';
 
 const AUTH_KEY = 'wedding_auth';
 
 export default function PasswordGate({ children }) {
+  const { t } = useLanguage();
   const [authenticated, setAuthenticated] = useState(false);
   const [input, setInput] = useState('');
   const [error, setError] = useState(false);
@@ -31,7 +34,11 @@ export default function PasswordGate({ children }) {
   if (authenticated) return children;
 
   return (
-    <div className="min-h-screen bg-wedding-bg flex items-center justify-center px-6">
+    <div className="min-h-screen bg-wedding-bg flex items-center justify-center px-6 relative">
+      <div className="absolute top-6 right-6">
+        <LanguageToggle />
+      </div>
+
       <div className="w-full max-w-xs">
 
         <div className="text-center mb-10">
@@ -39,7 +46,7 @@ export default function PasswordGate({ children }) {
             className="font-sans text-wedding-accent mb-4"
             style={{ fontSize: '0.58rem', letterSpacing: '0.4em', textTransform: 'uppercase' }}
           >
-            Natalie & Adán · 28 Aug 2027
+            {t.passwordGate.eyebrow}
           </p>
           <h1
             className="font-display text-wedding-text leading-none"
@@ -51,7 +58,7 @@ export default function PasswordGate({ children }) {
             className="font-serif italic text-wedding-muted mt-3"
             style={{ fontSize: '1rem', fontWeight: 300 }}
           >
-            Valle de Bueida, Quirós
+            {t.passwordGate.subtitle}
           </p>
         </div>
 
@@ -61,7 +68,7 @@ export default function PasswordGate({ children }) {
             className="block font-sans text-wedding-muted mb-2"
             style={{ fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}
           >
-            Password
+            {t.passwordGate.passwordLabel}
           </label>
           <input
             id="password"
@@ -78,7 +85,7 @@ export default function PasswordGate({ children }) {
               className="font-sans mt-2"
               style={{ fontSize: '0.8rem', color: '#b55252' }}
             >
-              Not quite — try again.
+              {t.passwordGate.error}
             </p>
           )}
           <button
@@ -86,7 +93,7 @@ export default function PasswordGate({ children }) {
             className="w-full mt-4 bg-wedding-accent text-wedding-bg font-display py-3 rounded-lg hover:opacity-90 transition-opacity"
             style={{ fontSize: '0.85rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}
           >
-            Enter
+            {t.passwordGate.enter}
           </button>
         </form>
 

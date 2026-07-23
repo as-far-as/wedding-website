@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../i18n/useLanguage';
 
 const WEDDING = new Date('2027-08-28T12:00:00');
 
@@ -39,6 +40,7 @@ function WildflowerSprig({ className }) {
 }
 
 export default function Hero() {
+  const { t } = useLanguage();
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -50,10 +52,10 @@ export default function Hero() {
   const pad = (n, d = 2) => String(n).padStart(d, '0');
 
   const units = [
-    { value: timeLeft.days,    label: 'Días',  d: 3 },
-    { value: timeLeft.hours,   label: 'Horas', d: 2 },
-    { value: timeLeft.minutes, label: 'Min',   d: 2 },
-    { value: timeLeft.seconds, label: 'Seg',   d: 2 },
+    { value: timeLeft.days,    label: t.hero.days,    d: 3 },
+    { value: timeLeft.hours,   label: t.hero.hours,   d: 2 },
+    { value: timeLeft.minutes, label: t.hero.minutes, d: 2 },
+    { value: timeLeft.seconds, label: t.hero.seconds, d: 2 },
   ];
 
   return (
@@ -83,7 +85,7 @@ export default function Hero() {
             className="font-sans text-wedding-bg/70"
             style={{ fontSize: '0.6rem', letterSpacing: '0.22em', textTransform: 'uppercase' }}
           >
-            Your photo here
+            {t.hero.photoPlaceholder}
           </p>
         </div>
       </div>
@@ -101,7 +103,7 @@ export default function Hero() {
             animation: 'heroFadeUp 0.5s 0.05s ease both',
           }}
         >
-          28 · viii · 2027
+          {t.hero.dateEyebrow}
         </p>
 
         {/* Names + connector ── the structural heart of the design */}
@@ -125,7 +127,7 @@ export default function Hero() {
               animation: 'heroFadeUp 0.55s 0.28s ease both',
             }}
           >
-            are getting married
+            {t.hero.marriedLine}
           </p>
 
           <h1
@@ -158,13 +160,13 @@ export default function Hero() {
             className="font-serif text-wedding-text italic"
             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)', fontWeight: 300 }}
           >
-            Valle de Bueida, Quirós
+            {t.hero.location}
           </p>
           <p
             className="font-sans text-wedding-muted mt-1"
             style={{ fontSize: '0.625rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
           >
-            Asturias · España
+            {t.hero.region}
           </p>
         </div>
 
@@ -174,7 +176,7 @@ export default function Hero() {
             className="font-sans text-wedding-muted/60 mb-4"
             style={{ fontSize: '0.5625rem', letterSpacing: '0.4em', textTransform: 'uppercase' }}
           >
-            Faltan
+            {t.hero.countdownLabel}
           </p>
           <div className="flex items-start">
             {units.map(({ value, label, d }, i) => (

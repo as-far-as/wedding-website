@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
 import PageLayout, { Section, CardGrid, Card } from '../components/PageLayout';
+import { useLanguage } from '../i18n/useLanguage';
 
 export default function Location() {
+  const { t } = useLanguage();
+  const l = t.location;
+
   return (
     <PageLayout
-      title="Location"
-      subtitle="Valle de Bueida, Quirós — Asturias, Spain"
+      title={l.title}
+      subtitle={l.subtitle}
     >
 
       {/* Map placeholder — replace with a Google Maps embed or similar */}
@@ -15,39 +19,34 @@ export default function Location() {
           <circle cx="12" cy="10" r="3"/>
         </svg>
         <p className="font-sans text-wedding-muted text-sm text-center">
-          Interactive map coming soon
+          {l.map.comingSoon}
         </p>
         <p className="font-sans text-wedding-muted/60 text-xs text-center">
-          Valle de Bueida, Quirós, Asturias, Spain
+          {l.map.address}
         </p>
       </div>
 
-      <Section title="The Site">
+      <Section title={l.site.title}>
         <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
-          The wedding is in the Valle de Bueida — a small, steep valley in the municipality of Quirós,
-          where Adán grew up. Not a hotel. Not a hired events space. A family place in the Cantabrian
-          foothills, surrounded by mountains and set in grass. Wild, intimate, and entirely itself.
+          {l.site.intro}
         </p>
         <div className="bg-wedding-accent/8 border-l-2 border-wedding-accent rounded-r-lg px-5 py-4 mb-6">
-          <p className="font-sans text-wedding-muted mb-1" style={{ letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '0.65rem' }}>Address</p>
+          <p className="font-sans text-wedding-muted mb-1" style={{ letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '0.65rem' }}>{l.site.addressLabel}</p>
           <address className="font-serif italic text-wedding-text not-italic" style={{ fontSize: '1rem', fontWeight: 300 }}>
-            Valle de Bueida<br />
-            Quirós, 33830<br />
-            Asturias, Spain
+            {l.site.addressLine1}<br />
+            {l.site.addressLine2}<br />
+            {l.site.addressLine3}
           </address>
         </div>
         <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
-          The valley is accessed via a single-lane rural road. GPS handles it well — we'll share
-          exact coordinates and any local quirks closer to the date. There is no public transport
-          to the valley. If you'd rather not drive on the day, the shuttle from Gijón is the answer —
-          see the{' '}
-          <Link to="/transport" className="text-wedding-accent underline underline-offset-2">Transport page</Link>.
+          {l.site.accessBefore}{' '}
+          <Link to="/transport" className="text-wedding-accent underline underline-offset-2">{l.site.accessLinkText}</Link>.
         </p>
       </Section>
 
-      <Section title="What's On">
+      <Section title={l.whatsOn.title}>
         <p className="font-sans text-wedding-muted leading-relaxed mb-8" style={{ fontSize: '0.925rem' }}>
-          Two days. You don't have to come to both — but you should.
+          {l.whatsOn.intro}
         </p>
 
         {/* Friday */}
@@ -57,7 +56,7 @@ export default function Location() {
               className="font-display text-wedding-accent"
               style={{ fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
             >
-              Friday 27 August
+              {l.whatsOn.friday.label}
             </span>
             <div className="h-px flex-1 bg-wedding-accent/20" />
           </div>
@@ -65,12 +64,10 @@ export default function Location() {
             className="font-display text-wedding-text mb-3"
             style={{ fontSize: '1.15rem' }}
           >
-            Friends pre-party — evening
+            {l.whatsOn.friday.heading}
           </h3>
           <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.9rem' }}>
-            An informal evening for friends. Food's on us — drinks are on you, bring whatever you like.
-            This is the settle-in night: arrive, pitch your tent, get acquainted (or reacquainted) before
-            the main event. Low-key, no agenda. The right way to start the weekend.
+            {l.whatsOn.friday.desc}
           </p>
         </div>
 
@@ -81,7 +78,7 @@ export default function Location() {
               className="font-display text-wedding-accent"
               style={{ fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
             >
-              Saturday 28 August
+              {l.whatsOn.saturday.label}
             </span>
             <div className="h-px flex-1 bg-wedding-accent/20" />
           </div>
@@ -89,20 +86,13 @@ export default function Location() {
             className="font-display text-wedding-text mb-3"
             style={{ fontSize: '1.15rem' }}
           >
-            The wedding — all day and into the night
+            {l.whatsOn.saturday.heading}
           </h3>
           <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.9rem' }}>
-            The full day. Ceremony under open sky, a proper banquet lunch, music, dancing, cider, and a
-            bar that stays open. Everything happens in and around the teepee in the valley. Arrive
-            mid-morning. Be there when the last song plays.
+            {l.whatsOn.saturday.desc}
           </p>
           <div className="space-y-3">
-            {[
-              { time: 'Morning',   desc: 'Gates open — arrivals, welcome drinks, settle in' },
-              { time: 'Afternoon', desc: 'Ceremony, then the banquet — long, unhurried, real food' },
-              { time: 'Evening',   desc: 'Music, dancing, bar open: cider, beer, wine, cocktails' },
-              { time: 'Late',      desc: 'As long as you like' },
-            ].map(({ time, desc }) => (
+            {l.whatsOn.saturday.schedule.map(({ time, desc }) => (
               <div key={time} className="flex gap-5 py-2.5 border-b border-wedding-accent/12 last:border-0">
                 <span
                   className="font-display text-wedding-accent shrink-0"
@@ -117,32 +107,27 @@ export default function Location() {
         </div>
       </Section>
 
-      <Section title="Good to Know">
+      <Section title={l.goodToKnow.title}>
         <CardGrid>
-          <Card title="What to Wear">
+          <Card title={l.goodToKnow.wear.title}>
             <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              Festival-smart. Linen, florals, flowing fabrics — something you can go from ceremony to
-              dancing in. The ground is grass, so leave the stilettos at home. Evenings drop to 12–16°C;
-              bring a layer you actually like.
+              {l.goodToKnow.wear.desc}
             </p>
           </Card>
-          <Card title="Food">
+          <Card title={l.goodToKnow.food.title}>
             <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              Food is provided on both days. Saturday's centrepiece is a proper banquet lunch, with snacks
-              in the evening. Friday is food provided, drinks BYOD. Flag dietary requirements in your RSVP.
+              {l.goodToKnow.food.desc}
             </p>
           </Card>
-          <Card title="The Bar">
+          <Card title={l.goodToKnow.bar.title}>
             <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              Saturday: fully catered — cider, beer, wine, cocktails. Asturian sidra will be pouring from
-              the start. Friday: BYOD. Come prepared.
+              {l.goodToKnow.bar.desc}
             </p>
           </Card>
-          <Card title="Getting There">
+          <Card title={l.goodToKnow.gettingThere.title}>
             <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              Parking on site. A shuttle runs from Gijón on Saturday — see the{' '}
-              <Link to="/transport" className="text-wedding-accent underline underline-offset-2">Transport page</Link>.{' '}
-              Stay on site and the whole question disappears.
+              {l.goodToKnow.gettingThere.before}{' '}
+              <Link to="/transport" className="text-wedding-accent underline underline-offset-2">{l.goodToKnow.gettingThere.linkText}</Link>{l.goodToKnow.gettingThere.after}
             </p>
           </Card>
         </CardGrid>
