@@ -122,12 +122,13 @@ export default {
         title: 'Aeropuertu d\'Asturies (OVD) — el más averáu, pero llimitáu',
         descBefore: 'L\'aeropuertu más averáu, a 1 hora ya 20 minutos de la finca más o menos. El vienente branu, la única ruta programada ye Wizz Air dende Londres Luton, ya solo los',
         descStrong: 'martes, xueves ya sábados',
-        bullets: ['~1 h 20 min a la finca en coche', 'Wizz Air: Londres Luton, solo mar / xue / sáb', 'Vede «Hores encamentaes» más abaxo pa la nuesa suxerencia de vuelos'],
+        dublinNote: 'Tamién hai un vuelu direutu d\'Aer Lingus dende Dublín, los martes.',
+        bullets: ['~1 h 20 min a la finca en coche', 'Wizz Air: Londres Luton, solo mar / xue / sáb', 'Aer Lingus: Dublín, solo mar', 'Vede «Hores encamentaes» más abaxo pa la nuesa suxerencia de vuelos'],
       },
       santander: {
         title: 'Aeropuertu de Santander (SDR) — una alternativa sólida',
-        desc: 'A 2 hores ya 30 minutos de la finca. Los vuelos de Ryanair ente Santander ya Stansted son más frecuentes ya con meyores hores qu\'les opciones d\'Asturies, asina que val la pena consideralo — sobre manera si\'l horariu llimitáu d\'Asturies nun encaxa coles vueses feches.',
-        bullets: ['~2 h 30 min a la finca en coche', 'Ryanair: Londres Stansted, frecuente', 'Conducir escontra l\'oeste pasando polos Picos d\'Europa o Llanes — dambos merecen el desvíu'],
+        desc: 'A 2 hores ya 30 minutos de la finca. Amás de Londres Stansted, Ryanair tamién vuela a Santander dende Manchester, Birmingham ya Edimburgu — asina que si vinís dende una d\'estes ciudaes, esta pue ser una opción más cenciella que\'l horariu llimitáu d\'Asturies.',
+        bullets: ['~2 h 30 min a la finca en coche', 'Ryanair: Londres Stansted, Manchester, Birmingham, Edimburgu', 'Práuticu si tais averaos a Manchester, Birmingham o Edimburgu', 'Conducir escontra l\'oeste pasando polos Picos d\'Europa o Llanes — dambos merecen el desvíu'],
       },
       paris: {
         title: 'París Orly — vía Eurostar',

@@ -122,12 +122,13 @@ export default {
         title: 'Asturias Airport (OVD) — closest, but limited',
         descBefore: 'The closest airport, about 1 hour 20 minutes from the venue. For next summer, the only scheduled route is Wizz Air from London Luton, and only on',
         descStrong: 'Tuesdays, Thursdays and Saturdays',
-        bullets: ['~1 hr 20 min to venue by car', 'Wizz Air: London Luton, Tue / Thu / Sat only', 'See "Recommended timings" below for our suggested flights'],
+        dublinNote: "There's also a direct Aer Lingus flight from Dublin, on Tuesdays.",
+        bullets: ['~1 hr 20 min to venue by car', 'Wizz Air: London Luton, Tue / Thu / Sat only', 'Aer Lingus: Dublin, Tue only', 'See "Recommended timings" below for our suggested flights'],
       },
       santander: {
         title: 'Santander Airport (SDR) — a strong alternative',
-        desc: "2 hours 30 minutes from the site. Ryanair's Santander–Stansted flights are more frequent and better timed than the Asturias options, so it's well worth considering — especially if the limited Asturias schedule doesn't fit your dates.",
-        bullets: ['~2 hr 30 min to venue by car', 'Ryanair: London Stansted, frequent', 'Drive west via the Picos de Europa or Llanes — both worth the detour'],
+        desc: "2 hours 30 minutes from the site. As well as London Stansted, Ryanair also flies to Santander from Manchester, Birmingham and Edinburgh — so if you're travelling from one of those cities, this may well be an easier option than the limited Asturias schedule.",
+        bullets: ['~2 hr 30 min to venue by car', 'Ryanair: London Stansted, Manchester, Birmingham, Edinburgh', 'Handy if you\'re near Manchester, Birmingham or Edinburgh', 'Drive west via the Picos de Europa or Llanes — both worth the detour'],
       },
       paris: {
         title: 'Paris Orly — via Eurostar',

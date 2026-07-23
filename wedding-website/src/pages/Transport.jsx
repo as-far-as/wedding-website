@@ -21,7 +21,7 @@ export default function Transport() {
         <CardGrid>
           <Card title={tr.byPlane.asturias.title}>
             <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
-              {tr.byPlane.asturias.descBefore} <strong className="text-wedding-text">{tr.byPlane.asturias.descStrong}</strong>.
+              {tr.byPlane.asturias.descBefore} <strong className="text-wedding-text">{tr.byPlane.asturias.descStrong}</strong>. {tr.byPlane.asturias.dublinNote}
             </p>
             <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
               {tr.byPlane.asturias.bullets.map((b) => (

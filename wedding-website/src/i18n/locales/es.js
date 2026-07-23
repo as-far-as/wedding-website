@@ -122,12 +122,13 @@ export default {
         title: 'Aeropuerto de Asturias (OVD) — el más cercano, pero limitado',
         descBefore: 'El aeropuerto más cercano, a 1 hora y 20 minutos del recinto aproximadamente. El próximo verano, la única ruta programada es Wizz Air desde Londres Luton, y solo los',
         descStrong: 'martes, jueves y sábados',
-        bullets: ['~1 h 20 min al recinto en coche', 'Wizz Air: Londres Luton, solo mar / jue / sáb', 'Ved «Horarios recomendados» más abajo para nuestra sugerencia de vuelos'],
+        dublinNote: 'También hay un vuelo directo de Aer Lingus desde Dublín, los martes.',
+        bullets: ['~1 h 20 min al recinto en coche', 'Wizz Air: Londres Luton, solo mar / jue / sáb', 'Aer Lingus: Dublín, solo mar', 'Ved «Horarios recomendados» más abajo para nuestra sugerencia de vuelos'],
       },
       santander: {
         title: 'Aeropuerto de Santander (SDR) — una alternativa sólida',
-        desc: 'A 2 horas y 30 minutos del recinto. Los vuelos de Ryanair entre Santander y Stansted son más frecuentes y con mejores horarios que las opciones de Asturias, así que merece la pena considerarlo — sobre todo si el horario limitado de Asturias no encaja con vuestras fechas.',
-        bullets: ['~2 h 30 min al recinto en coche', 'Ryanair: Londres Stansted, frecuente', 'Conducid hacia el oeste pasando por los Picos de Europa o Llanes — ambos merecen el desvío'],
+        desc: 'A 2 horas y 30 minutos del recinto. Además de Londres Stansted, Ryanair también vuela a Santander desde Manchester, Birmingham y Edimburgo — así que si venís desde alguna de esas ciudades, esta puede ser una opción más sencilla que el horario limitado de Asturias.',
+        bullets: ['~2 h 30 min al recinto en coche', 'Ryanair: Londres Stansted, Manchester, Birmingham, Edimburgo', 'Práctico si estáis cerca de Manchester, Birmingham o Edimburgo', 'Conducid hacia el oeste pasando por los Picos de Europa o Llanes — ambos merecen el desvío'],
       },
       paris: {
         title: 'París Orly — vía Eurostar',
