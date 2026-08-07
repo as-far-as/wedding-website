@@ -1,7 +1,23 @@
-import { GoogleSpreadsheet } from 'google-spreadsheet';
-import { JWT } from 'google-auth-library';
+import { createSign } from 'node:crypto';
 
-let cachedDoc = null;
+// Talks to the Google Sheets API directly over native fetch (Node 22 ships
+// it built in). This deliberately avoids google-auth-library/google-spreadsheet:
+// their HTTP client chain (gaxios -> node-fetch -> fetch-blob) doesn't bundle
+// cleanly under Netlify's Functions esbuild step, and this OAuth2 JWT-bearer
+// flow is simple enough to implement directly with node:crypto.
+
+const TOKEN_URL = 'https://oauth2.googleapis.com/token';
+const SHEETS_API = 'https://sheets.googleapis.com/v4/spreadsheets';
+
+let cachedToken = null; // { accessToken, expiresAt }
+
+function base64url(input) {
+  return Buffer.from(input)
+    .toString('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/, '');
+}
 
 // Accepts the private key either as a base64-encoded blob (recommended —
 // immune to the newline/quote mangling that happens when pasting a raw PEM
@@ -21,18 +37,75 @@ function resolvePrivateKey() {
   return unquoted.replace(/\\n/g, '\n');
 }
 
-export async function getSheet(tabName) {
-  if (!cachedDoc) {
-    const serviceAccountAuth = new JWT({
-      email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      key: resolvePrivateKey(),
-      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-    });
-    const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID, serviceAccountAuth);
-    await doc.loadInfo();
-    cachedDoc = doc;
+async function getAccessToken() {
+  const now = Math.floor(Date.now() / 1000);
+  if (cachedToken && cachedToken.expiresAt > now + 30) {
+    return cachedToken.accessToken;
   }
-  const sheet = cachedDoc.sheetsByTitle[tabName];
-  if (!sheet) throw new Error(`Sheet tab "${tabName}" not found`);
-  return sheet;
+
+  const header = base64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
+  const claims = base64url(JSON.stringify({
+    iss: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    scope: 'https://www.googleapis.com/auth/spreadsheets',
+    aud: TOKEN_URL,
+    iat: now,
+    exp: now + 3600,
+  }));
+  const signingInput = `${header}.${claims}`;
+  const signature = createSign('RSA-SHA256').update(signingInput).sign(resolvePrivateKey());
+  const assertion = `${signingInput}.${base64url(signature)}`;
+
+  const res = await fetch(TOKEN_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+      assertion,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Google auth failed: ${res.status} ${await res.text()}`);
+  }
+
+  const data = await res.json();
+  cachedToken = { accessToken: data.access_token, expiresAt: now + data.expires_in };
+  return cachedToken.accessToken;
+}
+
+function rowsToObjects(values) {
+  if (!values || values.length === 0) return [];
+  const [header, ...rows] = values;
+  return rows.map((row) => {
+    const obj = {};
+    header.forEach((key, i) => { obj[key] = row[i] ?? ''; });
+    return obj;
+  });
+}
+
+export async function readSheetRows(tabName) {
+  const token = await getAccessToken();
+  const url = `${SHEETS_API}/${process.env.GOOGLE_SHEET_ID}/values/${encodeURIComponent(tabName)}`;
+  const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+  if (!res.ok) {
+    throw new Error(`Sheets read failed: ${res.status} ${await res.text()}`);
+  }
+  const data = await res.json();
+  return rowsToObjects(data.values);
+}
+
+export async function appendRow(tabName, rowValues) {
+  const token = await getAccessToken();
+  const url = `${SHEETS_API}/${process.env.GOOGLE_SHEET_ID}/values/${encodeURIComponent(tabName)}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ values: [rowValues] }),
+  });
+  if (!res.ok) {
+    throw new Error(`Sheets append failed: ${res.status} ${await res.text()}`);
+  }
 }

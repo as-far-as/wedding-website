@@ -1,4 +1,4 @@
-import { getSheet } from './_sheets.js';
+import { appendRow } from './_sheets.js';
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
@@ -21,18 +21,17 @@ export const handler = async (event) => {
   }
 
   try {
-    const sheet = await getSheet('RSVPs');
-    await sheet.addRow({
-      Timestamp: new Date().toISOString(),
-      Slug: slug,
-      Name: name,
-      Attending: attending,
-      Dietary: dietary || '',
-      Message: message || '',
-      'Plus One Name': plusOneName || '',
-      'Plus One Attending': plusOneAttending || '',
-      'Plus One Dietary': plusOneDietary || '',
-    });
+    await appendRow('RSVPs', [
+      new Date().toISOString(),
+      slug,
+      name,
+      attending,
+      dietary || '',
+      message || '',
+      plusOneName || '',
+      plusOneAttending || '',
+      plusOneDietary || '',
+    ]);
 
     return { statusCode: 200, headers: JSON_HEADERS, body: JSON.stringify({ success: true }) };
   } catch (err) {

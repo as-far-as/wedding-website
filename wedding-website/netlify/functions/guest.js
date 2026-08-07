@@ -1,4 +1,4 @@
-import { getSheet } from './_sheets.js';
+import { readSheetRows } from './_sheets.js';
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
@@ -9,23 +9,22 @@ export const handler = async (event) => {
   }
 
   try {
-    const sheet = await getSheet('Guests');
-    const rows = await sheet.getRows();
+    const rows = await readSheetRows('Guests');
     const match = rows.find(
-      (r) => (r.get('Slug') || '').trim().toLowerCase() === slug.trim().toLowerCase()
+      (r) => (r.Slug || '').trim().toLowerCase() === slug.trim().toLowerCase()
     );
 
     if (!match) {
       return { statusCode: 404, headers: JSON_HEADERS, body: JSON.stringify({ error: 'not_found' }) };
     }
 
-    const plusOneRaw = (match.get('PlusOneAllowed') || '').toString().trim().toLowerCase();
+    const plusOneRaw = (match.PlusOneAllowed || '').toString().trim().toLowerCase();
 
     return {
       statusCode: 200,
       headers: JSON_HEADERS,
       body: JSON.stringify({
-        name: match.get('Name') || '',
+        name: match.Name || '',
         plusOneAllowed: ['true', 'yes', '1'].includes(plusOneRaw),
       }),
     };
