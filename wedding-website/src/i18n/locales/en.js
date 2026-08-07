@@ -272,6 +272,10 @@ export default {
       title: "We couldn't find that invite",
       text: "Double-check the link from your invitation, or get in touch and we'll sort it out.",
     },
+    loadError: {
+      title: 'Something went wrong',
+      text: "We couldn't load your invitation just now — this is on us, not you. Please try again in a moment, or get in touch directly.",
+    },
     greetingTemplate: 'Hi {name},',
     attendingLabel: 'Will you be there?',
     attendingYes: "Yes, can't wait!",

@@ -51,9 +51,12 @@ export default function Rsvp() {
     if (!slug) return;
     let cancelled = false;
     fetch(`/.netlify/functions/guest?slug=${encodeURIComponent(slug)}`)
-      .then((res) => {
+      .then(async (res) => {
         if (res.status === 404) return { notFound: true };
-        if (!res.ok) throw new Error('lookup_failed');
+        if (!res.ok) {
+          const body = await res.text();
+          throw new Error(`lookup_failed: ${res.status} ${body}`);
+        }
         return res.json();
       })
       .then((data) => {
@@ -65,8 +68,9 @@ export default function Rsvp() {
           setStatus('form');
         }
       })
-      .catch(() => {
-        if (!cancelled) setStatus('not-found');
+      .catch((err) => {
+        console.error('RSVP guest lookup failed:', err);
+        if (!cancelled) setStatus('error');
       });
     return () => { cancelled = true; };
   }, [slug]);
@@ -117,6 +121,13 @@ export default function Rsvp() {
         <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
           <h2 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.notFound.title}</h2>
           <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>{r.notFound.text}</p>
+        </div>
+      )}
+
+      {status === 'error' && (
+        <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
+          <h2 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.loadError.title}</h2>
+          <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>{r.loadError.text}</p>
         </div>
       )}
 

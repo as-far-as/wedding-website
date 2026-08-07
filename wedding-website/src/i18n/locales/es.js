@@ -272,6 +272,10 @@ export default {
       title: 'No hemos encontrado esa invitación',
       text: 'Comprobad el enlace de vuestra invitación, o escribidnos y lo solucionamos.',
     },
+    loadError: {
+      title: 'Algo ha ido mal',
+      text: 'No hemos podido cargar vuestra invitación ahora mismo — esto es cosa nuestra, no vuestra. Probad de nuevo en un momento, o escribidnos directamente.',
+    },
     greetingTemplate: 'Hola {name},',
     attendingLabel: '¿Vendréis?',
     attendingYes: '¡Sí, no podemos esperar!',

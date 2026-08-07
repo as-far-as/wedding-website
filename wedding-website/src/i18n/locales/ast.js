@@ -272,6 +272,10 @@ export default {
       title: 'Nun atopamos esa invitación',
       text: 'Comprobái l\'enllaz de la vuesa invitación, o escribinos ya lu solucionamos.',
     },
+    loadError: {
+      title: 'Daqué foi mal',
+      text: 'Nun pudimos cargar la vuesa invitación agora mesmo — esto ye cosa nuesa, non vuesa. Probái otra vuelta nun momentu, o escribinos direutamente.',
+    },
     greetingTemplate: 'Hola {name},',
     attendingLabel: '¿Vais vinir?',
     attendingYes: '¡Sí, nun podemos esperar!',
