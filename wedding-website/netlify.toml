@@ -1,7 +1,8 @@
 [build]
-  base    = "wedding-website"
-  command = "npm run build"
-  publish = "dist"
+  base      = "wedding-website"
+  command   = "npm run build"
+  publish   = "dist"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "22"

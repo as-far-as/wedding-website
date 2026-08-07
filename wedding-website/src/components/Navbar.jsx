@@ -10,9 +10,9 @@ export default function Navbar() {
   const NAV_LINKS = [
     { to: '/location',      label: t.nav.location },
     { to: '/accommodation', label: t.nav.accommodation },
-    { to: '/transport',     label: t.nav.transport },
     { to: '/asturias',      label: t.nav.asturias },
     { to: '/faqs',          label: t.nav.faqs },
+    { to: '/rsvp',          label: t.nav.rsvp },
   ];
 
   const linkClass = ({ isActive }) =>

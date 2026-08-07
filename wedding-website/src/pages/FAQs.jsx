@@ -67,7 +67,7 @@ export default function FAQs() {
       <div className="mt-12 bg-wedding-accent/10 border border-wedding-accent/20 rounded-xl p-6">
         <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.9rem' }}>
           {f.footer.before}{' '}
-          <Link to="/transport" className="text-wedding-accent underline underline-offset-2">{f.footer.transportLink}</Link>{' '}
+          <Link to="/location" className="text-wedding-accent underline underline-offset-2">{f.footer.transportLink}</Link>{' '}
           {f.footer.and}{' '}
           <Link to="/accommodation" className="text-wedding-accent underline underline-offset-2">{f.footer.accommodationLink}</Link>{f.footer.after}
         </p>

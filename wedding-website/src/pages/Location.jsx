@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
 import PageLayout, { Section, CardGrid, Card } from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
 
 export default function Location() {
   const { t } = useLanguage();
   const l = t.location;
+  const g = l.gettingHere;
 
   return (
     <PageLayout
@@ -26,6 +26,18 @@ export default function Location() {
         </p>
       </div>
 
+      {/* Site photo placeholder */}
+      <div className="bg-wedding-accent/10 border border-wedding-accent/20 rounded-lg aspect-video flex flex-col items-center justify-center mb-12 gap-3">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A9A86" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <circle cx="8.5" cy="8.5" r="1.5" />
+          <path d="M21 15l-5-5L5 21" />
+        </svg>
+        <p className="font-sans text-wedding-muted text-sm text-center">
+          {l.site.photoPlaceholder}
+        </p>
+      </div>
+
       <Section title={l.site.title}>
         <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
           {l.site.intro}
@@ -39,99 +51,181 @@ export default function Location() {
           </address>
         </div>
         <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
-          {l.site.accessBefore}{' '}
-          <Link to="/transport" className="text-wedding-accent underline underline-offset-2">{l.site.accessLinkText}</Link>.
+          {l.site.accessText}{' '}
+          <a href="#getting-here" className="text-wedding-accent underline underline-offset-2">{l.site.accessLinkText}</a>.
         </p>
       </Section>
 
-      <Section title={l.whatsOn.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed mb-8" style={{ fontSize: '0.925rem' }}>
-          {l.whatsOn.intro}
-        </p>
+      <div id="getting-here">
+        <Section title={g.title}>
 
-        {/* Friday */}
-        <div className="mb-8">
-          <div className="flex items-baseline gap-4 mb-4">
-            <span
-              className="font-display text-wedding-accent"
-              style={{ fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
-            >
-              {l.whatsOn.friday.label}
-            </span>
-            <div className="h-px flex-1 bg-wedding-accent/20" />
+          {/* Shuttle — the easy option, front and centre */}
+          <div className="mb-10">
+            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.shuttle.title}</h3>
+            <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
+              {g.shuttle.intro}
+            </p>
+            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mb-6">
+              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                <strong className="text-wedding-text">{g.shuttle.pickupLabel}</strong>{g.shuttle.pickupText}
+              </p>
+            </div>
+            <CardGrid>
+              <Card title={g.shuttle.parking.title}>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                  {g.shuttle.parking.desc}
+                </p>
+              </Card>
+              <Card title={g.shuttle.gijonBase.title}>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                  {g.shuttle.gijonBase.desc}
+                </p>
+              </Card>
+            </CardGrid>
           </div>
-          <h3
-            className="font-display text-wedding-text mb-3"
-            style={{ fontSize: '1.15rem' }}
-          >
-            {l.whatsOn.friday.heading}
-          </h3>
-          <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.9rem' }}>
-            {l.whatsOn.friday.desc}
-          </p>
-        </div>
 
-        {/* Saturday */}
-        <div>
-          <div className="flex items-baseline gap-4 mb-4">
-            <span
-              className="font-display text-wedding-accent"
-              style={{ fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
-            >
-              {l.whatsOn.saturday.label}
-            </span>
-            <div className="h-px flex-1 bg-wedding-accent/20" />
-          </div>
-          <h3
-            className="font-display text-wedding-text mb-3"
-            style={{ fontSize: '1.15rem' }}
-          >
-            {l.whatsOn.saturday.heading}
-          </h3>
-          <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.9rem' }}>
-            {l.whatsOn.saturday.desc}
-          </p>
-          <div className="space-y-3">
-            {l.whatsOn.saturday.schedule.map(({ time, desc }) => (
-              <div key={time} className="flex gap-5 py-2.5 border-b border-wedding-accent/12 last:border-0">
-                <span
-                  className="font-display text-wedding-accent shrink-0"
-                  style={{ fontSize: '0.8rem', minWidth: '5.5rem' }}
-                >
-                  {time}
-                </span>
-                <span className="font-sans text-wedding-muted" style={{ fontSize: '0.875rem' }}>{desc}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
+          {/* By Plane */}
+          <div className="mb-10">
+            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byPlane.title}</h3>
+            <CardGrid>
+              <Card title={g.byPlane.asturias.title}>
+                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                  {g.byPlane.asturias.descBefore}
+                </p>
+                <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
+                  {g.byPlane.asturias.bullets.map((b) => (
+                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
+                  ))}
+                </ul>
+              </Card>
 
-      <Section title={l.goodToKnow.title}>
-        <CardGrid>
-          <Card title={l.goodToKnow.wear.title}>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              {l.goodToKnow.wear.desc}
+              <Card title={g.byPlane.santander.title}>
+                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                  {g.byPlane.santander.desc}
+                </p>
+                <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
+                  {g.byPlane.santander.bullets.map((b) => (
+                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
+                  ))}
+                </ul>
+              </Card>
+
+              <Card title={g.byPlane.madrid.title}>
+                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                  {g.byPlane.madrid.desc}
+                </p>
+                <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
+                  {g.byPlane.madrid.bullets.map((b) => (
+                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
+                  ))}
+                </ul>
+              </Card>
+            </CardGrid>
+          </div>
+
+          {/* Recommended Timings */}
+          <div className="mb-10">
+            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.recommendedTimings.title}</h3>
+            <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
+              {g.recommendedTimings.intro}
             </p>
-          </Card>
-          <Card title={l.goodToKnow.food.title}>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              {l.goodToKnow.food.desc}
+            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mb-5">
+              <p className="font-sans text-wedding-muted leading-relaxed mb-2" style={{ fontSize: '0.875rem' }}>
+                <strong className="text-wedding-text">{g.recommendedTimings.outLabel}</strong> {g.recommendedTimings.outText}
+              </p>
+              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                <strong className="text-wedding-text">{g.recommendedTimings.backLabel}</strong> {g.recommendedTimings.backText}
+              </p>
+            </div>
+            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
+              {g.recommendedTimings.earlier}
             </p>
-          </Card>
-          <Card title={l.goodToKnow.bar.title}>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              {l.goodToKnow.bar.desc}
+          </div>
+
+          {/* Overland */}
+          <div className="mb-10">
+            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.overland.title}</h3>
+            <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
+              {g.overland.intro}
             </p>
-          </Card>
-          <Card title={l.goodToKnow.gettingThere.title}>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              {l.goodToKnow.gettingThere.before}{' '}
-              <Link to="/transport" className="text-wedding-accent underline underline-offset-2">{l.goodToKnow.gettingThere.linkText}</Link>{l.goodToKnow.gettingThere.after}
+            <CardGrid>
+              <Card title={g.overland.ferry.title}>
+                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                  {g.overland.ferry.desc}
+                </p>
+                <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
+                  {g.overland.ferry.bullets.map((b) => (
+                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
+                  ))}
+                </ul>
+              </Card>
+              <Card title={g.overland.train.title}>
+                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                  {g.overland.train.desc}
+                </p>
+                <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
+                  {g.overland.train.bullets.map((b) => (
+                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
+                  ))}
+                </ul>
+              </Card>
+            </CardGrid>
+          </div>
+
+          {/* By Car */}
+          <div className="mb-10">
+            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byCar.title}</h3>
+            <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
+              {g.byCar.intro}
             </p>
-          </Card>
-        </CardGrid>
-      </Section>
+            <div className="space-y-3">
+              {g.byCar.routes.map(({ from, dist, time, route }) => (
+                <div key={from} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3 border-b border-wedding-accent/15 last:border-0">
+                  <span className="font-display text-wedding-text shrink-0" style={{ minWidth: '13rem' }}>{from}</span>
+                  <span className="font-sans text-wedding-muted" style={{ fontSize: '0.875rem' }}>
+                    {dist} · {time} — <span className="text-wedding-muted/70">{route}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* By Train */}
+          <div className="mb-10">
+            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byTrain.title}</h3>
+            <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
+              {g.byTrain.intro}
+            </p>
+            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mb-5">
+              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                <strong className="text-wedding-text">{g.byTrain.polaLabel}</strong>{g.byTrain.polaText}
+              </p>
+            </div>
+            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
+              {g.byTrain.cercanias}
+            </p>
+          </div>
+
+          {/* However you get here */}
+          <div>
+            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.howeverYouGetHere.title}</h3>
+            <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
+              {g.howeverYouGetHere.text}
+            </p>
+            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5">
+              <p className="font-sans text-wedding-muted leading-relaxed mb-2" style={{ fontSize: '0.875rem' }}>
+                <strong className="text-wedding-text">{g.howeverYouGetHere.contactLabel}</strong>{g.howeverYouGetHere.contactBefore} {import.meta.env.VITE_ADAN_EMAIL} {g.howeverYouGetHere.contactOr} {import.meta.env.VITE_NATALIE_EMAIL} {g.howeverYouGetHere.contactAfter}
+              </p>
+              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                {g.howeverYouGetHere.phoneTemplate
+                  .replace('{adanPhone}', import.meta.env.VITE_ADAN_PHONE)
+                  .replace('{nataliePhone}', import.meta.env.VITE_NATALIE_PHONE)}
+              </p>
+            </div>
+          </div>
+
+        </Section>
+      </div>
 
     </PageLayout>
   );
