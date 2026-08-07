@@ -22,7 +22,7 @@ export const handler = async (event) => {
 
     const rsvpRows = await readSheetRows('RSVPs');
     const priorSubmissions = rsvpRows.filter(
-      (r) => (r.Slug || '').trim().toLowerCase() === slug.trim().toLowerCase()
+      (r) => (r.slug || '').trim().toLowerCase() === slug.trim().toLowerCase()
     );
     const latest = priorSubmissions[priorSubmissions.length - 1];
 
@@ -35,14 +35,14 @@ export const handler = async (event) => {
         houseInvite: ['true', 'yes', '1'].includes(houseInviteRaw),
         previousResponse: latest
           ? {
-              attending: latest.Attending || '',
-              accommodation: latest.Accommodation || '',
-              arrivalDay: latest['Arrival Day'] || '',
-              departureDay: latest['Departure Day'] || '',
-              dietary: latest.Dietary || '',
-              message: latest.Message || '',
-              plusOneAttending: latest['Plus One Attending'] || '',
-              plusOneDietary: latest['Plus One Dietary'] || '',
+              attending: latest.attending || '',
+              accommodation: latest.accommodation || '',
+              arrivalDay: latest.arrival_day || '',
+              departureDay: latest.departure_day || '',
+              dietary: latest.dietary || '',
+              message: latest.message || '',
+              plusOneAttending: latest.plus_one_attending || '',
+              plusOneDietary: latest.plus_one_dietary || '',
             }
           : null,
       }),

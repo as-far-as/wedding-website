@@ -109,6 +109,7 @@ export default function Rsvp() {
   const hasPlusOne = Boolean(guest?.plusOneName);
   const stayingInHouse = isHouseGuest && houseStay === 'yes';
   const effectiveAccommodation = stayingInHouse ? 'house' : accommodation;
+  const plusOneConfirmed = hasPlusOne && plusOneAttending === 'yes';
 
   const accommodationLabel = (value) => {
     if (value === 'house') return r.houseInvite.stayingLabel;
@@ -245,8 +246,8 @@ export default function Rsvp() {
                   <RadioPair
                     value={houseStay}
                     onChange={setHouseStay}
-                    yesLabel={r.houseInvite.yes}
-                    noLabel={r.houseInvite.no}
+                    yesLabel={plusOneConfirmed ? r.houseInvite.yesPlural : r.houseInvite.yesSingular}
+                    noLabel={plusOneConfirmed ? r.houseInvite.noPlural : r.houseInvite.noSingular}
                   />
 
                   {stayingInHouse && (

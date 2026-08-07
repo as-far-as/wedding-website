@@ -292,8 +292,10 @@ export default {
     houseInvite: {
       label: 'Estáis invitados a alojaros con nosotros en el recinto',
       text: 'Nos encantaría que os quedarais en una de las casas de la finca con nosotros. ¿Os apetece?',
-      yes: '¡Sí, nos encantaría!',
-      no: 'No, buscaremos nuestro propio sitio',
+      yesSingular: '¡Sí, me encantaría!',
+      yesPlural: '¡Sí, nos encantaría!',
+      noSingular: 'No, buscaré mi propio sitio',
+      noPlural: 'No, buscaremos nuestro propio sitio',
       stayingLabel: 'En el recinto con nosotros',
     },
     houseDates: {

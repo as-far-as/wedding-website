@@ -292,8 +292,10 @@ export default {
     houseInvite: {
       label: 'Tais convidaos a alloxavos con nós na finca',
       text: 'Prestaríanos que vos quedareis nuna de les cases de la finca con nós. ¿Vos preste?',
-      yes: '¡Sí, prestaríanos!',
-      no: 'Non, guetaremos el nuesu propiu sitiu',
+      yesSingular: '¡Sí, prestaríame!',
+      yesPlural: '¡Sí, prestaríanos!',
+      noSingular: 'Non, guetaré el mio propiu sitiu',
+      noPlural: 'Non, guetaremos el nuesu propiu sitiu',
       stayingLabel: 'Na finca con nós',
     },
     houseDates: {

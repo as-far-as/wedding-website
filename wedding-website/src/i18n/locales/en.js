@@ -292,8 +292,10 @@ export default {
     houseInvite: {
       label: "You're invited to stay on-site with us",
       text: "We'd love to have you stay in one of the houses on the property with us. Are you happy to take us up on it?",
-      yes: "Yes, we'd love to!",
-      no: "No, we'll sort our own place",
+      yesSingular: "Yes, I'd love to!",
+      yesPlural: "Yes, we'd love to!",
+      noSingular: "No, I'll sort my own place",
+      noPlural: "No, we'll sort our own place",
       stayingLabel: 'On-site with us',
     },
     houseDates: {
