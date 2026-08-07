@@ -29,6 +29,16 @@ function RadioPair({ value, onChange, yesLabel, noLabel }) {
   );
 }
 
+function SummaryRow({ label, value }) {
+  if (!value) return null;
+  return (
+    <div className="flex justify-between gap-4 py-2 border-b border-wedding-accent/12 last:border-0">
+      <dt className="font-sans text-wedding-muted" style={{ fontSize: '0.85rem' }}>{label}</dt>
+      <dd className="font-sans text-wedding-text text-right" style={{ fontSize: '0.85rem', fontWeight: 600 }}>{value}</dd>
+    </div>
+  );
+}
+
 export default function Rsvp() {
   const { slug } = useParams();
   const { t } = useLanguage();
@@ -44,9 +54,7 @@ export default function Rsvp() {
   const [departureDay, setDepartureDay] = useState('');
   const [dietary, setDietary] = useState('');
   const [message, setMessage] = useState('');
-  const [wantsPlusOne, setWantsPlusOne] = useState(false);
-  const [plusOneName, setPlusOneName] = useState('');
-  const [plusOneAttending, setPlusOneAttending] = useState('yes');
+  const [plusOneAttending, setPlusOneAttending] = useState('');
   const [plusOneDietary, setPlusOneDietary] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(false);
@@ -67,8 +75,26 @@ export default function Rsvp() {
         if (cancelled) return;
         if (data.notFound) {
           setStatus('not-found');
+          return;
+        }
+        setGuest(data);
+        const prev = data.previousResponse;
+        if (prev) {
+          setAttending(prev.attending || '');
+          setDietary(prev.dietary || '');
+          setMessage(prev.message || '');
+          setPlusOneAttending(prev.plusOneAttending || '');
+          setPlusOneDietary(prev.plusOneDietary || '');
+          if (prev.accommodation === 'house') {
+            setHouseStay('yes');
+            setArrivalDay(prev.arrivalDay || '');
+            setDepartureDay(prev.departureDay || '');
+          } else {
+            if (data.houseInvite && prev.attending === 'yes') setHouseStay('no');
+            setAccommodation(prev.accommodation || '');
+          }
+          setStatus('summary');
         } else {
-          setGuest(data);
           setStatus('form');
         }
       })
@@ -80,8 +106,15 @@ export default function Rsvp() {
   }, [slug]);
 
   const isHouseGuest = guest?.houseInvite;
+  const hasPlusOne = Boolean(guest?.plusOneName);
   const stayingInHouse = isHouseGuest && houseStay === 'yes';
   const effectiveAccommodation = stayingInHouse ? 'house' : accommodation;
+
+  const accommodationLabel = (value) => {
+    if (value === 'house') return r.houseInvite.stayingLabel;
+    return r.accommodation.options.find((o) => o.value === value)?.label || '';
+  };
+  const dayLabel = (value) => r.houseDates.days.find((d) => d.value === value)?.label || '';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -100,9 +133,9 @@ export default function Rsvp() {
           departureDay: attending === 'yes' && stayingInHouse ? departureDay : '',
           dietary: attending === 'yes' ? dietary : '',
           message,
-          plusOneName: wantsPlusOne ? plusOneName : '',
-          plusOneAttending: wantsPlusOne ? plusOneAttending : '',
-          plusOneDietary: wantsPlusOne ? plusOneDietary : '',
+          plusOneName: hasPlusOne ? guest.plusOneName : '',
+          plusOneAttending: hasPlusOne ? plusOneAttending : '',
+          plusOneDietary: hasPlusOne && plusOneAttending === 'yes' ? plusOneDietary : '',
         }),
       });
       if (!res.ok) throw new Error('submit_failed');
@@ -148,6 +181,42 @@ export default function Rsvp() {
           <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
             {r.successText.replace('{name}', guest.name)}
           </p>
+        </div>
+      )}
+
+      {status === 'summary' && guest && (
+        <div className="space-y-6">
+          <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
+            <h2 className="font-display text-wedding-text mb-2" style={{ fontSize: '1.2rem' }}>{r.summary.title}</h2>
+            <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.875rem' }}>{r.summary.subtitle}</p>
+            <dl>
+              <SummaryRow label={r.summary.attendingLabel} value={attending === 'yes' ? r.summary.yes : r.summary.no} />
+              {attending === 'yes' && (
+                <>
+                  <SummaryRow label={r.summary.stayingLabel} value={accommodationLabel(effectiveAccommodation)} />
+                  {stayingInHouse && (
+                    <>
+                      <SummaryRow label={r.summary.arrivalLabel} value={dayLabel(arrivalDay)} />
+                      <SummaryRow label={r.summary.departureLabel} value={dayLabel(departureDay)} />
+                    </>
+                  )}
+                  <SummaryRow label={r.summary.dietaryLabel} value={dietary} />
+                  {hasPlusOne && (
+                    <SummaryRow label={guest.plusOneName} value={plusOneAttending === 'yes' ? r.summary.yes : r.summary.no} />
+                  )}
+                </>
+              )}
+              <SummaryRow label={r.summary.messageLabel} value={message} />
+            </dl>
+          </div>
+          <button
+            type="button"
+            onClick={() => setStatus('form')}
+            className="w-full bg-wedding-accent text-wedding-bg font-display py-3 rounded-lg hover:opacity-90 transition-opacity"
+            style={{ fontSize: '0.85rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}
+          >
+            {r.summary.editButton}
+          </button>
         </div>
       )}
 
@@ -251,52 +320,27 @@ export default function Rsvp() {
                 />
               </div>
 
-              {guest.plusOneAllowed && (
+              {hasPlusOne && (
                 <div className="border border-wedding-accent/25 rounded-lg p-5">
-                  <label className="flex items-center gap-3 font-sans text-wedding-text mb-4" style={{ fontSize: '0.9rem' }}>
-                    <input
-                      type="checkbox"
-                      checked={wantsPlusOne}
-                      onChange={(e) => setWantsPlusOne(e.target.checked)}
-                      className="w-4 h-4"
-                    />
-                    {r.plusOneToggle}
-                  </label>
-
-                  {wantsPlusOne && (
-                    <div className="space-y-5">
-                      <div>
-                        <label className={labelClass} style={labelStyle} htmlFor="plusOneName">{r.plusOneNameLabel}</label>
-                        <input
-                          id="plusOneName"
-                          type="text"
-                          value={plusOneName}
-                          onChange={(e) => setPlusOneName(e.target.value)}
-                          className={inputClass}
-                          style={{ fontSize: '0.95rem' }}
-                        />
-                      </div>
-                      <div>
-                        <label className={labelClass} style={labelStyle}>{r.plusOneAttendingLabel}</label>
-                        <RadioPair
-                          value={plusOneAttending}
-                          onChange={setPlusOneAttending}
-                          yesLabel={r.attendingYes}
-                          noLabel={r.attendingNo}
-                        />
-                      </div>
-                      {plusOneAttending === 'yes' && (
-                        <div>
-                          <label className={labelClass} style={labelStyle} htmlFor="plusOneDietary">{r.plusOneDietaryLabel}</label>
-                          <textarea
-                            id="plusOneDietary"
-                            value={plusOneDietary}
-                            onChange={(e) => setPlusOneDietary(e.target.value)}
-                            className={inputClass}
-                            style={{ fontSize: '0.95rem', minHeight: '3.5rem' }}
-                          />
-                        </div>
-                      )}
+                  <p className="font-sans text-wedding-text mb-4" style={{ fontSize: '0.9rem' }}>
+                    {r.plusOneInviteTemplate.replace('{name}', guest.plusOneName)}
+                  </p>
+                  <RadioPair
+                    value={plusOneAttending}
+                    onChange={setPlusOneAttending}
+                    yesLabel={r.attendingYes}
+                    noLabel={r.attendingNo}
+                  />
+                  {plusOneAttending === 'yes' && (
+                    <div className="mt-5">
+                      <label className={labelClass} style={labelStyle} htmlFor="plusOneDietary">{r.plusOneDietaryLabel}</label>
+                      <textarea
+                        id="plusOneDietary"
+                        value={plusOneDietary}
+                        onChange={(e) => setPlusOneDietary(e.target.value)}
+                        className={inputClass}
+                        style={{ fontSize: '0.95rem', minHeight: '3.5rem' }}
+                      />
                     </div>
                   )}
                 </div>

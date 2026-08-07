@@ -9,8 +9,8 @@ export const handler = async (event) => {
   }
 
   try {
-    const rows = await readSheetRows('Guests');
-    const match = rows.find(
+    const guestRows = await readSheetRows('Guests');
+    const match = guestRows.find(
       (r) => (r.Slug || '').trim().toLowerCase() === slug.trim().toLowerCase()
     );
 
@@ -18,16 +18,33 @@ export const handler = async (event) => {
       return { statusCode: 404, headers: JSON_HEADERS, body: JSON.stringify({ error: 'not_found' }) };
     }
 
-    const plusOneRaw = (match.PlusOneAllowed || '').toString().trim().toLowerCase();
     const houseInviteRaw = (match.HouseInvite || '').toString().trim().toLowerCase();
+
+    const rsvpRows = await readSheetRows('RSVPs');
+    const priorSubmissions = rsvpRows.filter(
+      (r) => (r.Slug || '').trim().toLowerCase() === slug.trim().toLowerCase()
+    );
+    const latest = priorSubmissions[priorSubmissions.length - 1];
 
     return {
       statusCode: 200,
       headers: JSON_HEADERS,
       body: JSON.stringify({
         name: match.Name || '',
-        plusOneAllowed: ['true', 'yes', '1'].includes(plusOneRaw),
+        plusOneName: match.PlusOneName || '',
         houseInvite: ['true', 'yes', '1'].includes(houseInviteRaw),
+        previousResponse: latest
+          ? {
+              attending: latest.Attending || '',
+              accommodation: latest.Accommodation || '',
+              arrivalDay: latest['Arrival Day'] || '',
+              departureDay: latest['Departure Day'] || '',
+              dietary: latest.Dietary || '',
+              message: latest.Message || '',
+              plusOneAttending: latest['Plus One Attending'] || '',
+              plusOneDietary: latest['Plus One Dietary'] || '',
+            }
+          : null,
       }),
     };
   } catch (err) {
