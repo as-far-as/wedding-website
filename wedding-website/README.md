@@ -53,7 +53,7 @@ The RSVP page (`/rsvp/:slug`) looks guests up by a unique slug and writes replie
 
 1. **Create a Google Sheet** with two tabs:
    - `Guests` — header row: `Slug | Name | PlusOneAllowed`. Add one row per invitee. `Slug` is whatever goes in the URL (e.g. `jane-smith` → `/rsvp/jane-smith`); `PlusOneAllowed` is `TRUE`/`FALSE`.
-   - `RSVPs` — header row: `Timestamp | Slug | Name | Attending | Dietary | Message | Plus One Name | Plus One Attending | Plus One Dietary`. Leave it empty — the function appends rows here.
+   - `RSVPs` — header row: `Timestamp | Slug | Name | Attending | Dietary | Message | Plus One Name | Plus One Attending | Plus One Dietary | Accommodation`. Leave it empty — the function appends rows here. `Accommodation` is one of `campsite` / `cottage` / `gijon` / `own` (matching the options on the Accommodation page).
 2. **Create a Google Cloud service account** with the Sheets API enabled, and download its JSON key.
 3. **Share the Sheet** with the service account's `client_email` (Editor access).
 4. **Add these Netlify environment variables** (Site settings → Environment variables):

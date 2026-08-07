@@ -38,6 +38,7 @@ export default function Rsvp() {
   const [guest, setGuest] = useState(null);
 
   const [attending, setAttending] = useState('');
+  const [accommodation, setAccommodation] = useState('');
   const [dietary, setDietary] = useState('');
   const [message, setMessage] = useState('');
   const [wantsPlusOne, setWantsPlusOne] = useState(false);
@@ -87,6 +88,7 @@ export default function Rsvp() {
           slug,
           name: guest.name,
           attending,
+          accommodation: attending === 'yes' ? accommodation : '',
           dietary: attending === 'yes' ? dietary : '',
           message,
           plusOneName: wantsPlusOne ? plusOneName : '',
@@ -158,6 +160,27 @@ export default function Rsvp() {
 
           {attending === 'yes' && (
             <>
+              <div>
+                <label className={labelClass} style={labelStyle}>{r.accommodation.label}</label>
+                <div className="space-y-2">
+                  {r.accommodation.options.map(({ value, label, desc }) => (
+                    <button
+                      key={value}
+                      type="button"
+                      onClick={() => setAccommodation(value)}
+                      className={`w-full text-left rounded-lg border px-4 py-3 transition-colors ${
+                        accommodation === value
+                          ? 'border-wedding-accent bg-wedding-accent/10'
+                          : 'border-wedding-accent/40 hover:border-wedding-accent'
+                      }`}
+                    >
+                      <span className="font-sans text-wedding-text block" style={{ fontSize: '0.9rem', fontWeight: 600 }}>{label}</span>
+                      <span className="font-sans text-wedding-muted block mt-0.5" style={{ fontSize: '0.8rem' }}>{desc}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div>
                 <label className={labelClass} style={labelStyle} htmlFor="dietary">{r.dietaryLabel}</label>
                 <textarea

@@ -280,6 +280,15 @@ export default {
     attendingLabel: '¿Vendréis?',
     attendingYes: '¡Sí, no podemos esperar!',
     attendingNo: 'No podremos ir',
+    accommodation: {
+      label: '¿Dónde os vais a alojar?',
+      options: [
+        { value: 'campsite', label: 'En el recinto (acampada)', desc: 'Campo de acampada gratis justo al lado del recinto.' },
+        { value: 'cottage', label: 'Casa rural cercana', desc: 'Estamos organizando una casa rural reservada cerca — más detalles próximamente.' },
+        { value: 'gijon', label: 'Gijón + autobús lanzadera', desc: 'Alojándonos en la ciudad y cogiendo el autobús ese día.' },
+        { value: 'own', label: 'Por nuestra cuenta', desc: 'Organizando nuestro propio alojamiento.' },
+      ],
+    },
     dietaryLabel: 'Requisitos alimentarios',
     messageLabel: '¿Algo más que queráis contarnos?',
     plusOneToggle: 'Voy a traer acompañante',

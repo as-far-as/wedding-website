@@ -280,6 +280,15 @@ export default {
     attendingLabel: '¿Vais vinir?',
     attendingYes: '¡Sí, nun podemos esperar!',
     attendingNo: 'Nun vamos poder dir',
+    accommodation: {
+      label: '¿Onde vais alloxavos?',
+      options: [
+        { value: 'campsite', label: 'Na finca (acampada)', desc: 'Campu d\'acampada de baldre xusto al llau de la finca.' },
+        { value: 'cottage', label: 'Casa rural averada', desc: 'Tamos organizando una casa rural reservada averada — más detalles prósimamente.' },
+        { value: 'gijon', label: 'Xixón + autobús', desc: 'Alloxándonos na ciudá ya coyendo l\'autobús esi día.' },
+        { value: 'own', label: 'Pela nuesa cuenta', desc: 'Organizando el nuesu propiu alloxamientu.' },
+      ],
+    },
     dietaryLabel: 'Requisitos alimentarios',
     messageLabel: '¿Daqué más que vos preste dicinos?',
     plusOneToggle: 'Voi traer acompañante',

@@ -280,6 +280,15 @@ export default {
     attendingLabel: 'Will you be there?',
     attendingYes: "Yes, can't wait!",
     attendingNo: "Sorry, can't make it",
+    accommodation: {
+      label: 'Where will you be staying?',
+      options: [
+        { value: 'campsite', label: 'On site (camping)', desc: 'Free camping field right by the venue.' },
+        { value: 'cottage', label: 'Nearby casa rural', desc: "We're organising a pre-booked cottage nearby — more details to follow." },
+        { value: 'gijon', label: 'Gijón + shuttle bus', desc: 'Staying in the city and taking the shuttle on the day.' },
+        { value: 'own', label: 'Doing my own thing', desc: 'Sorting my own accommodation.' },
+      ],
+    },
     dietaryLabel: 'Dietary requirements',
     messageLabel: 'Anything else you want to tell us?',
     plusOneToggle: "I'm bringing a plus-one",
