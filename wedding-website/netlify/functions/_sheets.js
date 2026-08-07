@@ -10,8 +10,9 @@ export async function getSheet(tabName) {
       key: (process.env.GOOGLE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
-    cachedDoc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID, serviceAccountAuth);
-    await cachedDoc.loadInfo();
+    const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID, serviceAccountAuth);
+    await doc.loadInfo();
+    cachedDoc = doc;
   }
   const sheet = cachedDoc.sheetsByTitle[tabName];
   if (!sheet) throw new Error(`Sheet tab "${tabName}" not found`);
