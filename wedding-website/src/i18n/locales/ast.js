@@ -289,6 +289,23 @@ export default {
         { value: 'own', label: 'Pela nuesa cuenta', desc: 'Organizando el nuesu propiu alloxamientu.' },
       ],
     },
+    houseInvite: {
+      label: 'Tais convidaos a alloxavos con nós na finca',
+      text: 'Prestaríanos que vos quedareis nuna de les cases de la finca con nós. ¿Vos preste?',
+      yes: '¡Sí, prestaríanos!',
+      no: 'Non, guetaremos el nuesu propiu sitiu',
+    },
+    houseDates: {
+      arrivalLabel: '¿Cuándo vais llegar?',
+      departureLabel: '¿Cuándo vais dir?',
+      days: [
+        { value: 'thu-26', label: 'Xueves 26 d\'agostu' },
+        { value: 'fri-27', label: 'Vienres 27 d\'agostu' },
+        { value: 'sat-28', label: 'Sábadu 28 d\'agostu' },
+        { value: 'sun-29', label: 'Domingu 29 d\'agostu' },
+        { value: 'mon-30', label: 'Llunes 30 d\'agostu' },
+      ],
+    },
     dietaryLabel: 'Requisitos alimentarios',
     messageLabel: '¿Daqué más que vos preste dicinos?',
     plusOneToggle: 'Voi traer acompañante',

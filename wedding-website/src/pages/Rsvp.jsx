@@ -39,6 +39,9 @@ export default function Rsvp() {
 
   const [attending, setAttending] = useState('');
   const [accommodation, setAccommodation] = useState('');
+  const [houseStay, setHouseStay] = useState('');
+  const [arrivalDay, setArrivalDay] = useState('');
+  const [departureDay, setDepartureDay] = useState('');
   const [dietary, setDietary] = useState('');
   const [message, setMessage] = useState('');
   const [wantsPlusOne, setWantsPlusOne] = useState(false);
@@ -76,6 +79,10 @@ export default function Rsvp() {
     return () => { cancelled = true; };
   }, [slug]);
 
+  const isHouseGuest = guest?.houseInvite;
+  const stayingInHouse = isHouseGuest && houseStay === 'yes';
+  const effectiveAccommodation = stayingInHouse ? 'house' : accommodation;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -88,7 +95,9 @@ export default function Rsvp() {
           slug,
           name: guest.name,
           attending,
-          accommodation: attending === 'yes' ? accommodation : '',
+          accommodation: attending === 'yes' ? effectiveAccommodation : '',
+          arrivalDay: attending === 'yes' && stayingInHouse ? arrivalDay : '',
+          departureDay: attending === 'yes' && stayingInHouse ? departureDay : '',
           dietary: attending === 'yes' ? dietary : '',
           message,
           plusOneName: wantsPlusOne ? plusOneName : '',
@@ -160,26 +169,76 @@ export default function Rsvp() {
 
           {attending === 'yes' && (
             <>
-              <div>
-                <label className={labelClass} style={labelStyle}>{r.accommodation.label}</label>
-                <div className="space-y-2">
-                  {r.accommodation.options.map(({ value, label, desc }) => (
-                    <button
-                      key={value}
-                      type="button"
-                      onClick={() => setAccommodation(value)}
-                      className={`w-full text-left rounded-lg border px-4 py-3 transition-colors ${
-                        accommodation === value
-                          ? 'border-wedding-accent bg-wedding-accent/10'
-                          : 'border-wedding-accent/40 hover:border-wedding-accent'
-                      }`}
-                    >
-                      <span className="font-sans text-wedding-text block" style={{ fontSize: '0.9rem', fontWeight: 600 }}>{label}</span>
-                      <span className="font-sans text-wedding-muted block mt-0.5" style={{ fontSize: '0.8rem' }}>{desc}</span>
-                    </button>
-                  ))}
+              {isHouseGuest ? (
+                <div className="border border-wedding-accent/25 rounded-lg p-5">
+                  <p className="font-sans text-wedding-text mb-1" style={{ fontSize: '0.95rem', fontWeight: 600 }}>{r.houseInvite.label}</p>
+                  <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.85rem' }}>{r.houseInvite.text}</p>
+                  <RadioPair
+                    value={houseStay}
+                    onChange={setHouseStay}
+                    yesLabel={r.houseInvite.yes}
+                    noLabel={r.houseInvite.no}
+                  />
+
+                  {stayingInHouse && (
+                    <div className="grid sm:grid-cols-2 gap-5 mt-5">
+                      <div>
+                        <label className={labelClass} style={labelStyle} htmlFor="arrivalDay">{r.houseDates.arrivalLabel}</label>
+                        <select
+                          id="arrivalDay"
+                          value={arrivalDay}
+                          onChange={(e) => setArrivalDay(e.target.value)}
+                          className={inputClass}
+                          style={{ fontSize: '0.9rem' }}
+                        >
+                          <option value="" disabled>—</option>
+                          {r.houseDates.days.map(({ value, label }) => (
+                            <option key={value} value={value}>{label}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div>
+                        <label className={labelClass} style={labelStyle} htmlFor="departureDay">{r.houseDates.departureLabel}</label>
+                        <select
+                          id="departureDay"
+                          value={departureDay}
+                          onChange={(e) => setDepartureDay(e.target.value)}
+                          className={inputClass}
+                          style={{ fontSize: '0.9rem' }}
+                        >
+                          <option value="" disabled>—</option>
+                          {r.houseDates.days.map(({ value, label }) => (
+                            <option key={value} value={value}>{label}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
+              ) : null}
+
+              {(!isHouseGuest || houseStay === 'no') && (
+                <div>
+                  <label className={labelClass} style={labelStyle}>{r.accommodation.label}</label>
+                  <div className="space-y-2">
+                    {r.accommodation.options.map(({ value, label, desc }) => (
+                      <button
+                        key={value}
+                        type="button"
+                        onClick={() => setAccommodation(value)}
+                        className={`w-full text-left rounded-lg border px-4 py-3 transition-colors ${
+                          accommodation === value
+                            ? 'border-wedding-accent bg-wedding-accent/10'
+                            : 'border-wedding-accent/40 hover:border-wedding-accent'
+                        }`}
+                      >
+                        <span className="font-sans text-wedding-text block" style={{ fontSize: '0.9rem', fontWeight: 600 }}>{label}</span>
+                        <span className="font-sans text-wedding-muted block mt-0.5" style={{ fontSize: '0.8rem' }}>{desc}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div>
                 <label className={labelClass} style={labelStyle} htmlFor="dietary">{r.dietaryLabel}</label>

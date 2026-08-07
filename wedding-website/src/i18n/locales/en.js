@@ -289,6 +289,23 @@ export default {
         { value: 'own', label: 'Doing my own thing', desc: 'Sorting my own accommodation.' },
       ],
     },
+    houseInvite: {
+      label: "You're invited to stay on-site with us",
+      text: "We'd love to have you stay in one of the houses on the property with us. Are you happy to take us up on it?",
+      yes: "Yes, we'd love to!",
+      no: "No, we'll sort our own place",
+    },
+    houseDates: {
+      arrivalLabel: 'When will you arrive?',
+      departureLabel: 'When will you leave?',
+      days: [
+        { value: 'thu-26', label: 'Thursday 26 August' },
+        { value: 'fri-27', label: 'Friday 27 August' },
+        { value: 'sat-28', label: 'Saturday 28 August' },
+        { value: 'sun-29', label: 'Sunday 29 August' },
+        { value: 'mon-30', label: 'Monday 30 August' },
+      ],
+    },
     dietaryLabel: 'Dietary requirements',
     messageLabel: 'Anything else you want to tell us?',
     plusOneToggle: "I'm bringing a plus-one",

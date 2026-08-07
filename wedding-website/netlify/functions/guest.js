@@ -19,6 +19,7 @@ export const handler = async (event) => {
     }
 
     const plusOneRaw = (match.PlusOneAllowed || '').toString().trim().toLowerCase();
+    const houseInviteRaw = (match.HouseInvite || '').toString().trim().toLowerCase();
 
     return {
       statusCode: 200,
@@ -26,6 +27,7 @@ export const handler = async (event) => {
       body: JSON.stringify({
         name: match.Name || '',
         plusOneAllowed: ['true', 'yes', '1'].includes(plusOneRaw),
+        houseInvite: ['true', 'yes', '1'].includes(houseInviteRaw),
       }),
     };
   } catch (err) {

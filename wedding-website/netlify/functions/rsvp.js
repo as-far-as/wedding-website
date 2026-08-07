@@ -14,7 +14,7 @@ export const handler = async (event) => {
     return { statusCode: 400, headers: JSON_HEADERS, body: JSON.stringify({ error: 'invalid_json' }) };
   }
 
-  const { slug, name, attending, accommodation, dietary, message, plusOneName, plusOneAttending, plusOneDietary } = data;
+  const { slug, name, attending, accommodation, arrivalDay, departureDay, dietary, message, plusOneName, plusOneAttending, plusOneDietary } = data;
 
   if (!slug || !name || !attending) {
     return { statusCode: 400, headers: JSON_HEADERS, body: JSON.stringify({ error: 'missing_fields' }) };
@@ -32,6 +32,8 @@ export const handler = async (event) => {
       plusOneAttending || '',
       plusOneDietary || '',
       accommodation || '',
+      arrivalDay || '',
+      departureDay || '',
     ]);
 
     return { statusCode: 200, headers: JSON_HEADERS, body: JSON.stringify({ success: true }) };

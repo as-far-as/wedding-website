@@ -289,6 +289,23 @@ export default {
         { value: 'own', label: 'Por nuestra cuenta', desc: 'Organizando nuestro propio alojamiento.' },
       ],
     },
+    houseInvite: {
+      label: 'Estáis invitados a alojaros con nosotros en el recinto',
+      text: 'Nos encantaría que os quedarais en una de las casas de la finca con nosotros. ¿Os apetece?',
+      yes: '¡Sí, nos encantaría!',
+      no: 'No, buscaremos nuestro propio sitio',
+    },
+    houseDates: {
+      arrivalLabel: '¿Cuándo llegaréis?',
+      departureLabel: '¿Cuándo os iréis?',
+      days: [
+        { value: 'thu-26', label: 'Jueves 26 de agosto' },
+        { value: 'fri-27', label: 'Viernes 27 de agosto' },
+        { value: 'sat-28', label: 'Sábado 28 de agosto' },
+        { value: 'sun-29', label: 'Domingo 29 de agosto' },
+        { value: 'mon-30', label: 'Lunes 30 de agosto' },
+      ],
+    },
     dietaryLabel: 'Requisitos alimentarios',
     messageLabel: '¿Algo más que queráis contarnos?',
     plusOneToggle: 'Voy a traer acompañante',
