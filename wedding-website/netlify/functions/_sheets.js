@@ -73,12 +73,21 @@ async function getAccessToken() {
   return cachedToken.accessToken;
 }
 
+// Normalizes a header cell to a lookup key that's tolerant of however it's
+// styled in the sheet — "Plus One Name", "PlusOneName", "plus_one_name" and
+// "plusOneName" all resolve to the same key, so a header renaming (case,
+// spacing, underscores) doesn't silently break the read side.
+function normalizeKey(key) {
+  return key.toString().trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
 function rowsToObjects(values) {
   if (!values || values.length === 0) return [];
   const [header, ...rows] = values;
+  const keys = header.map(normalizeKey);
   return rows.map((row) => {
     const obj = {};
-    header.forEach((key, i) => { obj[key] = row[i] ?? ''; });
+    keys.forEach((key, i) => { obj[key] = row[i] ?? ''; });
     return obj;
   });
 }
