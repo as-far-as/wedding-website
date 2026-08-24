@@ -17,7 +17,6 @@ export default {
   },
 
   hero: {
-    photoPlaceholder: 'Your photo here',
     dateEyebrow: '28 · viii · 2027',
     marriedLine: 'are getting married',
     location: 'Valle de Bueida, Quirós',
@@ -29,23 +28,14 @@ export default {
     seconds: 'Sec',
   },
 
-  welcome: {
-    gallery: {
-      title: 'Photos',
-      placeholder: 'Photo coming soon',
-    },
-  },
-
   location: {
     title: 'Location & Getting Here',
     subtitle: 'Valle de Bueida, Quirós — Asturias, Spain',
     map: {
-      comingSoon: 'Interactive map coming soon',
       address: 'Valle de Bueida, Quirós, Asturias, Spain',
     },
     site: {
       title: 'The Site',
-      photoPlaceholder: 'Photo of the site coming soon',
       intro: 'The wedding will be held at Valle de Bueida in Quirós, Asturias. Bueida is a small hamlet located in a deep valley within the Ubiñas Natural Park.',
       addressLabel: 'Address',
       addressLine1: 'Valle de Bueida',

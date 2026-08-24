@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../i18n/useLanguage';
-import { Section } from './PageLayout';
+import backdrop from '../assets/collages/homepage.webp';
 
 const WEDDING = new Date('2027-08-28T12:00:00');
 
@@ -42,7 +42,6 @@ function WildflowerSprig({ className }) {
 
 export default function Hero() {
   const { t } = useLanguage();
-  const w = t.welcome;
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -61,44 +60,26 @@ export default function Hero() {
   ];
 
   return (
-    <>
-    <section className="min-h-screen bg-wedding-bg flex flex-col lg:flex-row overflow-hidden">
+    <section className="min-h-screen relative pl-backdrop overflow-hidden">
+      {/* Full-page photo backdrop */}
+      <img
+        src={backdrop}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none"
+      />
+      {/* Scrim: keeps text legible everywhere without boxing it */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'linear-gradient(180deg, rgba(12,16,12,0.5), rgba(12,16,12,0.32) 30%, rgba(12,16,12,0.5))' }}
+      />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-wedding-bg pointer-events-none" />
 
-      {/* ── Photo panel ──────────────────────────────────────────────────────
-          To use a real photo, replace the inner div with:
-          <img
-            src="/your-photo.jpg"
-            alt="Natalie and Adán"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-      ──────────────────────────────────────────────────────────────────────── */}
-      <div className="relative w-full h-[42vh] lg:w-[42%] lg:h-auto shrink-0 bg-wedding-accent">
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-          <div className="w-11 h-11 rounded-full border border-wedding-bg/40 flex items-center justify-center">
-            <svg
-              width="18" height="18" viewBox="0 0 24 24"
-              fill="none" stroke="#FAF9F6" strokeWidth="1.2"
-              strokeLinecap="round" strokeLinejoin="round"
-            >
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-              <circle cx="12" cy="13" r="4" />
-            </svg>
-          </div>
-          <p
-            className="font-sans text-wedding-bg/70"
-            style={{ fontSize: '0.6rem', letterSpacing: '0.22em', textTransform: 'uppercase' }}
-          >
-            {t.hero.photoPlaceholder}
-          </p>
-        </div>
-      </div>
-
-      {/* ── Content panel ─────────────────────────────────────────────────── */}
-      <div className="flex-1 flex flex-col justify-center px-8 sm:px-12 lg:px-14 xl:px-20 py-14 lg:py-0">
+      <div className="relative max-w-4xl mx-auto min-h-screen flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-20">
 
         {/* Date eyebrow */}
         <p
-          className="font-sans text-wedding-muted mb-7"
+          className="font-sans text-wedding-bg/75 mb-7"
           style={{
             fontSize: '0.625rem',
             letterSpacing: '0.38em',
@@ -109,12 +90,13 @@ export default function Hero() {
           {t.hero.dateEyebrow}
         </p>
 
-        {/* Names + connector ── the structural heart of the design */}
+        {/* Names + connector — the structural heart of the design */}
         <div className="mb-8">
           <h1
-            className="font-display text-wedding-text leading-[0.88] block"
+            className="font-display text-wedding-bg leading-[0.88] block"
             style={{
-              fontSize: 'clamp(2.4rem, 7vw, 6rem)',
+              fontSize: 'clamp(2.6rem, 8vw, 6.5rem)',
+              textShadow: '0 4px 22px rgba(0,0,0,0.6)',
               animation: 'heroFadeUp 0.55s 0.15s ease both',
             }}
           >
@@ -122,7 +104,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className="font-serif text-wedding-accent italic font-light"
+            className="font-serif text-wedding-bg/85 italic font-light"
             style={{
               fontSize: 'clamp(0.85rem, 1.8vw, 1.25rem)',
               paddingLeft: '0.25rem',
@@ -134,9 +116,10 @@ export default function Hero() {
           </p>
 
           <h1
-            className="font-display text-wedding-text leading-[0.88] block"
+            className="font-display text-wedding-bg leading-[0.88] block"
             style={{
-              fontSize: 'clamp(2.4rem, 7vw, 6rem)',
+              fontSize: 'clamp(2.6rem, 8vw, 6.5rem)',
+              textShadow: '0 4px 22px rgba(0,0,0,0.6)',
               animation: 'heroFadeUp 0.55s 0.38s ease both',
             }}
           >
@@ -149,9 +132,9 @@ export default function Hero() {
           className="flex items-center gap-4 mb-6"
           style={{ animation: 'heroFadeUp 0.5s 0.5s ease both' }}
         >
-          <div className="h-px bg-wedding-accent/40 flex-1 max-w-16" />
-          <WildflowerSprig className="text-wedding-accent/65 shrink-0" />
-          <div className="h-px bg-wedding-accent/40 flex-1 max-w-16" />
+          <div className="h-px bg-wedding-bg/40 flex-1 max-w-16" />
+          <WildflowerSprig className="text-wedding-bg/70 shrink-0" />
+          <div className="h-px bg-wedding-bg/40 flex-1 max-w-16" />
         </div>
 
         {/* Location */}
@@ -160,13 +143,13 @@ export default function Hero() {
           style={{ animation: 'heroFadeUp 0.5s 0.58s ease both' }}
         >
           <p
-            className="font-serif text-wedding-text italic"
-            style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)', fontWeight: 300 }}
+            className="font-serif text-wedding-bg italic"
+            style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)', fontWeight: 300, textShadow: '0 2px 10px rgba(0,0,0,0.55)' }}
           >
             {t.hero.location}
           </p>
           <p
-            className="font-sans text-wedding-muted mt-1"
+            className="font-sans text-wedding-bg/75 mt-1"
             style={{ fontSize: '0.625rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}
           >
             {t.hero.region}
@@ -176,7 +159,7 @@ export default function Hero() {
         {/* Countdown */}
         <div style={{ animation: 'heroFadeUp 0.5s 0.68s ease both' }}>
           <p
-            className="font-sans text-wedding-muted/60 mb-4"
+            className="font-sans text-wedding-bg/60 mb-4"
             style={{ fontSize: '0.5625rem', letterSpacing: '0.4em', textTransform: 'uppercase' }}
           >
             {t.hero.countdownLabel}
@@ -186,7 +169,7 @@ export default function Hero() {
               <div key={label} className="flex items-start">
                 {i > 0 && (
                   <span
-                    className="font-serif text-wedding-accent/40 italic"
+                    className="font-serif text-wedding-bg/40 italic"
                     style={{
                       fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                       padding: '0 clamp(5px, 1vw, 12px)',
@@ -200,13 +183,13 @@ export default function Hero() {
                 )}
                 <div className="flex flex-col items-center">
                   <span
-                    className="font-display text-wedding-text tabular-nums leading-none"
-                    style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)' }}
+                    className="font-display text-wedding-bg tabular-nums leading-none"
+                    style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)', textShadow: '0 3px 16px rgba(0,0,0,0.6)' }}
                   >
                     {pad(value, d)}
                   </span>
                   <span
-                    className="font-sans text-wedding-muted mt-1 block"
+                    className="font-sans text-wedding-bg/75 mt-1 block"
                     style={{ fontSize: '0.5625rem', letterSpacing: '0.16em', textTransform: 'uppercase' }}
                   >
                     {label}
@@ -219,20 +202,5 @@ export default function Hero() {
 
       </div>
     </section>
-
-    <div className="bg-wedding-bg max-w-4xl mx-auto px-6 py-12 md:py-16">
-
-      <Section title={w.gallery.title}>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {[0, 1, 2].map((i) => (
-            <div key={i} className="bg-wedding-accent/10 border border-wedding-accent/20 rounded-lg aspect-square flex items-center justify-center">
-              <p className="font-sans text-wedding-muted/60 text-center px-2" style={{ fontSize: '0.7rem' }}>{w.gallery.placeholder}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-    </div>
-    </>
   );
 }

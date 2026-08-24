@@ -17,7 +17,6 @@ export default {
   },
 
   hero: {
-    photoPlaceholder: 'Equí dirá la vuestra semeya',
     dateEyebrow: '28 · viii · 2027',
     marriedLine: 'cásense',
     location: 'Valle de Bueida, Quirós',
@@ -29,23 +28,14 @@ export default {
     seconds: 'Seg',
   },
 
-  welcome: {
-    gallery: {
-      title: 'Semeyes',
-      placeholder: 'Semeya prósimamente',
-    },
-  },
-
   location: {
     title: 'Allugamientu ya Cómo Llegar',
     subtitle: 'Valle de Bueida, Quirós — Asturies, España',
     map: {
-      comingSoon: 'Mapa interactivu prósimamente',
       address: 'Valle de Bueida, Quirós, Asturies, España',
     },
     site: {
       title: 'El Sitiu',
-      photoPlaceholder: 'Semeya del sitiu prósimamente',
       intro: 'La boda va celebrase nel Valle de Bueida, en Quirós, Asturies. Bueida ye una aldea pequeña asitiada nun valle fondu dientro del Parque Natural de les Ubiñes.',
       addressLabel: 'Direición',
       addressLine1: 'Valle de Bueida',

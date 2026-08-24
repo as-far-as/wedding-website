@@ -17,7 +17,6 @@ export default {
   },
 
   hero: {
-    photoPlaceholder: 'Aquí irá vuestra foto',
     dateEyebrow: '28 · viii · 2027',
     marriedLine: 'se casan',
     location: 'Valle de Bueida, Quirós',
@@ -29,23 +28,14 @@ export default {
     seconds: 'Seg',
   },
 
-  welcome: {
-    gallery: {
-      title: 'Fotos',
-      placeholder: 'Foto próximamente',
-    },
-  },
-
   location: {
     title: 'Ubicación y Cómo Llegar',
     subtitle: 'Valle de Bueida, Quirós — Asturias, España',
     map: {
-      comingSoon: 'Mapa interactivo próximamente',
       address: 'Valle de Bueida, Quirós, Asturias, España',
     },
     site: {
       title: 'El Lugar',
-      photoPlaceholder: 'Foto del lugar próximamente',
       intro: 'La boda se celebrará en el Valle de Bueida, en Quirós, Asturias. Bueida es una pequeña aldea situada en un valle profundo dentro del Parque Natural de las Ubiñas.',
       addressLabel: 'Dirección',
       addressLine1: 'Valle de Bueida',

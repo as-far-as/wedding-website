@@ -14,30 +14,16 @@ export default function Location() {
       backdrop={backdrop}
     >
 
-      {/* Map placeholder — replace with a Google Maps embed or similar */}
-      <div className="rounded-lg aspect-video flex flex-col items-center justify-center mb-12 gap-3" style={{ border: '1px solid var(--page-border, rgba(138,154,134,0.3))' }}>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-wedding-muted, #6C757D)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-          <circle cx="12" cy="10" r="3"/>
-        </svg>
-        <p className="font-sans text-wedding-muted text-sm text-center">
-          {l.map.comingSoon}
-        </p>
-        <p className="font-sans text-wedding-muted/60 text-xs text-center">
-          {l.map.address}
-        </p>
-      </div>
-
-      {/* Site photo placeholder */}
-      <div className="rounded-lg aspect-video flex flex-col items-center justify-center mb-12 gap-3" style={{ border: '1px solid var(--page-border, rgba(138,154,134,0.3))' }}>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-wedding-muted, #6C757D)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <path d="M21 15l-5-5L5 21" />
-        </svg>
-        <p className="font-sans text-wedding-muted text-sm text-center">
-          {l.site.photoPlaceholder}
-        </p>
+      {/* Google Maps embed (key-less iframe — no API key required) */}
+      <div className="relative rounded-lg aspect-video overflow-hidden mb-12" style={{ border: '1px solid var(--page-border, rgba(138,154,134,0.3))' }}>
+        <iframe
+          title={l.map.address}
+          src={`https://maps.google.com/maps?q=${encodeURIComponent(l.map.address)}&z=14&output=embed`}
+          className="absolute inset-0 w-full h-full"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
 
       <Section title={l.site.title}>
