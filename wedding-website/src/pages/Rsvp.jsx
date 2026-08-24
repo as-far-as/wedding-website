@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import PageLayout from '../components/PageLayout';
+import PageLayout, { Panel } from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
+import backdrop from '../assets/collages/rsvp.webp';
 
 const inputClass = 'w-full border border-wedding-accent/40 rounded-lg px-4 py-3 font-sans text-wedding-text bg-wedding-bg focus:outline-none focus:border-wedding-accent transition-colors';
 const labelClass = 'block font-sans text-wedding-muted mb-2';
@@ -149,7 +150,8 @@ export default function Rsvp() {
   };
 
   return (
-    <PageLayout title={r.title} subtitle={r.subtitle}>
+    <PageLayout title={r.title} subtitle={r.subtitle} backdrop={backdrop}>
+      <Panel>
 
       {status === 'no-slug' && (
         <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
@@ -375,6 +377,7 @@ export default function Rsvp() {
         </form>
       )}
 
+      </Panel>
     </PageLayout>
   );
 }

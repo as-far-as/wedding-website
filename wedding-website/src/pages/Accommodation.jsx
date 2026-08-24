@@ -1,5 +1,6 @@
-import PageLayout, { Section } from '../components/PageLayout';
+import PageLayout, { Section, Panel } from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
+import backdrop from '../assets/collages/accommodation.webp';
 
 export default function Accommodation() {
   const { t } = useLanguage();
@@ -9,11 +10,14 @@ export default function Accommodation() {
     <PageLayout
       title={a.title}
       subtitle={a.subtitle}
+      backdrop={backdrop}
     >
 
-      <p className="font-sans text-wedding-muted leading-relaxed mb-12" style={{ fontSize: '0.925rem' }}>
-        {a.intro}
-      </p>
+      <Panel className="mb-8">
+        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
+          {a.intro}
+        </p>
+      </Panel>
 
       <Section title={a.option1.title}>
         <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>

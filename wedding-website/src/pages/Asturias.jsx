@@ -1,5 +1,6 @@
 import PageLayout, { Section, CardGrid, Card } from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
+import backdrop from '../assets/collages/asturias.webp';
 
 export default function Asturias() {
   const { t } = useLanguage();
@@ -9,6 +10,7 @@ export default function Asturias() {
     <PageLayout
       title={as.title}
       subtitle={as.subtitle}
+      backdrop={backdrop}
     >
 
       <Section title={as.about.title}>
