@@ -27,8 +27,12 @@ export default function PageLayout({ title, subtitle, eyebrow, backdrop, childre
             className="absolute inset-0 pointer-events-none"
             style={{ background: 'linear-gradient(180deg, rgba(12,16,12,0.55), rgba(12,16,12,0.38) 22%, rgba(12,16,12,0.48))' }}
           />
-          {/* Fade to the plain background at the very bottom of the page */}
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-wedding-bg pointer-events-none" />
+          {/* Fade to a dark tone (not the light page background) at the very bottom,
+              so any white text sitting in this zone stays legible right to the end */}
+          <div
+            className="absolute inset-x-0 bottom-0 h-48 pointer-events-none"
+            style={{ background: 'linear-gradient(180deg, transparent, rgba(10,13,10,0.96))' }}
+          />
         </>
       )}
 

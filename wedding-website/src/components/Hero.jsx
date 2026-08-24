@@ -73,7 +73,10 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'linear-gradient(180deg, rgba(12,16,12,0.5), rgba(12,16,12,0.32) 30%, rgba(12,16,12,0.5))' }}
       />
-      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-wedding-bg pointer-events-none" />
+      <div
+        className="absolute inset-x-0 bottom-0 h-48 pointer-events-none"
+        style={{ background: 'linear-gradient(180deg, transparent, rgba(10,13,10,0.96))' }}
+      />
 
       <div className="relative max-w-4xl mx-auto min-h-screen flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-20">
 
