@@ -30,32 +30,9 @@ export default {
   },
 
   welcome: {
-    vibe: {
-      title: 'El Ambiente',
-      text: 'Pensad festival, no formal. Una ceremonia al aire libre en un valle de montaña, una comida larga que se convierte en una noche larga, sidra que no deja de correr, y una pista de baile que sigue hasta que alguien no pueda más. Es una boda pensada alrededor del paisaje en el que ocurre — salvaje, un poco áspera por los bordes, y exactamente cómo queremos pasar el día con la gente que más queremos.',
-    },
-    whatWereDoing: {
-      title: 'Qué Vamos a Hacer',
-      text: 'Por ahora lo dejamos abierto — los horarios exactos llegarán más cerca de la fecha, y tendréis el programa completo en la invitación. En líneas generales: las puertas se abren durante la mañana, la ceremonia ocurre al aire libre en el valle, después un banquete sentado como Dios manda, y el resto del día se convierte en música, baile, y una barra que no cierra pronto. Traed capas para la noche y calzado que aguante la hierba.',
-    },
     gallery: {
       title: 'Fotos',
       placeholder: 'Foto próximamente',
-    },
-    practical: {
-      title: 'Cosas que Saber',
-      dressCode: {
-        title: 'Qué Ponerse',
-        text: 'Estilo festival elegante. Lino, estampados florales, telas fluidas — algo con lo que podáis pasar de la ceremonia al baile sin sufrir. El suelo es hierba, así que dejad los tacones de aguja en casa. Por la noche baja a 12–16°C; traed una capa que os guste de verdad.',
-      },
-      foodDrink: {
-        title: 'Comida, Bebida y Baile',
-        text: 'Esperad un banquete sentado como Dios manda, algo de picoteo por la noche, y una barra con sidra, cerveza, vino y cócteles desde que abre. La sidra asturiana correrá sin parar — esto es Asturias, al fin y al cabo. Cuando se recojan las mesas, toca música y baile todo lo que os aguanten las piernas.',
-      },
-    },
-    closing: {
-      title: 'Venid a Celebrar con Nosotros',
-      text: 'Como sea que lleguéis, con lo que sea que os pongáis, solo queremos que estéis ahí. Consultad vuestra invitación para vuestro enlace personal de RSVP.',
     },
   },
 

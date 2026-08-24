@@ -30,32 +30,9 @@ export default {
   },
 
   welcome: {
-    vibe: {
-      title: 'L\'Ambiente',
-      text: 'Pensái festival, non formal. Una ceremonia al campu abiertu nun valle de montaña, una comida llarga que se convierte nuna nueche llarga, sidra que nun para de correr, ya una pista de baile que sigue hasta que naide pueda más. Ye una boda pensada al rodiu del paisaxe onde asocede — brava, un poco áspera pelos bordes, ya exactamente como queremos pasar el día cola xente que más queremos.',
-    },
-    whatWereDoing: {
-      title: 'Qué Vamos a Facer',
-      text: 'Poro agora déxamoslo abierto — los horarios esautos van llegar más averaos a la data, ya vais tener el programa completu na invitación. En llinies xenerales: les puertes abren pela mañana, la ceremonia asocede al campu abiertu nel valle, darréu un banquete sentáu de verdá, ya el restu del día conviértese en música, baile, ya una barra que nun zarra ceo. Traer capes pa la nueche ya calzáu qu\'aguante la yerba.',
-    },
     gallery: {
       title: 'Semeyes',
       placeholder: 'Semeya prósimamente',
-    },
-    practical: {
-      title: 'Coses que Saber',
-      dressCode: {
-        title: 'Qué Ponese',
-        text: 'Estilu festival elegante. Llinu, estampaos florales, teles fluyentes — daqué que valga pa dir de la ceremonia al baile ensin penar. El suelu ye yerba, asina que dexái los tacones en casa. Pela nueche baxa a 12–16°C; traer una capa que vos preste de verdá.',
-      },
-      foodDrink: {
-        title: 'Comida, Bebida ya Baile',
-        text: 'Esperái un banquete sentáu de verdá, daqué pa picar pela nueche, ya una barra con sidra, cerveza, vinu ya cócteles dende que abre. La sidra asturiana va correr ensin parar — esto ye Asturies, al fin ya al cabu. Cuando se recueyan les meses, tócase música ya baile tolo que vos aguanten les piernes.',
-      },
-    },
-    closing: {
-      title: 'Vinide a Celebrar con Nós',
-      text: 'Como quiera que lleguéis, con lo que seya que vos pongáis, solo queremos que teáis ellí. Consultái la vuesa invitación pal vuesu enllaz personal de RSVP.',
     },
   },
 

@@ -30,32 +30,9 @@ export default {
   },
 
   welcome: {
-    vibe: {
-      title: 'The Vibe',
-      text: "Think festival, not formal. A ceremony under open sky in a mountain valley, a long lunch that turns into a long night, cider that doesn't stop pouring, and a dance floor that runs until someone can't stand anymore. This is a wedding built around the landscape it's in — wild, a little rough around the edges, and exactly how we want to spend the day with the people we love most.",
-    },
-    whatWereDoing: {
-      title: "What We're Doing",
-      text: "We're keeping this loose for now — exact timings will follow closer to the date, and the full run-down will be on your invitation. Broadly: gates open through the morning, the ceremony happens outdoors in the valley, then a proper sit-down banquet, and the rest of the day rolls into music, dancing, and a bar that doesn't close early. Bring layers for the evening and shoes that can handle grass.",
-    },
     gallery: {
       title: 'Photos',
       placeholder: 'Photo coming soon',
-    },
-    practical: {
-      title: 'Good to Know',
-      dressCode: {
-        title: 'What to Wear',
-        text: 'Festival-smart. Linen, florals, flowing fabrics — something you can go from ceremony to dancing in. The ground is grass, so leave the stilettos at home. Evenings drop to 12–16°C; bring a layer you actually like.',
-      },
-      foodDrink: {
-        title: 'Food, Drink & Dancing',
-        text: "Expect a proper sit-down banquet, snacks to keep you going into the evening, and a bar stocked with cider, beer, wine and cocktails from the moment it opens. Asturian sidra will be flowing — this is Asturias, after all. Once the tables clear, it's music and dancing for as long as you've got in you.",
-      },
-    },
-    closing: {
-      title: 'Come Celebrate With Us',
-      text: "However you get here, whatever you wear, we just want you there. Check your invitation for your personal RSVP link.",
     },
   },
 

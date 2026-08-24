@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../i18n/useLanguage';
-import { Section, CardGrid, Card } from './PageLayout';
+import { Section } from './PageLayout';
 
 const WEDDING = new Date('2027-08-28T12:00:00');
 
@@ -222,18 +222,6 @@ export default function Hero() {
 
     <div className="bg-wedding-bg max-w-4xl mx-auto px-6 py-12 md:py-16">
 
-      <Section title={w.vibe.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
-          {w.vibe.text}
-        </p>
-      </Section>
-
-      <Section title={w.whatWereDoing.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
-          {w.whatWereDoing.text}
-        </p>
-      </Section>
-
       <Section title={w.gallery.title}>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {[0, 1, 2].map((i) => (
@@ -243,30 +231,6 @@ export default function Hero() {
           ))}
         </div>
       </Section>
-
-      <Section title={w.practical.title}>
-        <CardGrid>
-          <Card title={w.practical.dressCode.title}>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              {w.practical.dressCode.text}
-            </p>
-          </Card>
-          <Card title={w.practical.foodDrink.title}>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              {w.practical.foodDrink.text}
-            </p>
-          </Card>
-        </CardGrid>
-      </Section>
-
-      <div className="text-center py-6">
-        <p className="font-display text-wedding-text" style={{ fontSize: 'clamp(1.4rem, 3.5vw, 2rem)' }}>
-          {w.closing.title}
-        </p>
-        <p className="font-sans text-wedding-muted mt-3" style={{ fontSize: '0.9rem' }}>
-          {w.closing.text}
-        </p>
-      </div>
 
     </div>
     </>
