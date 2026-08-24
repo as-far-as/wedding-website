@@ -1,4 +1,4 @@
-import PageLayout, { Section, Card } from '../components/PageLayout';
+import PageLayout, { Section } from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
 
 export default function Accommodation() {
@@ -16,17 +16,9 @@ export default function Accommodation() {
       </p>
 
       <Section title={a.option1.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed mb-7" style={{ fontSize: '0.925rem' }}>
+        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
           {a.option1.intro}
         </p>
-        <Card title={a.option1.camping.title}>
-          <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
-            {a.option1.camping.desc}
-          </p>
-          <p className="font-sans text-wedding-accent/80" style={{ fontSize: '0.8rem', fontStyle: 'italic' }}>
-            {a.option1.camping.note}
-          </p>
-        </Card>
       </Section>
 
       <Section title={a.option2.title}>
@@ -41,25 +33,14 @@ export default function Accommodation() {
       </Section>
 
       <Section title={a.option3.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
+        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
           {a.option3.intro}
         </p>
-        <Card title={a.option3.gijon.title}>
-          <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-            {a.option3.gijon.desc}
-          </p>
-        </Card>
       </Section>
 
       <Section title={a.option4.title}>
         <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
           {a.option4.intro}
-        </p>
-      </Section>
-
-      <Section title={a.recommendations.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
-          {a.recommendations.text}
         </p>
       </Section>
 

@@ -12,11 +12,8 @@ export default function Asturias() {
     >
 
       <Section title={as.about.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.925rem' }}>
-          {as.about.p1}
-        </p>
         <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
-          {as.about.p2}
+          {as.about.p1}
         </p>
       </Section>
 
@@ -36,18 +33,17 @@ export default function Asturias() {
             <p className="font-sans text-wedding-muted/60 mt-2" style={{ fontSize: '0.78rem' }}>{as.thingsToDo.picos.distance}</p>
           </Card>
 
-          <Card title={as.thingsToDo.costaVerde.title}>
+          <Card title={as.thingsToDo.llanesRibadesella.title}>
             <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              {as.thingsToDo.costaVerde.desc}
+              {as.thingsToDo.llanesRibadesella.desc}
             </p>
-            <p className="font-sans text-wedding-muted/60 mt-2" style={{ fontSize: '0.78rem' }}>{as.thingsToDo.costaVerde.distance}</p>
+            <p className="font-sans text-wedding-muted/60 mt-2" style={{ fontSize: '0.78rem' }}>{as.thingsToDo.llanesRibadesella.distance}</p>
           </Card>
 
-          <Card title={as.thingsToDo.covadonga.title}>
+          <Card title={as.thingsToDo.villages.title}>
             <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              {as.thingsToDo.covadonga.desc}
+              {as.thingsToDo.villages.desc}
             </p>
-            <p className="font-sans text-wedding-muted/60 mt-2" style={{ fontSize: '0.78rem' }}>{as.thingsToDo.covadonga.distance}</p>
           </Card>
 
           <Card title={as.thingsToDo.oviedo.title}>
@@ -55,12 +51,6 @@ export default function Asturias() {
               {as.thingsToDo.oviedo.desc}
             </p>
             <p className="font-sans text-wedding-muted/60 mt-2" style={{ fontSize: '0.78rem' }}>{as.thingsToDo.oviedo.distance}</p>
-          </Card>
-
-          <Card title={as.thingsToDo.cangas.title}>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-              {as.thingsToDo.cangas.desc}
-            </p>
           </Card>
         </CardGrid>
       </Section>
@@ -87,7 +77,6 @@ export default function Asturias() {
           <li className="flex gap-3"><span className="text-wedding-accent shrink-0">—</span><span><strong className="text-wedding-text">{as.weather.daytime.strong}</strong>{as.weather.daytime.text}</span></li>
           <li className="flex gap-3"><span className="text-wedding-accent shrink-0">—</span><span><strong className="text-wedding-text">{as.weather.evenings.strong}</strong>{as.weather.evenings.text}</span></li>
           <li className="flex gap-3"><span className="text-wedding-accent shrink-0">—</span><span><strong className="text-wedding-text">{as.weather.rain.strong}</strong>{as.weather.rain.text}</span></li>
-          <li className="flex gap-3"><span className="text-wedding-accent shrink-0">—</span><span><strong className="text-wedding-text">{as.weather.sunCream.strong}</strong>{as.weather.sunCream.text}</span></li>
         </ul>
       </Section>
 

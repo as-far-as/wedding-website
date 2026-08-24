@@ -62,12 +62,9 @@ export default function Location() {
           {/* Shuttle — the easy option, front and centre */}
           <div className="mb-10">
             <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.shuttle.title}</h3>
-            <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
-              {g.shuttle.intro}
-            </p>
             <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mb-6">
               <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-                <strong className="text-wedding-text">{g.shuttle.pickupLabel}</strong>{g.shuttle.pickupText}
+                <strong className="text-wedding-text">{g.shuttle.bus.title}: </strong>{g.shuttle.bus.desc}
               </p>
             </div>
             <CardGrid>
@@ -76,9 +73,9 @@ export default function Location() {
                   {g.shuttle.parking.desc}
                 </p>
               </Card>
-              <Card title={g.shuttle.gijonBase.title}>
+              <Card title={g.shuttle.gijonLabel}>
                 <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-                  {g.shuttle.gijonBase.desc}
+                  {g.shuttle.gijonText}
                 </p>
               </Card>
             </CardGrid>
@@ -100,46 +97,19 @@ export default function Location() {
               </Card>
 
               <Card title={g.byPlane.santander.title}>
-                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
                   {g.byPlane.santander.desc}
                 </p>
-                <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
-                  {g.byPlane.santander.bullets.map((b) => (
-                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
-                  ))}
-                </ul>
-              </Card>
-
-              <Card title={g.byPlane.madrid.title}>
-                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
-                  {g.byPlane.madrid.desc}
-                </p>
-                <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
-                  {g.byPlane.madrid.bullets.map((b) => (
-                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
-                  ))}
-                </ul>
               </Card>
             </CardGrid>
-          </div>
-
-          {/* Recommended Timings */}
-          <div className="mb-10">
-            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.recommendedTimings.title}</h3>
-            <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
-              {g.recommendedTimings.intro}
-            </p>
-            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mb-5">
+            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mt-6">
               <p className="font-sans text-wedding-muted leading-relaxed mb-2" style={{ fontSize: '0.875rem' }}>
-                <strong className="text-wedding-text">{g.recommendedTimings.outLabel}</strong> {g.recommendedTimings.outText}
+                <strong className="text-wedding-text">{g.byPlane.asturiasLabel}</strong>
               </p>
-              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-                <strong className="text-wedding-text">{g.recommendedTimings.backLabel}</strong> {g.recommendedTimings.backText}
+              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
+                {g.byPlane.asturiasText}
               </p>
             </div>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
-              {g.recommendedTimings.earlier}
-            </p>
           </div>
 
           {/* Overland */}
@@ -150,24 +120,14 @@ export default function Location() {
             </p>
             <CardGrid>
               <Card title={g.overland.ferry.title}>
-                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
                   {g.overland.ferry.desc}
                 </p>
-                <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
-                  {g.overland.ferry.bullets.map((b) => (
-                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
-                  ))}
-                </ul>
               </Card>
               <Card title={g.overland.train.title}>
-                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
                   {g.overland.train.desc}
                 </p>
-                <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
-                  {g.overland.train.bullets.map((b) => (
-                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
-                  ))}
-                </ul>
               </Card>
             </CardGrid>
           </div>
@@ -190,38 +150,12 @@ export default function Location() {
             </div>
           </div>
 
-          {/* By Train */}
-          <div className="mb-10">
-            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byTrain.title}</h3>
-            <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
-              {g.byTrain.intro}
-            </p>
-            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mb-5">
-              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-                <strong className="text-wedding-text">{g.byTrain.polaLabel}</strong>{g.byTrain.polaText}
-              </p>
-            </div>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
-              {g.byTrain.cercanias}
-            </p>
-          </div>
-
           {/* However you get here */}
           <div>
             <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.howeverYouGetHere.title}</h3>
-            <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
+            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
               {g.howeverYouGetHere.text}
             </p>
-            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5">
-              <p className="font-sans text-wedding-muted leading-relaxed mb-2" style={{ fontSize: '0.875rem' }}>
-                <strong className="text-wedding-text">{g.howeverYouGetHere.contactLabel}</strong>{g.howeverYouGetHere.contactBefore} {import.meta.env.VITE_ADAN_EMAIL} {g.howeverYouGetHere.contactOr} {import.meta.env.VITE_NATALIE_EMAIL} {g.howeverYouGetHere.contactAfter}
-              </p>
-              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-                {g.howeverYouGetHere.phoneTemplate
-                  .replace('{adanPhone}', import.meta.env.VITE_ADAN_PHONE)
-                  .replace('{nataliePhone}', import.meta.env.VITE_NATALIE_PHONE)}
-              </p>
-            </div>
           </div>
 
         </Section>

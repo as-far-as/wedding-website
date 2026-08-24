@@ -44,6 +44,7 @@ export default function FAQs() {
   const f = t.faqs;
 
   const adanEmail = import.meta.env.VITE_ADAN_EMAIL;
+  const adanPhone = import.meta.env.VITE_ADAN_PHONE;
   const natalieEmail = import.meta.env.VITE_NATALIE_EMAIL;
 
   return (
@@ -58,7 +59,7 @@ export default function FAQs() {
             key={q}
             question={q}
             answer={aTemplate
-              ? aTemplate.replace('{adanEmail}', adanEmail).replace('{natalieEmail}', natalieEmail)
+              ? aTemplate.replace('{adanEmail}', adanEmail).replace('{adanPhone}', adanPhone).replace('{natalieEmail}', natalieEmail)
               : a}
           />
         ))}
