@@ -15,12 +15,14 @@ export default function PageLayout({ title, subtitle, eyebrow, backdrop, childre
     >
       {backdrop && (
         <>
-          {/* Full-page photo backdrop — spans the header and body together so it scrolls as one long image */}
-          <img
-            src={backdrop}
-            alt=""
+          {/* Full-page photo backdrop — spans the header and body together so it scrolls as one long image.
+              On mobile the page is far taller (relative to its width) than the source photo, so a single
+              cover-fit would crop most of it away; instead fit to width and tile vertically. Wider screens
+              (md+) go back to a single cover-fit image, since the aspect ratio mismatch is less extreme. */}
+          <div
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none"
+            className="absolute inset-0 bg-top bg-repeat-y [background-size:100%_auto] md:bg-no-repeat md:bg-cover pointer-events-none select-none"
+            style={{ backgroundImage: `url(${backdrop})` }}
           />
           {/* Scrim: keeps text legible everywhere without boxing it */}
           <div

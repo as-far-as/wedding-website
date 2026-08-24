@@ -61,12 +61,12 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen relative pl-backdrop overflow-hidden">
-      {/* Full-page photo backdrop */}
-      <img
-        src={backdrop}
-        alt=""
+      {/* Full-page photo backdrop — fit to width and tile vertically on mobile (see PageLayout for why),
+          single cover-fit image on wider screens */}
+      <div
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none"
+        className="absolute inset-0 bg-top bg-repeat-y [background-size:100%_auto] md:bg-no-repeat md:bg-cover pointer-events-none select-none"
+        style={{ backgroundImage: `url(${backdrop})` }}
       />
       {/* Scrim: keeps text legible everywhere without boxing it */}
       <div
