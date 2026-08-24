@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import PageLayout, { Panel } from '../components/PageLayout';
+import PageLayout from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
 import backdrop from '../assets/collages/rsvp.webp';
 
-const inputClass = 'w-full border border-wedding-accent/40 rounded-lg px-4 py-3 font-sans text-wedding-text bg-wedding-bg focus:outline-none focus:border-wedding-accent transition-colors';
+// Fixed (non-themed) dark text colour: these inputs always sit on their own
+// opaque light fill, regardless of the page's photo-backdrop text overrides.
+const inputClass = 'w-full border border-wedding-accent/40 rounded-lg px-4 py-3 font-sans text-[#2B2D42] bg-wedding-bg focus:outline-none focus:border-wedding-accent transition-colors';
 const labelClass = 'block font-sans text-wedding-muted mb-2';
 const labelStyle = { fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase' };
 
@@ -151,7 +153,6 @@ export default function Rsvp() {
 
   return (
     <PageLayout title={r.title} subtitle={r.subtitle} backdrop={backdrop}>
-      <Panel>
 
       {status === 'no-slug' && (
         <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
@@ -377,7 +378,6 @@ export default function Rsvp() {
         </form>
       )}
 
-      </Panel>
     </PageLayout>
   );
 }

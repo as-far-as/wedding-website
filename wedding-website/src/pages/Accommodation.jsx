@@ -1,4 +1,4 @@
-import PageLayout, { Section, Panel } from '../components/PageLayout';
+import PageLayout, { Section } from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
 import backdrop from '../assets/collages/accommodation.webp';
 
@@ -13,11 +13,9 @@ export default function Accommodation() {
       backdrop={backdrop}
     >
 
-      <Panel className="mb-8">
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
-          {a.intro}
-        </p>
-      </Panel>
+      <p className="font-sans text-wedding-muted leading-relaxed mb-10" style={{ fontSize: '0.925rem' }}>
+        {a.intro}
+      </p>
 
       <Section title={a.option1.title}>
         <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>

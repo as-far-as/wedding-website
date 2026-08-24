@@ -31,3 +31,9 @@
     animation-delay: 0ms !important;
   }
 }
+
+/* Pages with a photo backdrop: give text a soft shadow so it stays crisp
+   against the image without needing an opaque panel behind it. */
+.pl-backdrop :where(h1, h2, h3, h4, p, span, dt, dd, label, li, a, strong, address) {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}

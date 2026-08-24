@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import PageLayout, { Panel } from '../components/PageLayout';
+import PageLayout from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
 import backdrop from '../assets/collages/faqs.webp';
 
@@ -8,7 +8,7 @@ function FAQItem({ question, answer }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-wedding-accent/20 last:border-0">
+    <div className="last:border-0" style={{ borderBottom: '1px solid var(--page-rule, rgba(138,154,134,0.2))' }}>
       <button
         className="w-full flex items-start justify-between gap-6 py-5 text-left"
         onClick={() => setOpen(prev => !prev)}
@@ -55,28 +55,24 @@ export default function FAQs() {
       backdrop={backdrop}
     >
 
-      <Panel>
-        <div className="divide-y-0">
-          {f.items.map(({ q, a, aTemplate }) => (
-            <FAQItem
-              key={q}
-              question={q}
-              answer={aTemplate
-                ? aTemplate.replace('{adanEmail}', adanEmail).replace('{adanPhone}', adanPhone).replace('{natalieEmail}', natalieEmail)
-                : a}
-            />
-          ))}
-        </div>
-      </Panel>
+      <div>
+        {f.items.map(({ q, a, aTemplate }) => (
+          <FAQItem
+            key={q}
+            question={q}
+            answer={aTemplate
+              ? aTemplate.replace('{adanEmail}', adanEmail).replace('{adanPhone}', adanPhone).replace('{natalieEmail}', natalieEmail)
+              : a}
+          />
+        ))}
+      </div>
 
-      <Panel className="mt-8">
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.9rem' }}>
-          {f.footer.before}{' '}
-          <Link to="/location" className="text-wedding-accent underline underline-offset-2">{f.footer.transportLink}</Link>{' '}
-          {f.footer.and}{' '}
-          <Link to="/accommodation" className="text-wedding-accent underline underline-offset-2">{f.footer.accommodationLink}</Link>{f.footer.after}
-        </p>
-      </Panel>
+      <p className="font-sans text-wedding-muted leading-relaxed mt-10 pt-8" style={{ fontSize: '0.9rem', borderTop: '1px solid var(--page-rule, rgba(138,154,134,0.2))' }}>
+        {f.footer.before}{' '}
+        <Link to="/location" className="text-wedding-accent underline underline-offset-2">{f.footer.transportLink}</Link>{' '}
+        {f.footer.and}{' '}
+        <Link to="/accommodation" className="text-wedding-accent underline underline-offset-2">{f.footer.accommodationLink}</Link>{f.footer.after}
+      </p>
 
     </PageLayout>
   );
