@@ -1,18 +1,25 @@
 import { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/useLanguage';
+import { getStoredGuestSlug } from '../utils/guestSlug';
 import LanguageToggle from './LanguageToggle';
 
 export default function Navbar() {
   const { t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // useLocation() re-renders this component on every navigation, which is
+  // all we need to keep the stored slug (read fresh below, no state of its
+  // own) current as soon as a guest's personal link has been visited.
+  useLocation();
+  const guestSlug = getStoredGuestSlug();
+
   const NAV_LINKS = [
     { to: '/location',      label: t.nav.location },
     { to: '/accommodation', label: t.nav.accommodation },
     { to: '/asturias',      label: t.nav.asturias },
     { to: '/faqs',          label: t.nav.faqs },
-    { to: '/rsvp',          label: t.nav.rsvp },
+    { to: guestSlug ? `/rsvp/${guestSlug}` : '/rsvp', label: t.nav.rsvp },
   ];
 
   const linkClass = ({ isActive }) =>

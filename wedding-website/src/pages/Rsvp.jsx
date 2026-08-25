@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
+import { setStoredGuestSlug } from '../utils/guestSlug';
 import backdrop from '../assets/collages/rsvp.webp';
 
 // Fixed (non-themed) dark text colour: these inputs always sit on their own
@@ -49,6 +50,12 @@ export default function Rsvp() {
 
   const [status, setStatus] = useState(slug ? 'loading' : 'no-slug');
   const [guest, setGuest] = useState(null);
+
+  // Remember this guest's personal link so nav elsewhere on the site can
+  // route back to it, instead of the generic /rsvp, once they wander off.
+  useEffect(() => {
+    if (slug) setStoredGuestSlug(slug);
+  }, [slug]);
 
   const [attending, setAttending] = useState('');
   const [accommodation, setAccommodation] = useState('');
