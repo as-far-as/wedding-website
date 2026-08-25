@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useLanguage } from '../i18n/useLanguage';
+import { setStoredGuestSlug } from '../utils/guestSlug';
 import backdrop from '../assets/collages/homepage.webp';
 
 const WEDDING = new Date('2027-08-28T12:00:00');
@@ -42,6 +44,7 @@ function WildflowerSprig({ className }) {
 
 export default function Hero() {
   const { t } = useLanguage();
+  const { slug } = useParams();
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -49,6 +52,13 @@ export default function Hero() {
     const id = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
     return () => clearInterval(id);
   }, []);
+
+  // A personalised invite link (e.g. /jane-doe) lands here rather than
+  // straight on the RSVP form; remember the slug so the nav's RSVP link
+  // is already theirs by the time they click through.
+  useEffect(() => {
+    if (slug) setStoredGuestSlug(slug);
+  }, [slug]);
 
   const pad = (n, d = 2) => String(n).padStart(d, '0');
 

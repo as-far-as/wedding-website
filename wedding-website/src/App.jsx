@@ -27,6 +27,9 @@ export default function App() {
           <Route path="/faqs"          element={<FAQs />} />
           <Route path="/rsvp"          element={<Rsvp />} />
           <Route path="/rsvp/:slug"    element={<Rsvp />} />
+          {/* Personalised invite links: land on the homepage, remembering the
+              slug so the RSVP nav link is already theirs when they click through. */}
+          <Route path="/:slug"         element={<Hero />} />
         </Routes>
       </main>
     </BrowserRouter>

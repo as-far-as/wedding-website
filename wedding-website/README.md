@@ -62,7 +62,10 @@ The RSVP page (`/rsvp/:slug`) looks guests up by a unique slug and writes replie
    - `GOOGLE_SERVICE_ACCOUNT_EMAIL` — the service account's email
    - `GOOGLE_PRIVATE_KEY` — the private key from the JSON key (paste as-is, including the `BEGIN/END PRIVATE KEY` lines)
    - `GOOGLE_SHEET_ID` — the long ID in the Sheet's URL, between `/d/` and `/edit`
-5. Redeploy. Guest links are then just `https://<your-site>/rsvp/<slug>` for whatever slugs you've added to the `Guests` tab — no code changes needed to add more guests, just add rows to the Sheet.
+5. Redeploy. Guest links are then just `https://<your-site>/<slug>` for whatever slugs you've added to the `Guests` tab — no code changes needed to add more guests, just add rows to the Sheet.
+   - `https://<your-site>/<slug>` lands on the homepage first and quietly remembers the slug (in that browser's `localStorage`), so the RSVP link in the nav bar is already personalised by the time the guest clicks through.
+   - `https://<your-site>/rsvp/<slug>` also still works directly, for anyone who already has that link, or if you'd rather send guests straight to the form.
+   - Avoid picking a slug that collides with one of the site's own page names (`location`, `accommodation`, `asturias`, `faqs`, `rsvp`) — those routes take priority over the personalised-homepage one.
 
 ## Deployment
 
