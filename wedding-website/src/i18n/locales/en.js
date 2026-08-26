@@ -255,10 +255,13 @@ export default {
       arrivalLabel: 'When will you arrive?',
       departureLabel: 'When will you leave?',
       flightHint: "Flying from London? Direct flights to Asturias only run Thursdays and Tuesdays — for more flexibility, Santander has options most other days.",
-      days: [
+      arrivalDays: [
         { value: 'thu-26', label: 'Thursday 26 August' },
         { value: 'fri-27', label: 'Friday 27 August' },
         { value: 'sat-28', label: 'Saturday 28 August' },
+        { value: 'unsure', label: "Don't know yet" },
+      ],
+      departureDays: [
         { value: 'sun-29', label: 'Sunday 29 August' },
         { value: 'mon-30', label: 'Monday 30 August' },
         { value: 'tue-31', label: 'Tuesday 31 August' },

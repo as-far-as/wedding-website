@@ -60,7 +60,7 @@ function StayDates({ r, arrivalDay, setArrivalDay, departureDay, setDepartureDay
             style={{ fontSize: '0.9rem' }}
           >
             <option value="" disabled>—</option>
-            {r.stayDates.days.map(({ value, label }) => (
+            {r.stayDates.arrivalDays.map(({ value, label }) => (
               <option key={value} value={value}>{label}</option>
             ))}
           </select>
@@ -75,7 +75,7 @@ function StayDates({ r, arrivalDay, setArrivalDay, departureDay, setDepartureDay
             style={{ fontSize: '0.9rem' }}
           >
             <option value="" disabled>—</option>
-            {r.stayDates.days.map(({ value, label }) => (
+            {r.stayDates.departureDays.map(({ value, label }) => (
               <option key={value} value={value}>{label}</option>
             ))}
           </select>
@@ -171,7 +171,8 @@ export default function Rsvp() {
     if (value === 'house') return r.houseInvite.stayingLabel;
     return r.accommodation.options.find((o) => o.value === value)?.label || '';
   };
-  const dayLabel = (value) => r.stayDates.days.find((d) => d.value === value)?.label || '';
+  const dayLabel = (value) =>
+    [...r.stayDates.arrivalDays, ...r.stayDates.departureDays].find((d) => d.value === value)?.label || '';
 
   const handleSubmit = async (e) => {
     e.preventDefault();

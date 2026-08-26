@@ -255,10 +255,13 @@ export default {
       arrivalLabel: '¿Cuándo vais llegar?',
       departureLabel: '¿Cuándo vais dir?',
       flightHint: '¿Volando dende Londres? Los vuelos direutos a Asturies solo salen los xueves ya los martes — pa más flexibilidá, Santander tien opciones case tolos demás díes.',
-      days: [
+      arrivalDays: [
         { value: 'thu-26', label: 'Xueves 26 d\'agostu' },
         { value: 'fri-27', label: 'Vienres 27 d\'agostu' },
         { value: 'sat-28', label: 'Sábadu 28 d\'agostu' },
+        { value: 'unsure', label: 'Entá nun lo sé' },
+      ],
+      departureDays: [
         { value: 'sun-29', label: 'Domingu 29 d\'agostu' },
         { value: 'mon-30', label: 'Llunes 30 d\'agostu' },
         { value: 'tue-31', label: 'Martes 31 d\'agostu' },
