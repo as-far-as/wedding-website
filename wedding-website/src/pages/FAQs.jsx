@@ -4,7 +4,7 @@ import PageLayout from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
 import backdrop from '../assets/collages/faqs.webp';
 
-function FAQItem({ question, answerBold, answer }) {
+function FAQItem({ question, answerBold, answer, links }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -29,13 +29,31 @@ function FAQItem({ question, answerBold, answer }) {
         </span>
       </button>
       {open && (
-        <p
-          className="font-sans text-wedding-muted leading-relaxed pb-5"
-          style={{ fontSize: '0.9rem' }}
-        >
-          {answerBold && <strong className="text-wedding-text">{answerBold} </strong>}
-          {answer}
-        </p>
+        <div className="pb-5">
+          <p
+            className="font-sans text-wedding-muted leading-relaxed"
+            style={{ fontSize: '0.9rem' }}
+          >
+            {answerBold && <strong className="text-wedding-text">{answerBold} </strong>}
+            {answer}
+          </p>
+          {links && links.length > 0 && (
+            <div className="flex flex-wrap gap-3 mt-4">
+              {links.map(({ label, url }) => (
+                <a
+                  key={url}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-lg border px-4 py-2 font-sans text-wedding-text hover:border-wedding-accent transition-colors"
+                  style={{ fontSize: '0.8rem', borderColor: 'var(--page-border, rgba(138,154,134,0.4))' }}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       )}
     </div>
   );
@@ -48,6 +66,8 @@ export default function FAQs() {
   const adanEmail = import.meta.env.VITE_ADAN_EMAIL;
   const adanPhone = import.meta.env.VITE_ADAN_PHONE;
   const natalieEmail = import.meta.env.VITE_NATALIE_EMAIL;
+  const monzoLink = import.meta.env.VITE_MONZO_LINK;
+  const wiseLink = import.meta.env.VITE_WISE_LINK;
 
   return (
     <PageLayout
@@ -57,7 +77,7 @@ export default function FAQs() {
     >
 
       <div>
-        {f.items.map(({ q, a, aBold, aTemplate }) => (
+        {f.items.map(({ q, a, aBold, aTemplate, giftLinks }) => (
           <FAQItem
             key={q}
             question={q}
@@ -65,6 +85,10 @@ export default function FAQs() {
             answer={aTemplate
               ? aTemplate.replace('{adanEmail}', adanEmail).replace('{adanPhone}', adanPhone).replace('{natalieEmail}', natalieEmail)
               : a}
+            links={giftLinks && [
+              monzoLink && { label: giftLinks.monzo, url: monzoLink },
+              wiseLink && { label: giftLinks.wise, url: wiseLink },
+            ].filter(Boolean)}
           />
         ))}
       </div>
