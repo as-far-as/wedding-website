@@ -1,4 +1,4 @@
-import { appendRow } from './_sheets.js';
+import { appendRow, readSheetRows } from './_sheets.js';
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
@@ -21,6 +21,17 @@ export const handler = async (event) => {
   }
 
   try {
+    // Reject submissions for a slug that isn't a real guest — this endpoint
+    // is reachable directly (independent of the site password gate), so
+    // without this check anyone could write arbitrary rows into the sheet.
+    const guestRows = await readSheetRows('Guests');
+    const guestExists = guestRows.some(
+      (r) => (r.slug || '').trim().toLowerCase() === slug.trim().toLowerCase()
+    );
+    if (!guestExists) {
+      return { statusCode: 404, headers: JSON_HEADERS, body: JSON.stringify({ error: 'guest_not_found' }) };
+    }
+
     await appendRow('RSVPs', [
       new Date().toISOString(),
       slug,

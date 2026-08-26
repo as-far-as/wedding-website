@@ -103,6 +103,16 @@ export async function readSheetRows(tabName) {
   return rowsToObjects(data.values);
 }
 
+// Guards against spreadsheet formula injection: with valueInputOption=USER_ENTERED,
+// Sheets treats a cell starting with =, +, -, or @ as a formula. A leading
+// apostrophe forces it to be read as plain text instead, so a guest typing
+// something like "=IMPORTXML(...)" into a free-text field can't leave a live
+// formula sitting in the sheet.
+function sanitizeForSheets(value) {
+  if (typeof value !== 'string') return value;
+  return /^[=+\-@]/.test(value) ? `'${value}` : value;
+}
+
 export async function appendRow(tabName, rowValues) {
   const token = await getAccessToken();
   const url = `${SHEETS_API}/${process.env.GOOGLE_SHEET_ID}/values/${encodeURIComponent(tabName)}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
@@ -112,7 +122,7 @@ export async function appendRow(tabName, rowValues) {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ values: [rowValues] }),
+    body: JSON.stringify({ values: [rowValues.map(sanitizeForSheets)] }),
   });
   if (!res.ok) {
     throw new Error(`Sheets append failed: ${res.status} ${await res.text()}`);
