@@ -43,6 +43,48 @@ function SummaryRow({ label, value }) {
   );
 }
 
+function StayDates({ r, arrivalDay, setArrivalDay, departureDay, setDepartureDay }) {
+  return (
+    <div className="mt-5">
+      <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.8rem' }}>
+        {r.stayDates.flightHint}
+      </p>
+      <div className="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label className={labelClass} style={labelStyle} htmlFor="arrivalDay">{r.stayDates.arrivalLabel}</label>
+          <select
+            id="arrivalDay"
+            value={arrivalDay}
+            onChange={(e) => setArrivalDay(e.target.value)}
+            className={inputClass}
+            style={{ fontSize: '0.9rem' }}
+          >
+            <option value="" disabled>—</option>
+            {r.stayDates.days.map(({ value, label }) => (
+              <option key={value} value={value}>{label}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className={labelClass} style={labelStyle} htmlFor="departureDay">{r.stayDates.departureLabel}</label>
+          <select
+            id="departureDay"
+            value={departureDay}
+            onChange={(e) => setDepartureDay(e.target.value)}
+            className={inputClass}
+            style={{ fontSize: '0.9rem' }}
+          >
+            <option value="" disabled>—</option>
+            {r.stayDates.days.map(({ value, label }) => (
+              <option key={value} value={value}>{label}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Rsvp() {
   const { slug } = useParams();
   const { t } = useLanguage();
@@ -97,12 +139,12 @@ export default function Rsvp() {
           setPlusOneDietary(prev.plusOneDietary || '');
           if (prev.accommodation === 'house') {
             setHouseStay('yes');
-            setArrivalDay(prev.arrivalDay || '');
-            setDepartureDay(prev.departureDay || '');
           } else {
             if (data.houseInvite && prev.attending === 'yes') setHouseStay('no');
             setAccommodation(prev.accommodation || '');
           }
+          setArrivalDay(prev.arrivalDay || '');
+          setDepartureDay(prev.departureDay || '');
           setStatus('summary');
         } else {
           setStatus('form');
@@ -120,12 +162,16 @@ export default function Rsvp() {
   const stayingInHouse = isHouseGuest && houseStay === 'yes';
   const effectiveAccommodation = stayingInHouse ? 'house' : accommodation;
   const plusOneConfirmed = hasPlusOne && plusOneAttending === 'yes';
+  // Arrival/departure dates matter for anyone staying on or near the site
+  // for more than the wedding day itself — not for a Gijón day-trip by bus
+  // or guests sorting their own separate arrangements.
+  const needsStayDates = stayingInHouse || accommodation === 'campsite' || accommodation === 'cottage';
 
   const accommodationLabel = (value) => {
     if (value === 'house') return r.houseInvite.stayingLabel;
     return r.accommodation.options.find((o) => o.value === value)?.label || '';
   };
-  const dayLabel = (value) => r.houseDates.days.find((d) => d.value === value)?.label || '';
+  const dayLabel = (value) => r.stayDates.days.find((d) => d.value === value)?.label || '';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -140,8 +186,8 @@ export default function Rsvp() {
           name: guest.name,
           attending,
           accommodation: attending === 'yes' ? effectiveAccommodation : '',
-          arrivalDay: attending === 'yes' && stayingInHouse ? arrivalDay : '',
-          departureDay: attending === 'yes' && stayingInHouse ? departureDay : '',
+          arrivalDay: attending === 'yes' && needsStayDates ? arrivalDay : '',
+          departureDay: attending === 'yes' && needsStayDates ? departureDay : '',
           dietary: attending === 'yes' ? dietary : '',
           message,
           plusOneName: hasPlusOne ? guest.plusOneName : '',
@@ -205,12 +251,8 @@ export default function Rsvp() {
               {attending === 'yes' && (
                 <>
                   <SummaryRow label={r.summary.stayingLabel} value={accommodationLabel(effectiveAccommodation)} />
-                  {stayingInHouse && (
-                    <>
-                      <SummaryRow label={r.summary.arrivalLabel} value={dayLabel(arrivalDay)} />
-                      <SummaryRow label={r.summary.departureLabel} value={dayLabel(departureDay)} />
-                    </>
-                  )}
+                  <SummaryRow label={r.summary.arrivalLabel} value={dayLabel(arrivalDay)} />
+                  <SummaryRow label={r.summary.departureLabel} value={dayLabel(departureDay)} />
                   <SummaryRow label={r.summary.dietaryLabel} value={dietary} />
                   {hasPlusOne && (
                     <SummaryRow label={guest.plusOneName} value={plusOneAttending === 'yes' ? r.summary.yes : r.summary.no} />
@@ -261,38 +303,13 @@ export default function Rsvp() {
                   />
 
                   {stayingInHouse && (
-                    <div className="grid sm:grid-cols-2 gap-5 mt-5">
-                      <div>
-                        <label className={labelClass} style={labelStyle} htmlFor="arrivalDay">{r.houseDates.arrivalLabel}</label>
-                        <select
-                          id="arrivalDay"
-                          value={arrivalDay}
-                          onChange={(e) => setArrivalDay(e.target.value)}
-                          className={inputClass}
-                          style={{ fontSize: '0.9rem' }}
-                        >
-                          <option value="" disabled>—</option>
-                          {r.houseDates.days.map(({ value, label }) => (
-                            <option key={value} value={value}>{label}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <label className={labelClass} style={labelStyle} htmlFor="departureDay">{r.houseDates.departureLabel}</label>
-                        <select
-                          id="departureDay"
-                          value={departureDay}
-                          onChange={(e) => setDepartureDay(e.target.value)}
-                          className={inputClass}
-                          style={{ fontSize: '0.9rem' }}
-                        >
-                          <option value="" disabled>—</option>
-                          {r.houseDates.days.map(({ value, label }) => (
-                            <option key={value} value={value}>{label}</option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
+                    <StayDates
+                      r={r}
+                      arrivalDay={arrivalDay}
+                      setArrivalDay={setArrivalDay}
+                      departureDay={departureDay}
+                      setDepartureDay={setDepartureDay}
+                    />
                   )}
                 </div>
               ) : null}
@@ -317,6 +334,15 @@ export default function Rsvp() {
                       </button>
                     ))}
                   </div>
+                  {(accommodation === 'campsite' || accommodation === 'cottage') && (
+                    <StayDates
+                      r={r}
+                      arrivalDay={arrivalDay}
+                      setArrivalDay={setArrivalDay}
+                      departureDay={departureDay}
+                      setDepartureDay={setDepartureDay}
+                    />
+                  )}
                 </div>
               )}
 

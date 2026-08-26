@@ -231,15 +231,18 @@ export default {
       noPlural: 'No, buscaremos nuestro propio sitio',
       stayingLabel: 'En el recinto con nosotros',
     },
-    houseDates: {
+    stayDates: {
       arrivalLabel: '¿Cuándo llegaréis?',
       departureLabel: '¿Cuándo os iréis?',
+      flightHint: '¿Volando desde Londres? Los vuelos directos a Asturias solo salen los jueves y los martes — para más flexibilidad, Santander tiene opciones casi todos los demás días.',
       days: [
         { value: 'thu-26', label: 'Jueves 26 de agosto' },
         { value: 'fri-27', label: 'Viernes 27 de agosto' },
         { value: 'sat-28', label: 'Sábado 28 de agosto' },
         { value: 'sun-29', label: 'Domingo 29 de agosto' },
         { value: 'mon-30', label: 'Lunes 30 de agosto' },
+        { value: 'tue-31', label: 'Martes 31 de agosto' },
+        { value: 'unsure', label: 'Todavía no lo sé' },
       ],
     },
     dietaryLabel: 'Requisitos alimentarios',

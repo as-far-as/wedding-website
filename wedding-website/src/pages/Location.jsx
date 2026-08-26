@@ -14,18 +14,6 @@ export default function Location() {
       backdrop={backdrop}
     >
 
-      {/* Google Maps embed (key-less iframe — no API key required) */}
-      <div className="relative rounded-lg aspect-video overflow-hidden mb-12" style={{ border: '1px solid var(--page-border, rgba(138,154,134,0.3))' }}>
-        <iframe
-          title={l.map.address}
-          src={`https://maps.google.com/maps?q=${encodeURIComponent(l.map.address)}&z=14&output=embed`}
-          className="absolute inset-0 w-full h-full"
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
-
       <Section title={l.site.title}>
         <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
           {l.site.intro}
@@ -38,23 +26,37 @@ export default function Location() {
             {l.site.addressLine3}
           </address>
         </div>
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
+        <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
           {l.site.accessText}{' '}
           <a href="#getting-here" className="text-wedding-accent underline underline-offset-2">{l.site.accessLinkText}</a>.
         </p>
+
+        {/* Google Maps embed (key-less iframe — no API key required) */}
+        <div className="relative rounded-lg aspect-video overflow-hidden" style={{ border: '1px solid var(--page-border, rgba(138,154,134,0.3))' }}>
+          <iframe
+            title={l.map.address}
+            src={`https://maps.google.com/maps?q=${encodeURIComponent(l.map.address)}&z=14&output=embed`}
+            className="absolute inset-0 w-full h-full"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </Section>
 
+      {/* Getting Here — every mode follows the same shape: an optional lead
+          paragraph, then a card (or grid of cards) for the concrete options
+          or tips within it. No more mixing plain text, highlight boxes and
+          cards arbitrarily from one mode to the next. */}
       <div id="getting-here">
         <Section title={g.title}>
 
-          {/* Shuttle — the easy option, front and centre */}
+          {/* Bus from Gijón */}
           <div className="mb-10">
             <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.shuttle.title}</h3>
-            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mb-6">
-              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-                <strong className="text-wedding-text">{g.shuttle.bus.title}: </strong>{g.shuttle.bus.desc}
-              </p>
-            </div>
+            <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
+              {g.shuttle.bus.desc}
+            </p>
             <CardGrid>
               <Card title={g.shuttle.parking.title}>
                 <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
@@ -90,13 +92,12 @@ export default function Location() {
                 </p>
               </Card>
             </CardGrid>
-            <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-5 mt-6">
-              <p className="font-sans text-wedding-muted leading-relaxed mb-2" style={{ fontSize: '0.875rem' }}>
-                <strong className="text-wedding-text">{g.byPlane.asturiasLabel}</strong>
-              </p>
-              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
-                {g.byPlane.asturiasText}
-              </p>
+            <div className="mt-6">
+              <Card title={g.byPlane.asturiasLabel}>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
+                  {g.byPlane.asturiasText}
+                </p>
+              </Card>
             </div>
           </div>
 
