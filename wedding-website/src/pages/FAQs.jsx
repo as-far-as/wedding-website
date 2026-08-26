@@ -4,7 +4,7 @@ import PageLayout from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
 import backdrop from '../assets/collages/faqs.webp';
 
-function FAQItem({ question, answer }) {
+function FAQItem({ question, answerBold, answer }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -33,6 +33,7 @@ function FAQItem({ question, answer }) {
           className="font-sans text-wedding-muted leading-relaxed pb-5"
           style={{ fontSize: '0.9rem' }}
         >
+          {answerBold && <strong className="text-wedding-text">{answerBold} </strong>}
           {answer}
         </p>
       )}
@@ -56,10 +57,11 @@ export default function FAQs() {
     >
 
       <div>
-        {f.items.map(({ q, a, aTemplate }) => (
+        {f.items.map(({ q, a, aBold, aTemplate }) => (
           <FAQItem
             key={q}
             question={q}
+            answerBold={aBold}
             answer={aTemplate
               ? aTemplate.replace('{adanEmail}', adanEmail).replace('{adanPhone}', adanPhone).replace('{natalieEmail}', natalieEmail)
               : a}

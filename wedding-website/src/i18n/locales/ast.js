@@ -49,7 +49,15 @@ export default {
       shuttle: {
         title: 'Autobús dende Xixón',
         bus: { title: 'Autobús', desc: 'El día de la boda va haber un autobús ente Xixón ya la finca (hores por confirmar). Indicáilo nel RSVP si vos prestaría viaxar n\'autobús dende Xixón.' },
-        parking: { title: 'Aparcamientu', desc: 'Hai aparcamientu na mesma finca. Si conducís, organizáivos pa nun beber o guetái quien vos lleve de vuelta. Los contautos de taxis van tar na vuesa invitación — Uber ya Cabify nun cubren esta zona. Reservái con enantelación pa los trayeutos de madrugada.' },
+        parking: {
+          title: 'Aparcamientu',
+          intro: 'Hai aparcamientu na mesma finca.',
+          bullets: [
+            'Si conducís, organizáivos pa nun beber, o guetái quien vos lleve de vuelta.',
+            'Uber ya Cabify nun cubren esta zona — los contautos de taxis van tar na vuesa invitación.',
+            'Reservái taxis locales con enantelación pa los trayeutos de madrugada.',
+          ],
+        },
         gijonLabel: 'Xixón como Base',
         gijonText: 'Xixón ye la ciudá principal d\'Asturies, ya ye la ciudá natal d\'Adán. Tien munchos hoteles, una platya, ya bonísimes opciones pa comer ya beber. Encamentámosvos alloxavos equí ya coyer l\'autobús si nun queréis quedar averaos a la finca — ye la base evidente pal fin de selmana. Vede la páxina d\'Asturies pa más encamentaciones.',
       },
@@ -71,9 +79,16 @@ export default {
           title: 'Aeropuertu de Santander (SDR)',
           desc: 'Santander ta a unes 2h30 de la finca, ya a 1h45 de Xixón. Amás de Londres Stansted, Ryanair tamién vuela a Santander dende Manchester, Birmingham, Edimburgu ya otros destinos europeos. Los vuelos suelen ser más baratos qu\'a Asturies, asina que pue ser una opción más cenciella/económica, sobre too si pensáis quedar más tiempu n\'Asturies ya visitar los Picos d\'Europa o Llanes, na parte oriental.',
         },
-        asturiasLabel: 'Hores Encamentaes pa Volar a Asturies dende Londres',
-        asturiasText: 'Como Wizz Air solo vuela ente Luton ya Asturies los martes, xueves ya sábados, esta ye la combinación que meyor encuadra el fin de selmana de la boda: \n D\'ida: xueves 26 d\'agostu, Luton 14.10 → Asturies 17.05 \n De vuelta: martes 31 d\'agostu, Asturies 17:40 → Luton 18:30 \n Si necesitáis llegar más sero o volver enantes, podéis volar vía Madrid o dende Santander.',
+        recommendedTimings: {
+          title: 'Hores Encamentaes pa Volar a Asturies dende Londres',
+          intro: 'Como Wizz Air solo vuela ente Luton ya Asturies los martes, xueves ya sábados, esta ye la combinación que meyor encuadra el fin de selmana de la boda:',
+          outboundLabel: 'D\'ida:',
+          outboundText: 'xueves 26 d\'agostu, Luton 14.10 → Asturies 17.05',
+          returnLabel: 'De vuelta:',
+          returnText: 'martes 31 d\'agostu, Asturies 17:40 → Luton 18:30',
+          note: 'Si necesitáis llegar más sero o volver enantes, podéis volar vía Madrid o dende Santander.',
         },
+      },
       overland: {
         title: 'Opciones per Tierra',
         intro: 'Si prefierís nun volar, hai dos maneres de llegar per tierra dende\'l Reinu Uníu ya\'l norte d\'Europa.',
@@ -109,7 +124,12 @@ export default {
     intro: 'Hai delles opciones d\'alloxamientu averaes a la finca: podéis quedar en Xixón ya coyer l\'autobús, alloxavos averaos a la finca, o organizalo pela vuesa cuenta.',
     option1: {
       title: 'Opción 1: Cases Rurales',
-      intro: 'Hai munches cases rurales ya villes averaes a la finca, la mayoría a unos 10 minutos en coche. Vamos reservar delles en bloque pa asegurar disponibilidá pa tolos que quieran quedar. Los precios ya les feches esautes cubiertes van dependir de la propiedá — vamos compartilos en cuanto confirmemos les reserves. Indicáilo nel RSVP si tais interesaos ya coordinamos direutamente con vós. Va haber taxis disponibles pa llevar a la xente d\'equí p\'allá a les cases.',
+      intro: 'Hai munches cases rurales ya villes averaes a la finca, la mayoría a unos 10 minutos en coche — vamos reservar una seleición en bloque p\'asegurar sitiu pa tolos que quieran quedar.',
+      bullets: [
+        'Los precios ya les feches esautes van dependir de la propiedá — vamos compartilos en cuanto confirmemos les reserves.',
+        'Indicáilo nel RSVP si tais interesaos ya coordinamos direutamente con vós.',
+        'Va haber taxis disponibles pa llevar a la xente d\'equí p\'allá a les cases.',
+      ],
     },
     option2: {
       title: 'Opción 2: Acampada na Finca',
@@ -172,8 +192,8 @@ export default {
     subtitle: 'Too lo que necesitáis saber, nun solu sitiu',
     items: [
       { q: '¿Cómo faigo l\'RSVP?', a: 'Usái l\'enllaz personal de la vuesa invitación. Yá va llevar el vuesu nome (ya el del vuesu acompañante, si tenéis ún) axuntáu. Si perdéis l\'enllaz, escribinos ya vos lu reunviamos.' },
-      { q: '¿Cuál ye la data llímite pal RSVP?', a: 'Pidimos respuesta enantes del 1 de xineru de 2027. Esto ye pa poder zarrar los númberos de catering ya alloxamientu. Por favor, nun lo dexéis pal caberu momentu.' },
-      { q: '¿Cuál ye\'l códigu de vistimenta?', a: 'Estilu festival elegante. El suelu ye yerba, asina que dexái los tacones en casa. Pela nueche pue baxar a 12–16°C; traer una capa.' },
+      { q: '¿Cuál ye la data llímite pal RSVP?', aBold: 'Respondei enantes del 1 de xineru de 2027.', a: 'Esto ye pa poder zarrar los númberos de catering ya alloxamientu — por favor, nun lo dexéis pal caberu momentu.' },
+      { q: '¿Cuál ye\'l códigu de vistimenta?', aBold: 'Estilu festival elegante.', a: 'El suelu ye yerba, asina que dexái los tacones en casa. Pela nueche pue baxar a 12–16°C; traer una capa.' },
       { q: '¿Cuáles son les hores del día de la boda?', a: 'El sábadu 28 d\'agostu ye\'l día principal: llegaes pela mañana, escontra\'l meudía, pa un aperitivu, siguíu de la ceremonia. Darréu va haber un banquete pela tarde, música ya barra hasta bien entrada la nueche ya más allá.' },
       { q: '¿Hai aparcamientu na finca?', a: 'Sí, hai aparcamientu na mesma finca. Si pensáis beber, usái l\'autobús dende Xixón, o organizái un taxi con enantelación (solo va haber un taxi disponible esa nueche pa llevar a la xente averao).' },
       { q: 'Tengo necesidaes alimentaries especiales. ¿Podéis adaptavos?', a: 'Sí, decinos nel RSVP. Cuanto más específicos seáis, meyor. Vamos asegurar que l\'equipu de catering tea al tanto. Vexetarianu, veganu ya alerxes comunes nun van ser problema; si ye daqué más complexo, avisáinos ya confirmámoslo.' },

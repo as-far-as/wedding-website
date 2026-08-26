@@ -49,7 +49,15 @@ export default {
       shuttle: {
         title: 'Bus from Gijón',
         bus: {title: 'Bus', desc: "A bus will run between Gijón and the venue on the wedding day (timings TBC). Please confirm whether you would like to travel by bus from Gijón in the RSVP."},
-        parking: { title: 'Parking', desc: "Parking is on-site. If you're driving, plan ahead for not drinking or arrange a lift back. Taxi contacts will be in your invitation — Uber and Cabify don't cover this area. Book local in advance for late-night runs." },
+        parking: {
+          title: 'Parking',
+          intro: 'Parking is on-site.',
+          bullets: [
+            "If you're driving, plan ahead for not drinking, or arrange a lift back.",
+            "Uber and Cabify don't cover this area — taxi contacts will be in your invitation.",
+            'Book local taxis in advance for late-night runs.',
+          ],
+        },
         gijonLabel: 'Gijón as a Base',
         gijonText: 'Gijón is the main city of Asturias, and it is Adán\'s hometown. It has plenty of hotels, a beach, and great food and drink options. We recommend basing yourself here and getting the bus if you don\'t want to stay nearby — it\'s an obvious base for the weekend. See the Asturias page for recommendations.',
       },
@@ -71,8 +79,15 @@ export default {
           title: 'Santander Airport (SDR)',
           desc: "Santander is around 2h30 from the site, and 1h45 from Gijón. As well as London Stansted, Ryanair also flies to Santander from Manchester, Birmingham, Edinburgh and other European destinations. Flights are often cheaper than Asturias so this may well be an easier/cheaper option, especially if you plan on staying in Asturias for a bit longer and want to visit the Picos de Europa or Llanes in the East.",
         },
-        asturiasLabel: 'Recommended Timings for Flying to Asturias from London',
-        asturiasText: 'With Wizz Air only flying Luton–Asturias on Tuesdays, Thursdays and Saturdays, here\'s the pairing that brackets the wedding weekend most comfortably: \n Outbound: Thursday 26 August, Luton 14.10 → Asturias 17.05 \n Return: Tuesday 31 August, Asturias 17:40 → Luton 18:30 \n If you need to arrive later or get home sooner, you can fly out via Madrid or from Santander.',
+        recommendedTimings: {
+          title: 'Recommended Timings for Flying to Asturias from London',
+          intro: "With Wizz Air only flying Luton–Asturias on Tuesdays, Thursdays and Saturdays, here's the pairing that brackets the wedding weekend most comfortably:",
+          outboundLabel: 'Outbound:',
+          outboundText: 'Thursday 26 August, Luton 14.10 → Asturias 17.05',
+          returnLabel: 'Return:',
+          returnText: 'Tuesday 31 August, Asturias 17:40 → Luton 18:30',
+          note: 'If you need to arrive later or get home sooner, you can fly out via Madrid or from Santander.',
+        },
       },
       overland: {
         title: 'Overland Options',
@@ -109,7 +124,12 @@ export default {
     intro: "There are a few options for accommodation near the site: you can stay in Gijón and take the bus, stay near the site, or make your own arrangements.",
     option1: {
       title: 'Option 1: Casas Rurales',
-      intro: 'There are plenty of cottages and villas near the venue, mostly within a 10 minute drive. We will be block-booking these to ensure availability for everyone who wants to stay. Prices and exact dates covered will depend on the property — we\'ll share both as soon as bookings are confirmed. Let us know in your RSVP if you\'re interested and we\'ll coordinate directly with you. Taxis will be available to take people back and forth to the houses.',
+      intro: "There are plenty of cottages and villas near the venue, mostly within a 10 minute drive — we'll be block-booking a selection to make sure there's room for everyone who wants to stay.",
+      bullets: [
+        "Prices and exact dates will depend on the property — we'll share both as soon as bookings are confirmed.",
+        "Let us know in your RSVP if you're interested, and we'll coordinate directly with you.",
+        'Taxis will be available to take people back and forth to the houses.',
+      ],
     },
     option2: {
       title: 'Option 2: Camping On-Site',
@@ -172,8 +192,8 @@ export default {
     subtitle: 'Everything you need to know, all in one place',
     items: [
       { q: 'How do I RSVP?', a: "Use the personal link from your invitation. It'll have your name (and your plus-one, if you've got one) already attached. If you lose your link please get in touch and we'll resend it." },
-      { q: 'When is the RSVP deadline?', a: "We're asking for replies by 1st January 2027. This is to ensure we can finalise catering and accommodation numbers. Please don't leave it too late." },
-      { q: 'What is the dress code?', a: 'Festival-smart. The ground is grass, so leave the stilettos at home. Evenings can drop to 12–16°C; bring a layer.' },
+      { q: 'When is the RSVP deadline?', aBold: 'Please reply by 1st January 2027.', a: "This is to ensure we can finalise catering and accommodation numbers — please don't leave it too late." },
+      { q: 'What is the dress code?', aBold: 'Festival-smart.', a: 'The ground is grass, so leave the stilettos at home. Evenings can drop to 12–16°C; bring a layer.' },
       { q: 'What are the timings for the wedding day?', a: 'Saturday 28 August is the main event: arrivals in the morning around midday for an aperitivo, followed by the ceremony. There will then be a banquet lunch in the afternoon, music and bar into the evening and beyond.' },
       { q: 'Is there parking at the venue?', a: 'Yes, on-site parking is available. If you plan to drink use the bus running from Gijón, or arrange a taxi in advance (there will be just one taxi on-hand on the night to take people nearby).' },
       { q: 'I have dietary requirements. Can you accommodate me?', a: "Yes, please let us know in your RSVP. The more specific you can be, the better. We'll make sure the catering team is briefed. Vegetarian, vegan, and common allergies won't be a problem; anything more complex, just flag it and we'll confirm." },

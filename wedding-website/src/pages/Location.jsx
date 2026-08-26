@@ -59,9 +59,14 @@ export default function Location() {
             </p>
             <CardGrid>
               <Card title={g.shuttle.parking.title}>
-                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-                  {g.shuttle.parking.desc}
+                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                  {g.shuttle.parking.intro}
                 </p>
+                <ul className="font-sans text-wedding-muted space-y-1.5" style={{ fontSize: '0.8rem' }}>
+                  {g.shuttle.parking.bullets.map((b) => (
+                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
+                  ))}
+                </ul>
               </Card>
               <Card title={g.shuttle.gijonLabel}>
                 <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
@@ -93,9 +98,20 @@ export default function Location() {
               </Card>
             </CardGrid>
             <div className="mt-6">
-              <Card title={g.byPlane.asturiasLabel}>
-                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
-                  {g.byPlane.asturiasText}
+              <Card title={g.byPlane.recommendedTimings.title}>
+                <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.875rem' }}>
+                  {g.byPlane.recommendedTimings.intro}
+                </p>
+                <div className="space-y-1.5 mb-4">
+                  <p className="font-sans text-wedding-muted" style={{ fontSize: '0.875rem' }}>
+                    <strong className="text-wedding-text">{g.byPlane.recommendedTimings.outboundLabel}</strong> {g.byPlane.recommendedTimings.outboundText}
+                  </p>
+                  <p className="font-sans text-wedding-muted" style={{ fontSize: '0.875rem' }}>
+                    <strong className="text-wedding-text">{g.byPlane.recommendedTimings.returnLabel}</strong> {g.byPlane.recommendedTimings.returnText}
+                  </p>
+                </div>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                  {g.byPlane.recommendedTimings.note}
                 </p>
               </Card>
             </div>

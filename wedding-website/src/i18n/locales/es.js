@@ -49,7 +49,15 @@ export default {
       shuttle: {
         title: 'Autobús desde Gijón',
         bus: { title: 'Autobús', desc: 'El día de la boda habrá un autobús entre Gijón y el recinto (horarios por confirmar). Indicad en el RSVP si os gustaría viajar en autobús desde Gijón.' },
-        parking: { title: 'Aparcamiento', desc: 'Hay aparcamiento en el propio recinto. Si conducís, organizaos para no beber o buscad quien os lleve de vuelta. Los contactos de taxis estarán en vuestra invitación — Uber y Cabify no cubren esta zona. Reservad con antelación para los trayectos de madrugada.' },
+        parking: {
+          title: 'Aparcamiento',
+          intro: 'Hay aparcamiento en el propio recinto.',
+          bullets: [
+            'Si conducís, organizaos para no beber, o buscad quien os lleve de vuelta.',
+            'Uber y Cabify no cubren esta zona — los contactos de taxis estarán en vuestra invitación.',
+            'Reservad taxis locales con antelación para los trayectos de madrugada.',
+          ],
+        },
         gijonLabel: 'Gijón como Base',
         gijonText: 'Gijón es la ciudad principal de Asturias, y es la ciudad natal de Adán. Tiene muchos hoteles, una playa, y muy buenas opciones para comer y beber. Os recomendamos alojaros aquí y coger el autobús si no queréis quedaros cerca del recinto — es la base obvia para el fin de semana. Ved la página de Asturias para más recomendaciones.',
       },
@@ -71,8 +79,15 @@ export default {
           title: 'Aeropuerto de Santander (SDR)',
           desc: 'Santander está a unas 2h30 del recinto, y a 1h45 de Gijón. Además de Londres Stansted, Ryanair también vuela a Santander desde Manchester, Birmingham, Edimburgo y otros destinos europeos. Los vuelos suelen ser más baratos que a Asturias, así que puede ser una opción más fácil/económica, sobre todo si pensáis quedaros más tiempo en Asturias y visitar los Picos de Europa o Llanes, en el oriente.',
         },
-        asturiasLabel: 'Horarios Recomendados para Volar a Asturias desde Londres',
-        asturiasText: 'Como Wizz Air solo vuela entre Luton y Asturias los martes, jueves y sábados, esta es la combinación que mejor encuadra el fin de semana de la boda: \n Ida: jueves 26 de agosto, Luton 14.10 → Asturias 17.05 \n Vuelta: martes 31 de agosto, Asturias 17:40 → Luton 18:30 \n Si necesitáis llegar más tarde o volver antes, podéis volar vía Madrid o desde Santander.',
+        recommendedTimings: {
+          title: 'Horarios Recomendados para Volar a Asturias desde Londres',
+          intro: 'Como Wizz Air solo vuela entre Luton y Asturias los martes, jueves y sábados, esta es la combinación que mejor encuadra el fin de semana de la boda:',
+          outboundLabel: 'Ida:',
+          outboundText: 'jueves 26 de agosto, Luton 14.10 → Asturias 17.05',
+          returnLabel: 'Vuelta:',
+          returnText: 'martes 31 de agosto, Asturias 17:40 → Luton 18:30',
+          note: 'Si necesitáis llegar más tarde o volver antes, podéis volar vía Madrid o desde Santander.',
+        },
       },
       overland: {
         title: 'Opciones por Tierra',
@@ -109,7 +124,12 @@ export default {
     intro: 'Hay varias opciones de alojamiento cerca del recinto: podéis quedaros en Gijón y coger el autobús, alojaros cerca del recinto, o organizarlo por vuestra cuenta.',
     option1: {
       title: 'Opción 1: Casas Rurales',
-      intro: 'Hay muchas casas rurales y villas cerca del recinto, la mayoría a unos 10 minutos en coche. Vamos a reservar varias en bloque para asegurar disponibilidad para todo el que quiera quedarse. Los precios y las fechas exactas cubiertas dependerán de la propiedad — os los compartiremos en cuanto confirmemos las reservas. Decídnoslo en el RSVP si estáis interesados y coordinaremos directamente con vosotros. Habrá taxis disponibles para llevar a la gente de ida y vuelta a las casas.',
+      intro: 'Hay muchas casas rurales y villas cerca del recinto, la mayoría a unos 10 minutos en coche — vamos a reservar una selección en bloque para asegurar sitio para todo el que quiera quedarse.',
+      bullets: [
+        'Los precios y las fechas exactas dependerán de la propiedad — os los compartiremos en cuanto confirmemos las reservas.',
+        'Decídnoslo en el RSVP si estáis interesados y coordinaremos directamente con vosotros.',
+        'Habrá taxis disponibles para llevar a la gente de ida y vuelta a las casas.',
+      ],
     },
     option2: {
       title: 'Opción 2: Acampada en el Recinto',
@@ -172,8 +192,8 @@ export default {
     subtitle: 'Todo lo que necesitáis saber, en un solo sitio',
     items: [
       { q: '¿Cómo hago el RSVP?', a: 'Usad el enlace personal de vuestra invitación. Ya llevará vuestro nombre (y el de vuestro acompañante, si tenéis uno) adjunto. Si perdéis el enlace, escribidnos y os lo reenviamos.' },
-      { q: '¿Cuál es la fecha límite para el RSVP?', a: 'Pedimos respuesta antes del 1 de enero de 2027. Esto es para poder cerrar los números de catering y alojamiento. Por favor, no lo dejéis para el último momento.' },
-      { q: '¿Cuál es el código de vestimenta?', a: 'Estilo festival elegante. El suelo es hierba, así que dejad los tacones de aguja en casa. Por la noche puede bajar a 12–16°C; traed una capa.' },
+      { q: '¿Cuál es la fecha límite para el RSVP?', aBold: 'Respondednos antes del 1 de enero de 2027.', a: 'Esto es para poder cerrar los números de catering y alojamiento — por favor, no lo dejéis para el último momento.' },
+      { q: '¿Cuál es el código de vestimenta?', aBold: 'Estilo festival elegante.', a: 'El suelo es hierba, así que dejad los tacones de aguja en casa. Por la noche puede bajar a 12–16°C; traed una capa.' },
       { q: '¿Cuáles son los horarios del día de la boda?', a: 'El sábado 28 de agosto es el día principal: llegadas por la mañana, hacia el mediodía, para un aperitivo, seguido de la ceremonia. Después habrá un banquete por la tarde, música y barra hasta bien entrada la noche y más allá.' },
       { q: '¿Hay aparcamiento en el recinto?', a: 'Sí, hay aparcamiento en el propio recinto. Si pensáis beber, usad el autobús desde Gijón, u organizad un taxi con antelación (solo habrá un taxi disponible esa noche para llevar a la gente cerca).' },
       { q: 'Tengo necesidades alimentarias especiales. ¿Podéis adaptaros?', a: 'Sí, decídnoslo en el RSVP. Cuanto más específicos seáis, mejor. Nos aseguraremos de que el equipo de catering esté al tanto. Vegetariano, vegano y alergias comunes no serán ningún problema; si es algo más complejo, avisadnos y os lo confirmamos.' },

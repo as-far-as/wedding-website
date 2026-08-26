@@ -18,9 +18,14 @@ export default function Accommodation() {
       </p>
 
       <Section title={a.option1.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
+        <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.925rem' }}>
           {a.option1.intro}
         </p>
+        <ul className="font-sans text-wedding-muted space-y-2" style={{ fontSize: '0.875rem' }}>
+          {a.option1.bullets.map((b) => (
+            <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
+          ))}
+        </ul>
       </Section>
 
       <Section title={a.option2.title}>
