@@ -77,7 +77,7 @@ export default function FAQs() {
     >
 
       <div>
-        {f.items.map(({ q, a, aBold, aTemplate, giftLinks }) => (
+        {f.items.map(({ q, a, aBold, aTemplate, giftLinks, links }) => (
           <FAQItem
             key={q}
             question={q}
@@ -85,10 +85,12 @@ export default function FAQs() {
             answer={aTemplate
               ? aTemplate.replace('{adanEmail}', adanEmail).replace('{adanPhone}', adanPhone).replace('{natalieEmail}', natalieEmail)
               : a}
-            links={giftLinks && [
-              monzoLink && { label: giftLinks.monzo, url: monzoLink },
-              wiseLink && { label: giftLinks.wise, url: wiseLink },
-            ].filter(Boolean)}
+            links={giftLinks
+              ? [
+                  monzoLink && { label: giftLinks.monzo, url: monzoLink },
+                  wiseLink && { label: giftLinks.wise, url: wiseLink },
+                ].filter(Boolean)
+              : links}
           />
         ))}
       </div>
