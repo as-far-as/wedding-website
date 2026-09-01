@@ -32,7 +32,7 @@ function FAQItem({ question, answerBold, answer, links }) {
         <div className="pb-5">
           <p
             className="font-sans text-wedding-muted leading-relaxed"
-            style={{ fontSize: '0.9rem' }}
+            style={{ fontSize: '0.9rem', whiteSpace: 'pre-line' }}
           >
             {answerBold && <strong className="text-wedding-text">{answerBold} </strong>}
             {answer}

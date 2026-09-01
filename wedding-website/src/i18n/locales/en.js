@@ -12,7 +12,7 @@ export default {
     eyebrow: 'Natalie & Adán · 28 Aug 2027',
     subtitle: 'Valle de Bueida, Quirós',
     passwordLabel: 'Password',
-    error: 'Not quite — try again.',
+    error: 'Not quite, try again.',
     enter: 'Enter',
   },
 
@@ -36,7 +36,7 @@ export default {
     },
     site: {
       title: 'The Site',
-      intro: 'The wedding will be held at Valle de Bueida in Quirós, Asturias. Bueida is a small hamlet located in a deep valley within the Ubiñas Natural Park.',
+      intro: 'The wedding will be held at Valle de Bueida in Quirós, Asturias. \n Bueida is a small hamlet located in Quirós, within the Ubiñas Natural Park. Bárzana is the closest village with facilities.',
       addressLabel: 'Address',
       addressLine1: 'Valle de Bueida',
       addressLine2: 'Quirós, 33830',
@@ -46,18 +46,24 @@ export default {
     },
     gettingHere: {
       title: 'Getting Here',
+      byCar: {
+        title: 'By Car',
+        intro: "A car is the most practical way to move around Asturias.",
+        parking: {
+          title: 'Parking',
+          intro: 'Parking is available on-site. \n If you\'re driving, please plan ahead for not drinking, or arrange a lift back if you intend to drink. \n Taxis will be available on the night for runs to and from the venue from the local area.',
+        },
+        routes: [
+          { from: 'Asturias Airport (OVD)', dist: '~70 km', time: '~1 hr 20 min', route: 'A-66 south, exit Villazón, AS-228' },
+          { from: 'Gijón', dist: '~60 km', time: '~1 hr', route: 'A-66 south from Oviedo, exit Villazón' },
+          { from: 'Oviedo', dist: '~40 km', time: '~45 min', route: 'A-66 south, exit Villazón, AS-228' },
+          { from: 'Santander', dist: '~185 km', time: '~2 hr 30 min', route: 'A-8 west to Oviedo, then A-66 south' },
+          { from: 'Madrid', dist: '~450 km', time: '~4.5 hrs', route: 'A-66 north through the Asturian mountains' },
+        ],
+      },
       shuttle: {
         title: 'Bus from Gijón',
         bus: {title: 'Bus', desc: "A bus will run between Gijón and the venue on the wedding day (timings TBC). Please confirm whether you would like to travel by bus from Gijón in the RSVP."},
-        parking: {
-          title: 'Parking',
-          intro: 'Parking is on-site.',
-          bullets: [
-            "If you're driving, plan ahead for not drinking, or arrange a lift back.",
-            "Uber and Cabify don't cover this area — taxi contacts will be in your invitation.",
-            'Book local taxis in advance for late-night runs.',
-          ],
-        },
         gijonLabel: 'Gijón as a Base',
         gijonText: 'Gijón is the main city of Asturias, and it is Adán\'s hometown. It has plenty of hotels, a beach, and great food and drink options. We recommend basing yourself here and getting the bus if you don\'t want to stay nearby — it\'s an obvious base for the weekend. See the Asturias page for recommendations.',
       },
@@ -65,7 +71,7 @@ export default {
         title: 'By Plane',
         asturias: {
           title: 'Asturias Airport (OVD)',
-          descBefore: 'Asturias is the closest airport to the site and the one we would recommend flying to. It is 1h20 by car from the venue, or 30 minutes from Gijón / Oviedo (Alsa buses run every hour). For next summer, scheduled routes include:',
+          descBefore: 'Asturias is the closest airport to the site and the one we would recommend flying to. It is 1h20 by car from the venue, or 30 minutes from Gijón / Oviedo (Alsa buses run every hour). \n For next summer, scheduled routes include:',
           bullets: [
             'Wizz Air: London Luton, Tue / Thu / Sat',
             'Aer Lingus: Dublin, Tue / Sat',
@@ -77,7 +83,7 @@ export default {
         },
         santander: {
           title: 'Santander Airport (SDR)',
-          desc: "Santander is around 2h30 from the site, and 1h45 from Gijón. As well as London Stansted, Ryanair also flies to Santander from Manchester, Birmingham, Edinburgh and other European destinations. Flights are often cheaper than Asturias so this may well be an easier/cheaper option, especially if you plan on staying in Asturias for a bit longer and want to visit the Picos de Europa or Llanes in the East.",
+          desc: "Santander is around 2h30 from the site, and 1h45 from Gijón. As well as London Stansted, Ryanair also flies to Santander from Manchester, Birmingham, Edinburgh and other European destinations. \n Flights are often cheaper than Asturias, so this may well be an easier/cheaper option, especially if you plan on staying in Northern Spain for a bit longer and want to visit e.g. the Picos de Europa or Llanes in the East.",
         },
         recommendedTimings: {
           title: 'Recommended Timings for Flying to Asturias from London',
@@ -101,17 +107,6 @@ export default {
           desc: 'Travelling by train from Paris, the direct service only runs as far as Hendaye / Irún, on the French–Spanish border. From there, continue by BlaBlaCar (ride-share) or the Alsa coach from Irún to Gijón or Oviedo, then arrange onward transport to the venue.',
         },
       },
-      byCar: {
-        title: 'By Car',
-        intro: "A car is the most practical way to move around Asturias.",
-        routes: [
-          { from: 'Asturias Airport (OVD)', dist: '~70 km', time: '~1 hr 20 min', route: 'A-66 south, exit Villazón, AS-228' },
-          { from: 'Gijón', dist: '~60 km', time: '~1 hr', route: 'A-66 south from Oviedo, exit Villazón' },
-          { from: 'Oviedo', dist: '~40 km', time: '~45 min', route: 'A-66 south, exit Villazón, AS-228' },
-          { from: 'Santander', dist: '~185 km', time: '~2 hr 30 min', route: 'A-8 west to Oviedo, then A-66 south' },
-          { from: 'Madrid', dist: '~450 km', time: '~4.5 hrs', route: 'A-66 north through the Asturian mountains' },
-        ],
-      },
       howeverYouGetHere: {
         title: 'However You Get Here',
         text: "All of the above is entirely optional, so feel free to completely ignore it and do your own thing. We'd love for people to spend as much time in the area as they can and explore in their own time, but we understand it is already a big commitment to travel this far, so please adjust to your schedule! \n If you have any questions about logistics, please don't hesitate to reach out to Adán or Natalie, we're happy to help.",
@@ -124,18 +119,18 @@ export default {
     intro: "There are a few options for accommodation near the site: you can stay in Gijón and take the bus, stay near the site, or make your own arrangements.",
     option1: {
       title: 'Option 1: Casas Rurales',
-      intro: "There are plenty of cottages and villas near the venue, mostly within a 10 minute drive — we'll be block-booking a selection to make sure there's room for everyone who wants to stay.",
+      intro: "There are a handful of cottages (\"casas rurales\") near the venue, mostly within a 10 minute drive. We'll be block-booking a selection to make sure there's room for everyone who wants to stay nearby.",
       bullets: [
-        "Prices and exact dates will depend on the property — we'll share both as soon as bookings are confirmed.",
         "Let us know in your RSVP if you're interested, and we'll coordinate directly with you.",
+        "Prices and exact dates will depend on the property. If you choose this option, we'll get in touch and share these.",
         'Taxis will be available to take people back and forth to the houses.',
       ],
     },
     option2: {
       title: 'Option 2: Camping On-Site',
-      intro: 'The site has an adjoining field where you can pitch up or stay in a rented camper van. It is a beautiful location, in the forest by a stream, and you will be close to the action. You are welcome to use the showers and bathrooms on the site during your stay as well.',
+      intro: 'The site has an adjoining field where you can pitch up or stay in a rented camper van, for free. It is a beautiful location, in the forest by a stream, and you will be much closer to the action. You are welcome to use the showers and bathrooms on the site during your stay as well.',
       detailsLabel: 'Note:',
-      detailsText: " The weather can be changeable in Asturias, it can rain and temperatures will drop at night, so pack accordingly if you are camping!",
+      detailsText: " The weather can be changeable in Asturias. It can rain, and temperatures will drop at night. Please pack accordingly if you are camping!",
     },
     option3: {
       title: 'Option 3: Stay in Gijón and take the bus',
@@ -143,7 +138,7 @@ export default {
     },
     option4: {
       title: 'Option 4: Do Your Own Thing',
-      intro: 'If none of the above options suit, feel free to make your own arrangements. There are plenty of other places to stay in Asturias, and we want you to be comfortable. Just make sure you have a plan for getting to and from the venue - there are limited taxis in the area.',
+      intro: 'If none of the above options suit, feel free to make your own arrangements. There are plenty of other places to stay in Asturias, and we want you to be comfortable. Just make sure you have a plan for getting to and from the venue as there are limited taxis in the area.',
     },
   },
 
@@ -151,31 +146,33 @@ export default {
     title: 'Asturias',
     about: {
       title: 'About the Region',
-      p1: 'You\'ve probably heard Adán bang on about how great Asturias is, or maybe you\'ve had the privilege to visit already. Either way, we thought we\'d share some of our recommendations for the best things to do in the area.',
+      p1: 'You\'ve probably heard Adán bang on about how great Asturias is (or maybe you\'ve had the privilege to visit already). \n Either way, we thought we\'d share some of our recommendations for the best things to do in the area.',
     },
     thingsToDo: {
       title: 'Things to Do',
-      gijon: { title: 'Gijón', desc: "This is where Adán grew up, and half of my family still live there. It's Asturias's largest city, and home to its greatest football team Real Sporting. Formerly industrial and now reinvented with lots of places to eat and drink and a beautiful beach and coastline. The old town (Cimavilla) is the best place to get a drink (sidra!)", distance: '~1hr from venue - return bus on the day' },
+      gijon: { title: 'Gijón', desc: "This is where Adán grew up, and half of my family still live there. \n It's Asturias's largest city, and home to its greatest football team Real Sporting. Formerly industrial and now reinvented with lots of places to eat and drink and a beautiful beach and coastline. The old town (Cimavilla) is the best place to get a drink (sidra!)", distance: '~1hr from venue - return bus on the day' },
       picos: { title: 'Picos de Europa', desc: "The oldest National Park in Spain, with dramatic limestone peaks, gorges, and mountain villages. If you love hiking this is the place to go", distance: '~1.5 hrs from venue' },
+      ubinas: { title: 'Ubiñas Natural Park', desc: "The venue itself is located within the beautiful Ubiñas Natural Park, where there is a mixture of ancient forests, remote valleys and tough mountains to climb. \n It is much quieter than Picos de Europa, and arguably a more unique and special experience", distance: 'right outside' },
+      redes: { title: 'Redes Natural Park', desc: "Biosphere Reserve with some of the largest forests in Asturias and lots of incredible nature.", distance: '~1 hr from venue' },
       llanesRibadesella: { title: 'Llanes & Ribadesella', desc: 'The coast between these two seaside towns has the best beaches in the region, they are truly spectacular and unlike anything you will find in the south of Spain.', distance: '~1 hr from venue' },
       villages: { title: 'Seaside Villages', desc: 'Cudillero, Luarca, Tazones, Candás... All beautiful seaside villages to spend the day and get some delicious fresh seafood. Personal favourite is the lobster rice (arroz con bugre) in Tazones.' },
-      oviedo: { title: 'Oviedo', desc: "The grand, regional capital. Smaller than Gijon and with a lesser football team. Walkable, beautiful medieval old town and cathedral. Worth a morning if you're passing through.", distance: '~45 min from venue' },
+      oviedo: { title: 'Oviedo', desc: "The grand, regional capital. Smaller than Gijón (and with an inferior football team). \n Walkable, beautiful medieval old town and cathedral.", distance: '~45 min from venue' },
     },
     foodAndDrink: {
       title: 'Food & Drink',
-      intro: 'Asturian food is hearty and abundant. Exceptional local produce includes dairy (the most cheeses of any region in Europe), seafood, beans and SIDRA. You will have a chance to try many of these at the wedding. Here are some of our recommendations',
+      intro: 'Food in Asturias is hearty and abundant. We have exceptional local produce, including the most cheeses of any region in Europe, seafood, beans (fabada) and cider (sidra). \n You will of course have a chance to try some of these at the wedding, but beyond that here are some of our recommendations',
       items: [
         { name: 'Casa Jamallo', desc: 'Located in Bárzana, Quirós (near the venue). Good for game and stews.' },
-        { name: 'Casa Generosa', desc: 'Near Proaza. Recommend walking there from Les Xanes' },
-        { name: 'El Planeta', desc: 'Our favourite place for seafood in Gijón' },
-        { name: 'Gloria (Gijón)', desc: 'Modern take on Asturian cuisine, really nice' },
-        { name: 'El Cencerro (Gijón)', desc: 'Best for meat / steak in Gijón' },
-        { name: 'Tar d\'Abéu (Gijón)', desc: 'Classic sidrería in Gijón with great food' },
+        { name: 'Casa Generosa', desc: 'Near Proaza. An institution for fabada and cabritu (goat). Recommend walking there from Les Xanes' },
+        { name: 'El Planeta', desc: 'Our favourite place for seafood in Gijón. Get the sardines.' },
+        { name: 'Gloria (Gijón)', desc: 'Modern take on Asturian cuisine, really nice.' },
+        { name: 'El Cencerro (Gijón)', desc: 'Best for meat / steak in Gijón. Get the sweetbreads (mollejas) if they have them.' },
+        { name: 'Tar d\'Abéu (Gijón)', desc: 'Classic sidrería in Gijón with great, inventive food' },
         { name: 'Farragua', desc: 'Upmarket fine-dining in Gijón, really nice' },
-        { name: 'El Uría', desc: 'Best for seafood (lobster rice) in Tazones' },
+        { name: 'El Uría', desc: 'Best for seafood (arroz con bugre) in Tazones' },
         { name: 'El Molín de Mingo', desc: 'Near Llanes, best arroz con pitu (chicken rice) in Asturias' },
         { name: 'Fitumar', desc: 'Great seafood on the beach.' },
-        { name: 'Gueyümar', desc: 'Also great seafood on the beach - more upmarket' },
+        { name: 'Gueyümar', desc: 'Also great seafood on the beach - a bit more upmarket' },
       ],
     },
     weather: {
@@ -192,17 +189,16 @@ export default {
     subtitle: 'Everything you need to know, all in one place',
     items: [
       { q: 'How do I RSVP?', a: "Use the personal link from your invitation. It'll have your name (and your plus-one, if you've got one) already attached. If you lose your link please get in touch and we'll resend it." },
-      { q: 'When is the RSVP deadline?', aBold: 'Please reply by 1st January 2027.', a: "This is to ensure we can finalise catering and accommodation numbers — please don't leave it too late." },
+      { q: 'When is the RSVP deadline?', aBold: 'Please reply by 1st January 2027.', a: "This is to ensure we can finalise catering and accommodation numbers. Please don't leave it too late." },
       { q: 'What is the dress code?', aBold: 'Festival-smart.', a: 'The ground is grass, so leave the stilettos at home. Evenings can drop to 12–16°C; bring a layer.' },
       { q: 'What are the timings for the wedding day?', a: 'Saturday 28 August is the main event: arrivals in the morning around midday for an aperitivo, followed by the ceremony. There will then be a banquet lunch in the afternoon, music and bar into the evening and beyond.' },
-      { q: 'Is there parking at the venue?', a: 'Yes, on-site parking is available. If you plan to drink use the bus running from Gijón, or arrange a taxi in advance (there will be just one taxi on-hand on the night to take people nearby).' },
-      { q: 'I have dietary requirements. Can you accommodate me?', a: "Yes, please let us know in your RSVP. The more specific you can be, the better. We'll make sure the catering team is briefed. Vegetarian, vegan, and common allergies won't be a problem; anything more complex, just flag it and we'll confirm." },
-      { q: "What's the weather likely to be in late August?", a: 'Warm and humid. Expect 18–26°C during the day, cooler evenings (12–16°C once the sun drops), and the genuine possibility of rain at any point. The venue will have covered areas and we have plans for changeable weather. Bring a layer for the evening and some shoes that can handle grass.' },
-      { q: 'Can I take photos and share them on social media?', a: "We'll have a photographer there, and we'll share the professional photos with you afterwards; if you want to take photos feel free, but try and keep phone use to a minimum if possible." },
-      { q: 'Is food and drink included?', a: 'Yes. There will be an aperitivo on arrival, banquet lunch and snacks in the evening, with a fully stocked bar all day. Please flag any dietary requirements in your RSVP.' },
+      { q: 'Is there parking at the venue?', a: 'Yes, on-site parking is available. If you plan to drink, use the bus running from Gijón, or arrange a taxi (there will be one taxi on-hand on the night to take people nearby).' },
+      { q: 'I have dietary requirements. Can you accommodate me?', a: "Yes, please let us know in your RSVP. The more specific you can be, the better. Vegetarian, vegan, and common allergies won't be a problem." },
+      { q: "What's the weather likely to be in late August?", a: 'Warm, humid. Expect 18–26°C during the day, cooler evenings, 12–16°C once the sun drops. The venue will have covered areas and we have planned for rain.' },
+      { q: 'Can I take photos and share them on social media?', a: "Yes. But there will be a photographer there, and we'll share the professional photos with you afterwards. \n If you want to take photos feel free, but try and keep phone use to a minimum if possible." },
+      { q: 'Will there be food and/or drink?', a: 'Yes. There will be an aperitivo on arrival, banquet lunch and snacks in the evening, with a fully stocked bar. Please flag any dietary requirements in your RSVP.' },
       { q: 'Is there a gift list or registry?', a: "We know travelling here is a big commitment for some, so your presence at the wedding is genuinely the best gift. If you'd still like to give something, contributions to our honeymoon are gratefully received — links below for GBP or EUR.", giftLinks: { monzo: 'Pay in GBP (Monzo)', wise: 'Pay in EUR (Wise)' } },
-      { q: 'What happens if the weather is bad?', a: "We're planning the event with the weather firmly in mind. There will be covered and sheltered areas, and the ceremony has a wet-weather contingency. It won't stop the party." },
-      { q: 'I have a question not answered here.', aTemplate: "Drop us a message. You can reach Adán at {adanEmail} or {adanPhone}, or Natalie at {natalieEmail} — we'll do our best to reply promptly. If it's a question other guests are likely to have, we'll add it here." },
+      { q: 'I have a question not answered here.', aTemplate: "Drop us a message. You can reach Adán at {adanEmail} or {adanPhone}, or Natalie at {natalieEmail}. We'll do our best to reply promptly. If it's a question other guests are likely to have, we'll add it here." },
     ],
     footer: {
       before: 'More detail on getting here and where to stay can be found on the',

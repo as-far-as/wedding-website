@@ -15,7 +15,7 @@ export default function Location() {
     >
 
       <Section title={l.site.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
+        <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
           {l.site.intro}
         </p>
         <div className="bg-wedding-accent/8 border-l-2 border-wedding-accent rounded-r-lg px-5 py-4 mb-6">
@@ -51,29 +51,42 @@ export default function Location() {
       <div id="getting-here">
         <Section title={g.title}>
 
+          {/* By Car — leads: it's the most practical way to get around Asturias */}
+          <div className="mb-10">
+            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byCar.title}</h3>
+            <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
+              {g.byCar.intro}
+            </p>
+            <div className="mb-6">
+              <Card title={g.byCar.parking.title}>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
+                  {g.byCar.parking.intro}
+                </p>
+              </Card>
+            </div>
+            <div className="space-y-3">
+              {g.byCar.routes.map(({ from, dist, time, route }) => (
+                <div key={from} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3 border-b border-wedding-accent/15 last:border-0">
+                  <span className="font-display text-wedding-text shrink-0" style={{ minWidth: '13rem' }}>{from}</span>
+                  <span className="font-sans text-wedding-muted" style={{ fontSize: '0.875rem' }}>
+                    {dist} · {time} — <span className="text-wedding-muted/70">{route}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Bus from Gijón */}
           <div className="mb-10">
             <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.shuttle.title}</h3>
             <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
               {g.shuttle.bus.desc}
             </p>
-            <CardGrid>
-              <Card title={g.shuttle.parking.title}>
-                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
-                  {g.shuttle.parking.intro}
-                </p>
-                <ul className="font-sans text-wedding-muted space-y-1.5" style={{ fontSize: '0.8rem' }}>
-                  {g.shuttle.parking.bullets.map((b) => (
-                    <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
-                  ))}
-                </ul>
-              </Card>
-              <Card title={g.shuttle.gijonLabel}>
-                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
-                  {g.shuttle.gijonText}
-                </p>
-              </Card>
-            </CardGrid>
+            <Card title={g.shuttle.gijonLabel}>
+              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                {g.shuttle.gijonText}
+              </p>
+            </Card>
           </div>
 
           {/* By Plane */}
@@ -81,7 +94,7 @@ export default function Location() {
             <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byPlane.title}</h3>
             <CardGrid>
               <Card title={g.byPlane.asturias.title}>
-                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
                   {g.byPlane.asturias.descBefore}
                 </p>
                 <ul className="font-sans text-wedding-muted space-y-1 mt-3" style={{ fontSize: '0.8rem' }}>
@@ -92,7 +105,7 @@ export default function Location() {
               </Card>
 
               <Card title={g.byPlane.santander.title}>
-                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
                   {g.byPlane.santander.desc}
                 </p>
               </Card>
@@ -135,24 +148,6 @@ export default function Location() {
                 </p>
               </Card>
             </CardGrid>
-          </div>
-
-          {/* By Car */}
-          <div className="mb-10">
-            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byCar.title}</h3>
-            <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
-              {g.byCar.intro}
-            </p>
-            <div className="space-y-3">
-              {g.byCar.routes.map(({ from, dist, time, route }) => (
-                <div key={from} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3 border-b border-wedding-accent/15 last:border-0">
-                  <span className="font-display text-wedding-text shrink-0" style={{ minWidth: '13rem' }}>{from}</span>
-                  <span className="font-sans text-wedding-muted" style={{ fontSize: '0.875rem' }}>
-                    {dist} · {time} — <span className="text-wedding-muted/70">{route}</span>
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* However you get here */}

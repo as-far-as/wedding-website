@@ -12,7 +12,7 @@ export default {
     eyebrow: 'Natalie & Adán · 28 ago 2027',
     subtitle: 'Valle de Bueida, Quirós',
     passwordLabel: 'Contraseña',
-    error: 'No es correcta — inténtalo de nuevo.',
+    error: 'No es correcta, inténtalo de nuevo.',
     enter: 'Entrar',
   },
 
@@ -36,7 +36,7 @@ export default {
     },
     site: {
       title: 'El Lugar',
-      intro: 'La boda se celebrará en el Valle de Bueida, en Quirós, Asturias. Bueida es una pequeña aldea situada en un valle profundo dentro del Parque Natural de las Ubiñas.',
+      intro: 'La boda se celebrará en el Valle de Bueida, en Quirós, Asturias. \n Bueida es una pequeña aldea situada en Quirós, dentro del Parque Natural de las Ubiñas. Bárzana es el pueblo más cercano con servicios.',
       addressLabel: 'Dirección',
       addressLine1: 'Valle de Bueida',
       addressLine2: 'Quirós, 33830',
@@ -46,18 +46,24 @@ export default {
     },
     gettingHere: {
       title: 'Cómo Llegar',
+      byCar: {
+        title: 'En Coche',
+        intro: 'El coche es la forma más práctica de moverse por Asturias.',
+        parking: {
+          title: 'Aparcamiento',
+          intro: 'Hay aparcamiento disponible en el propio recinto. \n Si conducís, organizaos con antelación para no beber, o buscad quien os lleve de vuelta si pensáis beber. \n Habrá taxis disponibles esa noche para trayectos de ida y vuelta al recinto desde la zona.',
+        },
+        routes: [
+          { from: 'Aeropuerto de Asturias (OVD)', dist: '~70 km', time: '~1 h 20 min', route: 'A-66 sur, salida Villazón, AS-228' },
+          { from: 'Gijón', dist: '~60 km', time: '~1 h', route: 'A-66 sur desde Oviedo, salida Villazón' },
+          { from: 'Oviedo', dist: '~40 km', time: '~45 min', route: 'A-66 sur, salida Villazón, AS-228' },
+          { from: 'Santander', dist: '~185 km', time: '~2 h 30 min', route: 'A-8 oeste hasta Oviedo, luego A-66 sur' },
+          { from: 'Madrid', dist: '~450 km', time: '~4,5 h', route: 'A-66 norte a través de las montañas asturianas' },
+        ],
+      },
       shuttle: {
         title: 'Autobús desde Gijón',
         bus: { title: 'Autobús', desc: 'El día de la boda habrá un autobús entre Gijón y el recinto (horarios por confirmar). Indicad en el RSVP si os gustaría viajar en autobús desde Gijón.' },
-        parking: {
-          title: 'Aparcamiento',
-          intro: 'Hay aparcamiento en el propio recinto.',
-          bullets: [
-            'Si conducís, organizaos para no beber, o buscad quien os lleve de vuelta.',
-            'Uber y Cabify no cubren esta zona — los contactos de taxis estarán en vuestra invitación.',
-            'Reservad taxis locales con antelación para los trayectos de madrugada.',
-          ],
-        },
         gijonLabel: 'Gijón como Base',
         gijonText: 'Gijón es la ciudad principal de Asturias, y es la ciudad natal de Adán. Tiene muchos hoteles, una playa, y muy buenas opciones para comer y beber. Os recomendamos alojaros aquí y coger el autobús si no queréis quedaros cerca del recinto — es la base obvia para el fin de semana. Ved la página de Asturias para más recomendaciones.',
       },
@@ -65,7 +71,7 @@ export default {
         title: 'En Avión',
         asturias: {
           title: 'Aeropuerto de Asturias (OVD)',
-          descBefore: 'Asturias es el aeropuerto más cercano al recinto y el que recomendamos para volar. Está a 1h20 en coche del recinto, o a 30 minutos de Gijón / Oviedo (los autobuses de Alsa salen cada hora). Para el próximo verano, las rutas programadas incluyen:',
+          descBefore: 'Asturias es el aeropuerto más cercano al recinto y el que recomendamos para volar. Está a 1h20 en coche del recinto, o a 30 minutos de Gijón / Oviedo (los autobuses de Alsa salen cada hora). \n Para el próximo verano, las rutas programadas incluyen:',
           bullets: [
             'Wizz Air: Londres Luton, mar / jue / sáb',
             'Aer Lingus: Dublín, mar / sáb',
@@ -77,7 +83,7 @@ export default {
         },
         santander: {
           title: 'Aeropuerto de Santander (SDR)',
-          desc: 'Santander está a unas 2h30 del recinto, y a 1h45 de Gijón. Además de Londres Stansted, Ryanair también vuela a Santander desde Manchester, Birmingham, Edimburgo y otros destinos europeos. Los vuelos suelen ser más baratos que a Asturias, así que puede ser una opción más fácil/económica, sobre todo si pensáis quedaros más tiempo en Asturias y visitar los Picos de Europa o Llanes, en el oriente.',
+          desc: 'Santander está a unas 2h30 del recinto, y a 1h45 de Gijón. Además de Londres Stansted, Ryanair también vuela a Santander desde Manchester, Birmingham, Edimburgo y otros destinos europeos. \n Los vuelos suelen ser más baratos que a Asturias, así que puede ser una opción más fácil/económica, sobre todo si pensáis quedaros más tiempo en el norte de España y visitar, por ejemplo, los Picos de Europa o Llanes, en el oriente.',
         },
         recommendedTimings: {
           title: 'Horarios Recomendados para Volar a Asturias desde Londres',
@@ -101,17 +107,6 @@ export default {
           desc: 'Viajando en tren desde París, el servicio directo solo llega hasta Hendaya / Irún, en la frontera franco-española. Desde allí, continuad en BlaBlaCar (coche compartido) o en autobús de Alsa desde Irún hasta Gijón u Oviedo, y organizad el transporte hasta el recinto desde ahí.',
         },
       },
-      byCar: {
-        title: 'En Coche',
-        intro: 'El coche es la forma más práctica de moverse por Asturias.',
-        routes: [
-          { from: 'Aeropuerto de Asturias (OVD)', dist: '~70 km', time: '~1 h 20 min', route: 'A-66 sur, salida Villazón, AS-228' },
-          { from: 'Gijón', dist: '~60 km', time: '~1 h', route: 'A-66 sur desde Oviedo, salida Villazón' },
-          { from: 'Oviedo', dist: '~40 km', time: '~45 min', route: 'A-66 sur, salida Villazón, AS-228' },
-          { from: 'Santander', dist: '~185 km', time: '~2 h 30 min', route: 'A-8 oeste hasta Oviedo, luego A-66 sur' },
-          { from: 'Madrid', dist: '~450 km', time: '~4,5 h', route: 'A-66 norte a través de las montañas asturianas' },
-        ],
-      },
       howeverYouGetHere: {
         title: 'Como sea que Lleguéis',
         text: 'Todo lo anterior es completamente opcional, así que sentíos libres de ignorarlo por completo y hacer lo que queráis. Nos encantaría que la gente pasara el máximo tiempo posible en la zona y la explorara a su manera, pero entendemos que ya es un gran esfuerzo venir hasta aquí, así que ajustadlo a vuestro horario. \n Si tenéis alguna duda sobre la logística, no dudéis en poneros en contacto con Adán o Natalie, estaremos encantados de ayudar.',
@@ -124,18 +119,18 @@ export default {
     intro: 'Hay varias opciones de alojamiento cerca del recinto: podéis quedaros en Gijón y coger el autobús, alojaros cerca del recinto, o organizarlo por vuestra cuenta.',
     option1: {
       title: 'Opción 1: Casas Rurales',
-      intro: 'Hay muchas casas rurales y villas cerca del recinto, la mayoría a unos 10 minutos en coche — vamos a reservar una selección en bloque para asegurar sitio para todo el que quiera quedarse.',
+      intro: 'Hay un puñado de casas rurales cerca del recinto, la mayoría a unos 10 minutos en coche. Vamos a reservar una selección en bloque para asegurar sitio para todo el que quiera quedarse cerca.',
       bullets: [
-        'Los precios y las fechas exactas dependerán de la propiedad — os los compartiremos en cuanto confirmemos las reservas.',
-        'Decídnoslo en el RSVP si estáis interesados y coordinaremos directamente con vosotros.',
+        'Decídnoslo en el RSVP si estáis interesados, y coordinaremos directamente con vosotros.',
+        'Los precios y las fechas exactas dependerán de la propiedad. Si elegís esta opción, nos pondremos en contacto para compartirlos.',
         'Habrá taxis disponibles para llevar a la gente de ida y vuelta a las casas.',
       ],
     },
     option2: {
       title: 'Opción 2: Acampada en el Recinto',
-      intro: 'El recinto tiene un campo anexo donde podéis montar la tienda o quedaros en una autocaravana de alquiler. Es un lugar precioso, en el bosque junto a un arroyo, y estaréis cerca de toda la acción. También podéis usar las duchas y los baños del recinto durante vuestra estancia.',
+      intro: 'El recinto tiene un campo anexo donde podéis montar la tienda o quedaros en una autocaravana de alquiler, totalmente gratis. Es un lugar precioso, en el bosque junto a un arroyo, y estaréis mucho más cerca de toda la acción. También podéis usar las duchas y los baños del recinto durante vuestra estancia.',
       detailsLabel: 'Nota:',
-      detailsText: ' El tiempo puede ser cambiante en Asturias, puede llover y las temperaturas bajarán por la noche, así que preparad el equipaje en consecuencia si vais a acampar.',
+      detailsText: ' El tiempo puede ser cambiante en Asturias. Puede llover, y las temperaturas bajarán por la noche. ¡Preparad el equipaje en consecuencia si vais a acampar!',
     },
     option3: {
       title: 'Opción 3: Quedaros en Gijón y Coger el Autobús',
@@ -143,7 +138,7 @@ export default {
     },
     option4: {
       title: 'Opción 4: Por Vuestra Cuenta',
-      intro: 'Si ninguna de las opciones anteriores os viene bien, sentíos libres de organizaros por vuestra cuenta. Hay muchos otros sitios donde alojarse en Asturias, y queremos que estéis cómodos. Solo aseguraos de tener un plan para ir y volver del recinto — hay pocos taxis en la zona.',
+      intro: 'Si ninguna de las opciones anteriores os viene bien, sentíos libres de organizaros por vuestra cuenta. Hay muchos otros sitios donde alojarse en Asturias, y queremos que estéis cómodos. Solo aseguraos de tener un plan para ir y volver del recinto, ya que hay pocos taxis en la zona.',
     },
   },
 
@@ -151,31 +146,33 @@ export default {
     title: 'Asturias',
     about: {
       title: 'Sobre la Región',
-      p1: 'Seguramente hayáis oído a Adán hablar sin parar de lo buena que es Asturias, o quizá ya hayáis tenido el privilegio de visitarla. En cualquier caso, pensamos que os gustaría que compartiéramos algunas de nuestras recomendaciones sobre las mejores cosas que hacer en la zona.',
+      p1: 'Seguramente hayáis oído a Adán hablar sin parar de lo buena que es Asturias (o quizá ya hayáis tenido el privilegio de visitarla). \n En cualquier caso, pensamos que os gustaría que compartiéramos algunas de nuestras recomendaciones sobre las mejores cosas que hacer en la zona.',
     },
     thingsToDo: {
       title: 'Qué Hacer',
-      gijon: { title: 'Gijón', desc: 'Aquí es donde se crió Adán, y la mitad de su familia todavía vive allí. Es la ciudad más grande de Asturias, y hogar de su mejor equipo de fútbol, el Real Sporting. Antiguamente industrial y ahora reinventada, con muchos sitios para comer y beber y una playa y costa preciosas. El casco antiguo (Cimavilla) es el mejor sitio para tomar algo (¡sidra!)', distance: '~1h del recinto - autobús de ida y vuelta el día de la boda' },
+      gijon: { title: 'Gijón', desc: 'Aquí es donde se crió Adán, y la mitad de su familia todavía vive allí. \n Es la ciudad más grande de Asturias, y hogar de su mejor equipo de fútbol, el Real Sporting. Antiguamente industrial y ahora reinventada, con muchos sitios para comer y beber y una playa y costa preciosas. El casco antiguo (Cimavilla) es el mejor sitio para tomar algo (¡sidra!)', distance: '~1h del recinto - autobús de ida y vuelta el día de la boda' },
       picos: { title: 'Picos de Europa', desc: 'El parque nacional más antiguo de España, con impresionantes picos calizos, gargantas y pueblos de montaña. Si os gusta el senderismo, este es el sitio.', distance: '~1,5 h del recinto' },
+      ubinas: { title: 'Parque Natural de las Ubiñas', desc: 'El propio recinto está dentro del precioso Parque Natural de las Ubiñas, donde hay una mezcla de bosques antiguos, valles remotos y montañas exigentes para subir. \n Es mucho más tranquilo que los Picos de Europa, y podría decirse que una experiencia más única y especial', distance: 'justo al lado' },
+      redes: { title: 'Parque Natural de Redes', desc: 'Reserva de la Biosfera con algunos de los bosques más grandes de Asturias y una naturaleza increíble.', distance: '~1 h del recinto' },
       llanesRibadesella: { title: 'Llanes y Ribadesella', desc: 'La costa entre estos dos pueblos costeros tiene las mejores playas de la región, son realmente espectaculares y no se parecen a nada que encontraréis en el sur de España.', distance: '~1 h del recinto' },
       villages: { title: 'Pueblos Costeros', desc: 'Cudillero, Luarca, Tazones, Candás... Todos son pueblos costeros preciosos para pasar el día y comer marisco fresco delicioso. Nuestro favorito personal es el arroz con bugre en Tazones.' },
-      oviedo: { title: 'Oviedo', desc: 'La gran capital regional. Más pequeña que Gijón y con un equipo de fútbol peor. Se puede recorrer a pie, con un precioso casco antiguo medieval y catedral. Merece una mañana si pasáis por allí.', distance: '~45 min del recinto' },
+      oviedo: { title: 'Oviedo', desc: 'La gran capital regional. Más pequeña que Gijón (y con un equipo de fútbol inferior). \n Se puede recorrer a pie, con un precioso casco antiguo medieval y catedral.', distance: '~45 min del recinto' },
     },
     foodAndDrink: {
       title: 'Comida y Bebida',
-      intro: 'La comida asturiana es contundente y abundante. Entre sus productos locales excepcionales están los lácteos (la región con más quesos de Europa), el marisco, las legumbres y la SIDRA. Tendréis ocasión de probar muchos de ellos en la boda. Aquí van algunas de nuestras recomendaciones',
+      intro: 'La comida en Asturias es contundente y abundante. Tenemos productos locales excepcionales, incluyendo la región con más quesos de Europa, marisco, legumbres (fabada) y sidra. \n Por supuesto tendréis ocasión de probar algunos de estos en la boda, pero además de eso aquí van algunas de nuestras recomendaciones',
       items: [
         { name: 'Casa Jamallo', desc: 'En Bárzana, Quirós (cerca del recinto). Buena para caza y guisos.' },
-        { name: 'Casa Generosa', desc: 'Cerca de Proaza. Recomendamos ir andando desde Les Xanes' },
-        { name: 'El Planeta', desc: 'Nuestro sitio favorito para marisco en Gijón' },
-        { name: 'Gloria (Gijón)', desc: 'Versión moderna de la cocina asturiana, muy bueno' },
-        { name: 'El Cencerro (Gijón)', desc: 'El mejor para carne / chuletón en Gijón' },
-        { name: 'Tar d\'Abéu (Gijón)', desc: 'Sidrería clásica en Gijón con muy buena comida' },
+        { name: 'Casa Generosa', desc: 'Cerca de Proaza. Un referente para la fabada y el cabritu (cabrito). Recomendamos ir andando desde Les Xanes' },
+        { name: 'El Planeta', desc: 'Nuestro sitio favorito para marisco en Gijón. Pedid las sardinas.' },
+        { name: 'Gloria (Gijón)', desc: 'Versión moderna de la cocina asturiana, muy bueno.' },
+        { name: 'El Cencerro (Gijón)', desc: 'El mejor para carne / chuletón en Gijón. Pedid las mollejas si las tienen.' },
+        { name: 'Tar d\'Abéu (Gijón)', desc: 'Sidrería clásica en Gijón con comida muy buena y original' },
         { name: 'Farragua', desc: 'Alta cocina en Gijón, muy bueno' },
         { name: 'El Uría', desc: 'El mejor para marisco (arroz con bugre) en Tazones' },
         { name: 'El Molín de Mingo', desc: 'Cerca de Llanes, el mejor arroz con pitu (arroz con pollo) en Asturias' },
         { name: 'Fitumar', desc: 'Muy buen marisco en la playa.' },
-        { name: 'Gueyümar', desc: 'También muy buen marisco en la playa - más elegante' },
+        { name: 'Gueyümar', desc: 'También muy buen marisco en la playa - un poco más elegante' },
       ],
     },
     weather: {
@@ -195,14 +192,13 @@ export default {
       { q: '¿Cuál es la fecha límite para el RSVP?', aBold: 'Respondednos antes del 1 de enero de 2027.', a: 'Esto es para poder cerrar los números de catering y alojamiento — por favor, no lo dejéis para el último momento.' },
       { q: '¿Cuál es el código de vestimenta?', aBold: 'Estilo festival elegante.', a: 'El suelo es hierba, así que dejad los tacones de aguja en casa. Por la noche puede bajar a 12–16°C; traed una capa.' },
       { q: '¿Cuáles son los horarios del día de la boda?', a: 'El sábado 28 de agosto es el día principal: llegadas por la mañana, hacia el mediodía, para un aperitivo, seguido de la ceremonia. Después habrá un banquete por la tarde, música y barra hasta bien entrada la noche y más allá.' },
-      { q: '¿Hay aparcamiento en el recinto?', a: 'Sí, hay aparcamiento en el propio recinto. Si pensáis beber, usad el autobús desde Gijón, u organizad un taxi con antelación (solo habrá un taxi disponible esa noche para llevar a la gente cerca).' },
-      { q: 'Tengo necesidades alimentarias especiales. ¿Podéis adaptaros?', a: 'Sí, decídnoslo en el RSVP. Cuanto más específicos seáis, mejor. Nos aseguraremos de que el equipo de catering esté al tanto. Vegetariano, vegano y alergias comunes no serán ningún problema; si es algo más complejo, avisadnos y os lo confirmamos.' },
-      { q: '¿Qué tiempo hará a finales de agosto?', a: 'Cálido y húmedo. Esperad 18–26°C durante el día, noches más frescas (12–16°C en cuanto se pone el sol), y una posibilidad real de lluvia en cualquier momento. El recinto tendrá zonas cubiertas y tenemos un plan para el tiempo cambiante. Traed una capa para la noche y calzado que aguante la hierba.' },
-      { q: '¿Puedo hacer fotos y compartirlas en redes sociales?', a: 'Habrá un fotógrafo profesional, y compartiremos las fotos con vosotros después; si queréis hacer fotos, adelante, pero intentad usar el móvil lo mínimo posible si es viable.' },
-      { q: '¿La comida y la bebida están incluidas?', a: 'Sí. Habrá un aperitivo a la llegada, banquete y algo de picoteo por la noche, con una barra completa todo el día. Indicad cualquier necesidad alimentaria en el RSVP.' },
+      { q: '¿Hay aparcamiento en el recinto?', a: 'Sí, hay aparcamiento en el propio recinto. Si pensáis beber, usad el autobús desde Gijón, u organizad un taxi (habrá un taxi disponible esa noche para llevar a la gente cerca).' },
+      { q: 'Tengo necesidades alimentarias especiales. ¿Podéis adaptaros?', a: 'Sí, decídnoslo en el RSVP. Cuanto más específicos seáis, mejor. Vegetariano, vegano y alergias comunes no serán ningún problema.' },
+      { q: '¿Qué tiempo hará a finales de agosto?', a: 'Cálido y húmedo. Esperad 18–26°C durante el día, noches más frescas, 12–16°C en cuanto se pone el sol. El recinto tendrá zonas cubiertas y tenemos un plan para la lluvia.' },
+      { q: '¿Puedo hacer fotos y compartirlas en redes sociales?', a: 'Sí. Pero habrá un fotógrafo profesional, y compartiremos las fotos con vosotros después. \n Si queréis hacer fotos, adelante, pero intentad usar el móvil lo mínimo posible si es viable.' },
+      { q: '¿Habrá comida y/o bebida?', a: 'Sí. Habrá un aperitivo a la llegada, banquete y algo de picoteo por la noche, con una barra completamente equipada. Indicad cualquier necesidad alimentaria en el RSVP.' },
       { q: '¿Hay lista de bodas?', a: 'Sabemos que venir hasta aquí ya es un gran esfuerzo para algunos, así que vuestra presencia en la boda es de verdad el mejor regalo. Si aun así queréis daros algo, agradecemos con gusto contribuciones para nuestra luna de miel — enlaces abajo para libras (GBP) o euros (EUR).', giftLinks: { monzo: 'Pagar en libras (Monzo)', wise: 'Pagar en euros (Wise)' } },
-      { q: '¿Qué pasa si hace mal tiempo?', a: 'Estamos organizando el evento teniendo muy presente el tiempo. Habrá zonas cubiertas y protegidas, y la ceremonia tiene un plan alternativo para la lluvia. No parará la fiesta.' },
-      { q: 'Tengo una pregunta que no está aquí.', aTemplate: 'Escribidnos. Podéis contactar con Adán en {adanEmail} o en {adanPhone}, o con Natalie en {natalieEmail} — haremos lo posible por responder pronto. Si es una pregunta que probablemente tengan otros invitados, la añadiremos aquí.' },
+      { q: 'Tengo una pregunta que no está aquí.', aTemplate: 'Escribidnos. Podéis contactar con Adán en {adanEmail} o en {adanPhone}, o con Natalie en {natalieEmail}. Haremos lo posible por responder pronto. Si es una pregunta que probablemente tengan otros invitados, la añadiremos aquí.' },
     ],
     footer: {
       before: 'Más detalles sobre cómo llegar y dónde alojaros en las páginas de',
