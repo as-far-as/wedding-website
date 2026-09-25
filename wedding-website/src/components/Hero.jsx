@@ -92,11 +92,13 @@ export default function Hero() {
 
         {/* Date eyebrow */}
         <p
-          className="font-sans text-wedding-bg/75 mb-7"
+          className="font-sans text-wedding-bg mb-7"
           style={{
-            fontSize: '0.625rem',
-            letterSpacing: '0.38em',
+            fontSize: 'clamp(1rem, 2.6vw, 1.5rem)',
+            letterSpacing: '0.28em',
             textTransform: 'uppercase',
+            fontWeight: 700,
+            textShadow: '0 2px 12px rgba(0,0,0,0.55)',
             animation: 'heroFadeUp 0.5s 0.05s ease both',
           }}
         >
@@ -106,7 +108,7 @@ export default function Hero() {
         {/* Names + connector — the structural heart of the design */}
         <div className="mb-8">
           <h1
-            className="font-display text-wedding-bg leading-[0.88] block"
+            className="font-heading text-wedding-bg leading-[0.88] block"
             style={{
               fontSize: 'clamp(2.6rem, 8vw, 6.5rem)',
               textShadow: '0 4px 22px rgba(0,0,0,0.6)',
@@ -117,7 +119,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className="font-serif text-wedding-bg/85 italic font-light"
+            className="font-sans text-wedding-bg/85 italic font-light"
             style={{
               fontSize: 'clamp(0.85rem, 1.8vw, 1.25rem)',
               paddingLeft: '0.25rem',
@@ -129,14 +131,14 @@ export default function Hero() {
           </p>
 
           <h1
-            className="font-display text-wedding-bg leading-[0.88] block"
+            className="font-heading text-wedding-bg leading-[0.88] block"
             style={{
               fontSize: 'clamp(2.6rem, 8vw, 6.5rem)',
               textShadow: '0 4px 22px rgba(0,0,0,0.6)',
               animation: 'heroFadeUp 0.55s 0.38s ease both',
             }}
           >
-            Adán
+            &amp; Adán
           </h1>
         </div>
 
@@ -156,7 +158,7 @@ export default function Hero() {
           style={{ animation: 'heroFadeUp 0.5s 0.58s ease both' }}
         >
           <p
-            className="font-serif text-wedding-bg italic"
+            className="font-sans text-wedding-bg italic"
             style={{ fontSize: 'clamp(1rem, 2.5vw, 1.4rem)', fontWeight: 300, textShadow: '0 2px 10px rgba(0,0,0,0.55)' }}
           >
             {t.hero.location}
@@ -182,7 +184,7 @@ export default function Hero() {
               <div key={label} className="flex items-start">
                 {i > 0 && (
                   <span
-                    className="font-serif text-wedding-bg/40 italic"
+                    className="font-sans text-wedding-bg/40 italic"
                     style={{
                       fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                       padding: '0 clamp(5px, 1vw, 12px)',
@@ -196,7 +198,7 @@ export default function Hero() {
                 )}
                 <div className="flex flex-col items-center">
                   <span
-                    className="font-display text-wedding-bg tabular-nums leading-none"
+                    className="font-heading text-wedding-bg tabular-nums leading-none"
                     style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)', textShadow: '0 3px 16px rgba(0,0,0,0.6)' }}
                   >
                     {pad(value, d)}

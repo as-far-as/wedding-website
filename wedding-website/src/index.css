@@ -6,8 +6,11 @@
   --color-wedding-muted: #6C757D;
   --color-wedding-accent: #8A9A86;
 
-  /* Display: Anton — festival poster energy */
-  --font-display: "Anton", "Impact", "Arial Black", sans-serif;
+  /* Display: Anton — festival poster energy (h3 subheadings, labels, etc.) */
+  /*--font-display: "Anton", "Impact", "Arial Black", sans-serif;*/
+  --font-display: "Jost", "Gill Sans MT", system-ui, sans-serif;
+  /* Heading: Bonbon — used specifically for h1/h2 titles */
+  --font-heading: "Bonbon", "Cormorant Garamond", cursive;
   /* Serif: Cormorant Garamond — garden party / Asturian fete warmth */
   --font-serif: "Cormorant Garamond", "Palatino Linotype", Georgia, serif;
   /* Sans: Jost — clean utility labels */

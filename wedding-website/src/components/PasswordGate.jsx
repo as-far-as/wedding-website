@@ -49,13 +49,13 @@ export default function PasswordGate({ children }) {
             {t.passwordGate.eyebrow}
           </p>
           <h1
-            className="font-display text-wedding-text leading-none"
+            className="font-heading text-wedding-text leading-none"
             style={{ fontSize: 'clamp(3rem, 12vw, 5rem)' }}
           >
             N & A
           </h1>
           <p
-            className="font-serif italic text-wedding-muted mt-3"
+            className="font-sans italic text-wedding-muted mt-3"
             style={{ fontSize: '1rem', fontWeight: 300 }}
           >
             {t.passwordGate.subtitle}

@@ -8,6 +8,7 @@ import Hero from './components/Hero';
 import Location from './pages/Location';
 import Accommodation from './pages/Accommodation';
 import Asturias from './pages/Asturias';
+import DressCode from './pages/DressCode';
 import FAQs from './pages/FAQs';
 import Rsvp from './pages/Rsvp';
 
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/location"      element={<Location />} />
           <Route path="/accommodation" element={<Accommodation />} />
           <Route path="/asturias"      element={<Asturias />} />
+          <Route path="/dress-code"    element={<DressCode />} />
           <Route path="/faqs"          element={<FAQs />} />
           <Route path="/rsvp"          element={<Rsvp />} />
           <Route path="/rsvp/:slug"    element={<Rsvp />} />

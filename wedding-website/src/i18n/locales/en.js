@@ -3,6 +3,7 @@ export default {
     location: 'Location',
     accommodation: 'Accommodation',
     asturias: 'Asturias',
+    dressCode: 'Dress Code',
     faqs: 'FAQs',
     rsvp: 'RSVP',
     toggleMenu: 'Toggle navigation menu',
@@ -181,6 +182,17 @@ export default {
       daytime: { strong: 'Daytime:', text: ' 18–26°C. Hoping for sunshine but prepared for all eventualities.' },
       evenings: { strong: 'Evenings:', text: ' Drops to 12–16°C once the sun goes. Bring a layer you like.' },
       rain: { strong: 'Rain:', text: ' Real possibility any day. We have plans for changeable weather.' },
+    },
+  },
+
+  dressCode: {
+    title: 'Dress Code',
+    tagline: 'Ethereal mountain nymphs meets retro 70s dreamboats. Make of that what you will.',
+    body: "The wedding will be held outside in a mountain meadow (hopefully in the sunshine). We'll be dancing all night. It will get chilly once the sun goes down. So you'll want shoes you can dance in, or something comfy to change into later, plus something cool and comfortable for the sunshine and a few extra layers for the evening.",
+    moodBoard: {
+      title: 'Mood Board',
+      intro: 'For some visual inspiration, take a look at our shared Pinterest board.',
+      linkLabel: 'Open the mood board on Pinterest',
     },
   },
 

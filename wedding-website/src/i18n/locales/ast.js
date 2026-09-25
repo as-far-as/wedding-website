@@ -3,6 +3,7 @@ export default {
     location: 'Allugamientu',
     accommodation: 'Alloxamientu',
     asturias: 'Asturies',
+    dressCode: 'Vistimenta',
     faqs: 'Entrugues',
     rsvp: 'RSVP',
     toggleMenu: 'Abrir el menú de navegación',
@@ -181,6 +182,17 @@ export default {
       daytime: { strong: 'De día:', text: ' 18–26°C. Esperamos que faiga sol, pero preparaos pa too.' },
       evenings: { strong: 'Pela nueche:', text: ' Baxa a 12–16°C en cuanto se pon el sol. Traer una capa que vos preste.' },
       rain: { strong: 'Lluvia:', text: ' Posibilidá real cualesquier día. Tenemos un plan pal tiempu variable.' },
+    },
+  },
+
+  dressCode: {
+    title: 'Códigu de Vistimenta',
+    tagline: 'Ninfes etéreas de montaña con un toque retro de los años 70. Interpretailo como queráis.',
+    body: 'La boda va celebrase al campu abiertu nun prau de montaña (con suerte con sol). Vamos bailar tola nueche. Va refrescar en cuanto se pon el sol. Asina que vais necesitar calzáu col que podáis bailar, o daqué cómodo pa camudavos más sero, amás de daqué fresco ya cómodo pal sol ya delles capes extra pa la nueche.',
+    moodBoard: {
+      title: 'Tableru d\'Inspiración',
+      intro: 'Pa inspirávos visualmente, equí tenéis el nuesu tableru de Pinterest compartíu.',
+      linkLabel: 'Abrir el tableru en Pinterest',
     },
   },
 

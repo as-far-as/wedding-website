@@ -11,7 +11,7 @@ export default function LanguageToggle({ className = '' }) {
 
   return (
     <div
-      className={`inline-flex items-center border border-wedding-accent/30 rounded-full p-0.5 ${className}`}
+      className={`inline-flex items-center border border-wedding-bg/40 rounded-full p-0.5 ${className}`}
       role="group"
       aria-label="Language"
     >
@@ -26,9 +26,14 @@ export default function LanguageToggle({ className = '' }) {
             className={`font-sans rounded-full px-2.5 py-1 transition-colors ${
               active
                 ? 'bg-wedding-accent text-wedding-bg'
-                : 'text-wedding-muted hover:text-wedding-text'
+                : 'text-wedding-bg/75 hover:text-wedding-bg'
             }`}
-            style={{ fontSize: '0.625rem', letterSpacing: '0.08em', fontWeight: active ? 600 : 400 }}
+            style={{
+              fontSize: '0.625rem',
+              letterSpacing: '0.08em',
+              fontWeight: active ? 600 : 400,
+              textShadow: active ? 'none' : '0 1px 4px rgba(0,0,0,0.5)',
+            }}
           >
             {label}
           </button>

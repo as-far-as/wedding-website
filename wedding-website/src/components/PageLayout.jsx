@@ -39,8 +39,8 @@ export default function PageLayout({ title, subtitle, eyebrow, backdrop, childre
       )}
 
       <div className="relative">
-        {/* Festival-poster header */}
-        <div className={`px-6 py-16 md:py-24 relative overflow-hidden ${backdrop ? '' : 'bg-wedding-accent'}`}>
+        {/* Festival-poster header — extra top padding clears the fixed nav bar */}
+        <div className={`px-6 pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden ${backdrop ? '' : 'bg-wedding-accent'}`}>
           {!backdrop && (
             /* Subtle halftone dot texture — printed/poster quality, only reads on a flat accent fill */
             <div
@@ -61,14 +61,14 @@ export default function PageLayout({ title, subtitle, eyebrow, backdrop, childre
               </p>
             )}
             <h1
-              className="font-display text-wedding-bg leading-none"
+              className="font-heading text-wedding-bg leading-none"
               style={{ fontSize: 'clamp(2.4rem, 7vw, 5rem)', textShadow: backdrop ? '0 3px 18px rgba(0,0,0,0.6)' : 'none' }}
             >
               {title}
             </h1>
             {subtitle && (
               <p
-                className="font-serif italic text-wedding-bg/85 mt-4"
+                className="font-sans italic text-wedding-bg/85 mt-4"
                 style={{ fontSize: 'clamp(0.95rem, 2vw, 1.2rem)', fontWeight: 300, textShadow: backdrop ? '0 2px 12px rgba(0,0,0,0.6)' : 'none' }}
               >
                 {subtitle}
@@ -98,7 +98,7 @@ export function Section({ title, eyebrow, children }) {
         </p>
       )}
       <h2
-        className="font-display text-wedding-text mb-3"
+        className="font-heading text-wedding-text mb-3"
         style={{ fontSize: '1.5rem' }}
       >
         {title}
@@ -122,7 +122,7 @@ export function Card({ title, children }) {
     <div className="rounded-lg p-6" style={{ border: '1px solid var(--page-border, rgba(138,154,134,0.3))' }}>
       {title && (
         <h3
-          className="font-display text-wedding-text mb-3"
+          className="font-heading text-wedding-text mb-3"
           style={{ fontSize: '1.05rem' }}
         >
           {title}

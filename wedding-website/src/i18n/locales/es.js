@@ -3,6 +3,7 @@ export default {
     location: 'Ubicación',
     accommodation: 'Alojamiento',
     asturias: 'Asturias',
+    dressCode: 'Vestimenta',
     faqs: 'Preguntas',
     rsvp: 'RSVP',
     toggleMenu: 'Abrir menú de navegación',
@@ -181,6 +182,17 @@ export default {
       daytime: { strong: 'De día:', text: ' 18–26°C. Esperamos que haga sol, pero preparados para todo.' },
       evenings: { strong: 'Por la noche:', text: ' Baja a 12–16°C en cuanto se pone el sol. Traed una capa que os guste.' },
       rain: { strong: 'Lluvia:', text: ' Posibilidad real cualquier día. Tenemos un plan para el tiempo cambiante.' },
+    },
+  },
+
+  dressCode: {
+    title: 'Código de Vestimenta',
+    tagline: 'Ninfas etéreas de montaña con un toque retro de los años 70. Interpretadlo como queráis.',
+    body: 'La boda se celebrará al aire libre en un prado de montaña (con suerte con sol). Vamos a bailar toda la noche. Refrescará en cuanto se ponga el sol. Así que necesitaréis zapatos con los que podáis bailar, o algo cómodo para cambiaros más tarde, además de algo fresco y cómodo para el sol y alguna capa extra para la noche.',
+    moodBoard: {
+      title: 'Tablero de Inspiración',
+      intro: 'Para inspiraros visualmente, echad un vistazo a nuestro tablero de Pinterest compartido.',
+      linkLabel: 'Abrir el tablero en Pinterest',
     },
   },
 

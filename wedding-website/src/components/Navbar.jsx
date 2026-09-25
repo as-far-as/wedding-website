@@ -18,23 +18,26 @@ export default function Navbar() {
     { to: '/location',      label: t.nav.location },
     { to: '/accommodation', label: t.nav.accommodation },
     { to: '/asturias',      label: t.nav.asturias },
+    { to: '/dress-code',    label: t.nav.dressCode },
     { to: '/faqs',          label: t.nav.faqs },
     { to: guestSlug ? `/rsvp/${guestSlug}` : '/rsvp', label: t.nav.rsvp },
   ];
 
   const linkClass = ({ isActive }) =>
     `font-sans transition-colors ${
-      isActive ? 'text-wedding-text' : 'text-wedding-muted hover:text-wedding-text'
+      isActive ? 'text-wedding-bg' : 'text-wedding-bg/70 hover:text-wedding-bg'
     }`;
+  const textShadow = { textShadow: '0 1px 4px rgba(0,0,0,0.5)' };
 
   return (
-    <nav className="sticky top-0 z-50 bg-wedding-bg border-b border-wedding-accent/25">
+    <nav className="fixed top-0 inset-x-0 z-50">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
         <Link
           to="/"
-          className="font-display text-wedding-text text-xl leading-none"
+          className="font-heading text-wedding-bg text-2xl leading-none"
+          style={textShadow}
           onClick={() => setMenuOpen(false)}
         >
           N&A
@@ -48,7 +51,7 @@ export default function Navbar() {
                 <NavLink
                   to={to}
                   className={linkClass}
-                  style={{ fontSize: '0.65rem', letterSpacing: '0.22em', textTransform: 'uppercase' }}
+                  style={{ fontSize: '0.65rem', letterSpacing: '0.22em', textTransform: 'uppercase', ...textShadow }}
                 >
                   {label}
                 </NavLink>
@@ -66,29 +69,32 @@ export default function Navbar() {
           aria-expanded={menuOpen}
         >
           <span
-            className="block w-5 h-px bg-wedding-text origin-center transition-transform duration-200"
-            style={{ transform: menuOpen ? 'rotate(45deg) translateY(6px)' : 'none' }}
+            className="block w-5 h-px bg-wedding-bg origin-center transition-transform duration-200"
+            style={{ transform: menuOpen ? 'rotate(45deg) translateY(6px)' : 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
           />
           <span
-            className="block w-5 h-px bg-wedding-text transition-opacity duration-200"
-            style={{ opacity: menuOpen ? 0 : 1 }}
+            className="block w-5 h-px bg-wedding-bg transition-opacity duration-200"
+            style={{ opacity: menuOpen ? 0 : 1, boxShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
           />
           <span
-            className="block w-5 h-px bg-wedding-text origin-center transition-transform duration-200"
-            style={{ transform: menuOpen ? 'rotate(-45deg) translateY(-6px)' : 'none' }}
+            className="block w-5 h-px bg-wedding-bg origin-center transition-transform duration-200"
+            style={{ transform: menuOpen ? 'rotate(-45deg) translateY(-6px)' : 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
           />
         </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-wedding-bg border-t border-wedding-accent/20 px-6 py-6 flex flex-col gap-5">
+        <div
+          className="md:hidden px-6 py-6 flex flex-col gap-5"
+          style={{ background: '#14180f' }}
+        >
           {NAV_LINKS.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               className={linkClass}
-              style={{ fontSize: '0.65rem', letterSpacing: '0.22em', textTransform: 'uppercase' }}
+              style={{ fontSize: '0.65rem', letterSpacing: '0.22em', textTransform: 'uppercase', ...textShadow }}
               onClick={() => setMenuOpen(false)}
             >
               {label}

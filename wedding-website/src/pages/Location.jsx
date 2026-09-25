@@ -20,7 +20,7 @@ export default function Location() {
         </p>
         <div className="bg-wedding-accent/8 border-l-2 border-wedding-accent rounded-r-lg px-5 py-4 mb-6">
           <p className="font-sans text-wedding-muted mb-1" style={{ letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '0.65rem' }}>{l.site.addressLabel}</p>
-          <address className="font-serif italic text-wedding-text not-italic" style={{ fontSize: '1rem', fontWeight: 300 }}>
+          <address className="font-sans italic text-wedding-text not-italic" style={{ fontSize: '1rem', fontWeight: 300 }}>
             {l.site.addressLine1}<br />
             {l.site.addressLine2}<br />
             {l.site.addressLine3}
@@ -53,7 +53,7 @@ export default function Location() {
 
           {/* By Car — leads: it's the most practical way to get around Asturias */}
           <div className="mb-10">
-            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byCar.title}</h3>
+            <h3 className="font-heading text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byCar.title}</h3>
             <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
               {g.byCar.intro}
             </p>
@@ -67,7 +67,7 @@ export default function Location() {
             <div className="space-y-3">
               {g.byCar.routes.map(({ from, dist, time, route }) => (
                 <div key={from} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3 border-b border-wedding-accent/15 last:border-0">
-                  <span className="font-display text-wedding-text shrink-0" style={{ minWidth: '13rem' }}>{from}</span>
+                  <span className="font-heading text-wedding-text shrink-0" style={{ minWidth: '13rem', fontSize: '1.15rem' }}>{from}</span>
                   <span className="font-sans text-wedding-muted" style={{ fontSize: '0.875rem' }}>
                     {dist} · {time} — <span className="text-wedding-muted/70">{route}</span>
                   </span>
@@ -78,7 +78,7 @@ export default function Location() {
 
           {/* Bus from Gijón */}
           <div className="mb-10">
-            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.shuttle.title}</h3>
+            <h3 className="font-heading text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.shuttle.title}</h3>
             <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
               {g.shuttle.bus.desc}
             </p>
@@ -91,7 +91,7 @@ export default function Location() {
 
           {/* By Plane */}
           <div className="mb-10">
-            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byPlane.title}</h3>
+            <h3 className="font-heading text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.byPlane.title}</h3>
             <CardGrid>
               <Card title={g.byPlane.asturias.title}>
                 <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
@@ -132,7 +132,7 @@ export default function Location() {
 
           {/* Overland */}
           <div className="mb-10">
-            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.overland.title}</h3>
+            <h3 className="font-heading text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.overland.title}</h3>
             <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem' }}>
               {g.overland.intro}
             </p>
@@ -152,7 +152,7 @@ export default function Location() {
 
           {/* However you get here */}
           <div>
-            <h3 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.howeverYouGetHere.title}</h3>
+            <h3 className="font-heading text-wedding-text mb-3" style={{ fontSize: '1.1rem' }}>{g.howeverYouGetHere.title}</h3>
             <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
               {g.howeverYouGetHere.text}
             </p>
