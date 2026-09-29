@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+  WEDDING INVITATION EMAIL — Spanish version
+
+  This is the Spanish-language counterpart to invitation-template.html —
+  same structure, same {{Guest Name}} / {{RSVP Link}} / {{Website URL}}
+  placeholders, same fonts, same compatibility approach. See the comment
+  block at the top of invitation-template.html for the full setup notes
+  (mail-merge tools, images, compatibility); this file only has the
+  translated wording, kept in sync with the site's own Spanish terms
+  (nav labels, page titles) so it reads consistently with the website.
+-->
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Natalie &amp; Adán — 28 de agosto de 2027</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Cormorant+Garamond:ital@1&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; background-color: #EDEBE4; }
+
+    .heading-font { font-family: 'Bonbon', 'Cormorant Garamond', cursive; }
+    .body-font    { font-family: 'Jost', Helvetica, Arial, sans-serif; }
+
+    @media only screen and (max-width: 620px) {
+      .email-container { width: 100% !important; }
+      .stack-padding { padding-left: 24px !important; padding-right: 24px !important; }
+      .header-padding { padding: 40px 24px !important; }
+      .h1 { font-size: 40px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#EDEBE4;">
+
+  <!-- Preheader (hidden preview text shown in the inbox list, not in the email body) -->
+  <div style="display:none; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
+    Estáis invitados — Natalie &amp; Adán, 28 de agosto de 2027, Asturias, España.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#EDEBE4;">
+    <tr>
+      <td align="center" style="padding: 32px 16px;">
+
+        <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:100%; background-color:#FAF9F6; border-radius:12px; overflow:hidden;">
+
+          <!-- Header banner -->
+          <tr>
+            <td class="header-padding" align="center" style="background-color:#8A9A86; padding:56px 40px; text-align:center;">
+              <!--
+                Foto de cabecera opcional — descomenta y usa una URL pública
+                https:// si quieres una (ver invitation-template.html para
+                más detalle sobre por qué):
+
+                <img src="https://your-site.netlify.app/email/header.jpg" width="600" alt="" style="display:block; width:100%; max-width:520px; height:auto; border-radius:8px; margin-bottom:28px;" />
+              -->
+              <p class="body-font" style="margin:0 0 18px; color:#FAF9F6; opacity:0.8; font-size:11px; letter-spacing:4px; text-transform:uppercase;">
+                Estáis Invitados
+              </p>
+              <h1 class="heading-font h1" style="margin:0; color:#FAF9F6; font-size:56px; font-style:italic; font-weight:500; line-height:1.1;">
+                Natalie &amp; Adán
+              </h1>
+              <p class="body-font" style="margin:18px 0 0; color:#FAF9F6; opacity:0.85; font-size:13px; letter-spacing:3px; text-transform:uppercase;">
+                28 de agosto de 2027 &nbsp;·&nbsp; Asturias, España
+              </p>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td class="stack-padding" style="padding: 40px 48px;">
+
+              <p class="body-font" style="margin:0 0 20px; color:#2B2D42; font-size:20px; font-style:italic; font-weight:400;">
+                ¡Hola, {{Guest Name}}!
+              </p>
+
+              <p class="body-font" style="margin:0 0 20px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                Nos casamos, y nos encantaría que estuvierais con nosotros. Nuestra boda tendrá lugar el <strong>sábado 28 de agosto de 2027</strong> en Valle de Bueida, en Quirós, Asturias, un pequeño valle en el Parque Natural de las Ubiñas.
+              </p>
+
+              <p class="body-font" style="margin:0 0 32px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                Todo lo que necesitáis saber está en <a href="{{Website URL}}" target="_blank" style="color:#2B2D42; text-decoration:underline;">nuestra página web de la boda</a>: horarios, cómo llegar, dónde alojaros, qué poneros y cómo confirmar asistencia.
+              </p>
+
+              <!-- Botones de acción — cada uno es su propia tabla pequeña
+                   para que puedan pasar a líneas separadas en pantallas
+                   estrechas, en lugar de quedar fijos uno junto al otro. -->
+              <div align="center" style="margin:0 0 24px;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display:inline-block; margin:0 6px 12px; border-radius:999px; background-color:#2B2D42;">
+                  <tr>
+                    <td align="center">
+                      <a href="{{RSVP Link}}" target="_blank" class="body-font" style="display:inline-block; padding:16px 36px; color:#FAF9F6; font-size:14px; font-weight:600; letter-spacing:1px; text-decoration:none; border-radius:999px;">
+                        RSVP
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display:inline-block; margin:0 6px 12px; border-radius:999px; border:1px solid #2B2D42;">
+                  <tr>
+                    <td align="center">
+                      <a href="{{Website URL}}" target="_blank" class="body-font" style="display:inline-block; padding:15px 32px; color:#2B2D42; font-size:14px; font-weight:600; letter-spacing:1px; text-decoration:none; border-radius:999px;">
+                        Visitar la Web
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <p class="body-font" style="margin:0 0 32px; color:#6C757D; font-size:13px; line-height:1.6;">
+                O copiad estos enlaces en vuestro navegador:<br />
+                RSVP: <a href="{{RSVP Link}}" style="color:#8A9A86; text-decoration:underline;">{{RSVP Link}}</a><br />
+                Web: <a href="{{Website URL}}" style="color:#8A9A86; text-decoration:underline;">{{Website URL}}</a>
+              </p>
+
+              <!-- Contenido de la web -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E4E1D8; border-bottom:1px solid #E4E1D8; margin:0 0 28px;">
+                <tr>
+                  <td style="padding: 28px 0;">
+                    <p class="body-font" style="margin:0 0 16px; color:#2B2D42; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">
+                      En la Web
+                    </p>
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td class="body-font" style="padding:6px 0; color:#2B2D42; font-size:14px; line-height:1.6;">
+                          <strong>Ubicación y Cómo Llegar</strong>: el recinto, la dirección y cómo llegar
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="body-font" style="padding:6px 0; color:#2B2D42; font-size:14px; line-height:1.6;">
+                          <strong>Alojamiento</strong>: opciones para alojaros cerca
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="body-font" style="padding:6px 0; color:#2B2D42; font-size:14px; line-height:1.6;">
+                          <strong>Código de Vestimenta</strong>: qué poneros, además de un tablero de inspiración
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <p class="body-font" style="margin:0 0 8px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                <strong>Por favor, confirmad antes del 1 de diciembre de 2026</strong> usando el botón de RSVP de arriba (está personalizado para vosotros).
+              </p>
+
+              <p class="body-font" style="margin:0 0 32px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                Si tenéis alguna duda mientras tanto, responded a este correo o poneos en contacto directamente, estaremos encantados de ayudar.
+              </p>
+
+              <p class="body-font" style="margin:0; color:#2B2D42; font-size:16px; font-style:italic; font-weight:400;">
+                Con cariño,<br />
+                Natalie &amp; Adán
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="stack-padding" align="center" style="padding: 24px 48px 40px;">
+              <p class="body-font" style="margin:0; color:#6C757D; font-size:12px; line-height:1.6;">
+                {{Website URL}}
+              </p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

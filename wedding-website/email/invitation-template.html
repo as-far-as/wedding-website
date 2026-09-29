@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--
+  WEDDING INVITATION EMAIL — editable template
+
+  HOW TO EDIT
+  - All the wording below is a draft — edit any text directly in this file.
+  - Placeholders are wrapped in double curly braces, e.g. {{Guest Name}}.
+    - If you're sending via a mail-merge tool that reads a Google Sheet
+      (e.g. Yet Another Mail Merge / GMass, both work directly from Gmail),
+      keep the {{Column Name}} syntax as-is and just make sure your sheet
+      has matching column headers.
+    - If you're sending manually (copy this HTML into Gmail's "Insert HTML"
+      via a browser extension, or into Mailchimp/similar), find-and-replace
+      {{Guest Name}} and {{RSVP Link}} per guest before sending.
+  - Two separate links are used, on purpose:
+    - {{Website URL}} — the site's homepage, e.g. https://your-site.netlify.app
+      (no trailing slash). Used for "browse the site" mentions.
+    - {{RSVP Link}} — each guest's personal RSVP page, e.g.
+      https://your-site.netlify.app/rsvp/their-guest-slug — the same
+      personalised/hashed link format the site already uses. Used for the
+      RSVP button specifically.
+  - {{RSVP Deadline}} e.g. "1st January 2027" — keep in sync with the FAQ page.
+
+  FONTS
+  - Matches the website: 'Bonbon' (the curly script) for the one big title
+    only, 'Jost' for everything else — same split the site itself uses
+    between font-heading and font-sans. Most email clients (Gmail app,
+    Outlook desktop, etc.) strip custom web fonts entirely and will fall
+    back to a generic serif/sans-serif regardless, but this ships the same
+    font stack as the site for clients that do render it (Apple Mail, iOS
+    Mail, some webmail).
+
+  IMAGES
+  - Email clients block/hide locally-referenced images, so any photo used
+    here (e.g. a header photo) must be hosted at a public https:// URL —
+    for example uploaded into this project's `public/` folder and referenced
+    via your live Netlify domain once deployed, not a relative file path.
+    This draft ships without a header photo so it works everywhere without
+    that extra step; there's a commented-out slot below if you want to add one.
+
+  COMPATIBILITY
+  - Built with table-based layout and inline styles, which is what actually
+    renders consistently across Gmail, Outlook, Apple Mail, etc. — please
+    keep that structure if you edit the markup, rather than switching to
+    flexbox/grid, which many email clients strip out.
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Natalie &amp; Adán — 28 August 2027</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Cormorant+Garamond:ital@1&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; background-color: #EDEBE4; }
+
+    /* Same font split as the website: Bonbon (curly script) for the one big
+       title only, with the same fallback chain as the site's --font-heading
+       token; Jost for everything else, matching --font-sans. */
+    .heading-font { font-family: 'Bonbon', 'Cormorant Garamond', cursive; }
+    .body-font    { font-family: 'Jost', Helvetica, Arial, sans-serif; }
+
+    @media only screen and (max-width: 620px) {
+      .email-container { width: 100% !important; }
+      .stack-padding { padding-left: 24px !important; padding-right: 24px !important; }
+      .header-padding { padding: 40px 24px !important; }
+      .h1 { font-size: 40px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#EDEBE4;">
+
+  <!-- Preheader (hidden preview text shown in the inbox list, not in the email body) -->
+  <div style="display:none; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
+    You're invited — Natalie &amp; Adán, 28th August 2027, Asturias, Spain.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#EDEBE4;">
+    <tr>
+      <td align="center" style="padding: 32px 16px;">
+
+        <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:100%; background-color:#FAF9F6; border-radius:12px; overflow:hidden;">
+
+          <!-- Header banner -->
+          <tr>
+            <td class="header-padding" align="center" style="background-color:#8A9A86; padding:56px 40px; text-align:center;">
+              <!--
+                Optional header photo — uncomment and point src at a public
+                https:// URL if you'd like one (e.g. one of the site's
+                collage images, re-hosted somewhere public):
+
+                <img src="https://your-site.netlify.app/email/header.jpg" width="600" alt="" style="display:block; width:100%; max-width:520px; height:auto; border-radius:8px; margin-bottom:28px;" />
+              -->
+              <p class="body-font" style="margin:0 0 18px; color:#FAF9F6; opacity:0.8; font-size:11px; letter-spacing:4px; text-transform:uppercase;">
+                You're Invited
+              </p>
+              <h1 class="heading-font h1" style="margin:0; color:#FAF9F6; font-size:56px; font-style:italic; font-weight:500; line-height:1.1;">
+                Natalie &amp; Adán
+              </h1>
+              <p class="body-font" style="margin:18px 0 0; color:#FAF9F6; opacity:0.85; font-size:13px; letter-spacing:3px; text-transform:uppercase;">
+                28th August 2027 &nbsp;·&nbsp; Asturias, Spain
+              </p>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td class="stack-padding" style="padding: 40px 48px;">
+
+              <p class="body-font" style="margin:0 0 20px; color:#2B2D42; font-size:20px; font-style:italic; font-weight:400;">
+                Dear {{Guest Name}},
+              </p>
+
+              <p class="body-font" style="margin:0 0 20px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                We're getting married, and we'd love for you to be there with us. Our wedding will take place on <strong>Saturday 28th August 2027</strong> at Valle de Bueida, in Quirós, Asturias — a small mountain valley in northern Spain.
+              </p>
+
+              <p class="body-font" style="margin:0 0 32px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                Everything you need to know is on <a href="{{Website URL}}" target="_blank" style="color:#2B2D42; text-decoration:underline;">our wedding website</a>: schedule, getting here, where to stay, what to wear, and how to RSVP.
+              </p>
+
+              <!-- CTA buttons — each is its own small table so they can wrap
+                   onto separate lines on narrow screens, rather than being
+                   locked side-by-side in one row like table-cells would be. -->
+              <div align="center" style="margin:0 0 24px;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display:inline-block; margin:0 6px 12px; border-radius:999px; background-color:#2B2D42;">
+                  <tr>
+                    <td align="center">
+                      <a href="{{RSVP Link}}" target="_blank" class="body-font" style="display:inline-block; padding:16px 36px; color:#FAF9F6; font-size:14px; font-weight:600; letter-spacing:1px; text-decoration:none; border-radius:999px;">
+                        RSVP
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display:inline-block; margin:0 6px 12px; border-radius:999px; border:1px solid #2B2D42;">
+                  <tr>
+                    <td align="center">
+                      <a href="{{Website URL}}" target="_blank" class="body-font" style="display:inline-block; padding:15px 32px; color:#2B2D42; font-size:14px; font-weight:600; letter-spacing:1px; text-decoration:none; border-radius:999px;">
+                        Visit the Website
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <p class="body-font" style="margin:0 0 32px; color:#6C757D; font-size:13px; line-height:1.6;">
+                Or copy these links into your browser:<br />
+                RSVP: <a href="{{RSVP Link}}" style="color:#8A9A86; text-decoration:underline;">{{RSVP Link}}</a><br />
+                Website: <a href="{{Website URL}}" style="color:#8A9A86; text-decoration:underline;">{{Website URL}}</a>
+              </p>
+
+              <!-- What's on the site -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #E4E1D8; border-bottom:1px solid #E4E1D8; margin:0 0 28px;">
+                <tr>
+                  <td style="padding: 28px 0;">
+                    <p class="body-font" style="margin:0 0 16px; color:#2B2D42; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">
+                      On the Website
+                    </p>
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td class="body-font" style="padding:6px 0; color:#2B2D42; font-size:14px; line-height:1.6;">
+                          <strong>Location &amp; Getting Here</strong>: the venue, address, and how to get there
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="body-font" style="padding:6px 0; color:#2B2D42; font-size:14px; line-height:1.6;">
+                          <strong>Accommodation</strong>: options for staying nearby
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="body-font" style="padding:6px 0; color:#2B2D42; font-size:14px; line-height:1.6;">
+                          <strong>Asturias</strong>: our recommendations for the area
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="body-font" style="padding:6px 0; color:#2B2D42; font-size:14px; line-height:1.6;">
+                          <strong>Dress Code</strong>: what to wear, plus a mood board
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <p class="body-font" style="margin:0 0 8px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                <strong>Please RSVP by 1st December 2026</strong> using the RSVP button above (it's personalised to you).
+              </p>
+
+              <p class="body-font" style="margin:0 0 32px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                If you have any questions in the meantime, just reply to this email or get in touch directly, we're always happy to help.
+              </p>
+
+              <p class="body-font" style="margin:0; color:#2B2D42; font-size:16px; font-style:italic; font-weight:400;">
+                With love,<br />
+                Natalie &amp; Adán
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="stack-padding" align="center" style="padding: 24px 48px 40px;">
+              <p class="body-font" style="margin:0; color:#6C757D; font-size:12px; line-height:1.6;">
+                {{Website URL}}
+              </p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

@@ -1,13 +1,18 @@
 import { useLanguage } from '../i18n/useLanguage';
+import { ENABLED_LANGUAGES } from '../i18n/config';
 
 const OPTIONS = [
   { code: 'en', label: 'EN' },
   { code: 'es', label: 'ES' },
   { code: 'ast', label: 'AST' },
-];
+].filter(({ code }) => ENABLED_LANGUAGES.includes(code));
 
 export default function LanguageToggle({ className = '' }) {
   const { language, setLanguage } = useLanguage();
+
+  // Nothing to toggle between while only one language is enabled —
+  // see ENABLED_LANGUAGES in LanguageContext.jsx.
+  if (OPTIONS.length < 2) return null;
 
   return (
     <div

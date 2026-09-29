@@ -4,6 +4,7 @@ export default {
     accommodation: 'Alloxamientu',
     asturias: 'Asturies',
     dressCode: 'Vistimenta',
+    gifts: 'Regalos',
     faqs: 'Entrugues',
     rsvp: 'RSVP',
     toggleMenu: 'Abrir el menú de navegación',
@@ -134,12 +135,12 @@ export default {
       detailsText: ' El tiempu pue ser variable n\'Asturies. Pue llover, ya les temperatures van baxar pela nueche. ¡Preparái l\'equipaxe en consecuencia si vais acampar!',
     },
     option3: {
-      title: 'Opción 3: Quedar en Xixón ya Coyer l\'Autobús',
+      title: 'Opción 3: Quedar en Xixón',
       intro: 'El sábadu va circular un autobús d\'ida ya vuelta ente Xixón ya la finca. Podéis quedar na ciudá ya vinir a la boda esi día, pa volver pela nueche. Si pensáis coyer l\'autobús, indicáilo nel RSVP.',
     },
     option4: {
       title: 'Opción 4: Pela Vuesa Cuenta',
-      intro: 'Si nenguna de les opciones d\'enriba vos presta, sentíivos llibres d\'organizavos pela vuesa cuenta. Hai munchos otros sitios onde alloxase n\'Asturies, ya queremos que teáis a gustu. Namás aseguráivos de tener un plan pa dir ya volver de la finca, yá que hai pocos taxis na zona.',
+      intro: 'Si preferís organizar los vuesos propios planes, sentíivos llibres de facelo. Hai munchos otros sitios onde alloxase n\'Asturies, ya queremos que teáis a gustu. Namás aseguráivos de tener un plan pa dir ya volver de la finca, yá que hai pocos taxis na zona.',
     },
   },
 
@@ -188,12 +189,19 @@ export default {
   dressCode: {
     title: 'Códigu de Vistimenta',
     tagline: 'Ninfes etéreas de montaña con un toque retro de los años 70. Interpretailo como queráis.',
-    body: 'La boda va celebrase al campu abiertu nun prau de montaña (con suerte con sol). Vamos bailar tola nueche. Va refrescar en cuanto se pon el sol. Asina que vais necesitar calzáu col que podáis bailar, o daqué cómodo pa camudavos más sero, amás de daqué fresco ya cómodo pal sol ya delles capes extra pa la nueche.',
+    body: 'La boda va celebrase al campu abiertu nun prau de montaña (con suerte con sol). Vamos bailar tola nueche. Va refrescar en cuanto se pon el sol. Asina que vais necesitar calzáu col que podáis bailar, o daqué cómodo pa camudavos más sero, amás de daqué fresco ya cómodo pal sol ya delles capes extra pa la nueche. \n Nun fai falta llevar corbata si nun queréis (Adán probablemente nun va llevar una).',
     moodBoard: {
       title: 'Tableru d\'Inspiración',
       intro: 'Pa inspirávos visualmente, equí tenéis el nuesu tableru de Pinterest compartíu.',
       linkLabel: 'Abrir el tableru en Pinterest',
     },
+  },
+
+  gifts: {
+    title: 'Regalos',
+    body: "Sabemos que vinir hasta equí yá ye un gran esfuerciu, asina que la vuesa presencia na boda ye daveres el meyor regalu. \n Si aun así queréis dar daqué, agradecemos con gustu contribuciones pa la nuesa fiesta ya lluna de miel. Usái l'enllaz d'embaxo, o nun vos preocupéis ya esperái al día. Ensin presión (¡daveres!)",
+    monzoLabel: 'Regalar en llibres (Monzo)',
+    wiseLabel: 'Regalar en euros (Wise)',
   },
 
   faqs: {
@@ -209,8 +217,7 @@ export default {
       { q: '¿Qué tiempu va facer a la fin d\'agostu?', a: 'Cálidu ya húmedu. Esperái 18–26°C durante\'l día, nueches más fresques, 12–16°C en cuanto se pon el sol. La finca va tener zones cubiertes ya tenemos un plan pa la lluvia.' },
       { q: '¿Puedo facer semeyes ya compartiles nes redes sociales?', a: 'Sí. Pero va haber un fotógrafu profesional, ya vamos compartir les semeyes con vós darréu. \n Si queréis facer semeyes, p\'alantre, pero intentái usar el móvil lo mínimo posible si ye viable.' },
       { q: '¿Va haber comida y/o bebida?', a: 'Sí. Va haber un aperitivu a la llegada, banquete ya daqué pa picar pela nueche, con una barra completamente equipada. Indicái cualesquier necesidá alimentaria nel RSVP.' },
-      { q: '¿Hai llista de bodes?', a: 'Sabemos que vinir hasta equí yá ye un gran esfuerciu pa dalgunos, asina que la vuesa presencia na boda ye daveres el meyor regalu. Si aun así queréis dar daqué, agradecemos con gustu contribuciones pa la nuesa lluna de miel — enllaces embaxo pa llibres (GBP) o euros (EUR).', giftLinks: { monzo: 'Pagar en llibres (Monzo)', wise: 'Pagar en euros (Wise)' } },
-      { q: 'Tengo una entruga que nun ta equí.', aTemplate: 'Escribinos. Podéis contautar con Adán en {adanEmail} o en {adanPhone}, o con Natalie en {natalieEmail}. Vamos facer lo posible por responder ceo. Si ye una entruga que probablemente tengan otros convidaos, vamos amestala equí.' },
+      { q: 'Tengo una entruga que nun ta equí.', aTemplate: 'Escribinos. Podéis contautar con Adán en {adanEmail} o en {adanPhone}, o con Natalie en {natalieEmail} o en {nataliePhone}. Vamos facer lo posible por responder ceo. Si ye una entruga que probablemente tengan otros convidaos, vamos amestala equí.' },
     ],
     footer: {
       before: 'Más detalles sobre cómo llegar ya onde alloxavos nes páxines d\'',

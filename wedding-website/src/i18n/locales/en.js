@@ -4,6 +4,7 @@ export default {
     accommodation: 'Accommodation',
     asturias: 'Asturias',
     dressCode: 'Dress Code',
+    gifts: 'Gifts',
     faqs: 'FAQs',
     rsvp: 'RSVP',
     toggleMenu: 'Toggle navigation menu',
@@ -134,12 +135,12 @@ export default {
       detailsText: " The weather can be changeable in Asturias. It can rain, and temperatures will drop at night. Please pack accordingly if you are camping!",
     },
     option3: {
-      title: 'Option 3: Stay in Gijón and take the bus',
+      title: 'Option 3: Stay in Gijón',
       intro: 'A return bus will run between Gijón and the venue on Saturday. You can stay in the city and come to the wedding on the day, before heading back at night. If you intend on getting the bus, please let us know in your RSVP.',
     },
     option4: {
       title: 'Option 4: Do Your Own Thing',
-      intro: 'If none of the above options suit, feel free to make your own arrangements. There are plenty of other places to stay in Asturias, and we want you to be comfortable. Just make sure you have a plan for getting to and from the venue as there are limited taxis in the area.',
+      intro: 'If you prefer to work out your own plans, please feel free. There are plenty of other places to stay in Asturias, and we want you to be comfortable. Just make sure you have a plan for getting to and from the venue as there are limited taxis in the area.',
     },
   },
 
@@ -188,12 +189,19 @@ export default {
   dressCode: {
     title: 'Dress Code',
     tagline: 'Ethereal mountain nymphs meets retro 70s dreamboats. Make of that what you will.',
-    body: "The wedding will be held outside in a mountain meadow (hopefully in the sunshine). We'll be dancing all night. It will get chilly once the sun goes down. So you'll want shoes you can dance in, or something comfy to change into later, plus something cool and comfortable for the sunshine and a few extra layers for the evening.",
+    body: "The wedding will be held outside in a mountain meadow (hopefully in the sunshine). We'll be dancing all night. It will get chilly once the sun goes down. So you'll want shoes you can dance in, or something comfy to change into later, plus something cool and comfortable for the sunshine and a few extra layers for the evening. \n No need to wear a tie if you don't want to (Adán probably won't be wearing one)",
     moodBoard: {
       title: 'Mood Board',
       intro: 'For some visual inspiration, take a look at our shared Pinterest board.',
       linkLabel: 'Open the mood board on Pinterest',
     },
+  },
+
+  gifts: {
+    title: 'Gifts',
+    body: "We know travelling here is a big commitment, so your presence at the wedding is genuinely the best gift. \n If you'd still like to give something, contributions to our party and honeymoon are gratefully received. Use the link below, or feel free to wait until the day. No pressure (really!)",
+    monzoLabel: 'Gift in GBP (Monzo)',
+    wiseLabel: 'Gift in EUR (Wise)',
   },
 
   faqs: {
@@ -202,15 +210,14 @@ export default {
     items: [
       { q: 'How do I RSVP?', a: "Use the personal link from your invitation. It'll have your name (and your plus-one, if you've got one) already attached. If you lose your link please get in touch and we'll resend it." },
       { q: 'When is the RSVP deadline?', aBold: 'Please reply by 1st January 2027.', a: "This is to ensure we can finalise catering and accommodation numbers. Please don't leave it too late." },
-      { q: 'What is the dress code?', aBold: 'ethereal mountain nymphs meets retro 70s dreamboats.', a: "Make of that what you will. \n\n The boring answer is: The wedding will be held outside in a mountain meadow (hopefully in the sunshine). We'll be dancing all night. It will get chilly once the sun goes down. So you'll want shoes you can dance in, or something comfy to change into later, plus something cool and comfortable for the sunshine and a few extra layers for the evening.", links: [{ label: 'See our Pinterest mood board', url: 'https://pin.it/2ZMHQo8Qo' }] },
+      { q: 'What is the dress code?', aBold: 'ethereal mountain nymphs meets retro 70s dreamboats.', a: "The wedding will be held outside in a mountain meadow (hopefully in the sunshine). We'll be dancing all night. It will get chilly once the sun goes down. So you'll want shoes you can dance in, or something comfy to change into later, plus something cool and comfortable for the sunshine and a few extra layers for the evening.", links: [{ label: 'See our Pinterest mood board', url: 'https://pin.it/2ZMHQo8Qo' }] },
       { q: 'What are the timings for the wedding day?', a: 'Saturday 28 August is the main event: arrivals in the morning around midday for an aperitivo, followed by the ceremony. There will then be a banquet lunch in the afternoon, music and bar into the evening and beyond.' },
       { q: 'Is there parking at the venue?', a: 'Yes, on-site parking is available. If you plan to drink, use the bus running from Gijón, or arrange a taxi (there will be one taxi on-hand on the night to take people nearby).' },
       { q: 'I have dietary requirements. Can you accommodate me?', a: "Yes, please let us know in your RSVP. The more specific you can be, the better. Vegetarian, vegan, and common allergies won't be a problem." },
       { q: "What's the weather likely to be in late August?", a: 'Warm, humid. Expect 18–26°C during the day, cooler evenings, 12–16°C once the sun drops. The venue will have covered areas and we have planned for rain.' },
       { q: 'Can I take photos and share them on social media?', a: "Yes. But there will be a photographer there, and we'll share the professional photos with you afterwards. \n If you want to take photos feel free, but try and keep phone use to a minimum if possible." },
       { q: 'Will there be food and/or drink?', a: 'Yes. There will be an aperitivo on arrival, banquet lunch and snacks in the evening, with a fully stocked bar. Please flag any dietary requirements in your RSVP.' },
-      { q: 'Is there a gift list or registry?', a: "We know travelling here is a big commitment for some, so your presence at the wedding is genuinely the best gift. If you'd still like to give something, contributions to our honeymoon are gratefully received — links below for GBP or EUR.", giftLinks: { monzo: 'Pay in GBP (Monzo)', wise: 'Pay in EUR (Wise)' } },
-      { q: 'I have a question not answered here.', aTemplate: "Drop us a message. You can reach Adán at {adanEmail} or {adanPhone}, or Natalie at {natalieEmail}. We'll do our best to reply promptly. If it's a question other guests are likely to have, we'll add it here." },
+      { q: 'I have a question not answered here.', aTemplate: "Drop us a message. You can reach Adán at {adanEmail} or {adanPhone}, or Natalie at {natalieEmail} or {nataliePhone}. We'll do our best to reply promptly. If it's a question other guests are likely to have, we'll add it here." },
     ],
     footer: {
       before: 'More detail on getting here and where to stay can be found on the',

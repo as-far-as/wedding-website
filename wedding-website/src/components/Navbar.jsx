@@ -5,7 +5,7 @@ import { getStoredGuestSlug, subscribeGuestSlug } from '../utils/guestSlug';
 import LanguageToggle from './LanguageToggle';
 
 export default function Navbar() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Subscribes to the guest slug being stored, however/whenever that
@@ -17,8 +17,10 @@ export default function Navbar() {
   const NAV_LINKS = [
     { to: '/location',      label: t.nav.location },
     { to: '/accommodation', label: t.nav.accommodation },
-    { to: '/asturias',      label: t.nav.asturias },
+    // The Asturias page isn't part of the Spanish site — see Asturias.jsx.
+    ...(language === 'es' ? [] : [{ to: '/asturias', label: t.nav.asturias }]),
     { to: '/dress-code',    label: t.nav.dressCode },
+    { to: '/gifts',         label: t.nav.gifts },
     { to: '/faqs',          label: t.nav.faqs },
     { to: guestSlug ? `/rsvp/${guestSlug}` : '/rsvp', label: t.nav.rsvp },
   ];

@@ -28,6 +28,25 @@
   }
 }
 
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.35) rotate(0deg);
+  }
+  50% {
+    opacity: var(--sparkle-peak, 1);
+    transform: translateY(-6px) scale(1.25) rotate(45deg);
+  }
+}
+
+.sparkle {
+  position: absolute;
+  color: var(--color-wedding-bg);
+  opacity: 0;
+  animation: sparkleTwinkle ease-in-out infinite;
+  filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.85)) drop-shadow(0 0 14px rgba(255, 246, 214, 0.5));
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

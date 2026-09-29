@@ -1,3 +1,5 @@
+import Sparkles from './Sparkles';
+
 export default function PageLayout({ title, subtitle, eyebrow, backdrop, children }) {
   const rootStyle = backdrop
     ? {
@@ -51,6 +53,7 @@ export default function PageLayout({ title, subtitle, eyebrow, backdrop, childre
               }}
             />
           )}
+          <Sparkles />
           <div className="max-w-4xl mx-auto relative">
             {eyebrow && (
               <p
@@ -98,7 +101,7 @@ export function Section({ title, eyebrow, children }) {
         </p>
       )}
       <h2
-        className="font-heading text-wedding-text mb-3"
+        className="font-display text-wedding-text mb-3"
         style={{ fontSize: '1.5rem' }}
       >
         {title}
@@ -122,7 +125,7 @@ export function Card({ title, children }) {
     <div className="rounded-lg p-6" style={{ border: '1px solid var(--page-border, rgba(138,154,134,0.3))' }}>
       {title && (
         <h3
-          className="font-heading text-wedding-text mb-3"
+          className="font-display text-wedding-text mb-3"
           style={{ fontSize: '1.05rem' }}
         >
           {title}

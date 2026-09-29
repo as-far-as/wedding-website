@@ -210,7 +210,7 @@ export default function Rsvp() {
 
       {status === 'no-slug' && (
         <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
-          <h2 className="font-heading text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.noSlug.title}</h2>
+          <h2 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.noSlug.title}</h2>
           <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>{r.noSlug.text}</p>
         </div>
       )}
@@ -221,21 +221,21 @@ export default function Rsvp() {
 
       {status === 'not-found' && (
         <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
-          <h2 className="font-heading text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.notFound.title}</h2>
+          <h2 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.notFound.title}</h2>
           <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>{r.notFound.text}</p>
         </div>
       )}
 
       {status === 'error' && (
         <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
-          <h2 className="font-heading text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.loadError.title}</h2>
+          <h2 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.loadError.title}</h2>
           <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>{r.loadError.text}</p>
         </div>
       )}
 
       {status === 'done' && (
         <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
-          <h2 className="font-heading text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.successTitle}</h2>
+          <h2 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.successTitle}</h2>
           <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
             {r.successText.replace('{name}', guest.name)}
           </p>
@@ -245,7 +245,7 @@ export default function Rsvp() {
       {status === 'summary' && guest && (
         <div className="space-y-6">
           <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
-            <h2 className="font-heading text-wedding-text mb-2" style={{ fontSize: '1.2rem' }}>{r.summary.title}</h2>
+            <h2 className="font-display text-wedding-text mb-2" style={{ fontSize: '1.2rem' }}>{r.summary.title}</h2>
             <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.875rem' }}>{r.summary.subtitle}</p>
             <dl>
               <SummaryRow label={r.summary.attendingLabel} value={attending === 'yes' ? r.summary.yes : r.summary.no} />

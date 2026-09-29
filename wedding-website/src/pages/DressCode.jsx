@@ -40,7 +40,7 @@ export default function DressCode() {
       <p className="font-sans text-wedding-text leading-relaxed mb-6" style={{ fontSize: '1.05rem', fontWeight: 600 }}>
         {dc.tagline}
       </p>
-      <p className="font-sans text-wedding-muted leading-relaxed mb-10" style={{ fontSize: '0.925rem' }}>
+      <p className="font-sans text-wedding-muted leading-relaxed mb-10" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
         {dc.body}
       </p>
 

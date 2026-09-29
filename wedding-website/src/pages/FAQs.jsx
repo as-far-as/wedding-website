@@ -66,8 +66,7 @@ export default function FAQs() {
   const adanEmail = import.meta.env.VITE_ADAN_EMAIL;
   const adanPhone = import.meta.env.VITE_ADAN_PHONE;
   const natalieEmail = import.meta.env.VITE_NATALIE_EMAIL;
-  const monzoLink = import.meta.env.VITE_MONZO_LINK;
-  const wiseLink = import.meta.env.VITE_WISE_LINK;
+  const nataliePhone = import.meta.env.VITE_NATALIE_PHONE;
 
   return (
     <PageLayout
@@ -77,20 +76,15 @@ export default function FAQs() {
     >
 
       <div>
-        {f.items.map(({ q, a, aBold, aTemplate, giftLinks, links }) => (
+        {f.items.map(({ q, a, aBold, aTemplate, links }) => (
           <FAQItem
             key={q}
             question={q}
             answerBold={aBold}
             answer={aTemplate
-              ? aTemplate.replace('{adanEmail}', adanEmail).replace('{adanPhone}', adanPhone).replace('{natalieEmail}', natalieEmail)
+              ? aTemplate.replace('{adanEmail}', adanEmail).replace('{adanPhone}', adanPhone).replace('{natalieEmail}', natalieEmail).replace('{nataliePhone}', nataliePhone)
               : a}
-            links={giftLinks
-              ? [
-                  monzoLink && { label: giftLinks.monzo, url: monzoLink },
-                  wiseLink && { label: giftLinks.wise, url: wiseLink },
-                ].filter(Boolean)
-              : links}
+            links={links}
           />
         ))}
       </div>

@@ -1,9 +1,16 @@
+import { Navigate } from 'react-router-dom';
 import PageLayout, { Section, CardGrid, Card } from '../components/PageLayout';
 import { useLanguage } from '../i18n/useLanguage';
 import backdrop from '../assets/collages/asturias.webp';
 
 export default function Asturias() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  // The Spanish site drops this page entirely (it's mainly aimed at
+  // international guests unfamiliar with the area) — its content isn't
+  // translated, so bail out before touching t.asturias.
+  if (language === 'es') return <Navigate to="/" replace />;
+
   const as = t.asturias;
 
   return (
@@ -78,7 +85,7 @@ export default function Asturias() {
         <div className="space-y-5">
           {as.foodAndDrink.items.map(({ name, desc }) => (
             <div key={name} className="flex flex-col sm:flex-row gap-2 sm:gap-6 pb-5 border-b border-wedding-accent/15 last:border-0">
-              <span className="font-heading text-wedding-text shrink-0" style={{ minWidth: '11rem', fontSize: '1.15rem' }}>{name}</span>
+              <span className="font-display text-wedding-text shrink-0" style={{ minWidth: '11rem', fontSize: '1.15rem' }}>{name}</span>
               <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>{desc}</p>
             </div>
           ))}

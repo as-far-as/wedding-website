@@ -4,6 +4,7 @@ export default {
     accommodation: 'Alojamiento',
     asturias: 'Asturias',
     dressCode: 'Vestimenta',
+    gifts: 'Regalos',
     faqs: 'Preguntas',
     rsvp: 'RSVP',
     toggleMenu: 'Abrir menú de navegación',
@@ -49,11 +50,7 @@ export default {
       title: 'Cómo Llegar',
       byCar: {
         title: 'En Coche',
-        intro: 'El coche es la forma más práctica de moverse por Asturias.',
-        parking: {
-          title: 'Aparcamiento',
-          intro: 'Hay aparcamiento disponible en el propio recinto. \n Si conducís, organizaos con antelación para no beber, o buscad quien os lleve de vuelta si pensáis beber. \n Habrá taxis disponibles esa noche para trayectos de ida y vuelta al recinto desde la zona.',
-        },
+        intro: 'El coche es la forma más práctica. Habrá aparcamiento disponible en el propio recinto. \n Si conducís, organizaos con antelación para no beber, o buscad quien os lleve de vuelta si pensáis beber. \n Habrá taxis disponibles esa noche para trayectos de ida y vuelta al recinto desde la zona.',
         routes: [
           { from: 'Aeropuerto de Asturias (OVD)', dist: '~70 km', time: '~1 h 20 min', route: 'A-66 sur, salida Villazón, AS-228' },
           { from: 'Gijón', dist: '~60 km', time: '~1 h', route: 'A-66 sur desde Oviedo, salida Villazón' },
@@ -65,52 +62,9 @@ export default {
       shuttle: {
         title: 'Autobús desde Gijón',
         bus: { title: 'Autobús', desc: 'El día de la boda habrá un autobús entre Gijón y el recinto (horarios por confirmar). Indicad en el RSVP si os gustaría viajar en autobús desde Gijón.' },
-        gijonLabel: 'Gijón como Base',
-        gijonText: 'Gijón es la ciudad principal de Asturias, y es la ciudad natal de Adán. Tiene muchos hoteles, una playa, y muy buenas opciones para comer y beber. Os recomendamos alojaros aquí y coger el autobús si no queréis quedaros cerca del recinto — es la base obvia para el fin de semana. Ved la página de Asturias para más recomendaciones.',
-      },
-      byPlane: {
-        title: 'En Avión',
-        asturias: {
-          title: 'Aeropuerto de Asturias (OVD)',
-          descBefore: 'Asturias es el aeropuerto más cercano al recinto y el que recomendamos para volar. Está a 1h20 en coche del recinto, o a 30 minutos de Gijón / Oviedo (los autobuses de Alsa salen cada hora). \n Para el próximo verano, las rutas programadas incluyen:',
-          bullets: [
-            'Wizz Air: Londres Luton, mar / jue / sáb',
-            'Aer Lingus: Dublín, mar / sáb',
-            'Volotea: París Orly, mar / jue / dom',
-            'Lufthansa: Fráncfort (fechas por confirmar)',
-            'KLM: Ámsterdam (fechas por confirmar)',
-            'También podéis volar fácilmente con escala en Madrid desde la mayoría de sitios',
-          ],
-        },
-        santander: {
-          title: 'Aeropuerto de Santander (SDR)',
-          desc: 'Santander está a unas 2h30 del recinto, y a 1h45 de Gijón. Además de Londres Stansted, Ryanair también vuela a Santander desde Manchester, Birmingham, Edimburgo y otros destinos europeos. \n Los vuelos suelen ser más baratos que a Asturias, así que puede ser una opción más fácil/económica, sobre todo si pensáis quedaros más tiempo en el norte de España y visitar, por ejemplo, los Picos de Europa o Llanes, en el oriente.',
-        },
-        recommendedTimings: {
-          title: 'Horarios Recomendados para Volar a Asturias desde Londres',
-          intro: 'Como Wizz Air solo vuela entre Luton y Asturias los martes, jueves y sábados, esta es la combinación que mejor encuadra el fin de semana de la boda:',
-          outboundLabel: 'Ida:',
-          outboundText: 'jueves 26 de agosto, Luton 14.10 → Asturias 17.05',
-          returnLabel: 'Vuelta:',
-          returnText: 'martes 31 de agosto, Asturias 17:40 → Luton 18:30',
-          note: 'Si necesitáis llegar más tarde o volver antes, podéis volar vía Madrid o desde Santander.',
-        },
-      },
-      overland: {
-        title: 'Opciones por Tierra',
-        intro: 'Si preferís no volar, hay dos formas de llegar por tierra desde el Reino Unido y el norte de Europa.',
-        ferry: {
-          title: 'Ferry: Portsmouth a Santander',
-          desc: 'Brittany Ferries tiene una travesía directa de Portsmouth a Santander, una gran opción si queréis traer vuestro propio coche para hacer una ruta por el norte de España.',
-        },
-        train: {
-          title: 'Tren: París a Hendaya, y luego en adelante',
-          desc: 'Viajando en tren desde París, el servicio directo solo llega hasta Hendaya / Irún, en la frontera franco-española. Desde allí, continuad en BlaBlaCar (coche compartido) o en autobús de Alsa desde Irún hasta Gijón u Oviedo, y organizad el transporte hasta el recinto desde ahí.',
-        },
       },
       howeverYouGetHere: {
-        title: 'Como sea que Lleguéis',
-        text: 'Todo lo anterior es completamente opcional, así que sentíos libres de ignorarlo por completo y hacer lo que queráis. Nos encantaría que la gente pasara el máximo tiempo posible en la zona y la explorara a su manera, pero entendemos que ya es un gran esfuerzo venir hasta aquí, así que ajustadlo a vuestro horario. \n Si tenéis alguna duda sobre la logística, no dudéis en poneros en contacto con Adán o Natalie, estaremos encantados de ayudar.',
+        text: 'Si tenéis alguna duda sobre la logística, no dudéis en poneros en contacto con Adán o Natalie, estaremos encantados de ayudar.',
       },
     },
   },
@@ -130,70 +84,33 @@ export default {
     option2: {
       title: 'Opción 2: Acampada en el Recinto',
       intro: 'El recinto tiene un campo anexo donde podéis montar la tienda o quedaros en una autocaravana de alquiler, totalmente gratis. Es un lugar precioso, en el bosque junto a un arroyo, y estaréis mucho más cerca de toda la acción. También podéis usar las duchas y los baños del recinto durante vuestra estancia.',
-      detailsLabel: 'Nota:',
-      detailsText: ' El tiempo puede ser cambiante en Asturias. Puede llover, y las temperaturas bajarán por la noche. ¡Preparad el equipaje en consecuencia si vais a acampar!',
     },
     option3: {
-      title: 'Opción 3: Quedaros en Gijón y Coger el Autobús',
+      title: 'Opción 3: Quedaros en Gijón',
       intro: 'El sábado circulará un autobús de ida y vuelta entre Gijón y el recinto. Podéis quedaros en la ciudad y venir a la boda el día, para volver por la noche. Si pensáis coger el autobús, decídnoslo en el RSVP.',
     },
     option4: {
       title: 'Opción 4: Por Vuestra Cuenta',
-      intro: 'Si ninguna de las opciones anteriores os viene bien, sentíos libres de organizaros por vuestra cuenta. Hay muchos otros sitios donde alojarse en Asturias, y queremos que estéis cómodos. Solo aseguraos de tener un plan para ir y volver del recinto, ya que hay pocos taxis en la zona.',
-    },
-  },
-
-  asturias: {
-    title: 'Asturias',
-    about: {
-      title: 'Sobre la Región',
-      p1: 'Seguramente hayáis oído a Adán hablar sin parar de lo buena que es Asturias (o quizá ya hayáis tenido el privilegio de visitarla). \n En cualquier caso, pensamos que os gustaría que compartiéramos algunas de nuestras recomendaciones sobre las mejores cosas que hacer en la zona.',
-    },
-    thingsToDo: {
-      title: 'Qué Hacer',
-      gijon: { title: 'Gijón', desc: 'Aquí es donde se crió Adán, y la mitad de su familia todavía vive allí. \n Es la ciudad más grande de Asturias, y hogar de su mejor equipo de fútbol, el Real Sporting. Antiguamente industrial y ahora reinventada, con muchos sitios para comer y beber y una playa y costa preciosas. El casco antiguo (Cimavilla) es el mejor sitio para tomar algo (¡sidra!)', distance: '~1h del recinto - autobús de ida y vuelta el día de la boda' },
-      picos: { title: 'Picos de Europa', desc: 'El parque nacional más antiguo de España, con impresionantes picos calizos, gargantas y pueblos de montaña. Si os gusta el senderismo, este es el sitio.', distance: '~1,5 h del recinto' },
-      ubinas: { title: 'Parque Natural de las Ubiñas', desc: 'El propio recinto está dentro del precioso Parque Natural de las Ubiñas, donde hay una mezcla de bosques antiguos, valles remotos y montañas exigentes para subir. \n Es mucho más tranquilo que los Picos de Europa, y podría decirse que una experiencia más única y especial', distance: 'justo al lado' },
-      redes: { title: 'Parque Natural de Redes', desc: 'Reserva de la Biosfera con algunos de los bosques más grandes de Asturias y una naturaleza increíble.', distance: '~1 h del recinto' },
-      llanesRibadesella: { title: 'Llanes y Ribadesella', desc: 'La costa entre estos dos pueblos costeros tiene las mejores playas de la región, son realmente espectaculares y no se parecen a nada que encontraréis en el sur de España.', distance: '~1 h del recinto' },
-      villages: { title: 'Pueblos Costeros', desc: 'Cudillero, Luarca, Tazones, Candás... Todos son pueblos costeros preciosos para pasar el día y comer marisco fresco delicioso. Nuestro favorito personal es el arroz con bugre en Tazones.' },
-      oviedo: { title: 'Oviedo', desc: 'La gran capital regional. Más pequeña que Gijón (y con un equipo de fútbol inferior). \n Se puede recorrer a pie, con un precioso casco antiguo medieval y catedral.', distance: '~45 min del recinto' },
-    },
-    foodAndDrink: {
-      title: 'Comida y Bebida',
-      intro: 'La comida en Asturias es contundente y abundante. Tenemos productos locales excepcionales, incluyendo la región con más quesos de Europa, marisco, legumbres (fabada) y sidra. \n Por supuesto tendréis ocasión de probar algunos de estos en la boda, pero además de eso aquí van algunas de nuestras recomendaciones',
-      items: [
-        { name: 'Casa Jamallo', desc: 'En Bárzana, Quirós (cerca del recinto). Buena para caza y guisos.' },
-        { name: 'Casa Generosa', desc: 'Cerca de Proaza. Un referente para la fabada y el cabritu (cabrito). Recomendamos ir andando desde Les Xanes' },
-        { name: 'El Planeta', desc: 'Nuestro sitio favorito para marisco en Gijón. Pedid las sardinas.' },
-        { name: 'Gloria (Gijón)', desc: 'Versión moderna de la cocina asturiana, muy bueno.' },
-        { name: 'El Cencerro (Gijón)', desc: 'El mejor para carne / chuletón en Gijón. Pedid las mollejas si las tienen.' },
-        { name: 'Tar d\'Abéu (Gijón)', desc: 'Sidrería clásica en Gijón con comida muy buena y original' },
-        { name: 'Farragua', desc: 'Alta cocina en Gijón, muy bueno' },
-        { name: 'El Uría', desc: 'El mejor para marisco (arroz con bugre) en Tazones' },
-        { name: 'El Molín de Mingo', desc: 'Cerca de Llanes, el mejor arroz con pitu (arroz con pollo) en Asturias' },
-        { name: 'Fitumar', desc: 'Muy buen marisco en la playa.' },
-        { name: 'Gueyümar', desc: 'También muy buen marisco en la playa - un poco más elegante' },
-      ],
-    },
-    weather: {
-      title: 'El Tiempo en Agosto',
-      intro: 'Agosto es el mes más cálido de Asturias, pero sigue siendo Asturias. Los días deberían ser cálidos pero no calurosos y las noches serán frescas. Puede llover en cualquier momento. El paisaje es verde por algo.',
-      daytime: { strong: 'De día:', text: ' 18–26°C. Esperamos que haga sol, pero preparados para todo.' },
-      evenings: { strong: 'Por la noche:', text: ' Baja a 12–16°C en cuanto se pone el sol. Traed una capa que os guste.' },
-      rain: { strong: 'Lluvia:', text: ' Posibilidad real cualquier día. Tenemos un plan para el tiempo cambiante.' },
+      intro: 'Si preferís organizar vuestros propios planes, sentíos libres de hacerlo. Hay muchos otros sitios donde alojarse en Asturias, y queremos que estéis cómodos. Solo aseguraos de tener un plan para ir y volver del recinto, ya que hay pocos taxis en la zona.',
     },
   },
 
   dressCode: {
     title: 'Código de Vestimenta',
     tagline: 'Ninfas etéreas de montaña con un toque retro de los años 70. Interpretadlo como queráis.',
-    body: 'La boda se celebrará al aire libre en un prado de montaña (con suerte con sol). Vamos a bailar toda la noche. Refrescará en cuanto se ponga el sol. Así que necesitaréis zapatos con los que podáis bailar, o algo cómodo para cambiaros más tarde, además de algo fresco y cómodo para el sol y alguna capa extra para la noche.',
+    body: 'La boda se celebrará al aire libre en un prado de montaña (con suerte con sol). Vamos a bailar toda la noche. Refrescará en cuanto se ponga el sol. Así que necesitaréis zapatos con los que podáis bailar, o algo cómodo para cambiaros más tarde, además de algo fresco y cómodo para el sol y alguna capa extra para la noche. \n No hace falta llevar corbata si no queréis (Adán probablemente no llevará una).',
     moodBoard: {
       title: 'Tablero de Inspiración',
       intro: 'Para inspiraros visualmente, echad un vistazo a nuestro tablero de Pinterest compartido.',
       linkLabel: 'Abrir el tablero en Pinterest',
     },
+  },
+
+  gifts: {
+    title: 'Regalos',
+    body: 'Sabemos que venir hasta aquí ya es un gran esfuerzo, así que vuestra presencia en la boda es de verdad el mejor regalo. \n Si aun así queréis daros algo, agradecemos con gusto contribuciones para nuestra fiesta y luna de miel. Podéis usar el enlace de abajo, o dárnoslo en mano cuando llegue el día. Sin presión (¡de verdad!)',
+    monzoLabel: 'Regalar en libras (Monzo)',
+    wiseLabel: 'Regalar en euros (Wise)',
   },
 
   faqs: {
@@ -202,15 +119,13 @@ export default {
     items: [
       { q: '¿Cómo hago el RSVP?', a: 'Usad el enlace personal de vuestra invitación. Ya llevará vuestro nombre (y el de vuestro acompañante, si tenéis uno) adjunto. Si perdéis el enlace, escribidnos y os lo reenviamos.' },
       { q: '¿Cuál es la fecha límite para el RSVP?', aBold: 'Respondednos antes del 1 de enero de 2027.', a: 'Esto es para poder cerrar los números de catering y alojamiento — por favor, no lo dejéis para el último momento.' },
-      { q: '¿Cuál es el código de vestimenta?', aBold: 'ninfas etéreas de montaña con un toque retro de los años 70.', a: 'Interpretadlo como queráis. \n\n La respuesta aburrida es: la boda se celebrará al aire libre en un prado de montaña (con suerte con sol). Vamos a bailar toda la noche. Refrescará en cuanto se ponga el sol. Así que necesitaréis zapatos con los que podáis bailar, o algo cómodo para cambiaros más tarde, además de algo fresco y cómodo para el sol y alguna capa extra para la noche.', links: [{ label: 'Ved nuestro tablero de Pinterest', url: 'https://pin.it/2ZMHQo8Qo' }] },
+      { q: '¿Cuál es el código de vestimenta?', aBold: 'ninfas etéreas de montaña con un toque retro de los años 70.', a: 'la boda se celebrará al aire libre en un prado de montaña (con suerte con sol). Vamos a bailar toda la noche. Refrescará en cuanto se ponga el sol. Así que necesitaréis zapatos con los que podáis bailar, o algo cómodo para cambiaros más tarde, además de algo fresco y cómodo para el sol y alguna capa extra para la noche.', links: [{ label: 'Ved nuestro tablero de Pinterest', url: 'https://pin.it/2ZMHQo8Qo' }] },
       { q: '¿Cuáles son los horarios del día de la boda?', a: 'El sábado 28 de agosto es el día principal: llegadas por la mañana, hacia el mediodía, para un aperitivo, seguido de la ceremonia. Después habrá un banquete por la tarde, música y barra hasta bien entrada la noche y más allá.' },
       { q: '¿Hay aparcamiento en el recinto?', a: 'Sí, hay aparcamiento en el propio recinto. Si pensáis beber, usad el autobús desde Gijón, u organizad un taxi (habrá un taxi disponible esa noche para llevar a la gente cerca).' },
       { q: 'Tengo necesidades alimentarias especiales. ¿Podéis adaptaros?', a: 'Sí, decídnoslo en el RSVP. Cuanto más específicos seáis, mejor. Vegetariano, vegano y alergias comunes no serán ningún problema.' },
-      { q: '¿Qué tiempo hará a finales de agosto?', a: 'Cálido y húmedo. Esperad 18–26°C durante el día, noches más frescas, 12–16°C en cuanto se pone el sol. El recinto tendrá zonas cubiertas y tenemos un plan para la lluvia.' },
       { q: '¿Puedo hacer fotos y compartirlas en redes sociales?', a: 'Sí. Pero habrá un fotógrafo profesional, y compartiremos las fotos con vosotros después. \n Si queréis hacer fotos, adelante, pero intentad usar el móvil lo mínimo posible si es viable.' },
       { q: '¿Habrá comida y/o bebida?', a: 'Sí. Habrá un aperitivo a la llegada, banquete y algo de picoteo por la noche, con una barra completamente equipada. Indicad cualquier necesidad alimentaria en el RSVP.' },
-      { q: '¿Hay lista de bodas?', a: 'Sabemos que venir hasta aquí ya es un gran esfuerzo para algunos, así que vuestra presencia en la boda es de verdad el mejor regalo. Si aun así queréis daros algo, agradecemos con gusto contribuciones para nuestra luna de miel — enlaces abajo para libras (GBP) o euros (EUR).', giftLinks: { monzo: 'Pagar en libras (Monzo)', wise: 'Pagar en euros (Wise)' } },
-      { q: 'Tengo una pregunta que no está aquí.', aTemplate: 'Escribidnos. Podéis contactar con Adán en {adanEmail} o en {adanPhone}, o con Natalie en {natalieEmail}. Haremos lo posible por responder pronto. Si es una pregunta que probablemente tengan otros invitados, la añadiremos aquí.' },
+      { q: 'Tengo una pregunta que no está aquí.', aTemplate: 'Escribidnos. Podéis contactar con Adán en {adanEmail} o en {adanPhone}, o con Natalie en {natalieEmail} o en {nataliePhone}. Haremos lo posible por responder pronto. Si es una pregunta que probablemente tengan otros invitados, la añadiremos aquí.' },
     ],
     footer: {
       before: 'Más detalles sobre cómo llegar y dónde alojaros en las páginas de',
@@ -223,11 +138,10 @@ export default {
 
   rsvp: {
     title: 'RSVP',
-    subtitle: 'No podemos esperar para celebrarlo con vosotros',
     loading: 'Cargando vuestra invitación…',
     noSlug: {
       title: 'Usad vuestro enlace personal',
-      text: 'Usad el enlace de RSVP de vuestra invitación para responder — así sabemos quién contesta. ¿No lo encontráis? Escribidnos y os lo reenviamos.',
+      text: 'Usad el enlace de RSVP de vuestra invitación para responder. Si no lo encontráis, escribidnos y os lo reenviamos.',
     },
     notFound: {
       title: 'No hemos encontrado esa invitación',

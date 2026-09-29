@@ -1,19 +1,24 @@
 import { useEffect, useMemo, useState } from 'react';
 import { LanguageContext } from './context';
+import { ENABLED_LANGUAGES } from './config';
 import en from './locales/en';
 import es from './locales/es';
 import ast from './locales/ast';
 
 const LOCALES = { en, es, ast };
 const STORAGE_KEY = 'wedding_lang';
-const SUPPORTED = ['en', 'es', 'ast'];
 
 function detectDefault() {
+  // A personalised invite link can carry ?lang=es to land a guest straight
+  // on that language, e.g. https://site/rsvp/their-slug?lang=es — this takes
+  // priority so it works even for a guest's very first visit, before
+  // anything's been stored yet.
+  const fromUrl = new URLSearchParams(window.location.search).get('lang');
+  if (ENABLED_LANGUAGES.includes(fromUrl)) return fromUrl;
+
   const stored = localStorage.getItem(STORAGE_KEY);
-  if (SUPPORTED.includes(stored)) return stored;
-  const browser = (navigator.language || 'en').toLowerCase();
-  if (browser.startsWith('es')) return 'es';
-  return 'en';
+  if (ENABLED_LANGUAGES.includes(stored)) return stored;
+  return ENABLED_LANGUAGES[0];
 }
 
 export function LanguageProvider({ children }) {
@@ -25,7 +30,7 @@ export function LanguageProvider({ children }) {
   }, [language]);
 
   const setLanguage = (lang) => {
-    if (SUPPORTED.includes(lang)) setLanguageState(lang);
+    if (ENABLED_LANGUAGES.includes(lang)) setLanguageState(lang);
   };
 
   const value = useMemo(

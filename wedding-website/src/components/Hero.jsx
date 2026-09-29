@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useLanguage } from '../i18n/useLanguage';
 import { setStoredGuestSlug } from '../utils/guestSlug';
+import Sparkles from './Sparkles';
 import backdrop from '../assets/collages/homepage.webp';
 
 const WEDDING = new Date('2027-08-28T12:00:00');
@@ -87,6 +88,7 @@ export default function Hero() {
         className="absolute inset-x-0 bottom-0 h-48 pointer-events-none"
         style={{ background: 'linear-gradient(180deg, transparent, rgba(10,13,10,0.96))' }}
       />
+      <Sparkles />
 
       <div className="relative max-w-4xl mx-auto min-h-screen flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-20">
 
@@ -198,7 +200,7 @@ export default function Hero() {
                 )}
                 <div className="flex flex-col items-center">
                   <span
-                    className="font-heading text-wedding-bg tabular-nums leading-none"
+                    className="font-display text-wedding-bg tabular-nums leading-none"
                     style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)', textShadow: '0 3px 16px rgba(0,0,0,0.6)' }}
                   >
                     {pad(value, d)}
