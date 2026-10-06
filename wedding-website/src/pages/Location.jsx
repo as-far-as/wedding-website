@@ -71,7 +71,7 @@ export default function Location() {
                 <div key={from} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3 border-b border-wedding-accent/15 last:border-0">
                   <span className="font-display text-wedding-text shrink-0" style={{ minWidth: '13rem', fontSize: '1.15rem' }}>{from}</span>
                   <span className="font-sans text-wedding-muted" style={{ fontSize: '0.875rem' }}>
-                    {dist} · {time} — <span className="text-wedding-muted/70">{route}</span>
+                    {dist} · {time} · <span className="text-wedding-muted/70">{route}</span>
                   </span>
                 </div>
               ))}
@@ -86,7 +86,7 @@ export default function Location() {
             </p>
             {g.shuttle.gijonLabel && (
               <Card title={g.shuttle.gijonLabel}>
-                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
                   {g.shuttle.gijonText}
                 </p>
               </Card>
@@ -110,8 +110,16 @@ export default function Location() {
                 </Card>
 
                 <Card title={g.byPlane.santander.title}>
-                  <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
-                    {g.byPlane.santander.desc}
+                  <p className="font-sans text-wedding-muted leading-relaxed mb-3" style={{ fontSize: '0.875rem' }}>
+                    {g.byPlane.santander.descBefore}
+                  </p>
+                  <ul className="font-sans text-wedding-muted space-y-1 mt-3 mb-3" style={{ fontSize: '0.8rem' }}>
+                    {g.byPlane.santander.bullets.map((b) => (
+                      <li key={b} className="flex gap-2"><span className="text-wedding-accent shrink-0">—</span><span>{b}</span></li>
+                    ))}
+                  </ul>
+                  <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+                    {g.byPlane.santander.note}
                   </p>
                 </Card>
               </CardGrid>

@@ -29,7 +29,7 @@ export default function Accommodation() {
       </Section>
 
       <Section title={a.option2.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed mb-7" style={{ fontSize: '0.925rem' }}>
+        <p className="font-sans text-wedding-muted leading-relaxed mb-7" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
           {a.option2.intro}
         </p>
         {a.option2.detailsLabel && (
@@ -42,13 +42,13 @@ export default function Accommodation() {
       </Section>
 
       <Section title={a.option3.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
+        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
           {a.option3.intro}
         </p>
       </Section>
 
       <Section title={a.option4.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem' }}>
+        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
           {a.option4.intro}
         </p>
       </Section>

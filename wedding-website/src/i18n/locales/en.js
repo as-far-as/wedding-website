@@ -32,7 +32,7 @@ export default {
 
   location: {
     title: 'Location & Getting Here',
-    subtitle: 'Valle de Bueida, Quirós — Asturias, Spain',
+    subtitle: 'Valle de Bueida, Quirós, Asturias, Spain',
     map: {
       address: 'Valle de Bueida, Quirós, Asturias, Spain',
     },
@@ -67,7 +67,7 @@ export default {
         title: 'Bus from Gijón',
         bus: {title: 'Bus', desc: "A bus will run between Gijón and the venue on the wedding day (timings TBC). Please confirm whether you would like to travel by bus from Gijón in the RSVP."},
         gijonLabel: 'Gijón as a Base',
-        gijonText: 'Gijón is the main city of Asturias, and it is Adán\'s hometown. It has plenty of hotels, a beach, and great food and drink options. We recommend basing yourself here and getting the bus if you don\'t want to stay nearby — it\'s an obvious base for the weekend. See the Asturias page for recommendations.',
+        gijonText: 'Gijón is the main city of Asturias, and it is Adán\'s hometown. \n It has plenty of hotels, a beach, and great food and drink options. We recommend basing yourself here and getting the bus if you don\'t want to stay nearby, since it\'s an obvious base for the weekend. \n See the Asturias page for recommendations.',
       },
       byPlane: {
         title: 'By Plane',
@@ -78,14 +78,21 @@ export default {
             'Wizz Air: London Luton, Tue / Thu / Sat',
             'Aer Lingus: Dublin, Tue / Sat',
             'Volotea: Paris Orly, Tue / Thu / Sun',
-            'Lufthansa: Frankfurt (dates TBC)',
-            'KLM: Amsterdam (dates TBC)',
+            'Lufthansa: Frankfurt, Wed / Fri / Sat / Sun',
+            'KLM: Amsterdam, daily',
             'You can also easily fly with a stopover in Madrid from most places',
           ],
         },
         santander: {
           title: 'Santander Airport (SDR)',
-          desc: "Santander is around 2h30 from the site, and 1h45 from Gijón. As well as London Stansted, Ryanair also flies to Santander from Manchester, Birmingham, Edinburgh and other European destinations. \n Flights are often cheaper than Asturias, so this may well be an easier/cheaper option, especially if you plan on staying in Northern Spain for a bit longer and want to visit e.g. the Picos de Europa or Llanes in the East.",
+          descBefore: 'Santander is around 2h30 from the site, and 1h45 from Gijón. Ryanair flies to Santander from several UK airports:',
+          bullets: [
+            'London Stansted: Mon / Tue / Wed / Fri / Sun',
+            'Manchester: Tue / Thu / Sun',
+            'Birmingham: Wed / Sun',
+            'Edinburgh: Mon / Wed / Sun',
+          ],
+          note: 'Flights are often cheaper than Asturias, so this may well be an easier/cheaper option, especially if you plan on staying in Northern Spain for a bit longer and want to visit e.g. the Picos de Europa or Llanes in the East.',
         },
         recommendedTimings: {
           title: 'Recommended Timings for Flying to Asturias from London',
@@ -111,7 +118,7 @@ export default {
       },
       howeverYouGetHere: {
         title: 'However You Get Here',
-        text: "All of the above is entirely optional, so feel free to completely ignore it and do your own thing. We'd love for people to spend as much time in the area as they can and explore in their own time, but we understand it is already a big commitment to travel this far, so please adjust to your schedule! \n If you have any questions about logistics, please don't hesitate to reach out to Adán or Natalie, we're happy to help.",
+        text: "All of the above is entirely optional, so feel free to completely ignore it and do your own thing. \n We'd love for people to spend as much time in the area as they can and explore in their own time, but we understand it is already a big commitment to travel this far, so please adjust to your schedule! \n If you have any questions about logistics, please don't hesitate to reach out to Adán or Natalie, we're happy to help.",
       },
     },
   },
@@ -130,17 +137,17 @@ export default {
     },
     option2: {
       title: 'Option 2: Camping On-Site',
-      intro: 'The site has an adjoining field where you can pitch up or stay in a rented camper van, for free. It is a beautiful location, in the forest by a stream, and you will be much closer to the action. You are welcome to use the showers and bathrooms on the site during your stay as well.',
+      intro: 'The site has an adjoining field where you can pitch up or stay in a rented camper van, for free. \n It is a beautiful location, in the forest by a stream, and you will be much closer to the action. You are welcome to use the showers and bathrooms on the site during your stay as well.',
       detailsLabel: 'Note:',
       detailsText: " The weather can be changeable in Asturias. It can rain, and temperatures will drop at night. Please pack accordingly if you are camping!",
     },
     option3: {
       title: 'Option 3: Stay in Gijón',
-      intro: 'A return bus will run between Gijón and the venue on Saturday. You can stay in the city and come to the wedding on the day, before heading back at night. If you intend on getting the bus, please let us know in your RSVP.',
+      intro: 'A return bus will run between Gijón and the venue on Saturday. You can stay in the city and come to the wedding on the day, before heading back at night. \n If you intend on getting the bus, please let us know in your RSVP.',
     },
     option4: {
       title: 'Option 4: Do Your Own Thing',
-      intro: 'If you prefer to work out your own plans, please feel free. There are plenty of other places to stay in Asturias, and we want you to be comfortable. Just make sure you have a plan for getting to and from the venue as there are limited taxis in the area.',
+      intro: 'If you prefer to work out your own plans, please feel free. \n There are plenty of other places to stay in Asturias, and we want you to be comfortable. Just make sure you have a plan for getting to and from the venue as there are limited taxis in the area.',
     },
   },
 
@@ -179,7 +186,7 @@ export default {
     },
     weather: {
       title: 'Weather in August',
-      intro: "August is Asturias's warmest month, but it's still Asturias. Days should be warm but not hot and evenings will be cool. It can rain at any point. It is green for a reason.",
+      intro: "August is Asturias's warmest month, but it's still Asturias. \n Days should be warm but not hot and evenings will be cool. It can rain at any point. It is green for a reason.",
       daytime: { strong: 'Daytime:', text: ' 18–26°C. Hoping for sunshine but prepared for all eventualities.' },
       evenings: { strong: 'Evenings:', text: ' Drops to 12–16°C once the sun goes. Bring a layer you like.' },
       rain: { strong: 'Rain:', text: ' Real possibility any day. We have plans for changeable weather.' },
@@ -188,8 +195,8 @@ export default {
 
   dressCode: {
     title: 'Dress Code',
-    tagline: 'Ethereal mountain nymphs meets retro 70s dreamboats. Make of that what you will.',
-    body: "The wedding will be held outside in a mountain meadow (hopefully in the sunshine). We'll be dancing all night. It will get chilly once the sun goes down. So you'll want shoes you can dance in, or something comfy to change into later, plus something cool and comfortable for the sunshine and a few extra layers for the evening. \n No need to wear a tie if you don't want to (Adán probably won't be wearing one)",
+    tagline: 'Please wear what you feel comfortable in. But if you are looking for some pointers, think ethereal mountain nymphs meets retro 70s dreamboats.',
+    body: "The wedding will be held outside in a mountain meadow (hopefully in the sunshine). We'll be dancing all night, and it will get chilly once the sun goes down. \n So you'll want shoes you can dance in, or something comfy to change into later, plus something cool and comfortable for the sunshine and a few extra layers for the evening. \n No need to wear a tie if you don't want to (Adán probably won't be wearing one). \n\n The venue sits within a beautiful natural park, and we may organise a small hike the day after the wedding to help clear our heads, so packing some hiking shoes and clothes would be a good idea too.",
     moodBoard: {
       title: 'Mood Board',
       intro: 'For some visual inspiration, take a look at our shared Pinterest board.',
@@ -234,7 +241,7 @@ export default {
     loading: 'Loading your invitation…',
     noSlug: {
       title: 'Use your personal link',
-      text: "Please use the RSVP link from your invitation to reply — it lets us know who's responding. Can't find it? Get in touch and we'll resend it.",
+      text: "Please use the RSVP link from your invitation to reply, so we know who's responding. Can't find it? Get in touch and we'll resend it.",
     },
     notFound: {
       title: "We couldn't find that invite",
@@ -242,8 +249,9 @@ export default {
     },
     loadError: {
       title: 'Something went wrong',
-      text: "We couldn't load your invitation just now — this is on us, not you. Please try again in a moment, or get in touch directly.",
+      text: "We couldn't load your invitation just now. That's on us, not you. Please try again in a moment, or get in touch directly.",
     },
+    formNote: "No need to decide everything right now. You can come back and update your answers at any time before the RSVP deadline, and if you have any questions before filling this in, feel free to reach out to us first.",
     greetingTemplate: 'Hi {name},',
     attendingLabel: 'Will you be there?',
     attendingYes: "Yes, can't wait!",
@@ -255,6 +263,7 @@ export default {
         { value: 'cottage', label: 'Nearby casa rural', desc: "We're organising some pre-booked cottages nearby - would you like to stay in one?" },
         { value: 'gijon', label: 'Gijón + bus', desc: 'Staying in Gijón and taking the bus there and back on the day.' },
         { value: 'own', label: 'Doing my own thing', desc: 'Sorting my own accommodation and transport to the venue' },
+        { value: 'unsure', label: "Don't know yet", desc: 'No worries, you can come back and update this before the deadline.' },
       ],
     },
     houseInvite: {
@@ -269,7 +278,7 @@ export default {
     stayDates: {
       arrivalLabel: 'When will you arrive?',
       departureLabel: 'When will you leave?',
-      flightHint: "Flying from London? Direct flights to Asturias only run Thursdays and Tuesdays — for more flexibility, Santander has options most other days.",
+      flightHint: "Flying from London? Direct flights to Asturias only run Thursdays and Tuesdays, so for more flexibility, Santander has options most other days.",
       arrivalDays: [
         { value: 'thu-26', label: 'Thursday 26 August' },
         { value: 'fri-27', label: 'Friday 27 August' },
@@ -285,13 +294,13 @@ export default {
     },
     dietaryLabel: 'Dietary requirements',
     messageLabel: 'Anything else you want to tell us?',
-    plusOneInviteTemplate: "We'd love for you to bring {name} with you — are they coming too?",
+    plusOneInviteTemplate: "We'd love for you to bring {name} with you. Are they coming too?",
     plusOneDietaryLabel: "Plus-one's dietary requirements",
     submit: 'Send RSVP',
     submitting: 'Sending…',
     successTitle: 'Got it!',
-    successText: "Thanks {name} — we've got your reply. See you in Asturias!",
-    errorText: 'Something went wrong sending that — please try again, or email us directly.',
+    successText: "Thanks {name}, we've got your reply. See you in Asturias!",
+    errorText: 'Something went wrong sending that. Please try again, or email us directly.',
     summary: {
       title: "Here's what you told us",
       subtitle: 'You can update your answers any time before the RSVP deadline.',

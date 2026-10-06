@@ -32,7 +32,7 @@ export default {
 
   location: {
     title: 'Allugamientu ya Cómo Llegar',
-    subtitle: 'Valle de Bueida, Quirós — Asturies, España',
+    subtitle: 'Valle de Bueida, Quirós, Asturies, España',
     map: {
       address: 'Valle de Bueida, Quirós, Asturies, España',
     },
@@ -67,7 +67,7 @@ export default {
         title: 'Autobús dende Xixón',
         bus: { title: 'Autobús', desc: 'El día de la boda va haber un autobús ente Xixón ya la finca (hores por confirmar). Indicáilo nel RSVP si vos prestaría viaxar n\'autobús dende Xixón.' },
         gijonLabel: 'Xixón como Base',
-        gijonText: 'Xixón ye la ciudá principal d\'Asturies, ya ye la ciudá natal d\'Adán. Tien munchos hoteles, una platya, ya bonísimes opciones pa comer ya beber. Encamentámosvos alloxavos equí ya coyer l\'autobús si nun queréis quedar averaos a la finca — ye la base evidente pal fin de selmana. Vede la páxina d\'Asturies pa más encamentaciones.',
+        gijonText: 'Xixón ye la ciudá principal d\'Asturies, ya ye la ciudá natal d\'Adán. \n Tien munchos hoteles, una platya, ya bonísimes opciones pa comer ya beber. Encamentámosvos alloxavos equí ya coyer l\'autobús si nun queréis quedar averaos a la finca, yá que ye la base evidente pal fin de selmana. \n Vede la páxina d\'Asturies pa más encamentaciones.',
       },
       byPlane: {
         title: 'N\'Avión',
@@ -78,14 +78,21 @@ export default {
             'Wizz Air: Londres Luton, mar / xue / sáb',
             'Aer Lingus: Dublín, mar / sáb',
             'Volotea: París Orly, mar / xue / dom',
-            'Lufthansa: Fráncfort (feches por confirmar)',
-            'KLM: Ámsterdam (feches por confirmar)',
+            'Lufthansa: Fráncfort, mié / vie / sáb / dom',
+            'KLM: Ámsterdam, tolos díes',
             'Tamién podéis volar fácilmente con escala en Madrid dende la mayoría de sitios',
           ],
         },
         santander: {
           title: 'Aeropuertu de Santander (SDR)',
-          desc: 'Santander ta a unes 2h30 de la finca, ya a 1h45 de Xixón. Amás de Londres Stansted, Ryanair tamién vuela a Santander dende Manchester, Birmingham, Edimburgu ya otros destinos europeos. \n Los vuelos suelen ser más baratos qu\'a Asturies, asina que pue ser una opción más cenciella/económica, sobre too si pensáis quedar más tiempu nel norte d\'España ya visitar, por exemplu, los Picos d\'Europa o Llanes, na parte oriental.',
+          descBefore: 'Santander ta a unes 2h30 de la finca, ya a 1h45 de Xixón. Ryanair vuela a Santander dende dellos aeropuertos del Reinu Xuníu:',
+          bullets: [
+            'Londres Stansted: llu / mar / mié / vie / dom',
+            'Manchester: mar / xue / dom',
+            'Birmingham: mié / dom',
+            'Edimburgu: llu / mié / dom',
+          ],
+          note: 'Los vuelos suelen ser más baratos qu\'a Asturies, asina que pue ser una opción más cenciella/económica, sobre too si pensáis quedar más tiempu nel norte d\'España ya visitar, por exemplu, los Picos d\'Europa o Llanes, na parte oriental.',
         },
         recommendedTimings: {
           title: 'Hores Encamentaes pa Volar a Asturies dende Londres',
@@ -111,7 +118,7 @@ export default {
       },
       howeverYouGetHere: {
         title: 'Como quiera que Lleguéis',
-        text: 'Too lo d\'enriba ye dafechu opcional, asina que sentíivos llibres d\'ignoralo dafechu ya facer lo que vos preste. Prestaríanos que la xente pasare\'l máximu tiempu posible na zona ya la esplorare al so aire, pero entendemos que yá ye un gran esfuerciu vinir hasta equí, asina qu\'axustáilo al vuesu horariu. \n Si tenéis dalguna dubda sobre la llogística, nun dudéis en poner en contautu con Adán o Natalie, vamos tar encantaos d\'ayudar.',
+        text: 'Too lo d\'enriba ye dafechu opcional, asina que sentíivos llibres d\'ignoralo dafechu ya facer lo que vos preste. \n Prestaríanos que la xente pasare\'l máximu tiempu posible na zona ya la esplorare al so aire, pero entendemos que yá ye un gran esfuerciu vinir hasta equí, asina qu\'axustáilo al vuesu horariu. \n Si tenéis dalguna dubda sobre la llogística, nun dudéis en poner en contautu con Adán o Natalie, vamos tar encantaos d\'ayudar.',
       },
     },
   },
@@ -130,17 +137,17 @@ export default {
     },
     option2: {
       title: 'Opción 2: Acampada na Finca',
-      intro: 'La finca tien un campu axuntu onde podéis montar la tienda o quedar nuna autocaravana d\'alquiler, dafechu de baldre. Ye un sitiu guapísimu, nel monte xunto a un regatu, ya vais tar muncho más averaos a tola aición. Tamién podéis usar les duches ya los baños de la finca durante la vuesa estancia.',
+      intro: 'La finca tien un campu axuntu onde podéis montar la tienda o quedar nuna autocaravana d\'alquiler, dafechu de baldre. \n Ye un sitiu guapísimu, nel monte xunto a un regatu, ya vais tar muncho más averaos a tola aición. Tamién podéis usar les duches ya los baños de la finca durante la vuesa estancia.',
       detailsLabel: 'Nota:',
       detailsText: ' El tiempu pue ser variable n\'Asturies. Pue llover, ya les temperatures van baxar pela nueche. ¡Preparái l\'equipaxe en consecuencia si vais acampar!',
     },
     option3: {
       title: 'Opción 3: Quedar en Xixón',
-      intro: 'El sábadu va circular un autobús d\'ida ya vuelta ente Xixón ya la finca. Podéis quedar na ciudá ya vinir a la boda esi día, pa volver pela nueche. Si pensáis coyer l\'autobús, indicáilo nel RSVP.',
+      intro: 'El sábadu va circular un autobús d\'ida ya vuelta ente Xixón ya la finca. Podéis quedar na ciudá ya vinir a la boda esi día, pa volver pela nueche. \n Si pensáis coyer l\'autobús, indicáilo nel RSVP.',
     },
     option4: {
       title: 'Opción 4: Pela Vuesa Cuenta',
-      intro: 'Si preferís organizar los vuesos propios planes, sentíivos llibres de facelo. Hai munchos otros sitios onde alloxase n\'Asturies, ya queremos que teáis a gustu. Namás aseguráivos de tener un plan pa dir ya volver de la finca, yá que hai pocos taxis na zona.',
+      intro: 'Si preferís organizar los vuesos propios planes, sentíivos llibres de facelo. \n Hai munchos otros sitios onde alloxase n\'Asturies, ya queremos que teáis a gustu. Namás aseguráivos de tener un plan pa dir ya volver de la finca, yá que hai pocos taxis na zona.',
     },
   },
 
@@ -179,7 +186,7 @@ export default {
     },
     weather: {
       title: 'El Tiempu n\'Agostu',
-      intro: 'Agostu ye\'l mes más cálidu d\'Asturies, pero sigue siendo Asturies. Los díes tienen de ser cálidos pero non calorosos ya les nueches van tar fresques. Pue llover en cualesquier momentu. El paisaxe ye verde por daqué.',
+      intro: 'Agostu ye\'l mes más cálidu d\'Asturies, pero sigue siendo Asturies. \n Los díes tienen de ser cálidos pero non calorosos ya les nueches van tar fresques. Pue llover en cualesquier momentu. El paisaxe ye verde por daqué.',
       daytime: { strong: 'De día:', text: ' 18–26°C. Esperamos que faiga sol, pero preparaos pa too.' },
       evenings: { strong: 'Pela nueche:', text: ' Baxa a 12–16°C en cuanto se pon el sol. Traer una capa que vos preste.' },
       rain: { strong: 'Lluvia:', text: ' Posibilidá real cualesquier día. Tenemos un plan pal tiempu variable.' },
@@ -188,8 +195,8 @@ export default {
 
   dressCode: {
     title: 'Códigu de Vistimenta',
-    tagline: 'Ninfes etéreas de montaña con un toque retro de los años 70. Interpretailo como queráis.',
-    body: 'La boda va celebrase al campu abiertu nun prau de montaña (con suerte con sol). Vamos bailar tola nueche. Va refrescar en cuanto se pon el sol. Asina que vais necesitar calzáu col que podáis bailar, o daqué cómodo pa camudavos más sero, amás de daqué fresco ya cómodo pal sol ya delles capes extra pa la nueche. \n Nun fai falta llevar corbata si nun queréis (Adán probablemente nun va llevar una).',
+    tagline: 'Llevái lo que vos faiga sentir a gustu. Pero si buscáis dalguna inspiración, pensái en ninfes etéreas de montaña con un toque retro de los años 70.',
+    body: 'La boda va celebrase al campu abiertu nun prau de montaña (con suerte con sol). Vamos bailar tola nueche, ya va refrescar en cuanto se pon el sol. \n Asina que vais necesitar calzáu col que podáis bailar, o daqué cómodo pa camudavos más sero, amás de daqué fresco ya cómodo pal sol ya delles capes extra pa la nueche. \n Nun fai falta llevar corbata si nun queréis (Adán probablemente nun va llevar una). \n\n La finca ta dientro d\'un guapísimu parque natural, ya pue que organicemos una pequeña ruta de montaña al día siguiente de la boda pa despeyanos, asina que tamién pue ser bona idea trayer calzáu ya ropa de monte.',
     moodBoard: {
       title: 'Tableru d\'Inspiración',
       intro: 'Pa inspirávos visualmente, equí tenéis el nuesu tableru de Pinterest compartíu.',
@@ -209,7 +216,7 @@ export default {
     subtitle: 'Too lo que necesitáis saber, nun solu sitiu',
     items: [
       { q: '¿Cómo faigo l\'RSVP?', a: 'Usái l\'enllaz personal de la vuesa invitación. Yá va llevar el vuesu nome (ya el del vuesu acompañante, si tenéis ún) axuntáu. Si perdéis l\'enllaz, escribinos ya vos lu reunviamos.' },
-      { q: '¿Cuál ye la data llímite pal RSVP?', aBold: 'Respondei enantes del 1 de xineru de 2027.', a: 'Esto ye pa poder zarrar los númberos de catering ya alloxamientu — por favor, nun lo dexéis pal caberu momentu.' },
+      { q: '¿Cuál ye la data llímite pal RSVP?', aBold: 'Respondei enantes del 1 de xineru de 2027.', a: 'Esto ye pa poder zarrar los númberos de catering ya alloxamientu. Por favor, nun lo dexéis pal caberu momentu.' },
       { q: '¿Cuál ye\'l códigu de vistimenta?', aBold: 'ninfes etéreas de montaña con un toque retro de los años 70.', a: 'Interpretailo como queráis. \n\n La respuesta aburrida ye: la boda va celebrase al campu abiertu nun prau de montaña (con suerte con sol). Vamos bailar tola nueche. Va refrescar en cuanto se pon el sol. Asina que vais necesitar calzáu col que podáis bailar, o daqué cómodo pa camudavos más sero, amás de daqué fresco ya cómodo pal sol ya delles capes extra pa la nueche.', links: [{ label: 'Ver el tableru de Pinterest', url: 'https://pin.it/2ZMHQo8Qo' }] },
       { q: '¿Cuáles son les hores del día de la boda?', a: 'El sábadu 28 d\'agostu ye\'l día principal: llegaes pela mañana, escontra\'l meudía, pa un aperitivu, siguíu de la ceremonia. Darréu va haber un banquete pela tarde, música ya barra hasta bien entrada la nueche ya más allá.' },
       { q: '¿Hai aparcamientu na finca?', a: 'Sí, hai aparcamientu na mesma finca. Si pensáis beber, usái l\'autobús dende Xixón, o organizái un taxi (va haber un taxi disponible esa nueche pa llevar a la xente averao).' },
@@ -234,7 +241,7 @@ export default {
     loading: 'Cargando la vuesa invitación…',
     noSlug: {
       title: 'Usái el vuesu enllaz personal',
-      text: 'Usái l\'enllaz de RSVP de la vuesa invitación pa responder — asina sabemos quién contesta. ¿Nun lu atopáis? Escribinos ya vos lu reunviamos.',
+      text: 'Usái l\'enllaz de RSVP de la vuesa invitación pa responder, asina sabemos quién contesta. ¿Nun lu atopáis? Escribinos ya vos lu reunviamos.',
     },
     notFound: {
       title: 'Nun atopamos esa invitación',
@@ -242,8 +249,9 @@ export default {
     },
     loadError: {
       title: 'Daqué foi mal',
-      text: 'Nun pudimos cargar la vuesa invitación agora mesmo — esto ye cosa nuesa, non vuesa. Probái otra vuelta nun momentu, o escribinos direutamente.',
+      text: 'Nun pudimos cargar la vuesa invitación agora mesmo. Esto ye cosa nuesa, non vuesa. Probái otra vuelta nun momentu, o escribinos direutamente.',
     },
+    formNote: 'Nun fai falta decidilo too agora mesmo. Podéis volver ya anovar les vueses respuestes en cualesquier momentu enantes de la data llímite del RSVP, ya si tenéis dalguna dubda enantes de rellenalo, nun dudéis en escribinos primero.',
     greetingTemplate: 'Hola {name},',
     attendingLabel: '¿Vais vinir?',
     attendingYes: '¡Sí, nun podemos esperar!',
@@ -252,9 +260,10 @@ export default {
       label: '¿Onde vais alloxavos?',
       options: [
         { value: 'campsite', label: 'Na finca (acampada)', desc: 'Campu d\'acampada de baldre xusto al llau de la finca.' },
-        { value: 'cottage', label: 'Casa rural averada', desc: 'Tamos organizando una casa rural reservada averada — más detalles prósimamente.' },
+        { value: 'cottage', label: 'Casa rural averada', desc: 'Tamos organizando una casa rural reservada averada, más detalles prósimamente.' },
         { value: 'gijon', label: 'Xixón + autobús', desc: 'Alloxándonos na ciudá ya coyendo l\'autobús esi día.' },
         { value: 'own', label: 'Pela nuesa cuenta', desc: 'Organizando el nuesu propiu alloxamientu.' },
+        { value: 'unsure', label: 'Entá nun lo sé', desc: 'Nun pasa nada, podéis volver ya anovalo enantes de la data llímite.' },
       ],
     },
     houseInvite: {
@@ -269,7 +278,7 @@ export default {
     stayDates: {
       arrivalLabel: '¿Cuándo vais llegar?',
       departureLabel: '¿Cuándo vais dir?',
-      flightHint: '¿Volando dende Londres? Los vuelos direutos a Asturies solo salen los xueves ya los martes — pa más flexibilidá, Santander tien opciones case tolos demás díes.',
+      flightHint: '¿Volando dende Londres? Los vuelos direutos a Asturies solo salen los xueves ya los martes, asina que pa más flexibilidá, Santander tien opciones case tolos demás díes.',
       arrivalDays: [
         { value: 'thu-26', label: 'Xueves 26 d\'agostu' },
         { value: 'fri-27', label: 'Vienres 27 d\'agostu' },
@@ -285,13 +294,13 @@ export default {
     },
     dietaryLabel: 'Requisitos alimentarios',
     messageLabel: '¿Daqué más que vos preste dicinos?',
-    plusOneInviteTemplate: 'Prestaríanos que traxereis a {name} con vós — ¿va vinir tamién?',
+    plusOneInviteTemplate: 'Prestaríanos que traxereis a {name} con vós. ¿Va vinir tamién?',
     plusOneDietaryLabel: 'Requisitos alimentarios del acompañante',
     submit: 'Unviar RSVP',
     submitting: 'Unviando…',
     successTitle: '¡Recibío!',
-    successText: 'Gracies {name} — yá tenemos la vuesa respuesta. ¡Nos vemos n\'Asturies!',
-    errorText: 'Daqué foi mal al unviar esto — probái otra vuelta, o escribinos direutamente per email.',
+    successText: 'Gracies {name}, yá tenemos la vuesa respuesta. ¡Nos vemos n\'Asturies!',
+    errorText: 'Daqué foi mal al unviar esto. Probái otra vuelta, o escribinos direutamente per email.',
     summary: {
       title: 'Esto ye lo que nos dixisteis',
       subtitle: 'Podéis anovar les vueses respuestes en cualquier momentu enantes de la data llímite del RSVP.',

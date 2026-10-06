@@ -93,7 +93,7 @@ export default function Asturias() {
       </Section>
 
       <Section title={as.weather.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.925rem' }}>
+        <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
           {as.weather.intro}
         </p>
         <ul className="font-sans text-wedding-muted space-y-2" style={{ fontSize: '0.9rem' }}>

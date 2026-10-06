@@ -276,6 +276,12 @@ export default function Rsvp() {
 
       {status === 'form' && guest && (
         <form onSubmit={handleSubmit} noValidate className="space-y-8">
+          <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-4">
+            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.85rem' }}>
+              {r.formNote}
+            </p>
+          </div>
+
           <p className="font-sans italic text-wedding-text" style={{ fontSize: '1.1rem' }}>
             {r.greetingTemplate.replace('{name}', guest.name)}
           </p>
