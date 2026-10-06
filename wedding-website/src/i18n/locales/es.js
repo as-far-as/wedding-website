@@ -2,7 +2,7 @@ export default {
   nav: {
     location: 'Ubicación',
     accommodation: 'Alojamiento',
-    asturias: 'Asturias',
+    asturias: 'Asturies',
     dressCode: 'Vestimenta',
     gifts: 'Regalos',
     faqs: 'Preguntas',
@@ -14,7 +14,7 @@ export default {
     eyebrow: 'Natalie & Adán · 28 ago 2027',
     subtitle: 'Valle de Bueida, Quirós',
     passwordLabel: 'Contraseña',
-    error: 'Esa no es, prueba otra vez.',
+    error: 'Prueba otra vez.',
     enter: 'Entrar',
   },
 
@@ -22,7 +22,7 @@ export default {
     dateEyebrow: '28 · viii · 2027',
     marriedLine: 'se casan',
     location: 'Valle de Bueida, Quirós',
-    region: 'Asturias · España',
+    region: 'Asturies · España',
     countdownLabel: 'Faltan',
     days: 'Días',
     hours: 'Horas',
@@ -32,36 +32,36 @@ export default {
 
   location: {
     title: 'Ubicación y Cómo Llegar',
-    subtitle: 'Valle de Bueida, Quirós, Asturias, España',
+    subtitle: 'Valle de Bueida, Quirós, Asturies, España',
     map: {
       address: 'Valle de Bueida, Quirós, Asturias, España',
     },
     site: {
       title: 'El Lugar',
-      intro: 'Nos casamos en el Valle de Bueida, en Quirós, un rincón de Asturias que nos tiene el corazón robado. \n Bueida es una aldea pequeñina, metida dentro del Parque Natural de las Ubiñas. El pueblo con más servicios que tenéis cerca es Bárzana.',
+      intro: 'Nos casamos en el Valle de Bueida, en Quirós, \n Bueida es una aldea pequeña, dentro del Parque Natural de las Ubiñas. El pueblo más cercano es Bárzana.',
       addressLabel: 'Dirección',
       addressLine1: 'Valle de Bueida',
       addressLine2: 'Quirós, 33830',
-      addressLine3: 'Asturias, España',
-      accessText: 'Hasta la finca se llega por una carretera rural de un solo carril, aunque asfaltada, tranquilos. No hay transporte público hasta allí. ',
+      addressLine3: 'Asturies, España',
+      accessText: 'Hasta la finca se llega por una caleya rural de un solo carril, aunque asfaltada, tranquilos. No hay transporte público. ',
       accessLinkText: 'Cómo Llegar',
     },
     gettingHere: {
       title: 'Cómo Llegar',
       byCar: {
         title: 'En Coche',
-        intro: 'Lo más práctico, con diferencia, es venir en coche. Habrá sitio de sobra para aparcar en la propia finca. \n Eso sí, si vais a conducir organizaos con tiempo para no beber, o buscad quien os lleve de vuelta si pensáis tomar alguna sidra de más. \n Esa noche habrá taxis para ir y venir de la finca desde los pueblos de alrededor.',
+        intro: 'Lo más práctico, con diferencia, es venir en coche. Habrá sitio de sobra para aparcar en la propia finca. \n Eso sí, si vais a conducir organizaos con tiempo para no beber, o buscad quien os lleve de vuelta si pensáis tomar alguna sidra de más. \n Habrá algún taxi para ir y venir de la finca.',
         routes: [
-          { from: 'Aeropuerto de Asturias (OVD)', dist: '~70 km', time: '~1 h 20 min', route: 'A-66 sur, salida Villazón, AS-228' },
-          { from: 'Gijón', dist: '~60 km', time: '~1 h', route: 'A-66 sur desde Oviedo, salida Villazón' },
+          { from: 'Aeropuerto de Asturies (OVD)', dist: '~70 km', time: '~1 h 20 min', route: 'A-66 sur, salida Villazón, AS-228' },
+          { from: 'Xixón', dist: '~60 km', time: '~1 h', route: 'A-66 sur desde Oviedo, salida Villazón' },
           { from: 'Oviedo', dist: '~40 km', time: '~45 min', route: 'A-66 sur, salida Villazón, AS-228' },
           { from: 'Santander', dist: '~185 km', time: '~2 h 30 min', route: 'A-8 oeste hasta Oviedo, luego A-66 sur' },
           { from: 'Madrid', dist: '~450 km', time: '~4,5 h', route: 'A-66 norte a través de las montañas asturianas' },
         ],
       },
       shuttle: {
-        title: 'Autobús desde Gijón',
-        bus: { title: 'Autobús', desc: 'El día de la boda pondremos un autobús entre Gijón y la finca (los horarios os los confirmamos más adelante). Decidnos en el RSVP si queréis venir en él.' },
+        title: 'Autobús desde Xixón',
+        bus: { title: 'Autobús', desc: 'El día de la boda pondremos un autobús entre Xixón y la finca (los horarios os los confirmamos más adelante). Decidnos en el RSVP si queréis venir en él.' },
       },
       howeverYouGetHere: {
         text: 'Si tenéis cualquier duda sobre cómo llegar, escribidnos a Adán o a Natalie sin problema, que para eso estamos.',
@@ -71,10 +71,10 @@ export default {
 
   accommodation: {
     title: 'Alojamiento',
-    intro: 'Para dormir tenéis varias opciones: quedaros en Gijón y venir en autobús, buscar algo cerca de la finca, o apañároslo por vuestra cuenta.',
+    intro: 'Para dormir tenéis varias opciones: quedaros en Xixón y venir en autobús, buscar algo cerca de la finca, o apañároslo por vuestra cuenta.',
     option1: {
       title: 'Opción 1: Casas Rurales',
-      intro: 'Hay unas cuantas casas rurales cerca de la finca, la mayoría a diez minutitos en coche. Vamos a reservar unas pocas en bloque para que haya sitio de sobra para quien quiera quedarse cerca.',
+      intro: 'Hay unas cuantas casas rurales cerca de la finca, la mayoría a diez minutos en coche. Vamos a reservar unas pocas en bloque para que haya sitio de sobra para quien quiera quedarse cerca.',
       bullets: [
         'Si os interesa, decídnoslo en el RSVP y nos ponemos en contacto con vosotros.',
         'El precio y las fechas exactas dependen de cada casa. Os las pasamos en cuanto elijáis esta opción.',
@@ -83,22 +83,22 @@ export default {
     },
     option2: {
       title: 'Opción 2: Acampada en el Recinto',
-      intro: 'La finca tiene un prado al lado donde podéis plantar la tienda o quedaros en una autocaravana de alquiler, gratis total. \n Es un sitio precioso, entre el bosque y un regato, y vais a estar mucho más cerca de todo el jaleo. También podéis usar las duchas y los baños de la finca mientras estéis allí.',
+      intro: 'La finca tiene un prau al lado donde podéis plantar la tienda o quedaros en una autocaravana de alquiler, gratis total. \n Es un sitio precioso, entre el bosque y un regato, y vais a estar mucho más cerca de todo el jaleo. También podéis usar las duchas y los baños de la finca mientras estéis allí.',
     },
     option3: {
-      title: 'Opción 3: Quedaros en Gijón',
-      intro: 'El sábado pondremos un autobús de ida y vuelta entre Gijón y la finca. Podéis quedaros en la ciudad, venir a la boda ese día y volver por la noche. \n Si pensáis coger el autobús, decídnoslo en el RSVP.',
+      title: 'Opción 3: Quedaros en Xixón',
+      intro: 'El sábado pondremos un autobús de ida y vuelta entre Xixón y la finca. Así podréis venir a la boda desde casa ese día y volver por la noche. \n Si pensáis coger el autobús, decídnoslo en el RSVP.',
     },
     option4: {
       title: 'Opción 4: Por Vuestra Cuenta',
-      intro: 'Si preferís organizaros por vuestra cuenta, adelante sin problema. \n Hay un montón de sitios donde alojarse en Asturias, y lo importante es que estéis a gusto. Eso sí, aseguraos de tener manera de ir y volver de la finca, que por la zona hay pocos taxis.',
+      intro: 'Si preferís organizaros por vuestra cuenta, adelante. \n Hay un montón de sitios donde alojarse en Quirós y lo importante es que estéis a gusto. Eso sí, aseguraos de tener manera de ir y volver de la finca, que por la zona hay pocos taxis.',
     },
   },
 
   dressCode: {
     title: 'Código de Vestimenta',
-    tagline: 'Poneos lo que os haga sentir a gusto. Pero si buscáis alguna pista, pensad en ninfas etéreas de montaña con un puntín retro de los setenta.',
-    body: 'La boda va a ser al aire libre, en un prado de montaña (con suerte, con sol). Vamos a estar bailando toda la noche, y en cuanto se esconda el sol va a refrescar de lo lindo. \n Así que buscaos un calzado cómodo para bailar, o algo para cambiaros más tarde, más alguna prenda fresca para el día y un par de capas de abrigo para la noche. \n Si no os apetece poneros corbata, tranquilos, que Adán tampoco la va a llevar. \n\n La finca está metida en un parque natural precioso, y es posible que organicemos una ruta de montaña al día siguiente para despejarnos un poco, así que no estaría de más meter en la maleta unas botas y ropa de monte.',
+    tagline: 'Poneos lo que os haga sentir a gusto. Pero si buscáis alguna pista, pensad en una xana, etérea y misteriosa, pero con un puntín retro de los setenta.',
+    body: 'La boda va a ser al aire libre, en un prau de montaña (con suerte, con sol). Vamos a estar bailando toda la noche, y en cuanto se esconda el sol va a refrescar. \n Así que buscaos un calzado cómodo para bailar, o algo para cambiaros más tarde, y alguna prenda fresca para el día y un par de capas de abrigo para la noche. \n Si no os apetece poneros corbata, tranquilos, que Adán tampoco la va a llevar. \n\n La finca está metida en un parque natural precioso, y es posible que organicemos una ruta de montaña al día siguiente para despejarnos un poco, así que no estaría de más meter en la maleta unas botas y ropa de monte.',
     moodBoard: {
       title: 'Tablero de Inspiración',
       intro: 'Para que os hagáis una idea, echadle un ojo a nuestro tablero de Pinterest.',
@@ -108,7 +108,7 @@ export default {
 
   gifts: {
     title: 'Regalos',
-    body: 'Sabemos que venir hasta aquí ya es currárselo un poco, así que con que vengáis a la boda ya nos hacéis el mejor regalo del mundo. \n Pero si aun así os apetece daros algo, cualquier ayuda para la fiesta y la luna de miel se recibe con los brazos abiertos. Tenéis el enlace aquí abajo, o si lo preferís nos lo dais en mano el día de la boda. Nada de agobios, ¡en serio!',
+    body: 'Sabemos que venir hasta aquí ya es currárselo un poco, así que con que vengáis a la boda ya nos hacéis el mejor regalo del mundo. \n Pero si aun así os apetece daros algo, cualquier ayuda para la fiesta y la luna de miel se recibe con los brazos abiertos. Tenéis el enlace aquí abajo, o si lo preferís nos lo dais en mano el día de la boda.',
     monzoLabel: 'Regalar en libras (Monzo)',
     wiseLabel: 'Regalar en euros (Wise)',
   },
@@ -119,9 +119,9 @@ export default {
     items: [
       { q: '¿Cómo hago el RSVP?', a: 'Usad el enlace personal de vuestra invitación, que ya lleva vuestro nombre (y el de vuestro acompañante, si tenéis) puesto. Si no lo encontráis, escribidnos y os lo volvemos a mandar.' },
       { q: '¿Cuál es la fecha límite para el RSVP?', aBold: 'Respondednos antes del 1 de enero de 2027.', a: 'Lo necesitamos para cerrar bien los números de catering y alojamiento. Porfa, no lo dejéis para el último momento.' },
-      { q: '¿Cuál es el código de vestimenta?', aBold: 'ninfas etéreas de montaña con un toque retro de los años 70.', a: 'La boda va a ser al aire libre, en un prado de montaña (con suerte, con sol). Vamos a estar bailando toda la noche, y en cuanto se esconda el sol va a refrescar de lo lindo. Buscaos un calzado cómodo para bailar, o algo para cambiaros más tarde, más alguna prenda fresca para el día y un par de capas de abrigo para la noche.', links: [{ label: 'Ved nuestro tablero de Pinterest', url: 'https://pin.it/2ZMHQo8Qo' }] },
+      { q: '¿Cuál es el código de vestimenta?', aBold: 'Una xana etérea con un toque retro de los años 70.', a: 'La boda va a ser al aire libre, en un prau de montaña (con suerte, con sol). Vamos a estar bailando toda la noche, y en cuanto se esconda el sol va a refrescar de lo lindo. Buscaos un calzado cómodo para bailar, o algo para cambiaros más tarde, más alguna prenda fresca para el día y un par de capas de abrigo para la noche.', links: [{ label: 'Ved nuestro tablero de Pinterest', url: 'https://pin.it/2ZMHQo8Qo' }] },
       { q: '¿Cuáles son los horarios del día de la boda?', a: 'El sábado 28 de agosto es el día grande: llegada por la mañana, sobre el mediodía, para el aperitivo, y luego la ceremonia. Por la tarde, banquete, y música y barra hasta bien entrada la noche.' },
-      { q: '¿Hay aparcamiento en el recinto?', a: 'Sí, hay sitio de sobra en la propia finca. Si pensáis beber, coged el autobús desde Gijón o pedid un taxi (esa noche tendremos uno a mano para acercar a la gente).' },
+      { q: '¿Hay aparcamiento en el recinto?', a: 'Sí, hay sitio de sobra en la propia finca. Si pensáis beber, coged el autobús desde Xixón o pedid un taxi (esa noche tendremos uno a mano para acercar a la gente).' },
       { q: 'Tengo necesidades alimentarias especiales. ¿Podéis adaptaros?', a: 'Claro, decídnoslo en el RSVP. Cuanto más detalle nos deis, mejor. Vegetarianos, veganos y alergias de toda la vida no son ningún problema.' },
       { q: '¿Puedo hacer fotos y compartirlas en redes sociales?', a: 'Sí, claro. Aunque habrá un fotógrafo profesional, y luego os pasamos las fotos buenas. \n Si queréis sacar alguna, adelante, pero intentad no tener el móvil todo el rato pegado a la cara.' },
       { q: '¿Habrá comida y/o bebida?', a: 'Por supuesto. Aperitivo a la llegada, banquete, algo de picoteo por la noche y barra libre de sobra. Avisadnos de cualquier necesidad alimentaria en el RSVP.' },
@@ -153,16 +153,16 @@ export default {
     },
     formNote: 'No hace falta decidirlo todo ya. Podéis volver y cambiar vuestras respuestas cuando queráis, siempre antes de la fecha límite. Y si os surge alguna duda antes de rellenarlo, escribidnos primero sin problema.',
     greetingTemplate: 'Hola {name},',
-    attendingLabel: '¿Vendréis?',
-    attendingYes: '¡Sí, no podemos esperar!',
+    attendingLabel: '¿Venís?',
+    attendingYes: '¡Sí, por supuesto!',
     attendingNo: 'No podremos ir',
     accommodation: {
       label: '¿Dónde os vais a alojar?',
       options: [
-        { value: 'campsite', label: 'En el recinto (acampada)', desc: 'Campo de acampada gratis, pegado a la finca.' },
-        { value: 'cottage', label: 'Casa rural cercana', desc: 'Estamos mirando una casa rural cerca, en cuanto lo tengamos cerrado os contamos más.' },
-        { value: 'gijon', label: 'Gijón + autobús lanzadera', desc: 'Quedarse en la ciudad y venir en el autobús ese día.' },
-        { value: 'own', label: 'Por nuestra cuenta', desc: 'Organizándolo todo por nuestra cuenta.' },
+        { value: 'campsite', label: 'En el recinto (acampada)', desc: 'Acampada gratis en el prau, pegado a la finca.' },
+        { value: 'cottage', label: 'Casa rural cercana', desc: 'Vamos a organizar unas cuantas casas rurales para la gente que viene de lejos.' },
+        { value: 'gijon', label: 'Xixón + autobús lanzadera', desc: 'Quedarse en Xixón y venir en el autobús ese día.' },
+        { value: 'own', label: 'Por nuestra cuenta', desc: 'Vamos a organizarlo todo por nuestra cuenta, no necesitamos alojamiento ni transporte.' },
         { value: 'unsure', label: 'Todavía no lo sé', desc: 'No pasa nada, podéis volver y decirlo más adelante, antes de la fecha límite.' },
       ],
     },
@@ -178,7 +178,7 @@ export default {
     stayDates: {
       arrivalLabel: '¿Cuándo llegaréis?',
       departureLabel: '¿Cuándo os iréis?',
-      flightHint: '¿Volando desde Londres? Los vuelos directos a Asturias solo salen los jueves y los martes, así que si queréis más margen, desde Santander hay vuelos casi todos los días.',
+      flightHint: '¿Volando desde Londres? Los vuelos directos a Asturies solo salen los jueves y los martes, así que si queréis más margen, desde Santander hay vuelos casi todos los días.',
       arrivalDays: [
         { value: 'thu-26', label: 'Jueves 26 de agosto' },
         { value: 'fri-27', label: 'Viernes 27 de agosto' },
@@ -199,7 +199,7 @@ export default {
     submit: 'Enviar RSVP',
     submitting: 'Enviando…',
     successTitle: '¡Recibido!',
-    successText: 'Gracias {name}, ya tenemos vuestra respuesta apuntada. ¡Nos vemos en Asturias!',
+    successText: 'Gracias {name}, ya tenemos vuestra respuesta apuntada. ¡Nos vemos en Asturies!',
     errorText: 'Algo ha fallado al enviar esto. Probad otra vez, o escribidnos directamente por email.',
     summary: {
       title: 'Esto es lo que nos dijisteis',
