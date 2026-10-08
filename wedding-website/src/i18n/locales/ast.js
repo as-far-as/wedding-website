@@ -50,11 +50,7 @@ export default {
       title: 'Cómo Llegar',
       byCar: {
         title: 'En Coche',
-        intro: 'El coche ye la manera más práutica de movese per Asturies.',
-        parking: {
-          title: 'Aparcamientu',
-          intro: 'Hai aparcamientu disponible na mesma finca. \n Si conducís, organizáivos con enantelación pa nun beber, o guetái quien vos lleve de vuelta si pensáis beber. \n Va haber taxis disponibles esa nueche pa trayeutos d\'ida ya vuelta a la finca dende la zona.',
-        },
+        intro: 'El coche ye la manera más práutica. Va haber aparcamientu disponible na mesma finca. \n Si conducís, organizáivos con enantelación pa nun beber, o guetái quien vos lleve de vuelta si pensáis beber. \n Va haber taxis disponibles esa nueche pa trayeutos d\'ida ya vuelta a la finca dende la zona.',
         routes: [
           { from: 'Aeropuertu d\'Asturies (OVD)', dist: '~70 km', time: '~1 h 20 min', route: 'A-66 sur, salida Villazón, AS-228' },
           { from: 'Xixón', dist: '~60 km', time: '~1 h', route: 'A-66 sur dende Uviéu, salida Villazón' },
@@ -66,59 +62,9 @@ export default {
       shuttle: {
         title: 'Autobús dende Xixón',
         bus: { title: 'Autobús', desc: 'El día de la boda va haber un autobús ente Xixón ya la finca (hores por confirmar). Indicáilo nel RSVP si vos prestaría viaxar n\'autobús dende Xixón.' },
-        gijonLabel: 'Xixón como Base',
-        gijonText: 'Xixón ye la ciudá principal d\'Asturies, ya ye la ciudá natal d\'Adán. \n Tien munchos hoteles, una platya, ya bonísimes opciones pa comer ya beber. Encamentámosvos alloxavos equí ya coyer l\'autobús si nun queréis quedar averaos a la finca, yá que ye la base evidente pal fin de selmana. \n Vede la páxina d\'Asturies pa más encamentaciones.',
-      },
-      byPlane: {
-        title: 'N\'Avión',
-        asturias: {
-          title: 'Aeropuertu d\'Asturies (OVD)',
-          descBefore: 'Asturies ye l\'aeropuertu más averáu a la finca ya\'l que encamentamos pa volar. Ta a 1h20 en coche de la finca, o a 30 minutos de Xixón / Uviéu (los autobuses d\'Alsa salen cada hora). \n Pal vienente branu, les rutes programaes inclúin:',
-          bullets: [
-            'Wizz Air: Londres Luton, mar / xue / sáb',
-            'Aer Lingus: Dublín, mar / sáb',
-            'Volotea: París Orly, mar / xue / dom',
-            'Lufthansa: Fráncfort, mié / vie / sáb / dom',
-            'KLM: Ámsterdam, tolos díes',
-            'Tamién podéis volar fácilmente con escala en Madrid dende la mayoría de sitios',
-          ],
-        },
-        santander: {
-          title: 'Aeropuertu de Santander (SDR)',
-          descBefore: 'Santander ta a unes 2h30 de la finca, ya a 1h45 de Xixón. Ryanair vuela a Santander dende dellos aeropuertos del Reinu Xuníu:',
-          bullets: [
-            'Londres Stansted: llu / mar / mié / vie / dom',
-            'Manchester: mar / xue / dom',
-            'Birmingham: mié / dom',
-            'Edimburgu: llu / mié / dom',
-          ],
-          note: 'Los vuelos suelen ser más baratos qu\'a Asturies, asina que pue ser una opción más cenciella/económica, sobre too si pensáis quedar más tiempu nel norte d\'España ya visitar, por exemplu, los Picos d\'Europa o Llanes, na parte oriental.',
-        },
-        recommendedTimings: {
-          title: 'Hores Encamentaes pa Volar a Asturies dende Londres',
-          intro: 'Como Wizz Air solo vuela ente Luton ya Asturies los martes, xueves ya sábados, esta ye la combinación que meyor encuadra el fin de selmana de la boda:',
-          outboundLabel: 'D\'ida:',
-          outboundText: 'xueves 26 d\'agostu, Luton 14.10 → Asturies 17.05',
-          returnLabel: 'De vuelta:',
-          returnText: 'martes 31 d\'agostu, Asturies 17:40 → Luton 18:30',
-          note: 'Si necesitáis llegar más sero o volver enantes, podéis volar vía Madrid o dende Santander.',
-        },
-      },
-      overland: {
-        title: 'Opciones per Tierra',
-        intro: 'Si prefierís nun volar, hai dos maneres de llegar per tierra dende\'l Reinu Uníu ya\'l norte d\'Europa.',
-        ferry: {
-          title: 'Ferry: Portsmouth a Santander',
-          desc: 'Brittany Ferries tien una travesía direuta de Portsmouth a Santander, una gran opción si queréis traer el vuesu propiu coche pa facer una ruta pol norte d\'España.',
-        },
-        train: {
-          title: 'Tren: París a Irún, ya darréu p\'alantre',
-          desc: 'Viaxando en tren dende París, el serviciu direutu solo llega hasta Irún, na frontera francu-española. Dende ellí, siguíi en BlaBlaCar (coche compartíu) o n\'autobús d\'Alsa dende Irún hasta Xixón o Uviéu, ya organizái\'l tresporte hasta la finca dende ellí.',
-        },
       },
       howeverYouGetHere: {
-        title: 'Como quiera que Lleguéis',
-        text: 'Too lo d\'enriba ye dafechu opcional, asina que sentíivos llibres d\'ignoralo dafechu ya facer lo que vos preste. \n Prestaríanos que la xente pasare\'l máximu tiempu posible na zona ya la esplorare al so aire, pero entendemos que yá ye un gran esfuerciu vinir hasta equí, asina qu\'axustáilo al vuesu horariu. \n Si tenéis dalguna dubda sobre la llogística, nun dudéis en poner en contautu con Adán o Natalie, vamos tar encantaos d\'ayudar.',
+        text: 'Si tenéis dalguna dubda sobre cómo llegar, escribinos a Adán o a Natalie ensin problema, que pa eso tamos.',
       },
     },
   },
@@ -138,8 +84,6 @@ export default {
     option2: {
       title: 'Opción 2: Acampada na Finca',
       intro: 'La finca tien un campu axuntu onde podéis montar la tienda o quedar nuna autocaravana d\'alquiler, dafechu de baldre. \n Ye un sitiu guapísimu, nel monte xunto a un regatu, ya vais tar muncho más averaos a tola aición. Tamién podéis usar les duches ya los baños de la finca durante la vuesa estancia.',
-      detailsLabel: 'Nota:',
-      detailsText: ' El tiempu pue ser variable n\'Asturies. Pue llover, ya les temperatures van baxar pela nueche. ¡Preparái l\'equipaxe en consecuencia si vais acampar!',
     },
     option3: {
       title: 'Opción 3: Quedar en Xixón',
@@ -148,48 +92,6 @@ export default {
     option4: {
       title: 'Opción 4: Pela Vuesa Cuenta',
       intro: 'Si preferís organizar los vuesos propios planes, sentíivos llibres de facelo. \n Hai munchos otros sitios onde alloxase n\'Asturies, ya queremos que teáis a gustu. Namás aseguráivos de tener un plan pa dir ya volver de la finca, yá que hai pocos taxis na zona.',
-    },
-  },
-
-  asturias: {
-    title: 'Asturies',
-    about: {
-      title: 'Sobre la Rexón',
-      p1: 'Seguramente ayáis sentío a Adán falar ensin parar de lo bona qu\'ye Asturies (o quiciabes yá tuvisteis el privilexu de visitala). \n En cualesquier casu, pensamos que vos prestaría que compartiéramos delles de les nueses encamentaciones sobre les meyores coses que facer na zona.',
-    },
-    thingsToDo: {
-      title: 'Qué Facer',
-      gijon: { title: 'Xixón', desc: 'Equí ye onde se criara Adán, ya la metá de la so familia entá vive ellí. \n Ye la ciudá más grande d\'Asturies, ya casa del so meyor equipu de fútbol, el Real Sporting. Enantes industrial ya agora reinventada, con munchos sitios pa comer ya beber ya una platya ya costa guapísimes. El casco antiguu (Cimavilla) ye\'l meyor sitiu pa tomar daqué (¡sidra!)', distance: '~1h de la finca - autobús d\'ida ya vuelta el día de la boda' },
-      picos: { title: 'Picos d\'Europa', desc: 'El parque nacional más antiguu d\'España, con picos calizos imponentes, gargantes ya pueblos de montaña. Si vos presta\'l senderismu, esti ye\'l sitiu.', distance: '~1,5 h de la finca' },
-      ubinas: { title: 'Parque Natural de les Ubiñes', desc: 'La mesma finca ta dientro del guapu Parque Natural de les Ubiñes, onde hai una amiestura de montes antiguos, valles apartaos ya montañes esixentes pa xubir. \n Ye muncho más tranquilu que los Picos d\'Europa, ya quiciabes una esperiencia más única ya especial', distance: 'xusto al llau' },
-      redes: { title: 'Parque Natural de Redes', desc: 'Reserva de la Biosfera con dalgunos de los montes más grandes d\'Asturies ya una natura increíble.', distance: '~1 h de la finca' },
-      llanesRibadesella: { title: 'Llanes ya Ribeseya', desc: 'La costa ente estos dos pueblos costeros tien les meyores playes de la rexón, son daveres espectaculares ya nun se parecen a nada qu\'atoparéis nel sur d\'España.', distance: '~1 h de la finca' },
-      villages: { title: 'Pueblinos Costeros', desc: 'Cuideiru, Lluarca, Tazones, Candás... Tolos son pueblinos costeros guapísimos pa pasar el día ya comer mariscu fresco delicioso. El nuesu favoritu personal ye l\'arroz con bugre en Tazones.' },
-      oviedo: { title: 'Uviéu', desc: 'La gran capital rexonal. Más pequeña que Xixón (ya con un equipu de fútbol peor). \n Pa dir andando, con un casco antiguu medieval ya catedral guapísimos.', distance: '~45 min de la finca' },
-    },
-    foodAndDrink: {
-      title: 'Comida ya Bebida',
-      intro: 'La comida n\'Asturies ye contundente ya abondosa. Tenemos productos locales escepcionales, incluyendo la rexón con más quesos d\'Europa, mariscu, llegumes (fabada) ya sidra. \n Per supuestu vais tener ocasión de probar dalgunos d\'estos na boda, pero amás d\'eso equí van delles de les nueses encamentaciones',
-      items: [
-        { name: 'Casa Jamallo', desc: 'En Bárzana, Quirós (averao a la finca). Bona pa caza ya guisaos.' },
-        { name: 'Casa Generosa', desc: 'Averada a Proaza. Un referente pa la fabada ya\'l cabritu. Encamentamos dir andando dende Les Xanes' },
-        { name: 'El Planeta', desc: 'El nuesu sitiu favoritu pa mariscu en Xixón. Pidir les sardines.' },
-        { name: 'Gloria (Xixón)', desc: 'Versión moderna de la cocina asturiana, mui bona.' },
-        { name: 'El Cencerro (Xixón)', desc: 'El meyor pa carne / chuletón en Xixón. Pidir les mollejes si les tienen.' },
-        { name: 'Tar d\'Abéu (Xixón)', desc: 'Sidrería clásica en Xixón con comida mui bona ya orixinal' },
-        { name: 'Farragua', desc: 'Alta cocina en Xixón, mui bona' },
-        { name: 'El Uría', desc: 'El meyor pa mariscu (arroz con bugre) en Tazones' },
-        { name: 'El Molín de Mingo', desc: 'Averao a Llanes, el meyor arroz con pitu n\'Asturies' },
-        { name: 'Fitumar', desc: 'Mui bon mariscu na platya.' },
-        { name: 'Gueyümar', desc: 'Tamién mui bon mariscu na platya - un poco más elegante' },
-      ],
-    },
-    weather: {
-      title: 'El Tiempu n\'Agostu',
-      intro: 'Agostu ye\'l mes más cálidu d\'Asturies, pero sigue siendo Asturies. \n Los díes tienen de ser cálidos pero non calorosos ya les nueches van tar fresques. Pue llover en cualesquier momentu. El paisaxe ye verde por daqué.',
-      daytime: { strong: 'De día:', text: ' 18–26°C. Esperamos que faiga sol, pero preparaos pa too.' },
-      evenings: { strong: 'Pela nueche:', text: ' Baxa a 12–16°C en cuanto se pon el sol. Traer una capa que vos preste.' },
-      rain: { strong: 'Lluvia:', text: ' Posibilidá real cualesquier día. Tenemos un plan pal tiempu variable.' },
     },
   },
 
@@ -217,11 +119,10 @@ export default {
     items: [
       { q: '¿Cómo faigo l\'RSVP?', a: 'Usái l\'enllaz personal de la vuesa invitación. Yá va llevar el vuesu nome (ya el del vuesu acompañante, si tenéis ún) axuntáu. Si perdéis l\'enllaz, escribinos ya vos lu reunviamos.' },
       { q: '¿Cuál ye la data llímite pal RSVP?', aBold: 'Respondei enantes del 1 de xineru de 2027.', a: 'Esto ye pa poder zarrar los númberos de catering ya alloxamientu. Por favor, nun lo dexéis pal caberu momentu.' },
-      { q: '¿Cuál ye\'l códigu de vistimenta?', aBold: 'ninfes etéreas de montaña con un toque retro de los años 70.', a: 'Interpretailo como queráis. \n\n La respuesta aburrida ye: la boda va celebrase al campu abiertu nun prau de montaña (con suerte con sol). Vamos bailar tola nueche. Va refrescar en cuanto se pon el sol. Asina que vais necesitar calzáu col que podáis bailar, o daqué cómodo pa camudavos más sero, amás de daqué fresco ya cómodo pal sol ya delles capes extra pa la nueche.', links: [{ label: 'Ver el tableru de Pinterest', url: 'https://pin.it/2ZMHQo8Qo' }] },
+      { q: '¿Cuál ye\'l códigu de vistimenta?', aBold: 'ninfes etéreas de montaña con un toque retro de los años 70.', a: 'La boda va celebrase al campu abiertu nun prau de montaña (con suerte con sol). Vamos bailar tola nueche. Va refrescar en cuanto se pon el sol. Asina que vais necesitar calzáu col que podáis bailar, o daqué cómodo pa camudavos más sero, amás de daqué fresco ya cómodo pal sol ya delles capes extra pa la nueche.', links: [{ label: 'Ver el tableru de Pinterest', url: 'https://pin.it/2ZMHQo8Qo' }] },
       { q: '¿Cuáles son les hores del día de la boda?', a: 'El sábadu 28 d\'agostu ye\'l día principal: llegaes pela mañana, escontra\'l meudía, pa un aperitivu, siguíu de la ceremonia. Darréu va haber un banquete pela tarde, música ya barra hasta bien entrada la nueche ya más allá.' },
       { q: '¿Hai aparcamientu na finca?', a: 'Sí, hai aparcamientu na mesma finca. Si pensáis beber, usái l\'autobús dende Xixón, o organizái un taxi (va haber un taxi disponible esa nueche pa llevar a la xente averao).' },
       { q: 'Tengo necesidaes alimentaries especiales. ¿Podéis adaptavos?', a: 'Sí, decinos nel RSVP. Cuanto más específicos seáis, meyor. Vexetarianu, veganu ya alerxes comunes nun van ser problema.' },
-      { q: '¿Qué tiempu va facer a la fin d\'agostu?', a: 'Cálidu ya húmedu. Esperái 18–26°C durante\'l día, nueches más fresques, 12–16°C en cuanto se pon el sol. La finca va tener zones cubiertes ya tenemos un plan pa la lluvia.' },
       { q: '¿Puedo facer semeyes ya compartiles nes redes sociales?', a: 'Sí. Pero va haber un fotógrafu profesional, ya vamos compartir les semeyes con vós darréu. \n Si queréis facer semeyes, p\'alantre, pero intentái usar el móvil lo mínimo posible si ye viable.' },
       { q: '¿Va haber comida y/o bebida?', a: 'Sí. Va haber un aperitivu a la llegada, banquete ya daqué pa picar pela nueche, con una barra completamente equipada. Indicái cualesquier necesidá alimentaria nel RSVP.' },
       { q: 'Tengo una entruga que nun ta equí.', aTemplate: 'Escribinos. Podéis contautar con Adán en {adanEmail} o en {adanPhone}, o con Natalie en {natalieEmail} o en {nataliePhone}. Vamos facer lo posible por responder ceo. Si ye una entruga que probablemente tengan otros convidaos, vamos amestala equí.' },
@@ -237,7 +138,6 @@ export default {
 
   rsvp: {
     title: 'RSVP',
-    subtitle: 'Nun podemos esperar a celebralo con vós',
     loading: 'Cargando la vuesa invitación…',
     noSlug: {
       title: 'Usái el vuesu enllaz personal',

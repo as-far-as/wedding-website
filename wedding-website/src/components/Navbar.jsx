@@ -17,8 +17,8 @@ export default function Navbar() {
   const NAV_LINKS = [
     { to: '/location',      label: t.nav.location },
     { to: '/accommodation', label: t.nav.accommodation },
-    // The Asturias page isn't part of the Spanish site — see Asturias.jsx.
-    ...(language === 'es' ? [] : [{ to: '/asturias', label: t.nav.asturias }]),
+    // The Asturias page isn't part of the Spanish or Asturian site — see Asturias.jsx.
+    ...(language === 'es' || language === 'ast' ? [] : [{ to: '/asturias', label: t.nav.asturias }]),
     { to: '/dress-code',    label: t.nav.dressCode },
     { to: '/gifts',         label: t.nav.gifts },
     { to: '/faqs',          label: t.nav.faqs },

@@ -167,22 +167,10 @@ export default {
       villages: { title: 'Seaside Villages', desc: 'Cudillero, Luarca, Tazones, Candás... All beautiful seaside villages to spend the day and get some delicious fresh seafood. Personal favourite is the lobster rice (arroz con bugre) in Tazones.' },
       oviedo: { title: 'Oviedo', desc: "The grand, regional capital. Smaller than Gijón (and with an inferior football team). \n Walkable, beautiful medieval old town and cathedral.", distance: '~45 min from venue' },
     },
-    foodAndDrink: {
-      title: 'Food & Drink',
-      intro: 'Food in Asturias is hearty and abundant. We have exceptional local produce, including the most cheeses of any region in Europe, seafood, beans (fabada) and cider (sidra). \n You will of course have a chance to try some of these at the wedding, but beyond that here are some of our recommendations',
-      items: [
-        { name: 'Casa Jamallo', desc: 'Located in Bárzana, Quirós (near the venue). Good for game and stews.' },
-        { name: 'Casa Generosa', desc: 'Near Proaza. An institution for fabada and cabritu (goat). Recommend walking there from Les Xanes' },
-        { name: 'El Planeta', desc: 'Our favourite place for seafood in Gijón. Get the sardines.' },
-        { name: 'Gloria (Gijón)', desc: 'Modern take on Asturian cuisine, really nice.' },
-        { name: 'El Cencerro (Gijón)', desc: 'Best for meat / steak in Gijón. Get the sweetbreads (mollejas) if they have them.' },
-        { name: 'Tar d\'Abéu (Gijón)', desc: 'Classic sidrería in Gijón with great, inventive food' },
-        { name: 'Farragua', desc: 'Upmarket fine-dining in Gijón, really nice' },
-        { name: 'El Uría', desc: 'Best for seafood (arroz con bugre) in Tazones' },
-        { name: 'El Molín de Mingo', desc: 'Near Llanes, best arroz con pitu (chicken rice) in Asturias' },
-        { name: 'Fitumar', desc: 'Great seafood on the beach.' },
-        { name: 'Gueyümar', desc: 'Also great seafood on the beach - a bit more upmarket' },
-      ],
+    mapList: {
+      title: 'Our Favourite Spots',
+      intro: "We've pinned some of our favourite spots in Asturias on a shared Google Maps list, in case you want some more inspiration.",
+      linkLabel: 'Open the list in Google Maps',
     },
     weather: {
       title: 'Weather in August',
