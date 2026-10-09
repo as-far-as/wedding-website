@@ -33,18 +33,28 @@
  *    it automatically the first time it runs if it's missing.
  * 7. Run sendTestInvite() first (see below) to email yourself a real,
  *    fully-merged preview before sending to anyone else.
- * 8. When ready, run sendAllInvites(). The very first run of either
- *    function will pop up Google's "this app isn't verified" consent
- *    screen — that's expected for a personal script only you run; click
- *    through Advanced > Go to (project name) > Allow. It only sends as
- *    you, from your own Gmail account, and only when you run it.
+ * 8. Before sending for real, add a "Test" column and put something like
+ *    "yes" in it next to a handful of trusted guests (people happy to get
+ *    a real invite a little early), then run sendTestBatch() — this sends
+ *    the real email to just those people's actual addresses, so you can
+ *    see how it lands in a real inbox and click through the real RSVP
+ *    flow, before anyone else gets theirs.
+ * 9. When ready, run sendAllInvites() for everyone else. The very first
+ *    run of any of these three functions will pop up Google's "this app
+ *    isn't verified" consent screen — that's expected for a personal
+ *    script only you run; click through Advanced > Go to (project name) >
+ *    Allow. It only sends as you, from your own Gmail account, and only
+ *    when you run it.
  *
  * SAFETY
  * - Rows are skipped if "Invite Sent At" is already filled in, so re-running
  *   sendAllInvites() (e.g. after adding a few late-arriving guests) won't
  *   re-email everyone — it only sends to rows that haven't gone out yet.
- * - sendAllInvites() shows a confirmation dialog with the exact number of
- *   emails it's about to send before doing anything irreversible.
+ *   sendTestBatch() fills this in too, so anyone it emails won't be sent a
+ *   second copy when you later run sendAllInvites().
+ * - sendTestBatch() and sendAllInvites() both show a confirmation dialog
+ *   (sendTestBatch() lists exactly who it's about to email) before doing
+ *   anything irreversible.
  * - Gmail's own sending limit is ~100 recipients/day for a plain personal
  *   @gmail.com account (higher for Google Workspace) — for a guest list
  *   larger than that, split sendAllInvites() across a couple of days by
@@ -79,11 +89,18 @@ function resolveLanguage_(rawValue) {
   return CONFIG.DEFAULT_LANGUAGE;
 }
 
+/** Any non-blank-ish value in the Test column marks that row for sendTestBatch(). */
+function isTestRow_(rawValue) {
+  const v = (rawValue || '').toString().trim().toLowerCase();
+  return v !== '' && !['no', 'false', '0'].includes(v);
+}
+
 /** Menu so you can run this from the Sheet itself, no script editor needed. */
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu('Wedding Invites')
     .addItem('Send test email to me', 'sendTestInvite')
+    .addItem('Send to test guests (Test column)', 'sendTestBatch')
     .addItem('Send all unsent invites', 'sendAllInvites')
     .addToUi();
 }
@@ -166,6 +183,46 @@ function sendTestInvite() {
   });
 
   SpreadsheetApp.getUi().alert(`Test email sent to ${CONFIG.TEST_RECIPIENT_EMAIL}, merged from "${guest.name}"'s row (${resolveLanguage_(guest.language)}).`);
+}
+
+/** Sends the real invite, to their real address, to every guest row marked
+ *  in a "Test" column (any value except blank/no/false/0) — use this to do
+ *  an end-to-end test with a handful of trusted people before running
+ *  sendAllInvites() for everyone. Marks them as sent too, so they won't be
+ *  emailed a second time by sendAllInvites() later. */
+function sendTestBatch() {
+  const rows = readGuestRows_();
+  const sheet = getGuestSheet_();
+
+  if (!('test' in (rows[0] || {}))) {
+    SpreadsheetApp.getUi().alert('No "Test" column found — add one to your Guests tab and put a value (e.g. "yes") next to whichever guests you want to test with first.');
+    return;
+  }
+
+  const toSend = rows.filter((r) => r.name && r.slug && r.email && isTestRow_(r.test) && !r.invitesentat);
+
+  if (toSend.length === 0) {
+    SpreadsheetApp.getUi().alert('Nothing to send — mark a row with a value (e.g. "yes") in the Test column, and make sure it has an Email and hasn\'t already been sent.');
+    return;
+  }
+
+  const ui = SpreadsheetApp.getUi();
+  const names = toSend.map((r) => `${r.name} (${r.email})`).join(', ');
+  const response = ui.alert('Confirm test send', `This will send ${toSend.length} real invitation email(s) to: ${names}. Continue?`, ui.ButtonSet.YES_NO);
+  if (response !== ui.Button.YES) return;
+
+  let sent = 0;
+  toSend.forEach((guest) => {
+    const { html, subject } = buildEmail_(guest);
+    GmailApp.sendEmail(guest.email, subject, 'This email needs an HTML-capable mail client to view.', {
+      htmlBody: html,
+      name: 'Natalie & Adán',
+    });
+    sheet.getRange(guest._rowNumber, guest._sentAtCol).setValue(new Date());
+    sent += 1;
+  });
+
+  ui.alert(`Sent ${sent} test invitation(s).`);
 }
 
 /** Sends the real invite to every guest row that has an email address and

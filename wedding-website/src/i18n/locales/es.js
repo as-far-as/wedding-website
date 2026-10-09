@@ -95,6 +95,52 @@ export default {
     },
   },
 
+  asturias: {
+    title: 'Asturies',
+    about: {
+      title: 'Por la Zona',
+      p1: 'Aquí van algunas recomendaciones nuestras, por si os apetece aprovechar el viaje para ver algo más de la zona.',
+    },
+    thingsToDo: {
+      title: 'Qué Hacer',
+      gijon: { title: 'Xixón', desc: 'Aquí se crió Adán, y la mitad de su familia todavía vive allí. El casco antiguo (Cimavilla) es un buen sitio para tomar algo.', distance: '~1h de la finca, autobús de ida y vuelta el día de la boda' },
+      picos: { title: 'Picos de Europa', desc: 'Si os gusta el senderismo, es parada obligada.', distance: '~1,5 h de la finca' },
+      ubinas: { title: 'Parque Natural de las Ubiñas', desc: 'La propia finca está dentro, mucho más tranquilo que Picos de Europa.', distance: 'justo al lado' },
+      redes: { title: 'Parque Natural de Redes', desc: 'Reserva de la Biosfera, con una naturaleza espectacular.', distance: '~1 h de la finca' },
+      llanesRibadesella: { title: 'Llanes y Ribadesella', desc: 'Las mejores playas de la zona, con diferencia.', distance: '~1 h de la finca' },
+      villages: { title: 'Pueblos Costeros', desc: 'Cudillero, Luarca, Tazones, Candás... para pasar el día y comer buen marisco.' },
+      oviedo: { title: 'Uviéu', desc: 'Más tranquilo que Xixón (y con peor equipo de fútbol).', distance: '~45 min de la finca' },
+    },
+    foodAndDrink: {
+      title: 'Comida y Bebida',
+      intro: 'Un par de sitios que nos gustan especialmente, por si os sirve:',
+      items: [
+        { name: 'Casa Jamallo', desc: 'En Bárzana, Quirós, muy cerca de la finca.' },
+        { name: 'Casa Generosa', desc: 'Cerca de Proaza, un clásico para la fabada y el cabritu.' },
+        { name: 'El Planeta', desc: 'Nuestro favorito para marisco en Xixón. Pedid las sardinas.' },
+        { name: 'Gloria (Xixón)', desc: 'Cocina asturiana con un punto moderno.' },
+        { name: 'El Cencerro (Xixón)', desc: 'Para carne. Pedid las mollejas si las tienen.' },
+        { name: 'Tar d\'Abéu (Xixón)', desc: 'Sidrería clásica, comida muy buena.' },
+        { name: 'Farragua', desc: 'Alta cocina en Xixón, nos encanta.' },
+        { name: 'El Uría', desc: 'Marisco en Tazones, el arroz con bugre está muy bueno.' },
+        { name: 'El Molín de Mingo', desc: 'Cerca de Llanes, el mejor arroz con pitu que hemos probado.' },
+        { name: 'Fitumar', desc: 'Marisco en primera línea de playa.' },
+        { name: 'Gueyümar', desc: 'También en la playa, algo más elegante.' },
+      ],
+    },
+    mapNote: {
+      text: 'Tenéis todas estas recomendaciones y alguna más en',
+      linkLabel: 'esta lista de Google Maps',
+    },
+    weather: {
+      title: 'El Tiempo en Agosto',
+      intro: 'Buen tiempo durante el día, pero refresca bastante por la noche. Llevad alguna capa, por si acaso.',
+      daytime: { strong: 'De día:', text: ' 18–26°C.' },
+      evenings: { strong: 'Por la noche:', text: ' Baja a 12–16°C en cuanto se pone el sol.' },
+      rain: { strong: 'Lluvia:', text: ' Puede caer algún chaparrón cualquier día, tenemos plan por si acaso.' },
+    },
+  },
+
   dressCode: {
     title: 'Código de Vestimenta',
     tagline: 'Poneos lo que os haga sentir a gusto. Pero si buscáis alguna pista, pensad en una xana, etérea y misteriosa, pero con un puntín retro de los setenta.',

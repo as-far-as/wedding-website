@@ -8,10 +8,11 @@ const GOOGLE_MAPS_LIST_URL = 'https://maps.app.goo.gl/FYSP5nhh1PmSGECk9';
 export default function Asturias() {
   const { t, language } = useLanguage();
 
-  // The Spanish and Asturian sites drop this page entirely (it's mainly
-  // aimed at international guests unfamiliar with the area) — its content
-  // isn't translated for either, so bail out before touching t.asturias.
-  if (language === 'es' || language === 'ast') return <Navigate to="/" replace />;
+  // The Asturian site drops this page entirely (it's untranslated and
+  // mostly redundant for a reader already fluent in Asturian) — bail out
+  // before touching t.asturias. The Spanish version stays, just written
+  // for readers who likely already know the area.
+  if (language === 'ast') return <Navigate to="/" replace />;
 
   const as = t.asturias;
 
@@ -80,20 +81,29 @@ export default function Asturias() {
         </CardGrid>
       </Section>
 
-      <Section title={as.mapList.title}>
-        <p className="font-sans text-wedding-muted leading-relaxed mb-5" style={{ fontSize: '0.925rem' }}>
-          {as.mapList.intro}
+      <Section title={as.foodAndDrink.title}>
+        <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
+          {as.foodAndDrink.intro}
         </p>
-        <a
-          href={GOOGLE_MAPS_LIST_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-lg border px-5 py-3 font-sans text-wedding-text hover:border-wedding-accent transition-colors"
-          style={{ fontSize: '0.875rem', borderColor: 'var(--page-border, rgba(138,154,134,0.4))' }}
-        >
-          {as.mapList.linkLabel}
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div className="space-y-5">
+          {as.foodAndDrink.items.map(({ name, desc }) => (
+            <div key={name} className="flex flex-col sm:flex-row gap-2 sm:gap-6 pb-5 border-b border-wedding-accent/15 last:border-0">
+              <span className="font-display text-wedding-text shrink-0" style={{ minWidth: '11rem', fontSize: '1.15rem' }}>{name}</span>
+              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>{desc}</p>
+            </div>
+          ))}
+        </div>
+        <p className="font-sans text-wedding-muted leading-relaxed mt-6" style={{ fontSize: '0.875rem' }}>
+          {as.mapNote.text}{' '}
+          <a
+            href={GOOGLE_MAPS_LIST_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-wedding-accent underline underline-offset-2"
+          >
+            {as.mapNote.linkLabel}
+          </a>.
+        </p>
       </Section>
 
       <Section title={as.weather.title}>
