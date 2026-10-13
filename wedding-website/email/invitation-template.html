@@ -13,22 +13,22 @@
       via a browser extension, or into Mailchimp/similar), find-and-replace
       {{Guest Name}} and {{RSVP Link}} per guest before sending.
   - Two separate links are used, on purpose:
-    - {{Website URL}} — the site's homepage, e.g. https://your-site.netlify.app
+    - {{Website URL}} — the site's homepage, e.g. https://natalie-and-adan.netlify.app
       (no trailing slash). Used for "browse the site" mentions.
     - {{RSVP Link}} — each guest's personal RSVP page, e.g.
-      https://your-site.netlify.app/rsvp/their-guest-slug — the same
+      https://natalie-and-adan.netlify.app/rsvp/their-guest-slug — the same
       personalised/hashed link format the site already uses. Used for the
       RSVP button specifically.
   - {{RSVP Deadline}} e.g. "1st January 2027" — keep in sync with the FAQ page.
 
   FONTS
-  - Matches the website: 'Bonbon' (the curly script) for the one big title
-    only, 'Jost' for everything else — same split the site itself uses
-    between font-heading and font-sans. Most email clients (Gmail app,
-    Outlook desktop, etc.) strip custom web fonts entirely and will fall
-    back to a generic serif/sans-serif regardless, but this ships the same
-    font stack as the site for clients that do render it (Apple Mail, iOS
-    Mail, some webmail).
+  - Matches the website: Jost for everything except the "Natalie & Adán"
+    title. Most email clients (Gmail, Outlook, etc.) strip custom web
+    fonts entirely, Jost just falls back to a similar generic sans-serif
+    when that happens, which is barely noticeable — but the site's actual
+    title font (Bonbon, a decorative script) has no generic equivalent to
+    fall back to, so it's shipped as an image instead (see IMAGES below)
+    rather than text, to guarantee it actually looks like Bonbon everywhere.
 
   IMAGES
   - Email clients block/hide locally-referenced images, so any photo used
@@ -37,17 +37,26 @@
     via your live Netlify domain once deployed, not a relative file path.
     This draft ships without a header photo so it works everywhere without
     that extra step; there's a commented-out slot below if you want to add one.
+  - The "Natalie & Adán" title is one such image, already in the repo at
+    public/email/title.png and referenced via the live Netlify URL. If the
+    names ever change, regenerate it (a transparent PNG of the text, set in
+    Bonbon, cream/#FAF9F6) and replace that file, keeping the same path.
 
   COMPATIBILITY
   - Built with table-based layout and inline styles, which is what actually
     renders consistently across Gmail, Outlook, Apple Mail, etc. — please
     keep that structure if you edit the markup, rather than switching to
     flexbox/grid, which many email clients strip out.
+  - Deliberately has no <meta name="viewport"> tag. That tag is meant for a
+    browser loading a page as the top-level document, not for HTML dropped
+    into an email client's own rendering surface — in Gmail's web client in
+    particular, including it has been observed to make the whole message
+    render roughly 2x wider than the fixed 600px card this is built around.
+    Don't re-add it; the @media query below already handles small screens.
 -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Natalie &amp; Adán, 28 August 2027</title>
   <!--[if mso]>
@@ -59,24 +68,24 @@
     </xml>
   </noscript>
   <![endif]-->
-  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Cormorant+Garamond:ital@1&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     img { -ms-interpolation-mode: bicubic; border: 0; line-height: 100%; outline: none; text-decoration: none; }
     body { margin: 0; padding: 0; width: 100% !important; background-color: #EDEBE4; }
 
-    /* Same font split as the website: Bonbon (curly script) for the one big
-       title only, with the same fallback chain as the site's --font-heading
-       token; Jost for everything else, matching --font-sans. */
-    .heading-font { font-family: 'Bonbon', 'Cormorant Garamond', cursive; }
-    .body-font    { font-family: 'Jost', Helvetica, Arial, sans-serif; }
+    /* Jost matches the site's --font-sans for everything but the title.
+       The title itself is a hosted image (see the comment by the <img>
+       below), not text — Gmail/Outlook strip the Bonbon web font entirely,
+       so text here would silently fall back to a generic cursive font. */
+    .body-font { font-family: 'Jost', Helvetica, Arial, sans-serif; }
 
     @media only screen and (max-width: 620px) {
       .email-container { width: 100% !important; }
       .stack-padding { padding-left: 24px !important; padding-right: 24px !important; }
       .header-padding { padding: 40px 24px !important; }
-      .h1 { font-size: 40px !important; }
+      .h1 { width: 300px !important; }
     }
   </style>
 </head>
@@ -101,14 +110,19 @@
                 https:// URL if you'd like one (e.g. one of the site's
                 collage images, re-hosted somewhere public):
 
-                <img src="https://your-site.netlify.app/email/header.jpg" width="600" alt="" style="display:block; width:100%; max-width:520px; height:auto; border-radius:8px; margin-bottom:28px;" />
+                <img src="https://natalie-and-adan.netlify.app/email/header.jpg" width="600" alt="" style="display:block; width:100%; max-width:520px; height:auto; border-radius:8px; margin-bottom:28px;" />
               -->
               <p class="body-font" style="margin:0 0 18px; color:#FAF9F6; opacity:0.8; font-size:11px; letter-spacing:4px; text-transform:uppercase;">
                 You're Invited
               </p>
-              <h1 class="heading-font h1" style="margin:0; color:#FAF9F6; font-size:56px; font-style:italic; font-weight:500; line-height:1.1;">
-                Natalie &amp; Adán
-              </h1>
+              <!--
+                Rendered as an image (not text) in the site's actual Bonbon
+                font — Gmail/Outlook strip web fonts entirely, so text here
+                would fall back to a generic system cursive font instead.
+                Regenerate this file (public/email/title.png in the repo,
+                same filename) if the names or the font ever change.
+              -->
+              <img src="https://natalie-and-adan.netlify.app/email/title.png" width="420" alt="Natalie &amp; Adán" class="h1" style="display:block; width:420px; max-width:100%; height:auto; margin:0 auto;" />
               <p class="body-font" style="margin:18px 0 0; color:#FAF9F6; opacity:0.85; font-size:13px; letter-spacing:3px; text-transform:uppercase;">
                 28th August 2027 &nbsp;·&nbsp; Asturias, Spain
               </p>
@@ -127,8 +141,12 @@
                 We're getting married, and we'd love for you to be there with us. Our wedding will take place on <strong>Saturday 28th August 2027</strong> at Valle de Bueida, in Quirós, Asturias, a small mountain valley in northern Spain.
               </p>
 
-              <p class="body-font" style="margin:0 0 32px; color:#2B2D42; font-size:15px; line-height:1.7;">
+              <p class="body-font" style="margin:0 0 20px; color:#2B2D42; font-size:15px; line-height:1.7;">
                 Everything you need to know is on <a href="{{Website URL}}" target="_blank" style="color:#2B2D42; text-decoration:underline;">our wedding website</a>: schedule, getting here, where to stay, what to wear, and how to RSVP.
+              </p>
+
+              <p class="body-font" style="margin:0 0 32px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                The site is password-protected, just so it's not sitting out in the open. The password is <strong>{{Site Password}}</strong>.
               </p>
 
               <!-- CTA buttons — each is its own small table so they can wrap

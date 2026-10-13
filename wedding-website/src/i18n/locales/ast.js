@@ -169,6 +169,7 @@ export default {
     houseInvite: {
       label: 'Tais convidaos a alloxavos con nós na finca',
       text: 'Prestaríanos que vos quedareis nuna de les cases de la finca con nós. ¿Vos preste?',
+      textWithPlusOne: 'Prestaríanos que vinierais con {plusOneName} a quedavos con nós nuna de les cases de la finca. ¿Vos preste?',
       yesSingular: '¡Sí, prestaríame!',
       yesPlural: '¡Sí, prestaríanos!',
       noSingular: 'Non, guetaré el mio propiu sitiu',
@@ -178,7 +179,7 @@ export default {
     stayDates: {
       arrivalLabel: '¿Cuándo vais llegar?',
       departureLabel: '¿Cuándo vais dir?',
-      flightHint: '¿Volando dende Londres? Los vuelos direutos a Asturies solo salen los xueves ya los martes, asina que pa más flexibilidá, Santander tien opciones case tolos demás díes.',
+      flightHint: 'Los vuelos direutos a Asturies dende Londres solo salen los xueves, los sábados ya los martes. Si queréis más flexibilidá, Santander tien opciones case tolos demás díes.',
       arrivalDays: [
         { value: 'thu-26', label: 'Xueves 26 d\'agostu' },
         { value: 'fri-27', label: 'Vienres 27 d\'agostu' },
@@ -188,7 +189,6 @@ export default {
       departureDays: [
         { value: 'sun-29', label: 'Domingu 29 d\'agostu' },
         { value: 'mon-30', label: 'Llunes 30 d\'agostu' },
-        { value: 'tue-31', label: 'Martes 31 d\'agostu' },
         { value: 'unsure', label: 'Entá nun lo sé' },
       ],
     },

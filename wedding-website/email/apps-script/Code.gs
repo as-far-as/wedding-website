@@ -17,10 +17,12 @@
  *        of invitation-template-es.html
  *    (no .html extension needed in the file name field — Apps Script adds
  *    that itself). Leave both files' {{Guest Name}} / {{RSVP Link}} /
- *    {{Website URL}} / {{RSVP Deadline}} placeholders exactly as they are;
- *    this script fills them in below.
- * 5. Edit the CONFIG block just below to match your sheet's tab name,
- *    your site's URL, and RSVP deadline.
+ *    {{Website URL}} / {{RSVP Deadline}} / {{Site Password}} placeholders
+ *    exactly as they are; this script fills them in below.
+ * 5. Edit the CONFIG block just below to match your sheet's tab name, your
+ *    site's URL, RSVP deadline, and the site's actual password (SITE_PASSWORD)
+ *    — this only ever lives here in your own Apps Script project, never in
+ *    the repo, so it's safe to put the real value in.
  * 6. Make sure your "Guests" tab has:
  *      - an "Email" column with each guest's email address — this script
  *        doesn't invent one, it reads it from there
@@ -63,9 +65,10 @@
 
 const CONFIG = {
   GUEST_SHEET_NAME: 'Guests',
-  WEBSITE_URL: 'https://your-site.netlify.app',      // homepage, no trailing slash
-  RSVP_BASE_URL: 'https://your-site.netlify.app/rsvp', // personal link = this + "/" + slug
+  WEBSITE_URL: 'https://natalie-and-adan.netlify.app',      // homepage, no trailing slash
+  RSVP_BASE_URL: 'https://natalie-and-adan.netlify.app/rsvp', // personal link = this + "/" + slug
   RSVP_DEADLINE: '1st December 2026',
+  SITE_PASSWORD: 'your-site-password', // the site's password gate — never commit the real value to the repo, only set it here
   TEST_RECIPIENT_EMAIL: 'you@example.com', // where sendTestInvite() sends its preview
   DEFAULT_LANGUAGE: 'en', // used when a guest row's Language column is blank/unrecognised
 
@@ -161,7 +164,8 @@ function buildEmail_(guest) {
     .split('{{Guest Name}}').join(displayName)
     .split('{{RSVP Link}}').join(rsvpLink)
     .split('{{Website URL}}').join(websiteUrl)
-    .split('{{RSVP Deadline}}').join(CONFIG.RSVP_DEADLINE);
+    .split('{{RSVP Deadline}}').join(CONFIG.RSVP_DEADLINE)
+    .split('{{Site Password}}').join(CONFIG.SITE_PASSWORD);
 
   return { html, subject: langConfig.SUBJECT };
 }

@@ -13,7 +13,6 @@
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Natalie &amp; Adán, 28 de agosto de 2027</title>
   <!--[if mso]>
@@ -25,21 +24,21 @@
     </xml>
   </noscript>
   <![endif]-->
-  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Cormorant+Garamond:ital@1&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     img { -ms-interpolation-mode: bicubic; border: 0; line-height: 100%; outline: none; text-decoration: none; }
     body { margin: 0; padding: 0; width: 100% !important; background-color: #EDEBE4; }
 
-    .heading-font { font-family: 'Bonbon', 'Cormorant Garamond', cursive; }
-    .body-font    { font-family: 'Jost', Helvetica, Arial, sans-serif; }
+    /* The title itself is a hosted image, not text — see invitation-template.html */
+    .body-font { font-family: 'Jost', Helvetica, Arial, sans-serif; }
 
     @media only screen and (max-width: 620px) {
       .email-container { width: 100% !important; }
       .stack-padding { padding-left: 24px !important; padding-right: 24px !important; }
       .header-padding { padding: 40px 24px !important; }
-      .h1 { font-size: 40px !important; }
+      .h1 { width: 300px !important; }
     }
   </style>
 </head>
@@ -64,14 +63,12 @@
                 https:// si quieres una (ver invitation-template.html para
                 más detalle sobre por qué):
 
-                <img src="https://your-site.netlify.app/email/header.jpg" width="600" alt="" style="display:block; width:100%; max-width:520px; height:auto; border-radius:8px; margin-bottom:28px;" />
+                <img src="https://natalie-and-adan.netlify.app/email/header.jpg" width="600" alt="" style="display:block; width:100%; max-width:520px; height:auto; border-radius:8px; margin-bottom:28px;" />
               -->
               <p class="body-font" style="margin:0 0 18px; color:#FAF9F6; opacity:0.8; font-size:11px; letter-spacing:4px; text-transform:uppercase;">
                 Estáis Invitados
               </p>
-              <h1 class="heading-font h1" style="margin:0; color:#FAF9F6; font-size:56px; font-style:italic; font-weight:500; line-height:1.1;">
-                Natalie &amp; Adán
-              </h1>
+              <img src="https://natalie-and-adan.netlify.app/email/title.png" width="420" alt="Natalie &amp; Adán" class="h1" style="display:block; width:420px; max-width:100%; height:auto; margin:0 auto;" />
               <p class="body-font" style="margin:18px 0 0; color:#FAF9F6; opacity:0.85; font-size:13px; letter-spacing:3px; text-transform:uppercase;">
                 28 de agosto de 2027 &nbsp;·&nbsp; Asturies, España
               </p>
@@ -90,8 +87,12 @@
                 Nos casamos, y nos haría muchísima ilusión teneros con nosotros. La boda es el <strong>sábado 28 de agosto de 2027</strong>, en Valle de Bueida, Quirós, un rincón de Asturies metido en el Parque Natural de las Ubiñas.
               </p>
 
-              <p class="body-font" style="margin:0 0 32px; color:#2B2D42; font-size:15px; line-height:1.7;">
+              <p class="body-font" style="margin:0 0 20px; color:#2B2D42; font-size:15px; line-height:1.7;">
                 Tenéis todo lo que necesitáis saber en <a href="{{Website URL}}" target="_blank" style="color:#2B2D42; text-decoration:underline;">nuestra página web</a>: horarios, cómo llegar, dónde alojaros, qué poneros y cómo confirmar asistencia.
+              </p>
+
+              <p class="body-font" style="margin:0 0 32px; color:#2B2D42; font-size:15px; line-height:1.7;">
+                La web tiene contraseña, nada más que para que no esté a la vista de cualquiera: es <strong>{{Site Password}}</strong>.
               </p>
 
               <!-- Botones de acción: cada uno es su propia tabla pequeña

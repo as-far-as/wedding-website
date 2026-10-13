@@ -46,12 +46,9 @@ function SummaryRow({ label, value }) {
 function StayDates({ r, arrivalDay, setArrivalDay, departureDay, setDepartureDay }) {
   return (
     <div className="mt-5">
-      <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.8rem' }}>
-        {r.stayDates.flightHint}
-      </p>
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label className={labelClass} style={labelStyle} htmlFor="arrivalDay">{r.stayDates.arrivalLabel}</label>
+          <label className="font-sans text-wedding-text block mb-1" style={{ fontSize: '0.95rem', fontWeight: 600 }} htmlFor="arrivalDay">{r.stayDates.arrivalLabel}</label>
           <select
             id="arrivalDay"
             value={arrivalDay}
@@ -66,7 +63,7 @@ function StayDates({ r, arrivalDay, setArrivalDay, departureDay, setDepartureDay
           </select>
         </div>
         <div>
-          <label className={labelClass} style={labelStyle} htmlFor="departureDay">{r.stayDates.departureLabel}</label>
+          <label className="font-sans text-wedding-text block mb-1" style={{ fontSize: '0.95rem', fontWeight: 600 }} htmlFor="departureDay">{r.stayDates.departureLabel}</label>
           <select
             id="departureDay"
             value={departureDay}
@@ -81,6 +78,9 @@ function StayDates({ r, arrivalDay, setArrivalDay, departureDay, setDepartureDay
           </select>
         </div>
       </div>
+      <p className="font-sans text-wedding-muted leading-relaxed mt-4" style={{ fontSize: '0.8rem' }}>
+        {r.stayDates.flightHint}
+      </p>
     </div>
   );
 }
@@ -162,6 +162,35 @@ export default function Rsvp() {
   const stayingInHouse = isHouseGuest && houseStay === 'yes';
   const effectiveAccommodation = stayingInHouse ? 'house' : accommodation;
   const plusOneConfirmed = hasPlusOne && plusOneAttending === 'yes';
+  // House guests with a plus-one answer the plus-one question first, so the
+  // on-site invite below can already greet both of them by name.
+  const plusOneFirst = isHouseGuest && hasPlusOne;
+
+  const plusOneSection = hasPlusOne && (
+    <div className="border border-wedding-accent/25 rounded-lg p-5">
+      <p className="font-sans text-wedding-text mb-4" style={{ fontSize: '0.9rem' }}>
+        {r.plusOneInviteTemplate.replace('{name}', guest.plusOneName)}
+      </p>
+      <RadioPair
+        value={plusOneAttending}
+        onChange={setPlusOneAttending}
+        yesLabel={r.attendingYes}
+        noLabel={r.attendingNo}
+      />
+      {plusOneAttending === 'yes' && (
+        <div className="mt-5">
+          <label className={labelClass} style={labelStyle} htmlFor="plusOneDietary">{r.plusOneDietaryLabel}</label>
+          <textarea
+            id="plusOneDietary"
+            value={plusOneDietary}
+            onChange={(e) => setPlusOneDietary(e.target.value)}
+            className={inputClass}
+            style={{ fontSize: '0.95rem', minHeight: '3.5rem' }}
+          />
+        </div>
+      )}
+    </div>
+  );
   // Arrival/departure dates matter for anyone staying on or near the site
   // for more than the wedding day itself — not for a Gijón day-trip by bus
   // or guests sorting their own separate arrangements.
@@ -298,10 +327,14 @@ export default function Rsvp() {
 
           {attending === 'yes' && (
             <>
+              {plusOneFirst && plusOneSection}
+
               {isHouseGuest ? (
                 <div className="border border-wedding-accent/25 rounded-lg p-5">
                   <p className="font-sans text-wedding-text mb-1" style={{ fontSize: '0.95rem', fontWeight: 600 }}>{r.houseInvite.label}</p>
-                  <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.85rem' }}>{r.houseInvite.text}</p>
+                  <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.85rem' }}>
+                    {plusOneConfirmed ? r.houseInvite.textWithPlusOne.replace('{plusOneName}', guest.plusOneName) : r.houseInvite.text}
+                  </p>
                   <RadioPair
                     value={houseStay}
                     onChange={setHouseStay}
@@ -364,31 +397,7 @@ export default function Rsvp() {
                 />
               </div>
 
-              {hasPlusOne && (
-                <div className="border border-wedding-accent/25 rounded-lg p-5">
-                  <p className="font-sans text-wedding-text mb-4" style={{ fontSize: '0.9rem' }}>
-                    {r.plusOneInviteTemplate.replace('{name}', guest.plusOneName)}
-                  </p>
-                  <RadioPair
-                    value={plusOneAttending}
-                    onChange={setPlusOneAttending}
-                    yesLabel={r.attendingYes}
-                    noLabel={r.attendingNo}
-                  />
-                  {plusOneAttending === 'yes' && (
-                    <div className="mt-5">
-                      <label className={labelClass} style={labelStyle} htmlFor="plusOneDietary">{r.plusOneDietaryLabel}</label>
-                      <textarea
-                        id="plusOneDietary"
-                        value={plusOneDietary}
-                        onChange={(e) => setPlusOneDietary(e.target.value)}
-                        className={inputClass}
-                        style={{ fontSize: '0.95rem', minHeight: '3.5rem' }}
-                      />
-                    </div>
-                  )}
-                </div>
-              )}
+              {!plusOneFirst && plusOneSection}
             </>
           )}
 
