@@ -245,7 +245,7 @@ export default {
 
   rsvp: {
     title: 'RSVP',
-    subtitle: "We can't wait to celebrate with you",
+    subtitle: "We can't wait to celebrate with you. Please let us know if you can make it by 1st January 2027.",
     loading: 'Loading your invitation…',
     noSlug: {
       title: 'Use your personal link',

@@ -142,6 +142,7 @@ export default {
 
   rsvp: {
     title: 'RSVP',
+    subtitle: 'Fáinos muncha ilusión celebralo con vosotros. Por favor, avisainos si podéis vinir enantes del 1 de xineru de 2027.',
     loading: 'Cargando la vuesa invitación…',
     noSlug: {
       title: 'Usái el vuesu enllaz personal',

@@ -188,6 +188,7 @@ export default {
 
   rsvp: {
     title: 'RSVP',
+    subtitle: 'Nos hace muchísima ilusión celebrarlo con vosotros. Porfa, decidnos si podéis venir antes del 1 de enero de 2027.',
     loading: 'Cargando vuestra invitación…',
     noSlug: {
       title: 'Usad vuestro enlace personal',
