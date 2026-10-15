@@ -33,6 +33,10 @@ export default {
   location: {
     title: 'Ubicación y Cómo Llegar',
     subtitle: 'Valle de Bueida, Quirós, Asturies, España',
+    travelNote: {
+      title: 'Reservad con Tiempo',
+      text: 'Para los que vengáis de fuera, intentad comprar los billetes con antelación. En agosto los precios suelen subir bastante, así que conviene planearlo cuanto antes.',
+    },
     map: {
       address: 'Valle de Bueida, Quirós, Asturias, España',
     },
@@ -142,13 +146,13 @@ export default {
   },
 
   dressCode: {
-    title: 'Código de Vestimenta',
-    tagline: 'Poneos lo que os haga sentir a gusto. Pero si buscáis alguna pista, pensad en una xana, etérea y misteriosa, pero con un puntín retro de los setenta.',
-    body: 'La boda va a ser al aire libre, en un prau de montaña (con suerte, con sol). Vamos a estar bailando toda la noche, y en cuanto se esconda el sol va a refrescar. \n Así que buscaos un calzado cómodo para bailar, o algo para cambiaros más tarde, y alguna prenda fresca para el día y un par de capas de abrigo para la noche. \n Si no os apetece poneros corbata, tranquilos, que Adán tampoco la va a llevar. \n\n La finca está metida en un parque natural precioso, y es posible que organicemos una ruta de montaña al día siguiente para despejarnos un poco, así que no estaría de más meter en la maleta unas botas y ropa de monte.',
+    title: 'Qué ponerse',
+    tagline: 'Si buscáis alguna pista, pensad en un cuento de hadas pero con un punto retro de los setenta. Pero tranquilos, esto es solo una recomendación, podéis llevar lo que queráis.',
+    body: 'La boda va a ser al aire libre, en un prau de montaña (con suerte, con sol). Vamos a estar bailando toda la noche, y en cuanto se esconda el sol va a refrescar. \n Así que buscaos un calzado cómodo para bailar, o algo para cambiaros más tarde, y alguna prenda fresca para el día y un par de capas de abrigo para la noche. Recomendamos traer un abanico (más que nada para impresionar a los ingleses). \n Si no os apetece poneros corbata, tranquilos, que Adán tampoco la va a llevar. \n\n La finca está metida de lleno en el Parque Natural de las Ubiñas, y es posible que organicemos una ruta de montaña al día siguiente para despejarnos un poco, así que no estaría de más meter en la maleta unas botas y ropa de monte.',
     moodBoard: {
-      title: 'Tablero de Inspiración',
+      title: 'Inspiración',
       intro: 'Para que os hagáis una idea, echadle un ojo a nuestro tablero de Pinterest.',
-      linkLabel: 'Abrir el tablero en Pinterest',
+      linkLabel: 'Abrir en Pinterest',
     },
   },
 

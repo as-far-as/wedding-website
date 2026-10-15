@@ -14,6 +14,14 @@ export default function Location() {
       backdrop={backdrop}
     >
 
+      <div className="mb-10">
+        <Card title={l.travelNote.title}>
+          <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem' }}>
+            {l.travelNote.text}
+          </p>
+        </Card>
+      </div>
+
       <Section title={l.site.title}>
         <p className="font-sans text-wedding-muted leading-relaxed mb-6" style={{ fontSize: '0.925rem', whiteSpace: 'pre-line' }}>
           {l.site.intro}

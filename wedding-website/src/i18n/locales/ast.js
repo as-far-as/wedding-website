@@ -33,6 +33,10 @@ export default {
   location: {
     title: 'Allugamientu ya Cómo Llegar',
     subtitle: 'Valle de Bueida, Quirós, Asturies, España',
+    travelNote: {
+      title: 'Reservái con Tiempu',
+      text: 'Pa los que vengáis de fuera, intentái mercar los billetes con enantelación. N\'agostu los precios suelen xubir abondo, asina que convién planealo cuanto enantes.',
+    },
     map: {
       address: 'Valle de Bueida, Quirós, Asturies, España',
     },
