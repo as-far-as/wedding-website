@@ -72,12 +72,14 @@ export default function Asturias() {
             </p>
           </Card>
 
-          <Card title={as.thingsToDo.oviedo.title}>
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
-              {as.thingsToDo.oviedo.desc}
-            </p>
-            <p className="font-sans text-wedding-muted/60 mt-2" style={{ fontSize: '0.78rem' }}>{as.thingsToDo.oviedo.distance}</p>
-          </Card>
+          {as.thingsToDo.oviedo && (
+            <Card title={as.thingsToDo.oviedo.title}>
+              <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.875rem', whiteSpace: 'pre-line' }}>
+                {as.thingsToDo.oviedo.desc}
+              </p>
+              <p className="font-sans text-wedding-muted/60 mt-2" style={{ fontSize: '0.78rem' }}>{as.thingsToDo.oviedo.distance}</p>
+            </Card>
+          )}
         </CardGrid>
       </Section>
 

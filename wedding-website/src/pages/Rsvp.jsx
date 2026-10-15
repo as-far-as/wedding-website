@@ -166,6 +166,23 @@ export default function Rsvp() {
   // on-site invite below can already greet both of them by name.
   const plusOneFirst = isHouseGuest && hasPlusOne;
 
+  // Split out so, for house guests, the plus-one's dietary field can sit
+  // below the main guest's dietary field instead of inside this box — the
+  // attending question itself still needs answering before the house-invite
+  // box further down, so that part stays put.
+  const plusOneDietaryField = hasPlusOne && plusOneAttending === 'yes' && (
+    <div>
+      <label className={labelClass} style={labelStyle} htmlFor="plusOneDietary">{r.plusOneDietaryLabel}</label>
+      <textarea
+        id="plusOneDietary"
+        value={plusOneDietary}
+        onChange={(e) => setPlusOneDietary(e.target.value)}
+        className={inputClass}
+        style={{ fontSize: '0.95rem', minHeight: '3.5rem' }}
+      />
+    </div>
+  );
+
   const plusOneSection = hasPlusOne && (
     <div className="border border-wedding-accent/25 rounded-lg p-5">
       <p className="font-sans text-wedding-text mb-4" style={{ fontSize: '0.9rem' }}>
@@ -177,18 +194,7 @@ export default function Rsvp() {
         yesLabel={r.attendingYes}
         noLabel={r.attendingNo}
       />
-      {plusOneAttending === 'yes' && (
-        <div className="mt-5">
-          <label className={labelClass} style={labelStyle} htmlFor="plusOneDietary">{r.plusOneDietaryLabel}</label>
-          <textarea
-            id="plusOneDietary"
-            value={plusOneDietary}
-            onChange={(e) => setPlusOneDietary(e.target.value)}
-            className={inputClass}
-            style={{ fontSize: '0.95rem', minHeight: '3.5rem' }}
-          />
-        </div>
-      )}
+      {!plusOneFirst && plusOneDietaryField && <div className="mt-5">{plusOneDietaryField}</div>}
     </div>
   );
   // Arrival/departure dates matter for anyone staying on or near the site
@@ -396,6 +402,8 @@ export default function Rsvp() {
                   style={{ fontSize: '0.95rem', minHeight: '4.5rem' }}
                 />
               </div>
+
+              {plusOneFirst && plusOneDietaryField}
 
               {!plusOneFirst && plusOneSection}
             </>
