@@ -203,8 +203,8 @@ export default {
 
   dressCode: {
     title: 'Dress Code',
-    tagline: 'If you are looking for some inspiration, think ethereal mountain nymphs meets retro 70s dreamboats. But of course, please do wear what you feel comfortable in! ',
-    body: "The wedding will be held mostly outside in a mountain meadow, hopefully in the sunshine. We'll be dancing well into the night, and it might get chilly once the sun goes down. \n So you'll want shoes you can dance in, or something comfy to change into later, plus something cool and comfortable for the sunshine and a few extra layers for the evening. Maybe bring a fan for that authentic Spanish flair! \n No need to wear a tie if you don't want to (Adán probably won't be wearing one). \n\n The venue sits within a beautiful natural park, and we may organise a small hike the day after the wedding to help clear our heads, so packing some hiking shoes and clothes would be a good idea too.",
+    tagline: 'Think ethereal mountain nymphs meets retro 70s dreamboats',
+    body: "The wedding will be held mostly outside in a mountain meadow, hopefully in the sunshine. We'll be dancing well into the night, and it might get chilly once the sun goes down. \n\n So you'll want shoes you can dance in, or something comfy to change into later, plus something cool and comfortable for the sunshine and a few extra layers for the evening. Maybe bring a fan for that authentic Spanish flair! \n\n No need to wear a tie if you don't want to (Adán probably won't be wearing one). \n\n The venue sits within a beautiful natural park, and we may organise a small hike the day after the wedding to help clear our heads, so packing some hiking shoes and clothes would be a good idea too. \n\n Of course, please do wear what you feel comfortable in!",
     moodBoard: {
       title: 'Mood Board',
       intro: 'For some visual inspiration, take a look at our shared Pinterest board.',

@@ -147,8 +147,8 @@ export default {
 
   dressCode: {
     title: 'Qué ponerse',
-    tagline: 'Si buscáis alguna pista, pensad en un cuento de hadas pero con un punto retro de los setenta. Pero tranquilos, esto es solo una recomendación, podéis llevar lo que queráis.',
-    body: 'La boda va a ser al aire libre, en un prau de montaña (con suerte, con sol). Vamos a estar bailando toda la noche, y en cuanto se esconda el sol va a refrescar. \n Así que buscaos un calzado cómodo para bailar, o algo para cambiaros más tarde, y alguna prenda fresca para el día y un par de capas de abrigo para la noche. Recomendamos traer un abanico (más que nada para impresionar a los ingleses). \n Si no os apetece poneros corbata, tranquilos, que Adán tampoco la va a llevar. \n\n La finca está metida de lleno en el Parque Natural de las Ubiñas, y es posible que organicemos una ruta de montaña al día siguiente para despejarnos un poco, así que no estaría de más meter en la maleta unas botas y ropa de monte.',
+    tagline: 'Imagina que estás en un cuento de hadas, pero con un punto retro de los setenta.',
+    body: 'La boda va a ser al aire libre, en un prau de montaña (con suerte, con sol). Vamos a estar bailando toda la noche, y en cuanto se esconda el sol va a refrescar. \n\n Así que buscaos un calzado cómodo para bailar, o algo para cambiaros más tarde, y alguna prenda fresca para el día y un par de capas de abrigo para la noche. Recomendamos traer un abanico (más que nada para impresionar a los ingleses). \n\n Si no os apetece poneros corbata, tranquilos, que Adán tampoco la va a llevar. \n\n La finca está metida de lleno en el Parque Natural de las Ubiñas, y es posible que organicemos una ruta de montaña al día siguiente para despejarnos un poco, así que no estaría de más meter en la maleta unas botas y ropa de monte. \n\n Solo falta decir que todo esto es solo una recomendación. Podéis poneros lo que queráis, con tal de que estéis cómodos y podáis bailar.',
     moodBoard: {
       title: 'Inspiración',
       intro: 'Para que os hagáis una idea, echadle un ojo a nuestro tablero de Pinterest.',
