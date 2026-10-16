@@ -1,6 +1,21 @@
-import { readSheetRows } from './_sheets.js';
+import { readSheetRows, getOrCreateColumnIndex, updateCell } from './_sheets.js';
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
+const VISITED_AT_HEADER = 'RSVP Page Visited At';
+
+// Records the first time a guest's personalised RSVP link is opened. Best
+// effort only — a hiccup here should never stop the guest's page from
+// loading, so failures are logged and swallowed, not thrown.
+async function recordFirstVisit(guest) {
+  if (guest.rsvppagevisitedat) return; // already recorded, nothing to do
+  try {
+    const colIndex = await getOrCreateColumnIndex('Guests', VISITED_AT_HEADER);
+    const timestamp = new Date().toISOString().replace('T', ' ').replace(/\.\d+Z$/, ' UTC');
+    await updateCell('Guests', guest._rowNumber, colIndex, timestamp);
+  } catch (err) {
+    console.error('recording guest visit failed', err);
+  }
+}
 
 export const handler = async (event) => {
   const slug = (event.queryStringParameters || {}).slug;
@@ -19,6 +34,8 @@ export const handler = async (event) => {
     }
 
     const houseInviteRaw = (match.houseinvite || '').toString().trim().toLowerCase();
+
+    await recordFirstVisit(match);
 
     const rsvpRows = await readSheetRows('RSVPs');
     const priorSubmissions = rsvpRows.filter(

@@ -85,11 +85,22 @@ function rowsToObjects(values) {
   if (!values || values.length === 0) return [];
   const [header, ...rows] = values;
   const keys = header.map(normalizeKey);
-  return rows.map((row) => {
-    const obj = {};
-    keys.forEach((key, i) => { obj[key] = row[i] ?? ''; });
+  return rows.map((row, i) => {
+    const obj = { _rowNumber: i + 2 }; // +2: header row + 1-index
+    keys.forEach((key, j) => { obj[key] = row[j] ?? ''; });
     return obj;
   });
+}
+
+// Converts a 0-based column index to its Sheets letter (0 -> A, 25 -> Z, 26 -> AA, ...).
+function columnToLetter(index) {
+  let letter = '';
+  let n = index;
+  while (n >= 0) {
+    letter = String.fromCharCode((n % 26) + 65) + letter;
+    n = Math.floor(n / 26) - 1;
+  }
+  return letter;
 }
 
 export async function readSheetRows(tabName) {
@@ -126,5 +137,42 @@ export async function appendRow(tabName, rowValues) {
   });
   if (!res.ok) {
     throw new Error(`Sheets append failed: ${res.status} ${await res.text()}`);
+  }
+}
+
+// Finds a header's column (0-based), creating it at the end of the header
+// row if it isn't there yet — mirrors the same on-demand-column pattern the
+// Apps Script mail merge uses for "Invite Sent At".
+export async function getOrCreateColumnIndex(tabName, headerName) {
+  const token = await getAccessToken();
+  const headerUrl = `${SHEETS_API}/${process.env.GOOGLE_SHEET_ID}/values/${encodeURIComponent(`${tabName}!1:1`)}`;
+  const res = await fetch(headerUrl, { headers: { Authorization: `Bearer ${token}` } });
+  if (!res.ok) {
+    throw new Error(`Sheets header read failed: ${res.status} ${await res.text()}`);
+  }
+  const data = await res.json();
+  const header = (data.values && data.values[0]) || [];
+  const index = header.map(normalizeKey).indexOf(normalizeKey(headerName));
+  if (index !== -1) return index;
+
+  const newIndex = header.length;
+  await updateCell(tabName, 1, newIndex, headerName);
+  return newIndex;
+}
+
+export async function updateCell(tabName, rowNumber, colIndex, value) {
+  const token = await getAccessToken();
+  const range = `${tabName}!${columnToLetter(colIndex)}${rowNumber}`;
+  const url = `${SHEETS_API}/${process.env.GOOGLE_SHEET_ID}/values/${encodeURIComponent(range)}?valueInputOption=USER_ENTERED`;
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ values: [[sanitizeForSheets(value)]] }),
+  });
+  if (!res.ok) {
+    throw new Error(`Sheets cell update failed: ${res.status} ${await res.text()}`);
   }
 }
