@@ -302,6 +302,7 @@ export default {
     },
     dietaryLabel: 'Dietary requirements',
     messageLabel: 'Anything else you want to tell us?',
+    plusOneSectionTitle: 'Your Plus-One',
     plusOneInviteTemplate: "We'd love for you to bring {name} with you. Are they coming too?",
     plusOneDietaryLabel: "Plus-one's dietary requirements",
     submit: 'Send RSVP',

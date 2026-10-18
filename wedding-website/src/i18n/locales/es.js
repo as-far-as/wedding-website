@@ -243,6 +243,7 @@ export default {
     },
     dietaryLabel: 'Necesidades dietéticas',
     messageLabel: '¿Algo más que queráis contarnos?',
+    plusOneSectionTitle: 'Vuestro Acompañante',
     plusOneInviteTemplate: 'Nos haría mucha ilusión que trajerais a {name}. ¿Va a venir también?',
     plusOneDietaryLabel: 'Necesidades dietéticas del acompañante',
     submit: 'Enviar RSVP',

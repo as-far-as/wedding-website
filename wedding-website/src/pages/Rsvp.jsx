@@ -10,6 +10,10 @@ import backdrop from '../assets/collages/rsvp.webp';
 const inputClass = 'w-full border border-wedding-accent/40 rounded-lg px-4 py-3 font-sans text-[#2B2D42] bg-wedding-bg focus:outline-none focus:border-wedding-accent transition-colors';
 const labelClass = 'block font-sans text-wedding-muted mb-2';
 const labelStyle = { fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase' };
+// Every question section gets one of these, so the whole form reads clearly
+// as a single page rather than a one-at-a-time wizard.
+const sectionHeaderClass = 'font-display text-wedding-text mb-3';
+const sectionHeaderStyle = { fontSize: '1.1rem' };
 
 function RadioPair({ value, onChange, yesLabel, noLabel }) {
   return (
@@ -162,14 +166,9 @@ export default function Rsvp() {
   const stayingInHouse = isHouseGuest && houseStay === 'yes';
   const effectiveAccommodation = stayingInHouse ? 'house' : accommodation;
   const plusOneConfirmed = hasPlusOne && plusOneAttending === 'yes';
-  // House guests with a plus-one answer the plus-one question first, so the
-  // on-site invite below can already greet both of them by name.
-  const plusOneFirst = isHouseGuest && hasPlusOne;
 
-  // Split out so, for house guests, the plus-one's dietary field can sit
-  // below the main guest's dietary field instead of inside this box — the
-  // attending question itself still needs answering before the house-invite
-  // box further down, so that part stays put.
+  // Kept separate from plusOneSection so it can sit below the main guest's
+  // own dietary field rather than inside the plus-one question box above.
   const plusOneDietaryField = hasPlusOne && plusOneAttending === 'yes' && (
     <div>
       <label className={labelClass} style={labelStyle} htmlFor="plusOneDietary">{r.plusOneDietaryLabel}</label>
@@ -185,6 +184,7 @@ export default function Rsvp() {
 
   const plusOneSection = hasPlusOne && (
     <div className="border border-wedding-accent/25 rounded-lg p-5">
+      <h3 className={sectionHeaderClass} style={sectionHeaderStyle}>{r.plusOneSectionTitle}</h3>
       <p className="font-sans text-wedding-text mb-4" style={{ fontSize: '0.9rem' }}>
         {r.plusOneInviteTemplate.replace('{name}', guest.plusOneName)}
       </p>
@@ -194,7 +194,6 @@ export default function Rsvp() {
         yesLabel={r.attendingYes}
         noLabel={r.attendingNo}
       />
-      {!plusOneFirst && plusOneDietaryField && <div className="mt-5">{plusOneDietaryField}</div>}
     </div>
   );
   // Arrival/departure dates matter for anyone staying on or near the site
@@ -322,7 +321,7 @@ export default function Rsvp() {
           </p>
 
           <div>
-            <label className={labelClass} style={labelStyle}>{r.attendingLabel}</label>
+            <h3 className={sectionHeaderClass} style={sectionHeaderStyle}>{r.attendingLabel}</h3>
             <RadioPair
               value={attending}
               onChange={setAttending}
@@ -331,86 +330,80 @@ export default function Rsvp() {
             />
           </div>
 
-          {attending === 'yes' && (
-            <>
-              {plusOneFirst && plusOneSection}
+          {plusOneSection}
 
-              {isHouseGuest ? (
-                <div className="border border-wedding-accent/25 rounded-lg p-5">
-                  <p className="font-sans text-wedding-text mb-1" style={{ fontSize: '0.95rem', fontWeight: 600 }}>{r.houseInvite.label}</p>
-                  <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.85rem' }}>
-                    {plusOneConfirmed ? r.houseInvite.textWithPlusOne.replace('{plusOneName}', guest.plusOneName) : r.houseInvite.text}
-                  </p>
-                  <RadioPair
-                    value={houseStay}
-                    onChange={setHouseStay}
-                    yesLabel={plusOneConfirmed ? r.houseInvite.yesPlural : r.houseInvite.yesSingular}
-                    noLabel={plusOneConfirmed ? r.houseInvite.noPlural : r.houseInvite.noSingular}
-                  />
+          {isHouseGuest && (
+            <div className="border border-wedding-accent/25 rounded-lg p-5">
+              <h3 className={sectionHeaderClass} style={sectionHeaderStyle}>{r.houseInvite.label}</h3>
+              <p className="font-sans text-wedding-muted leading-relaxed mb-4" style={{ fontSize: '0.85rem' }}>
+                {plusOneConfirmed ? r.houseInvite.textWithPlusOne.replace('{plusOneName}', guest.plusOneName) : r.houseInvite.text}
+              </p>
+              <RadioPair
+                value={houseStay}
+                onChange={setHouseStay}
+                yesLabel={plusOneConfirmed ? r.houseInvite.yesPlural : r.houseInvite.yesSingular}
+                noLabel={plusOneConfirmed ? r.houseInvite.noPlural : r.houseInvite.noSingular}
+              />
 
-                  {stayingInHouse && (
-                    <StayDates
-                      r={r}
-                      arrivalDay={arrivalDay}
-                      setArrivalDay={setArrivalDay}
-                      departureDay={departureDay}
-                      setDepartureDay={setDepartureDay}
-                    />
-                  )}
-                </div>
-              ) : null}
-
-              {(!isHouseGuest || houseStay === 'no') && (
-                <div>
-                  <label className={labelClass} style={labelStyle}>{r.accommodation.label}</label>
-                  <div className="space-y-2">
-                    {r.accommodation.options.map(({ value, label, desc }) => (
-                      <button
-                        key={value}
-                        type="button"
-                        onClick={() => setAccommodation(value)}
-                        className={`w-full text-left rounded-lg border px-4 py-3 transition-colors ${
-                          accommodation === value
-                            ? 'border-wedding-accent bg-wedding-accent/10'
-                            : 'border-wedding-accent/40 hover:border-wedding-accent'
-                        }`}
-                      >
-                        <span className="font-sans text-wedding-text block" style={{ fontSize: '0.9rem', fontWeight: 600 }}>{label}</span>
-                        <span className="font-sans text-wedding-muted block mt-0.5" style={{ fontSize: '0.8rem' }}>{desc}</span>
-                      </button>
-                    ))}
-                  </div>
-                  {(accommodation === 'campsite' || accommodation === 'cottage') && (
-                    <StayDates
-                      r={r}
-                      arrivalDay={arrivalDay}
-                      setArrivalDay={setArrivalDay}
-                      departureDay={departureDay}
-                      setDepartureDay={setDepartureDay}
-                    />
-                  )}
-                </div>
-              )}
-
-              <div>
-                <label className={labelClass} style={labelStyle} htmlFor="dietary">{r.dietaryLabel}</label>
-                <textarea
-                  id="dietary"
-                  value={dietary}
-                  onChange={(e) => setDietary(e.target.value)}
-                  className={inputClass}
-                  style={{ fontSize: '0.95rem', minHeight: '4.5rem' }}
+              {stayingInHouse && (
+                <StayDates
+                  r={r}
+                  arrivalDay={arrivalDay}
+                  setArrivalDay={setArrivalDay}
+                  departureDay={departureDay}
+                  setDepartureDay={setDepartureDay}
                 />
+              )}
+            </div>
+          )}
+
+          {(!isHouseGuest || houseStay !== 'yes') && (
+            <div>
+              <h3 className={sectionHeaderClass} style={sectionHeaderStyle}>{r.accommodation.label}</h3>
+              <div className="space-y-2">
+                {r.accommodation.options.map(({ value, label, desc }) => (
+                  <button
+                    key={value}
+                    type="button"
+                    onClick={() => setAccommodation(value)}
+                    className={`w-full text-left rounded-lg border px-4 py-3 transition-colors ${
+                      accommodation === value
+                        ? 'border-wedding-accent bg-wedding-accent/10'
+                        : 'border-wedding-accent/40 hover:border-wedding-accent'
+                    }`}
+                  >
+                    <span className="font-sans text-wedding-text block" style={{ fontSize: '0.9rem', fontWeight: 600 }}>{label}</span>
+                    <span className="font-sans text-wedding-muted block mt-0.5" style={{ fontSize: '0.8rem' }}>{desc}</span>
+                  </button>
+                ))}
               </div>
-
-              {plusOneFirst && plusOneDietaryField}
-
-              {!plusOneFirst && plusOneSection}
-            </>
+              {(accommodation === 'campsite' || accommodation === 'cottage') && (
+                <StayDates
+                  r={r}
+                  arrivalDay={arrivalDay}
+                  setArrivalDay={setArrivalDay}
+                  departureDay={departureDay}
+                  setDepartureDay={setDepartureDay}
+                />
+              )}
+            </div>
           )}
 
           <div>
-            <label className={labelClass} style={labelStyle} htmlFor="message">{r.messageLabel}</label>
+            <label className={sectionHeaderClass} style={sectionHeaderStyle} htmlFor="dietary">{r.dietaryLabel}</label>
+            <textarea
+              id="dietary"
+              value={dietary}
+              onChange={(e) => setDietary(e.target.value)}
+              className={inputClass}
+              style={{ fontSize: '0.95rem', minHeight: '4.5rem' }}
+            />
+          </div>
+
+          {plusOneDietaryField}
+
+          <div>
+            <label className={sectionHeaderClass} style={sectionHeaderStyle} htmlFor="message">{r.messageLabel}</label>
             <textarea
               id="message"
               value={message}

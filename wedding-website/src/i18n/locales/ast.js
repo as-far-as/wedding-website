@@ -199,6 +199,7 @@ export default {
     },
     dietaryLabel: 'Requisitos alimentarios',
     messageLabel: '¿Daqué más que vos preste dicinos?',
+    plusOneSectionTitle: 'El Vuestru Acompañante',
     plusOneInviteTemplate: 'Prestaríanos que traxereis a {name} con vós. ¿Va vinir tamién?',
     plusOneDietaryLabel: 'Requisitos alimentarios del acompañante',
     submit: 'Unviar RSVP',
