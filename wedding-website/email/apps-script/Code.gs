@@ -151,8 +151,9 @@ function buildEmail_(guest) {
   const lang = resolveLanguage_(guest.language);
   const langConfig = CONFIG.LANGUAGES[lang];
 
+  const conjunction = lang === 'es' ? 'y' : 'and';
   const displayName = guest.plusonename
-    ? `${guest.name} & ${guest.plusonename}`
+    ? `${guest.name} ${conjunction} ${guest.plusonename}`
     : guest.name;
   // ?lang= so the site itself opens straight into the guest's language,
   // rather than relying on their browser or a stored preference.
