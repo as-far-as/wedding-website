@@ -139,8 +139,8 @@ export default {
     title: 'Accommodation',
     intro: "There are a few options for accommodation near the site: you can stay in Gijón and take the bus, stay near the site, or make your own arrangements.",
     option1: {
-      title: 'Option 1: Casas Rurales',
-      intro: "There are a handful of cottages (\"casas rurales\") near the venue, mostly within a 10 minute drive. We'll be block-booking a selection to make sure there's room for everyone who wants to stay nearby.",
+      title: 'Option 1: Nearby Casas Rurales / Hotels',
+      intro: "There are a handful of cottages (\"casas rurales\") and hotels near the venue, mostly within a 10 minute drive. We'll be block-booking a selection to make sure there's room for everyone who wants to stay nearby.",
       bullets: [
         "Let us know in your RSVP if you're interested, and we'll coordinate directly with you.",
         "Prices and exact dates will depend on the property (we estimate around £100 per person for two nights). If you choose this option, we'll get in touch and share these.",

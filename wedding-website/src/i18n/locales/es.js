@@ -85,8 +85,8 @@ export default {
     title: 'Alojamiento',
     intro: 'Para dormir tenéis varias opciones: quedaros en Xixón y venir en autobús, buscar algo cerca de la finca... Os ayudamos a elegir:',
     option1: {
-      title: 'Opción 1: Casas Rurales',
-      intro: 'Hay unas cuantas casas rurales cerca de la finca, la mayoría a diez minutos en coche. Vamos a reservar unas pocas en bloque, para que haya sitio de sobra para quien quiera quedarse cerca.',
+      title: 'Opción 1: Casas Rurales / Hoteles Cercanos',
+      intro: 'Hay unas cuantas casas rurales y hoteles cerca de la finca, la mayoría a diez minutos en coche. Vamos a reservar unas pocas en bloque, para que haya sitio de sobra para quien quiera quedarse cerca.',
       bullets: [
         'Si os interesa, decídnoslo en el RSVP y nos ponemos en contacto con vosotros.',
         'El precio y las fechas exactas dependen de cada casa, estimamos ~100€ por persona para dos noches. Os las pasamos en cuanto elijáis esta opción.',

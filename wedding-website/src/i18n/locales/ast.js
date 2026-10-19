@@ -85,8 +85,8 @@ export default {
     title: 'Alloxamientu',
     intro: 'Hai delles opciones d\'alloxamientu averaes a la finca: podéis quedar en Xixón ya coyer l\'autobús, alloxavos averaos a la finca, o organizalo pela vuesa cuenta.',
     option1: {
-      title: 'Opción 1: Cases Rurales',
-      intro: 'Hai un puñáu de cases rurales averaes a la finca, la mayoría a unos 10 minutos en coche. Vamos reservar una seleición en bloque p\'asegurar sitiu pa tolos que quieran quedar averaos.',
+      title: 'Opción 1: Cases Rurales / Hoteles Averaos',
+      intro: 'Hai un puñáu de cases rurales ya hoteles averaos a la finca, la mayoría a unos 10 minutos en coche. Vamos reservar una seleición en bloque p\'asegurar sitiu pa tolos que quieran quedar averaos.',
       bullets: [
         'Indicáilo nel RSVP si tais interesaos, ya coordinamos direutamente con vós.',
         'Los precios ya les feches esautes van dependir de la propiedá. Si escoyéis esta opción, vamos poner en contautu pa compartilos.',
