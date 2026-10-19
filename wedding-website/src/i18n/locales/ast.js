@@ -1,6 +1,7 @@
 export default {
   nav: {
     location: 'Allugamientu',
+    timings: 'Horarios',
     accommodation: 'Alloxamientu',
     asturias: 'Asturies',
     dressCode: 'Vistimenta',
@@ -71,6 +72,13 @@ export default {
         text: 'Si tenéis dalguna dubda sobre cómo llegar, escribinos a Adán o a Natalie ensin problema, que pa eso tamos.',
       },
     },
+  },
+
+  timings: {
+    title: 'Horarios',
+    subtitle: 'L\'horariu completu del fin de selmana',
+    tbcTitle: 'Prósimamente',
+    tbcText: 'Entá tamos zarrando los horarios esautos del fin de selmana. ¡Volvei a mirar más averao a la boda!',
   },
 
   accommodation: {

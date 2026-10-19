@@ -1,6 +1,7 @@
 export default {
   nav: {
     location: 'Location',
+    timings: 'Timings',
     accommodation: 'Accommodation',
     asturias: 'Asturias',
     dressCode: 'Dress Code',
@@ -125,6 +126,13 @@ export default {
         text: "All of the above is entirely optional, so feel free to completely ignore it and do your own thing. \n We'd love for people to spend as much time in the area as they can and explore in their own time, but we understand it is already a big commitment to travel this far, so please adjust to your schedule! \n If you have any questions about logistics, please don't hesitate to reach out to Adán or Natalie, we're happy to help.",
       },
     },
+  },
+
+  timings: {
+    title: 'Timings',
+    subtitle: 'The full weekend schedule',
+    tbcTitle: 'Coming soon',
+    tbcText: "We're still finalising the exact timings for the weekend. Check back closer to the big day!",
   },
 
   accommodation: {

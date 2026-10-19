@@ -16,6 +16,7 @@ export default function Navbar() {
 
   const NAV_LINKS = [
     { to: '/location',      label: t.nav.location },
+    { to: '/timings',       label: t.nav.timings },
     { to: '/accommodation', label: t.nav.accommodation },
     // The Asturias page isn't part of the Asturian site — see Asturias.jsx.
     ...(language === 'ast' ? [] : [{ to: '/asturias', label: t.nav.asturias }]),

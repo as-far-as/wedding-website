@@ -1,6 +1,7 @@
 export default {
   nav: {
     location: 'Ubicación',
+    timings: 'Horarios',
     accommodation: 'Alojamiento',
     asturias: 'Asturies',
     dressCode: 'Vestimenta',
@@ -71,6 +72,13 @@ export default {
         text: 'Si tenéis cualquier duda sobre cómo llegar, escribidnos a Adán o a Natalie sin problema, que para eso estamos.',
       },
     },
+  },
+
+  timings: {
+    title: 'Horarios',
+    subtitle: 'El horario completo del fin de semana',
+    tbcTitle: 'Próximamente',
+    tbcText: 'Todavía estamos cerrando los horarios exactos del fin de semana. ¡Volved a mirar más cerca de la boda!',
   },
 
   accommodation: {

@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import Location from './pages/Location';
+import Timings from './pages/Timings';
 import Accommodation from './pages/Accommodation';
 import Asturias from './pages/Asturias';
 import DressCode from './pages/DressCode';
@@ -24,6 +25,7 @@ export default function App() {
         <Routes>
           <Route path="/"              element={<Hero />} />
           <Route path="/location"      element={<Location />} />
+          <Route path="/timings"       element={<Timings />} />
           <Route path="/accommodation" element={<Accommodation />} />
           <Route path="/asturias"      element={<Asturias />} />
           <Route path="/dress-code"    element={<DressCode />} />
