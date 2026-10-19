@@ -216,7 +216,7 @@ export default {
     accommodation: {
       label: '¿Dónde os vais a alojar?',
       options: [
-        { value: 'cottage', label: 'Casa rural / hotel cercano', desc: 'Nos gustaría alojarnos en algo ya reservado cerca de la finca (hotel / casa rural). Habrá taxis ese día para ir y volver.' },
+        { value: 'cottage', label: 'Casa rural / hotel cercano (ya reservado)', desc: 'Nos gustaría alojarnos en algo ya reservado cerca de la finca (hotel / casa rural). Habrá taxis ese día para ir y volver.' },
         { value: 'gijon', label: 'Xixón + autobús lanzadera', desc: 'Vamos a quedarnos en Xixón y coger el autobús de ida y vuelta ese día.' },
         { value: 'campsite', label: 'En el recinto (acampada)', desc: 'Acampada gratis en el prau, pegado a la finca.' },
         { value: 'own', label: 'Por nuestra cuenta', desc: 'Vamos a organizarlo todo por nuestra cuenta, no necesitamos alojamiento ni transporte.' },

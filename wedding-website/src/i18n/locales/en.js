@@ -275,7 +275,7 @@ export default {
     accommodation: {
       label: 'Where will you be staying?',
       options: [
-        { value: 'cottage', label: 'Nearby cottage / hotel', desc: 'I would like to stay in some pre-booked accommodation near the venue (hotel / cottage). Taxis will be available on the day to go back and forth.' },
+        { value: 'cottage', label: 'Nearby cottage / hotel (pre-booked)', desc: 'I would like to stay in some pre-booked accommodation near the venue (hotel / cottage). Taxis will be available on the day to go back and forth.' },
         { value: 'gijon', label: 'Gijón + bus', desc: 'I plan on staying in Gijón and taking the bus there and back on the day.' },
         { value: 'campsite', label: 'On site (camping)', desc: 'Free camping field by the venue, access to showers and bathroom.' },
         { value: 'own', label: 'Doing my own thing', desc: "I'm sorting my own accommodation and transport to the venue" },

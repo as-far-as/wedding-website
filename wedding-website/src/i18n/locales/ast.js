@@ -172,7 +172,7 @@ export default {
     accommodation: {
       label: '¿Onde vais alloxavos?',
       options: [
-        { value: 'cottage', label: 'Casa rural / hotel averáu', desc: 'Prestaríanos alloxanos en daqué yá reservao cerca de la finca (hotel / casa rural). Va haber taxis esi día pa dir ya volver.' },
+        { value: 'cottage', label: 'Casa rural / hotel averáu (yá reservao)', desc: 'Prestaríanos alloxanos en daqué yá reservao cerca de la finca (hotel / casa rural). Va haber taxis esi día pa dir ya volver.' },
         { value: 'gijon', label: 'Xixón + autobús', desc: 'Vamos a quedanos en Xixón ya coyer l\'autobús d\'ida ya vuelta esi día.' },
         { value: 'campsite', label: 'Na finca (acampada)', desc: 'Campu d\'acampada de baldre xusto al llau de la finca.' },
         { value: 'own', label: 'Pela nuesa cuenta', desc: 'Organizando el nuesu propiu alloxamientu.' },
