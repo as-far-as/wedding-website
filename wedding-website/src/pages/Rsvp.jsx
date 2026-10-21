@@ -163,6 +163,7 @@ export default function Rsvp() {
 
   const isHouseGuest = guest?.houseInvite;
   const hasPlusOne = Boolean(guest?.plusOneName);
+  const greetingName = hasPlusOne ? `${guest.name} ${r.and} ${guest.plusOneName}` : guest?.name;
   const stayingInHouse = isHouseGuest && houseStay === 'yes';
   const effectiveAccommodation = stayingInHouse ? 'house' : accommodation;
   const plusOneConfirmed = hasPlusOne && plusOneAttending === 'yes';
@@ -183,11 +184,8 @@ export default function Rsvp() {
   );
 
   const plusOneSection = hasPlusOne && (
-    <div className="border border-wedding-accent/25 rounded-lg p-5">
-      <h3 className={sectionHeaderClass} style={sectionHeaderStyle}>{r.plusOneSectionTitle}</h3>
-      <p className="font-sans text-wedding-text mb-4" style={{ fontSize: '0.9rem' }}>
-        {r.plusOneInviteTemplate.replace('{name}', guest.plusOneName)}
-      </p>
+    <div>
+      <h3 className={sectionHeaderClass} style={sectionHeaderStyle}>{r.attendingLabelTemplate.replace('{name}', guest.plusOneName)}</h3>
       <RadioPair
         value={plusOneAttending}
         onChange={setPlusOneAttending}
@@ -321,12 +319,17 @@ export default function Rsvp() {
             </p>
           </div>
 
-          <p className="font-sans italic text-wedding-text" style={{ fontSize: '1.1rem' }}>
-            {r.greetingTemplate.replace('{name}', guest.name)}
-          </p>
+          <div>
+            <p className="font-sans italic text-wedding-text" style={{ fontSize: '1.1rem' }}>
+              {r.greetingTemplate.replace('{name}', greetingName)}
+            </p>
+            <p className="font-sans italic text-wedding-text mt-2" style={{ fontSize: '1.1rem' }}>
+              {r.greetingIntro}
+            </p>
+          </div>
 
           <div>
-            <h3 className={sectionHeaderClass} style={sectionHeaderStyle}>{r.attendingLabel}</h3>
+            <h3 className={sectionHeaderClass} style={sectionHeaderStyle}>{r.attendingLabelTemplate.replace('{name}', guest.name)}</h3>
             <RadioPair
               value={attending}
               onChange={setAttending}
