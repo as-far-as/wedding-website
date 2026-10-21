@@ -198,11 +198,6 @@ export default {
 
   rsvp: {
     title: 'RSVP',
-    subtitle: 'Nos hace muchísima ilusión celebrarlo con vosotros. Porfa, decidnos si podéis venir antes del 1 de enero de 2027.',
-    weddingDate: {
-      title: 'Sábado 28 de agosto de 2027',
-      subtitle: 'El evento principal será el sábado, pero Natalie y Adán estarán por la zona desde el viernes hasta el domingo, por si queréis quedaros más tiempo.',
-    },
     loading: 'Cargando vuestra invitación…',
     noSlug: {
       title: 'Usad vuestro enlace personal',
@@ -216,9 +211,8 @@ export default {
       title: 'Algo ha ido mal',
       text: 'No hemos podido cargar vuestra invitación ahora mismo. Es cosa nuestra, no vuestra. Probad otra vez en un rato, o escribidnos directamente.',
     },
-    formNote: 'No hace falta decidirlo todo ya. Podéis volver y cambiar vuestras respuestas cuando queráis, siempre antes de la fecha límite. Y si os surge alguna duda antes de rellenarlo, escribidnos primero sin problema.',
     greetingTemplate: 'Queridos {name},',
-    greetingIntro: 'Natalie y Adán nos casamos en Asturies el sábado 28 de agosto de 2027, ¡y nos encantaría teneros con nosotros!',
+    greetingIntro: 'Nos hace muchísima ilusión invitaros a un fin de semana de fiesta, cariño y celebración de la boda de Natalie & Adán. La fiesta será el sábado 28 de agosto de 2027, en pleno corazón de las montañas de Asturies, en el norte de España. El evento principal será el sábado, pero Natalie y Adán estarán por la zona desde el viernes hasta el domingo, por si queréis quedaros más tiempo.\n\nPorfa, decidnos si podéis venir antes del 1 de enero de 2027. No hace falta decidirlo todo ya: podéis volver y cambiar vuestras respuestas cuando queráis, siempre antes de la fecha límite.\n\nTenéis toda la información en esta web, pero si os surge alguna duda antes de rellenar esto, escribidnos primero sin problema.',
     and: 'y',
     attendingLabelTemplate: '¿Vendrá {name}?',
     attendingYes: '¡Sí, por supuesto!',

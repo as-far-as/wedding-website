@@ -238,12 +238,7 @@ export default function Rsvp() {
   };
 
   return (
-    <PageLayout title={r.title} subtitle={r.subtitle} backdrop={backdrop}>
-
-      <div className="mb-8">
-        <h2 className="font-display text-wedding-text mb-2" style={{ fontSize: '1.3rem' }}>{r.weddingDate.title}</h2>
-        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.9rem' }}>{r.weddingDate.subtitle}</p>
-      </div>
+    <PageLayout title={r.title} backdrop={backdrop}>
 
       {status === 'no-slug' && (
         <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
@@ -313,17 +308,11 @@ export default function Rsvp() {
 
       {status === 'form' && guest && (
         <form onSubmit={handleSubmit} noValidate className="space-y-8">
-          <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-4">
-            <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.85rem' }}>
-              {r.formNote}
-            </p>
-          </div>
-
           <div>
             <p className="font-sans italic text-wedding-text" style={{ fontSize: '1.1rem' }}>
               {r.greetingTemplate.replace('{name}', greetingName)}
             </p>
-            <p className="font-sans italic text-wedding-text mt-2" style={{ fontSize: '1.1rem' }}>
+            <p className="font-sans italic text-wedding-text mt-2" style={{ fontSize: '1.1rem', whiteSpace: 'pre-line' }}>
               {r.greetingIntro}
             </p>
           </div>

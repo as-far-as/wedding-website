@@ -257,11 +257,6 @@ export default {
 
   rsvp: {
     title: 'RSVP',
-    subtitle: "We can't wait to celebrate with you. Please let us know if you can make it by 1st January 2027.",
-    weddingDate: {
-      title: 'Saturday 28 August 2027',
-      subtitle: "The main event will be on the Saturday, but Natalie and Adán will be in the area from Friday to Sunday if you'd like to be around for longer.",
-    },
     loading: 'Loading your invitation…',
     noSlug: {
       title: 'Use your personal link',
@@ -275,9 +270,8 @@ export default {
       title: 'Something went wrong',
       text: "We couldn't load your invitation just now. That's on us, not you. Please try again in a moment, or get in touch directly.",
     },
-    formNote: "No need to decide everything right now. You can come back and update your answers at any time before the RSVP deadline, and if you have any questions before filling this in, feel free to reach out to us first.",
     greetingTemplate: 'Dear {name},',
-    greetingIntro: "Natalie and Adán are getting married in Asturias on Saturday 28th August 2027 and would love for you to be there!",
+    greetingIntro: "We are delighted to invite you to join us in a weekend of revelry, merriment, and romance celebrating the wedding of Natalie & Adán. The festivities will take place on Saturday the 28th of August 2027, deep in the wild mountains of Asturias, northern Spain. The main event will be on the Saturday, but Natalie and Adán will be in the area from Friday to Sunday if you'd like to be around for longer.\n\nPlease let us know if you can make it by 1st January 2027. No need to decide everything right now. You can come back and update your answers at any time before the RSVP deadline.\n\nEverything you need to know should be on this website, but if you have any questions before filling this in, feel free to reach out to us first.",
     and: 'and',
     attendingLabelTemplate: 'Will {name} be there?',
     attendingYes: "Yes, can't wait!",

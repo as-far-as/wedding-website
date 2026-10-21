@@ -154,11 +154,6 @@ export default {
 
   rsvp: {
     title: 'RSVP',
-    subtitle: 'Fáinos muncha ilusión celebralo con vosotros. Por favor, avisainos si podéis vinir enantes del 1 de xineru de 2027.',
-    weddingDate: {
-      title: 'Sábadu 28 d\'agostu de 2027',
-      subtitle: 'L\'eventu principal va ser el sábadu, pero Natalie y Adán van tar pela zona dende\'l vienres hasta\'l domingu, por si queréis quedar más tiempu.',
-    },
     loading: 'Cargando la vuesa invitación…',
     noSlug: {
       title: 'Usái el vuesu enllaz personal',
@@ -172,9 +167,8 @@ export default {
       title: 'Daqué foi mal',
       text: 'Nun pudimos cargar la vuesa invitación agora mesmo. Esto ye cosa nuesa, non vuesa. Probái otra vuelta nun momentu, o escribinos direutamente.',
     },
-    formNote: 'Nun fai falta decidilo too agora mesmo. Podéis volver ya anovar les vueses respuestes en cualesquier momentu enantes de la data llímite del RSVP, ya si tenéis dalguna dubda enantes de rellenalo, nun dudéis en escribinos primero.',
     greetingTemplate: 'Queríos {name},',
-    greetingIntro: 'Natalie y Adán casámonos n\'Asturies el sábadu 28 d\'agostu de 2027, ¡y prestaríanos tenervos con nós!',
+    greetingIntro: 'Fáinos muncha ilusión convidaros a un fin de selmana de fiesta, cariñu ya celebración de la boda de Natalie & Adán. La fiesta va ser el sábadu 28 d\'agostu de 2027, nel mediu de les montañes d\'Asturies, nel norte d\'España. L\'eventu principal va ser el sábadu, pero Natalie y Adán van tar pela zona dende\'l vienres hasta\'l domingu, por si queréis quedar más tiempu.\n\nPor favor, avisainos si podéis vinir enantes del 1 de xineru de 2027. Nun fai falta decidilo too agora mesmo: podéis volver ya anovar les vueses respuestes cuando queráis, enantes de la data llímite.\n\nTenéis tola información nesta web, pero si tenéis dalguna dubda enantes de rellenar esto, escribinos primero ensin problema.',
     and: 'ya',
     attendingLabelTemplate: '¿Va vinir {name}?',
     attendingYes: '¡Sí, nun podemos esperar!',
