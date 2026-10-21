@@ -77,6 +77,10 @@ export default {
   timings: {
     title: 'Horarios',
     subtitle: 'El horario completo del fin de semana',
+    weddingDate: {
+      title: 'Sábado 28 de agosto de 2027',
+      subtitle: 'El evento principal será el sábado, pero Natalie y Adán estarán por la zona desde el viernes hasta el domingo, por si queréis quedaros más tiempo.',
+    },
     tbcTitle: 'Próximamente',
     tbcText: 'Todavía estamos cerrando los horarios exactos del fin de semana. ¡Volved a mirar más cerca de la boda!',
   },
@@ -195,6 +199,10 @@ export default {
   rsvp: {
     title: 'RSVP',
     subtitle: 'Nos hace muchísima ilusión celebrarlo con vosotros. Porfa, decidnos si podéis venir antes del 1 de enero de 2027.',
+    weddingDate: {
+      title: 'Sábado 28 de agosto de 2027',
+      subtitle: 'El evento principal será el sábado, pero Natalie y Adán estarán por la zona desde el viernes hasta el domingo, por si queréis quedaros más tiempo.',
+    },
     loading: 'Cargando vuestra invitación…',
     noSlug: {
       title: 'Usad vuestro enlace personal',

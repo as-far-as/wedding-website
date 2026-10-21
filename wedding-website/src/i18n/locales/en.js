@@ -131,6 +131,10 @@ export default {
   timings: {
     title: 'Timings',
     subtitle: 'The full weekend schedule',
+    weddingDate: {
+      title: 'Saturday 28 August 2027',
+      subtitle: "The main event will be on the Saturday, but Natalie and Adán will be in the area from Friday to Sunday if you'd like to be around for longer.",
+    },
     tbcTitle: 'Coming soon',
     tbcText: "We're still finalising the exact timings for the weekend. Check back closer to the big day!",
   },
@@ -254,6 +258,10 @@ export default {
   rsvp: {
     title: 'RSVP',
     subtitle: "We can't wait to celebrate with you. Please let us know if you can make it by 1st January 2027.",
+    weddingDate: {
+      title: 'Saturday 28 August 2027',
+      subtitle: "The main event will be on the Saturday, but Natalie and Adán will be in the area from Friday to Sunday if you'd like to be around for longer.",
+    },
     loading: 'Loading your invitation…',
     noSlug: {
       title: 'Use your personal link',

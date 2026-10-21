@@ -77,6 +77,10 @@ export default {
   timings: {
     title: 'Horarios',
     subtitle: 'L\'horariu completu del fin de selmana',
+    weddingDate: {
+      title: 'Sábadu 28 d\'agostu de 2027',
+      subtitle: 'L\'eventu principal va ser el sábadu, pero Natalie y Adán van tar pela zona dende\'l vienres hasta\'l domingu, por si queréis quedar más tiempu.',
+    },
     tbcTitle: 'Prósimamente',
     tbcText: 'Entá tamos zarrando los horarios esautos del fin de selmana. ¡Volvei a mirar más averao a la boda!',
   },
@@ -151,6 +155,10 @@ export default {
   rsvp: {
     title: 'RSVP',
     subtitle: 'Fáinos muncha ilusión celebralo con vosotros. Por favor, avisainos si podéis vinir enantes del 1 de xineru de 2027.',
+    weddingDate: {
+      title: 'Sábadu 28 d\'agostu de 2027',
+      subtitle: 'L\'eventu principal va ser el sábadu, pero Natalie y Adán van tar pela zona dende\'l vienres hasta\'l domingu, por si queréis quedar más tiempu.',
+    },
     loading: 'Cargando la vuesa invitación…',
     noSlug: {
       title: 'Usái el vuesu enllaz personal',

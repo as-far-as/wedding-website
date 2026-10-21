@@ -242,6 +242,11 @@ export default function Rsvp() {
   return (
     <PageLayout title={r.title} subtitle={r.subtitle} backdrop={backdrop}>
 
+      <div className="mb-8">
+        <h2 className="font-display text-wedding-text mb-2" style={{ fontSize: '1.3rem' }}>{r.weddingDate.title}</h2>
+        <p className="font-sans text-wedding-muted leading-relaxed" style={{ fontSize: '0.9rem' }}>{r.weddingDate.subtitle}</p>
+      </div>
+
       {status === 'no-slug' && (
         <div className="bg-wedding-accent/10 border border-wedding-accent/25 rounded-lg p-6">
           <h2 className="font-display text-wedding-text mb-3" style={{ fontSize: '1.2rem' }}>{r.noSlug.title}</h2>
